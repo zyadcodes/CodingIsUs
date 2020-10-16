@@ -1,0 +1,45 @@
+// This component will be the Icon component for each Guide & will be in the HomeScreen
+import React from 'react';
+import {TouchableOpacity, Image, Text, PixelRatio} from 'react-native';
+import {Icon} from 'react-native-elements';
+import fontStyles from '../../../config/fontStyles';
+import GuideIconStyle from './GuideIconStyle';
+
+// Creates the functional component
+const GuideIcon = (props) => {
+  // Fetches the props passed into this component
+  const {title, image, onPress, iconName, iconColor} = props;
+
+  // Renders the UI of the component
+  return (
+    <TouchableOpacity
+      style={GuideIconStyle.container}
+      onPress={() => onPress()}>
+      {image ? (
+        <Image
+          resizeMode={'contain'}
+          style={GuideIconStyle.image}
+          source={image}
+        />
+      ) : (
+        <Icon
+          type="font-awesome-5"
+          size={PixelRatio.get() * 17}
+          name={iconName}
+          color={iconColor}
+        />
+      )}
+      <Text
+        style={[
+          fontStyles.bigTextStyle,
+          fontStyles.black,
+          {textAlign: 'center'},
+        ]}>
+        {title}
+      </Text>
+    </TouchableOpacity>
+  );
+};
+
+// Exports the module
+export default GuideIcon;

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "234463436871",
+    "firebase_url": "https://coding-is-us.firebaseio.com",
+    "project_id": "coding-is-us",
+    "storage_bucket": "coding-is-us.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:234463436871:android:7923d3e28f9160f02d1162",
+        "android_client_info": {
+          "package_name": "com.CodingIsUs.CodingIsUs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "234463436871-t7b1m4kne9mnqlv1h5f0dkdfpvv3902n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJxhf5PUiZstlAryKhP661PT0k3crijNg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "234463436871-t7b1m4kne9mnqlv1h5f0dkdfpvv3902n.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "234463436871-p01a9112ju5e22qnj7l1a4bd1h0be9dh.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.CodingIsUs.CodingIsUs"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
