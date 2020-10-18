@@ -15,6 +15,7 @@
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* CodingIsUsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* CodingIsUsTests.m */; };
+		9B815F65253BF0DC00B81E4B /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B815F64253BF0DC00B81E4B /* File.swift */; };
 		9B998ECF250D6518003A8B35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		9BAB710025259D0600AEDE6B /* ding.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9BAB70FF25259D0600AEDE6B /* ding.mp3 */; };
 		9BB36B36250DB9C7000403CA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9BB36B35250DB9C7000403CA /* GoogleService-Info.plist */; };
@@ -75,6 +76,8 @@
 		91C30AC5C04F1B8F32F3DD04 /* Pods-CodingIsUs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodingIsUs.release.xcconfig"; path = "Target Support Files/Pods-CodingIsUs/Pods-CodingIsUs.release.xcconfig"; sourceTree = "<group>"; };
 		954BB508146C406892E91B24 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		95C7A12C789644D2B9E94DAE /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
+		9B815F63253BF0DC00B81E4B /* CodingIsUs-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CodingIsUs-Bridging-Header.h"; sourceTree = "<group>"; };
+		9B815F64253BF0DC00B81E4B /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		9B86DF842515765F0038C4F8 /* CodingIsUs.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = CodingIsUs.entitlements; path = CodingIsUs/CodingIsUs.entitlements; sourceTree = "<group>"; };
 		9BAB70FF25259D0600AEDE6B /* ding.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ding.mp3; sourceTree = "<group>"; };
 		9BB36B35250DB9C7000403CA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -210,6 +213,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				9B815F64253BF0DC00B81E4B /* File.swift */,
 				9BB36B35250DB9C7000403CA /* GoogleService-Info.plist */,
 				13B07FAE1A68108700A75B9A /* CodingIsUs */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
@@ -218,6 +222,7 @@
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				C42B2972A1DB2E5605B1E015 /* Pods */,
 				6B40AB792770467591839F66 /* Resources */,
+				9B815F63253BF0DC00B81E4B /* CodingIsUs-Bridging-Header.h */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -349,7 +354,7 @@
 					};
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = 7234TKH9GH;
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1200;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -719,6 +724,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				9B815F65253BF0DC00B81E4B /* File.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -760,6 +766,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CCD766BABBBF50911712DD76 /* Pods-CodingIsUs-CodingIsUsTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -783,6 +790,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 17B78828B06143D7DB122643 /* Pods-CodingIsUs-CodingIsUsTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = CodingIsUsTests/Info.plist;
@@ -819,6 +827,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.CodingIsUs.CodingIsUs;
 				PRODUCT_NAME = "Coding is Us";
+				SWIFT_OBJC_BRIDGING_HEADER = "CodingIsUs-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -844,6 +853,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.CodingIsUs.CodingIsUs;
 				PRODUCT_NAME = "Coding is Us";
+				SWIFT_OBJC_BRIDGING_HEADER = "CodingIsUs-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

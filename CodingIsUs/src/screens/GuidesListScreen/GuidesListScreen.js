@@ -162,7 +162,12 @@ const GuidesListScreen = ({route, navigation}) => {
                     color={colors.white}
                   />
                 </TouchableOpacity>
-                <Text style={[fontStyles.bigTextStyle, fontStyles.white]}>
+                <Text
+                  style={[
+                    fontStyles.bigTextStyle,
+                    fontStyles.white,
+                    {textAlign: 'center'},
+                  ]}>
                   {route.params.category.title}
                 </Text>
                 <View />

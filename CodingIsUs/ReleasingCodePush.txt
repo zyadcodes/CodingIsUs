@@ -1,0 +1,16 @@
+To release to CodePush:
+
+iOS: appcenter codepush release-react -a codingisus.com/Coding-is-Us -t 1.0.5 -d Production
+Android: appcenter codepush release-react -a codingisus.com/Coding-is-Us-1 -t 1.0.4 -d Production
+
+iOS Mandatory: appcenter codepush release-react -a codingisus.com/Coding-is-Us -t 1.0.5 -d Production -m
+Android Mandatory: appcenter codepush release-react -a codingisus.com/Coding-is-Us-1 -t 1.0.4 -d Production -m
+
+iOS Production Key: t4d_sln_3PP2QjIEXQLria7xfCLskzt_e-dEt
+iOS Staging Key: zajb4Smx5P8vy5l2W7OZLxNaOhqpgBAskoRB6
+
+Android Production Key: ohqDkkZId9cFvwsp5q3n2XNobf4kJqsJP0oLn
+Android Staging Key: pdwUtMz6JK0iP5FalcH41LpJRQiyjMeIPeyL5
+
+
+
