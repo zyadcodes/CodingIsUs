@@ -6,6 +6,8 @@ export default {
     FAQ: 'FAQ',
     ContactUs: 'Contact Us',
     FollowUsOnSocialMedia: 'Follow Us on Social Media',
+    Related: 'Related',
+    Length: 'Length: ',
     IWantToLearn: 'I want to learn...',
     Python: 'Python',
     Java: 'Java',
@@ -45,4 +47,5 @@ export default {
     MarkAsDone: 'Mark as Done',
     CodingIsUs: 'Coding is Us',
     AllGuides: 'All Guides',
+    Sections: 'Sections',
 }

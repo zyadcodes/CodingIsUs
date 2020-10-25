@@ -1,28 +1,51 @@
 // This is going to export all of the guides as default exports within an object to be used in the HomeScreen & Guide Screen.
 // Each section will include three attributes. The section name, description, and video link
 import PythonLogo from '../assets/images/PythonLogo.png';
+import PythonCover from '../assets/images/PythonCover.jpeg';
 import FirebaseLogo from '../assets/images/FirebaseLogo.png';
+import FirestoreCover from '../assets/images/FirestoreCover.jpg';
 import JavaLogo from '../assets/images/JavaLogo.png';
+import JavaCover from '../assets/images/JavaCover.jpg';
 import JavaScriptLogo from '../assets/images/JavaScriptLogo.png';
+import JavaScriptCover from '../assets/images/JavaScriptCover.jpg';
 import ReactJSLogo from '../assets/images/ReactJSLogo.png';
+import ReactJSCover from '../assets/images/ReactJSCover.png';
 import ReactNativeLogo from '../assets/images/ReactNativeLogo.png';
+import ReactNativeCover from '../assets/images/ReactNativeCover.png';
 import CPlusPlusLogo from '../assets/images/CPlusPlusLogo.png';
+import CPlusPlusCover from '../assets/images/CPlusPlusCover.png';
 import CLogo from '../assets/images/CLogo.png';
+import CCover from '../assets/images/CCover.jpeg';
 import CSharpLogo from '../assets/images/CSharpLogo.png';
+import CSharpCover from '../assets/images/CSharpCover.jpeg';
 import HTMLLogo from '../assets/images/HTMLLogo.png';
+import HTMLCover from '../assets/images/HTMLCover.jpg';
 import CSSLogo from '../assets/images/CSSLogo.png';
+import CSSCover from '../assets/images/CSSCover.jpg';
 import MySQLLogo from '../assets/images/MySQLLogo.png';
+import MySQLCover from '../assets/images/MySQLCover.jpg';
 import PHPLogo from '../assets/images/PHPLogo.png';
+import PHPCover from '../assets/images/PHPCover.jpg';
 import MachineLearningLogo from '../assets/images/MachineLearningLogo.png';
+import MachineLearningCover from '../assets/images/MachineLearningCover.jpg';
 import KotlinLogo from '../assets/images/KotlinLogo.png';
+import KotlinCover from '../assets/images/KotlinCover.png';
 import AndroidStudioLogo from '../assets/images/AndroidStudioLogo.png';
+import AndroidStudioCover from '../assets/images/AndroidStudioCover.png';
 import FlutterLogo from '../assets/images/FlutterLogo.png';
+import FlutterCover from '../assets/images/FlutterCover.png';
 import SwiftLogo from '../assets/images/SwiftLogo.png';
+import SwiftCover from '../assets/images/SwiftCover.png';
 
 const FirestoreGuide = {
   title: 'Firestore',
+  cover: FirestoreCover,
   logo: FirebaseLogo,
+  description:
+    'Cloud Firestore is a NoSQL document database that lets you easily store, sync, and query data for your mobile and web apps at a global scale.',
+  duration: '1 Hour',
   guideID: 2000,
+  relatedGuides: [13000, 6000],
   sections: [
     {
       name: 'Introduction',
@@ -84,8 +107,13 @@ const FirestoreGuide = {
 
 const JavaGuide = {
   title: 'Java',
+  cover: JavaCover,
   logo: JavaLogo,
+  description:
+    'Java is a class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible.',
+  duration: '10 Hours',
   guideID: 3000,
+  relatedGuides: [16000, 17000],
   sections: [
     {
       name: 'Introduction to Java',
@@ -193,8 +221,13 @@ const JavaGuide = {
 
 const JavaScriptGuide = {
   title: 'JavaScript',
+  cover: JavaScriptCover,
   logo: JavaScriptLogo,
+  description:
+    'JavaScript is a scripting or programming language that allows you to implement complex features on web pages like displaying timely content updates, interactive maps, animated 2D/3D graphics, and more.',
+  duration: '24 Hours',
   guideID: 4000,
+  relatedGuides: [5000, 6000],
   sections: [
     {
       name: 'Introduction',
@@ -311,9 +344,14 @@ const JavaScriptGuide = {
 };
 
 const ReactJSGuide = {
-  title: 'React.js',
+  title: 'React.JS',
+  cover: ReactJSCover,
   logo: ReactJSLogo,
+  description:
+    'React is an open-source, front end, JavaScript library for building user interfaces or UI components. React can be used as a base in the development of single-page or mobile applications.',
+  duration: '4 Hours',
   guideID: 5000,
+  relatedGuides: [4000, 6000],
   sections: [
     {
       name: 'Introduction & Setup',
@@ -372,8 +410,13 @@ const ReactJSGuide = {
 
 const ReactNativeGuide = {
   title: 'React Native',
+  cover: ReactNativeCover,
   logo: ReactNativeLogo,
+  description:
+    'React Native is an open-source mobile application framework created by Facebook, Inc. It is used to develop applications for Android, Android TV, iOS, macOS, tvOS, Web, Windows and UWP by enabling developers to use React along with native platform capabilities.',
+  duration: '5.5 Hours',
   guideID: 6000,
+  relatedGuides: [3000, 5000],
   sections: [
     {
       name: 'Introduction',
@@ -603,8 +646,13 @@ const ReactNativeGuide = {
 
 const CPlusPlusGuide = {
   title: 'C++',
+  cover: CPlusPlusCover,
   logo: CPlusPlusLogo,
+  description:
+    'C++ is a general-purpose programming language created by Bjarne Stroustrup as an extension of the C programming language, or "C with Classes"',
+  duration: '6.5 Hours',
   guideID: 7000,
+  relatedGuides: [8000, 9000],
   sections: [
     {
       name: 'Installation & Setup',
@@ -790,8 +838,13 @@ const CPlusPlusGuide = {
 
 const CGuide = {
   title: 'C',
+  cover: CCover,
   logo: CLogo,
+  duration: '21 Hours',
+  description:
+    'C is a general-purpose, procedural computer programming language supporting structured programming, lexical variable scope, and recursion, with a static type system.',
   guideID: 8000,
+  relatedGuides: [7000, 9000],
   sections: [
     {
       name: 'Intro to C',
@@ -1409,8 +1462,13 @@ const CGuide = {
 
 const CSharpGuide = {
   title: 'C#',
+  cover: CSharpCover,
   logo: CSharpLogo,
+  description:
+    'C# is a general-purpose, multi-paradigm programming language encompassing strong typing, lexically scoped, imperative, declarative, functional, generic, object-oriented, and component-oriented programming disciplines.',
+  duration: '4 Hours',
   guideID: 9000,
+  relatedGuides: [7000, 8000],
   sections: [
     {
       name: 'Basics 1',
@@ -1515,8 +1573,13 @@ const CSharpGuide = {
 
 const CSSGuide = {
   title: 'CSS',
+  cover: CSSCover,
   logo: CSSLogo,
+  description:
+    'Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language such as HTML.',
+  duration: '2 Hours',
   guideID: 10000,
+  relatedGuides: [11000, 5000],
   sections: [
     {
       name: 'Introduction',
@@ -1630,8 +1693,13 @@ const CSSGuide = {
 
 const HTMLGuide = {
   title: 'HTML',
+  cover: HTMLCover,
   logo: HTMLLogo,
+  description:
+    'Hypertext Markup Language is the standard markup language for documents designed to be displayed in a web browser. It can be assisted by technologies such as Cascading Style Sheets and scripting languages such as JavaScript.',
+  duration: '1.5 Hours',
   guideID: 11000,
+  relatedGuides: [10000, 5000],
   sections: [
     {
       name: 'Introduction to HTML',
@@ -1828,8 +1896,13 @@ const HTMLGuide = {
 
 const PythonGuide = {
   title: 'Python',
+  cover: PythonCover,
   logo: PythonLogo,
+  description:
+    "Python is an interpreted, high-level and general-purpose programming language. Python's design philosophy emphasizes code readability with its notable use of significant whitespace.",
+  duration: '4.5 Hours',
   guideID: 12000,
+  relatedGuides: [15000, 3000],
   sections: [
     {
       name: 'Programming with Python',
@@ -2116,8 +2189,13 @@ const PythonGuide = {
 
 const MySQLGuide = {
   title: 'MySQL',
+  cover: MySQLCover,
   logo: MySQLLogo,
+  description:
+    'MySQL is a database management system. It may be anything from a simple shopping list to a picture gallery or the vast amounts of information in a corporate network.',
+  duration: '4.5 Hours',
   guideID: 13000,
+  relatedGuides: [2000, 14000],
   sections: [
     {
       name: 'Introduction',
@@ -2280,8 +2358,13 @@ const MySQLGuide = {
 
 const PHPGuide = {
   title: 'PHP',
+  cover: PHPCover,
   logo: PHPLogo,
+  description:
+    'PHP (recursive acronym for PHP: Hypertext Preprocessor ) is a widely-used open source general-purpose scripting language that is especially suited for web development.',
+  duration: '6 Hours',
   guideID: 14000,
+  relatedGuides: [13000, 2000],
   sections: [
     {
       name: 'Why Learn PHP?',
@@ -2554,8 +2637,13 @@ const PHPGuide = {
 
 const MachineLearningGuide = {
   title: 'Machine Learning',
+  cover: MachineLearningCover,
   logo: MachineLearningLogo,
+  description:
+    'Machine learning is the study of computer algorithms that improve automatically through experience. It is seen as a subset of artificial intelligence.',
+  duration: '2.5 Hours',
   guideID: 15000,
+  relatedGuides: [12000, 3000],
   sections: [
     {
       name: 'Introduction',
@@ -2642,8 +2730,13 @@ const MachineLearningGuide = {
 
 const KotlinGuide = {
   title: 'Kotlin',
+  cover: KotlinCover,
   logo: KotlinLogo,
+  duration: '5 Hours',
+  description:
+    'Kotlin is an open-source statically typed programming language that targets the JVM, Android, JavaScript and Native. It was developed by JetBrains.',
   guideID: 16000,
+  relatedGuides: [3000, 17000],
   sections: [
     {
       name: 'Welcome',
@@ -2946,8 +3039,13 @@ const KotlinGuide = {
 
 const AndroidStudioGuide = {
   title: 'Android Studio',
+  cover: AndroidStudioCover,
   logo: AndroidStudioLogo,
+  description:
+    "Android Studio is the official integrated development environment for Google's Android operating system, built on JetBrains' IntelliJ IDEA software and designed specifically for Android development.",
+  duration: '14 Hours',
   guideID: 17000,
+  relatedGuides: [3000, 19000],
   sections: [
     {
       name: 'Configuring Java JDK',
@@ -3257,8 +3355,13 @@ const AndroidStudioGuide = {
 
 const FlutterGuide = {
   title: 'Flutter',
+  cover: FlutterCover,
   logo: FlutterLogo,
+  description:
+    'Flutter is an open-source UI software development kit created by Google. It is used to develop applications for Android, iOS, Linux, Mac, Windows, Google Fuchsia, and the web from a single codebase.',
+  duration: '6 Hours',
   guideID: 18000,
+  relatedGuides: [6000, 17000],
   sections: [
     {
       name: 'Intro & Setup',
@@ -3501,8 +3604,12 @@ const FlutterGuide = {
 
 const SwiftGuide = {
   title: 'Swift',
+  cover: SwiftCover,
   logo: SwiftLogo,
+  duration: '3 Hours',
+  description: 'Swift is a general-purpose, multi-paradigm, compiled programming language developed by Apple Inc. and the open-source community. It is used to develop applications for macOS and iOS.',
   guideID: 19000,
+  relatedGuides: [17000, 6000],
   sections: [
     {
       name: 'Introduction',

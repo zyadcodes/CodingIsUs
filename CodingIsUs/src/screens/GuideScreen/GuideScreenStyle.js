@@ -8,6 +8,48 @@ export default StyleSheet.create({
     flex: 1,
     backgroundColor: colors.lightBlue,
   },
+  backButton: {
+    position: 'absolute',
+    justifyContent: 'center',
+    alignItems: 'center',
+    left: screenWidth * 0.025,
+    top: screenHeight * 0.05,
+    zIndex: 1,
+  },
+  coverImage: {
+    width: screenWidth * 1,
+    height: screenHeight * 0.3,
+  },
+  guideInformation: {
+    paddingHorizontal: screenWidth * 0.025,
+    alignItems: 'flex-start',
+    marginTop: screenHeight * 0.015,
+  },
+  logoTitle: {
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    marginBottom: screenHeight * 0.025,
+    width: screenWidth * 0.6
+  },
+  descriptionText: {
+    marginBottom: screenHeight * 0.025,
+  },
+  progressContainerStyle: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginVertical: screenHeight * 0.025,
+    width: screenWidth * 0.9,
+  },
+  progressPercentage: {
+    marginLeft: screenWidth * 0.025,
+  },
+  sectionsText: {
+    marginBottom: screenHeight * 0.035,
+  },
+  sectionContainer: {
+    marginLeft: screenWidth * 0.025,
+  },
   titleContainer: {
     marginLeft: screenWidth * 0.05,
     marginBottom: screenHeight * 0.025,
@@ -18,10 +60,22 @@ export default StyleSheet.create({
   contentContainer: {
     marginBottom: screenHeight * 0.025,
   },
+  logoContainer: {
+    borderWidth: 0.5,
+    borderColor: colors.lightGray,
+    borderRadius: screenWidth * 0.03,
+    paddingHorizontal: screenWidth * 0.025,
+    paddingVertical: screenWidth * 0.025,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: colors.white,
+    width: screenWidth * 0.25,
+    height: screenHeight * 0.125,
+    marginRight: screenWidth * 0.05,
+  },
   image: {
-    width: screenWidth * 0.3,
+    width: screenWidth * 0.2,
     height: screenHeight * 0.1,
-    marginLeft: screenWidth * 0.05
   },
   loadingContainer: {
     flex: 1,
@@ -33,6 +87,9 @@ export default StyleSheet.create({
   },
   smallSpacer: {
     height: screenHeight * 0.01,
+  },
+  leftSpacer: {
+    width: screenWidth * 0.05,
   },
   bottomTextContainer: {
     width: screenWidth * 0.9,
@@ -70,5 +127,17 @@ export default StyleSheet.create({
     borderBottomColor: colors.lightGray,
     borderBottomWidth: 0.5,
     marginBottom: screenHeight * 0.05,
+  },
+  relatedGuidesStyle: {
+    marginVertical: screenHeight * 0.05,
+  },
+  relatedTextStyle: {
+    marginLeft: screenWidth * 0.025,
+    marginBottom: screenHeight * 0.015,
+  },
+  relatedGuidesIcons: {
+    flexDirection: 'row',
+    marginLeft: screenWidth * -0.05,
+    alignSelf: 'center',
   },
 });

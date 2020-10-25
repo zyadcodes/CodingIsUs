@@ -18,6 +18,31 @@ Sample output:
 
 */
 
+/*
+
+Use the below website to get length of any playlist:
+
+https://ytplaylist-len.herokuapp.com/
+
+*/
+
+
+const fetch = require("node-fetch");
+
+const getVideoObjectByID = async (videoID) => {
+  const result = await fetch(
+    "https://noembed.com/embed?url=https://www.youtube.com/watch?v=" + videoID,
+    {
+      method: "GET",
+    }
+  );
+  const finalObject = await result.json();
+  return finalObject;
+};
+
+/*
+
+
 // This function will take in an array of video IDs and a starting ID to number each section. It will then construct and print out the array. Below is
 // a sample output:
 /* 
@@ -34,54 +59,28 @@ Sample output:
 
 */
 
-const fetch = require('node-fetch');
 async function constructGuideSections(videoIDs, startingID) {
-	const sections = [];
-	let ID = startingID;
-	for (let i = 0; i < videoIDs.length; i++) {
-		const videoID = videoIDs[i];
-		const result = await fetch(
-			'https://noembed.com/embed?url=https://www.youtube.com/watch?v=' + videoID,
-			{
-				method: 'GET',
-			}
-		);
-		const finalObject = await result.json();
-		// The next piece of code needs tto be adjusted according to the format of the video titles
-		const title = finalObject.title;
-		let name = '';
-		name = title.substring(title.indexOf('Lesson ') + 9).trim();
-		const section = {
-			name,
-			description: '',
-			videoLink: videoID,
-			ID: ID,
-		};
-		ID++;
-		sections.push(section);
-	}
-	console.log(sections);
+  const sections = [];
+  let ID = startingID;
+  for (let i = 0; i < videoIDs.length; i++) {
+    const videoID = videoIDs[i];
+    const finalObject = await getVideoObjectByID(videoID);
+    // The next piece of code needs tto be adjusted according to the format of the video titles
+    const title = finalObject.title;
+    let name = "";
+    name = title.substring(title.indexOf("Lesson ") + 9).trim();
+    const section = {
+      name,
+      description: "",
+      videoLink: videoID,
+      ID: ID,
+    };
+    ID++;
+    sections.push(section);
+  }
+  console.log(sections);
 }
-constructGuideSections(
-	[
-		'ySa58y1SRy0',
-		'zcLMOTEDd8Y',
-		'hWqx7p0TF3Q',
-		'H_xErt38mWg',
-		'R4U42rkmHDk',
-		'KV7Ts9sm850',
-		'36ipzqIQKIk',
-		'CLmZxVkN9gw',
-		'AT5_lx4PbVM',
-		'43UOxoOuAag',
-		'uPw8ankqEOw',
-		'8r1njDKLs90',
-		'9GoKcRmy-G0',
-		'IG_JCxSPa_k',
-		'kDWDTg_RpLA',
-		'LxKZf0LyRbA',
-		'rNyTxjGSp8Q',
-		'mJwmGpdZQAg',
-	],
-	19001
-);
+
+getVideoObjectByID("ySa58y1SRy0").then((result) => {
+  console.log(result);
+});

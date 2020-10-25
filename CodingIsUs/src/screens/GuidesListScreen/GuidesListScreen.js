@@ -33,7 +33,6 @@ import GuidesListScreenStyle from './GuidesListScreenStyle';
 const GuidesListScreen = ({route, navigation}) => {
   // Stores the status of the user's ad preference and the loading status of the screen
   const [isLoading, setIsLoading] = useState(true);
-  const [adEEAStatus, setAdEEAStatus] = useState('');
   const [guides, setGuides] = useState('');
 
   // The useEffect method is going to handle any AdMob settings that need to be configured and check for
@@ -46,7 +45,7 @@ const GuidesListScreen = ({route, navigation}) => {
   const checkInternetConnection = async () => {
     const networkState = await NetInfo.fetch();
     if (networkState.isConnected) {
-      setupAds();
+      loadScreenData();
     } else {
       Alert.alert(strings.Whoops, strings.CodingIsUsRequiresInternet, [
         {
@@ -58,35 +57,7 @@ const GuidesListScreen = ({route, navigation}) => {
   };
 
   // Helper method for useEffect
-  const setupAds = async () => {
-    // Requests consent from European Users to show Adverts
-    const consentInfo = await AdsConsent.requestInfoUpdate([
-      'pub-3956967028189707',
-    ]);
-    if (
-      consentInfo.isRequestLocationInEeaOrUnknown &&
-      consentInfo.status === AdsConsentStatus.UNKNOWN
-    ) {
-      const formResult = await AdsConsent.showForm({
-        privacyPolicy: 'https://codingisus.com/pages/privacy-policy',
-        withPersonalizedAds: true,
-        withNonPersonalizedAds: true,
-        withAdFree: false,
-      });
-      setAdEEAStatus(formResult.status);
-    }
-
-    await admob().setRequestConfiguration({
-      // Update all future requests suitable for parental guidance
-      maxAdContentRating: MaxAdContentRating.T,
-
-      // Indicates that you want your content treated as child-directed for purposes of COPPA.
-      tagForChildDirectedTreatment: false,
-
-      // Indicates that you want the ad request to be handled in a
-      // manner suitable for users under the age of consent.
-      tagForUnderAgeOfConsent: false,
-    });
+  const loadScreenData = async () => {
     if (!route.params) {
       setGuides(GuideTitles);
       setIsLoading(false);
@@ -96,35 +67,7 @@ const GuidesListScreen = ({route, navigation}) => {
         category.guideIDs.includes(eachGuide.guideID),
       );
       setGuides(specificGuides);
-      // Creates the Ad Request
-      const adUnitId = __DEV__
-        ? TestIds.INTERSTITIAL
-        : Platform.OS === 'ios'
-        ? 'ca-app-pub-3956967028189707/8619654687'
-        : 'ca-app-pub-3956967028189707/9741164661';
-
-      const interstitial = InterstitialAd.createForAdRequest(adUnitId, {
-        requestNonPersonalizedAdsOnly:
-          adEEAStatus === AdsConsentStatus.NON_PERSONALIZED,
-        keywords: ['computer', 'coding', 'programming', 'computer science'],
-      });
-      const eventListener = interstitial.onAdEvent((type) => {
-        if (type === AdEventType.LOADED) {
-          interstitial.show();
-        } else if (type === AdEventType.LEFT_APPLICATION) {
-          logEvent('AppClosedFromAd', {
-            screen: 'GuideListScreen',
-          });
-        } else if (type === AdEventType.ERROR) {
-          logEvent('AdError', {screen: 'GuideListScreen'});
-        }
-      });
-
-      // Start loading the interstitial straight away
-      interstitial.load();
       setIsLoading(false);
-      // Unsubscribe from events on unmount
-      return () => eventListener();
     }
   };
 
@@ -194,7 +137,6 @@ const GuidesListScreen = ({route, navigation}) => {
               if (route.params) {
                 navigation.push('GuideScreen', {
                   guideID: item.guideID,
-                  adEEAStatus,
                 });
                 logEvent('GuideClickedFromCategory', {
                   guideID: item.guideID,
@@ -203,7 +145,6 @@ const GuidesListScreen = ({route, navigation}) => {
                 });
               } else {
                 navigation.push('GuideScreen', {
-                  adEEAStatus,
                   loadAd: true,
                   guideID: item.guideID,
                 });

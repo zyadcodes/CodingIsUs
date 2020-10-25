@@ -263,10 +263,12 @@
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "CodingIsUsTests" */;
 			buildPhases = (
 				CDE9FC683BC004B144B26EC9 /* [CP] Check Pods Manifest.lock */,
+				B02452BC40C46D628C348627 /* [CP] Prepare Artifacts */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
 				7517B219040FC95F4879177B /* [CP] Copy Pods Resources */,
+				A96F5DEBF0B74E9CEEC1F293 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -284,6 +286,7 @@
 			buildPhases = (
 				591993D61C9EBD591E152C22 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
+				E034D3814D7B1A8B9F3B1F11 /* [CP] Prepare Artifacts */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
@@ -291,6 +294,7 @@
 				1513D85988CB0F3D0272C3F8 /* [CP] Copy Pods Resources */,
 				04B092817B22805048997480 /* [CP-User] [RNFB] Core Configuration */,
 				B3EF71E21582868B0EC591C0 /* [CP-User] [RNFB] Crashlytics Configuration */,
+				8207B73D6261C717894189B2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -616,6 +620,58 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CodingIsUs-CodingIsUsTests/Pods-CodingIsUs-CodingIsUsTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		8207B73D6261C717894189B2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CodingIsUs/Pods-CodingIsUs-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/cocoapods-artifacts-${CONFIGURATION}.txt",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CodingIsUs/Pods-CodingIsUs-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A96F5DEBF0B74E9CEEC1F293 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CodingIsUs-CodingIsUsTests/Pods-CodingIsUs-CodingIsUsTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/cocoapods-artifacts-${CONFIGURATION}.txt",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CodingIsUs-CodingIsUsTests/Pods-CodingIsUs-CodingIsUsTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B02452BC40C46D628C348627 /* [CP] Prepare Artifacts */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CodingIsUs-CodingIsUsTests/Pods-CodingIsUs-CodingIsUsTests-artifacts.sh",
+				"${PODS_ROOT}/GoogleUserMessagingPlatform/Frameworks/Release/UserMessagingPlatform.xcframework",
+			);
+			name = "[CP] Prepare Artifacts";
+			outputPaths = (
+				"${BUILT_PRODUCTS_DIR}/cocoapods-artifacts-${CONFIGURATION}.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CodingIsUs-CodingIsUsTests/Pods-CodingIsUs-CodingIsUsTests-artifacts.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B2E4BC3E1AAA32818FAFAEB4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -668,6 +724,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E034D3814D7B1A8B9F3B1F11 /* [CP] Prepare Artifacts */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CodingIsUs/Pods-CodingIsUs-artifacts.sh",
+				"${PODS_ROOT}/GoogleUserMessagingPlatform/Frameworks/Release/UserMessagingPlatform.xcframework",
+			);
+			name = "[CP] Prepare Artifacts";
+			outputPaths = (
+				"${BUILT_PRODUCTS_DIR}/cocoapods-artifacts-${CONFIGURATION}.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CodingIsUs/Pods-CodingIsUs-artifacts.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -814,7 +888,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = CodingIsUs/CodingIsUs.entitlements;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = 7234TKH9GH;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = CodingIsUs/Info.plist;
@@ -841,7 +915,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = CodingIsUs/CodingIsUs.entitlements;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = 7234TKH9GH;
 				INFOPLIST_FILE = CodingIsUs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

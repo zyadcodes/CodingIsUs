@@ -6,7 +6,7 @@ import {screenHeight, screenWidth} from '../../../config/dimensions';
 export default StyleSheet.create({
   container: {
     width: screenWidth * 0.425,
-    height: screenHeight * 0.15,
+    height: screenHeight * 0.185,
     paddingVertical: screenHeight * 0.01,
     justifyContent: 'space-between',
     alignItems: 'center',
