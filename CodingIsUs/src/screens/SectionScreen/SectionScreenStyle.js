@@ -13,9 +13,6 @@ export default StyleSheet.create({
     marginRight: screenWidth * 0.05,
     marginBottom: screenHeight * 0.025,
   },
-  contentContainer: {
-    marginBottom: screenHeight * 0.025,
-  },
   descriptionText: {
     textAlign: 'center',
     marginBottom: screenHeight * 0.025,
@@ -30,12 +27,6 @@ export default StyleSheet.create({
     height: screenHeight * 0.33,
     width: screenWidth,
   },
-  practiceStyle: {
-    paddingHorizontal: screenWidth * 0.05,
-  },
-  mediumSpacer: {
-    height: screenHeight * 0.025,
-  },
   smallSpacer: {
     height: screenHeight * 0.0125,
   },
@@ -43,9 +34,5 @@ export default StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  logoStyle: {
-    width: screenWidth * 0.4,
-    height: screenHeight * 0.1,
   },
 });

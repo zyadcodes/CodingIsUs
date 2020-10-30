@@ -12,13 +12,6 @@ export default StyleSheet.create({
     width: screenWidth * 0.4,
     height: screenHeight * 0.1,
   },
-  textContainer: {
-    width: screenWidth * 0.95,
-    alignItems: 'center',
-    textAlign: 'center',
-    marginTop: screenHeight * 0.05,
-    marginBottom: screenHeight * 0.05,
-  },
   mediumSpacer: {
     height: screenHeight * 0.05,
   },
@@ -26,10 +19,6 @@ export default StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  imageBackground: {
-    width: screenWidth,
-    height: screenHeight * 0.2,
   },
   backButton: {
     justifyContent: 'center',

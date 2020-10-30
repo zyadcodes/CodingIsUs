@@ -4,10 +4,8 @@ import {
   ScrollView,
   Text,
   View,
-  LogBox,
   TouchableOpacity,
   ActivityIndicator,
-  Image,
   Platform,
 } from 'react-native';
 import {
@@ -23,13 +21,9 @@ import YoutubePlayer from 'react-native-youtube-iframe';
 import strings from '../../../config/strings';
 import colors from '../../../config/colors';
 import {Icon} from 'react-native-elements';
-import firebaseAnalytics from '@react-native-firebase/analytics';
-import {AppEventsLogger} from 'react-native-fbsdk';
 import {
   updateSectionStatus,
-  getSectionStatus,
 } from '../../../config/StorageFunctions';
-import CIULogo from '../../../assets/images/CIULogo.png';
 import SoundPlayer from 'react-native-sound-player';
 import {logEvent} from '../../../config/Analytics';
 

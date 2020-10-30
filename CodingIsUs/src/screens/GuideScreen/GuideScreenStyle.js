@@ -49,16 +49,7 @@ export default StyleSheet.create({
   },
   sectionContainer: {
     marginLeft: screenWidth * 0.025,
-  },
-  titleContainer: {
-    marginLeft: screenWidth * 0.05,
-    marginBottom: screenHeight * 0.025,
-    width: screenWidth * 0.75,
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  contentContainer: {
-    marginBottom: screenHeight * 0.025,
+    marginBottom: screenHeight * 0.015,
   },
   logoContainer: {
     borderWidth: 0.5,
@@ -81,52 +72,6 @@ export default StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  mediumSpacer: {
-    height: screenHeight * 0.025,
-  },
-  smallSpacer: {
-    height: screenHeight * 0.01,
-  },
-  leftSpacer: {
-    width: screenWidth * 0.05,
-  },
-  bottomTextContainer: {
-    width: screenWidth * 0.9,
-    alignSelf: 'center',
-    alignItems: 'center',
-  },
-  logoStyle: {
-    width: screenWidth * 0.4,
-    height: screenHeight * 0.2,
-  },
-  textCard: {
-    flexDirection: 'row',
-    width: screenWidth,
-    paddingHorizontal: screenWidth * 0.05,
-    height: screenHeight * 0.05,
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    backgroundColor: colors.white,
-    borderTopColor: colors.lightGray,
-    borderTopWidth: 0.5,
-    borderBottomColor: colors.lightGray,
-    borderBottomWidth: 0.5,
-    marginBottom: screenHeight * 0.05,
-  },
-  textCardGreen: {
-    flexDirection: 'row',
-    width: screenWidth,
-    paddingHorizontal: screenWidth * 0.05,
-    height: screenHeight * 0.05,
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    backgroundColor: colors.green,
-    borderTopColor: colors.lightGray,
-    borderTopWidth: 0.5,
-    borderBottomColor: colors.lightGray,
-    borderBottomWidth: 0.5,
-    marginBottom: screenHeight * 0.05,
   },
   relatedGuidesStyle: {
     marginVertical: screenHeight * 0.05,

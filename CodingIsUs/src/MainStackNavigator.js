@@ -5,6 +5,7 @@ import MainTabNavigator from './MainTabNavigator';
 import GuideScreen from './screens/GuideScreen/GuideScreen';
 import GuidesListScreen from './screens/GuidesListScreen/GuidesListScreen';
 import SectionScreen from './screens/SectionScreen/SectionScreen';
+import ResourcesScreen from './screens/ResourcesScreen/ResourcesScreen';
 
 // Declares the Stack Navigator
 const Stack = createStackNavigator();
@@ -31,6 +32,11 @@ const MainStackNavigator = () => {
       <Stack.Screen
         name={'SectionScreen'}
         component={SectionScreen}
+        screenOptions={{gestureEnabled: false}}
+      />
+      <Stack.Screen
+        name={'ResourcesScreen'}
+        component={ResourcesScreen}
         screenOptions={{gestureEnabled: false}}
       />
     </Stack.Navigator>

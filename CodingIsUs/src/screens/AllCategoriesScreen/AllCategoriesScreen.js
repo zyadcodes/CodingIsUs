@@ -3,7 +3,6 @@ import React, {useEffect, useState} from 'react';
 import {
   View,
   Text,
-  TouchableOpacity,
   FlatList,
   Image,
   ActivityIndicator,
@@ -12,18 +11,12 @@ import {
 import AllCategoriesScreenStyle from './AllCategoriesScreenStyle';
 import strings from '../../../config/strings';
 import fontStyles from '../../../config/fontStyles';
-import {Icon} from 'react-native-elements';
 import colors from '../../../config/colors';
 import GuideIcon from '../../components/GuideIcon/GuideIcon';
 import CIULogo from '../../../assets/images/CIULogo.png';
 import Categories from '../../../config/Categories';
 import NetInfo from '@react-native-community/netinfo';
 import {logEvent} from '../../../config/Analytics';
-import admob, {
-  MaxAdContentRating,
-  AdsConsent,
-  AdsConsentStatus,
-} from '@react-native-firebase/admob';
 import Svg, {Path} from 'react-native-svg';
 
 // Declares the functional component

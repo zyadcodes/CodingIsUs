@@ -19,14 +19,6 @@ import CIULogo from '../../../assets/images/CIULogo.png';
 import GuideTitles from '../../../config/GuideTitles';
 import NetInfo from '@react-native-community/netinfo';
 import {logEvent} from '../../../config/Analytics';
-import admob, {
-  InterstitialAd,
-  TestIds,
-  MaxAdContentRating,
-  AdsConsent,
-  AdEventType,
-  AdsConsentStatus,
-} from '@react-native-firebase/admob';
 import GuidesListScreenStyle from './GuidesListScreenStyle';
 
 // Declares the functional component
@@ -138,7 +130,7 @@ const GuidesListScreen = ({route, navigation}) => {
                 navigation.push('GuideScreen', {
                   guideID: item.guideID,
                 });
-                logEvent('GuideClickedFromCategory', {
+                logEvent('GuideClicked', {
                   guideID: item.guideID,
                   title: item.title,
                   category: route.params.category.title,

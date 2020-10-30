@@ -7,17 +7,14 @@ export default StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'center',
-    borderTopWidth: 0.2,
-    borderTopColor: colors.lightGray,
-    borderRightWidth: 0.2,
-    borderRightColor: colors.lightGray,
+    borderWidth: 0.2,
+    borderColor: colors.lightGray,
     backgroundColor: colors.white,
-    height: screenHeight * 0.1,
     width: screenWidth * 0.95,
   },
   completedIndicator: {
     width: screenWidth * 0.05,
-    height: screenHeight * 0.1,
+    height: '100%',
   },
   greenBackground: {
     backgroundColor: colors.green,
@@ -26,8 +23,8 @@ export default StyleSheet.create({
     backgroundColor: colors.red,
   },
   textContainer: {
-    height: screenHeight * 0.1,
     width: screenWidth * 0.8,
+    paddingVertical: screenHeight * 0.015,
     marginLeft: screenWidth * 0.015,
     justifyContent: 'space-evenly',
   },

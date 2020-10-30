@@ -1,19 +1,17 @@
 // This is going to be the file that is launched when the app is first launched by the user. Will navigate directly to the
 // MainStackNavigator
 import 'react-native-gesture-handler';
-import React, {useRef, useEffect, useState, useContext} from 'react';
+import React, {useRef, useEffect} from 'react';
 import MainStackNavigator from './src/MainStackNavigator';
 import {NavigationContainer} from '@react-navigation/native';
 import firebaseAnalytics from '@react-native-firebase/analytics';
 import messaging from '@react-native-firebase/messaging';
 import codePush from 'react-native-code-push';
-import {screenHeight, screenWidth} from './config/dimensions';
 import {logEvent} from './config/Analytics';
 import {updateAdShownStatus} from './config/StorageFunctions';
 
 // Declares the functional component
 let App = () => {
-
   // Initializes references for Firebase Analytics
   const routeNameRef = useRef();
   const navigationRef = useRef();

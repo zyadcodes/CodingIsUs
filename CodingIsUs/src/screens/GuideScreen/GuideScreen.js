@@ -26,7 +26,6 @@ import colors from '../../../config/colors';
 import Guides from '../../../config/Guides';
 import GuideTitles from '../../../config/GuideTitles';
 import {Icon} from 'react-native-elements';
-import CIULogo from '../../../assets/images/CIULogo.png';
 import GuideIcon from '../../components/GuideIcon/GuideIcon';
 import {useIsFocused} from '@react-navigation/native';
 import ProgressBar from 'react-native-progress/Bar';
@@ -281,45 +280,62 @@ const GuideScreen = ({navigation, route}) => {
           </View>
         )}
         ListFooterComponent={
-          <View style={GuideScreenStyle.relatedGuidesStyle}>
-            <View style={GuideScreenStyle.relatedTextStyle}>
-              <Text style={[fontStyles.longTitleTextStyle, fontStyles.black]}>
-                {strings.Related}
-              </Text>
+          <View>
+            <View style={GuideScreenStyle.sectionContainer}>
+              <SectionCard
+                isCompleted={true}
+                sectionTitle={strings.AdditionalResources}
+                sectionDescription={strings.SeeTheDocumentation}
+                onPress={() => {
+                  logEvent('ResourcesClicked', {
+                    guideID: guideID,
+                  });
+                  navigation.push('ResourcesScreen', {
+                    guide: guide,
+                  });
+                }}
+              />
             </View>
-            <View style={GuideScreenStyle.relatedGuidesIcons}>
-              <GuideIcon
-                title={relatedGuides[0].title}
-                image={relatedGuides[0].logo}
-                onPress={() => {
-                  navigation.push('GuideScreen', {
-                    adEEAStatus,
-                    loadAd: false,
-                    guideID: relatedGuides[0].guideID,
-                  });
-                  logEvent('RelatedGuideClicked', {
-                    guideIDFrom: guideID,
-                    guideIDTo: relatedGuides[0].guideID,
-                    title: relatedGuides[0].guideID,
-                  });
-                }}
-              />
-              <GuideIcon
-                title={relatedGuides[1].title}
-                image={relatedGuides[1].logo}
-                onPress={() => {
-                  navigation.push('GuideScreen', {
-                    adEEAStatus,
-                    loadAd: false,
-                    guideID: relatedGuides[1].guideID,
-                  });
-                  logEvent('RelatedGuideClicked', {
-                    guideIDFrom: guideID,
-                    guideIDTo: relatedGuides[1].guideID,
-                    title: relatedGuides[1].guideID,
-                  });
-                }}
-              />
+            <View style={GuideScreenStyle.relatedGuidesStyle}>
+              <View style={GuideScreenStyle.relatedTextStyle}>
+                <Text style={[fontStyles.longTitleTextStyle, fontStyles.black]}>
+                  {strings.Related}
+                </Text>
+              </View>
+              <View style={GuideScreenStyle.relatedGuidesIcons}>
+                <GuideIcon
+                  title={relatedGuides[0].title}
+                  image={relatedGuides[0].logo}
+                  onPress={() => {
+                    navigation.push('GuideScreen', {
+                      adEEAStatus,
+                      loadAd: false,
+                      guideID: relatedGuides[0].guideID,
+                    });
+                    logEvent('RelatedGuideClicked', {
+                      guideIDFrom: guideID,
+                      guideIDTo: relatedGuides[0].guideID,
+                      title: relatedGuides[0].guideID,
+                    });
+                  }}
+                />
+                <GuideIcon
+                  title={relatedGuides[1].title}
+                  image={relatedGuides[1].logo}
+                  onPress={() => {
+                    navigation.push('GuideScreen', {
+                      adEEAStatus,
+                      loadAd: false,
+                      guideID: relatedGuides[1].guideID,
+                    });
+                    logEvent('RelatedGuideClicked', {
+                      guideIDFrom: guideID,
+                      guideIDTo: relatedGuides[1].guideID,
+                      title: relatedGuides[1].guideID,
+                    });
+                  }}
+                />
+              </View>
             </View>
           </View>
         }

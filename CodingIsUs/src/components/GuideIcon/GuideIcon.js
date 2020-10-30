@@ -1,6 +1,6 @@
 // This component will be the Icon component for each Guide & will be in the HomeScreen
 import React from 'react';
-import {TouchableOpacity, Image, Text, PixelRatio} from 'react-native';
+import {TouchableOpacity, Image, Text, PixelRatio, View} from 'react-native';
 import {Icon} from 'react-native-elements';
 import fontStyles from '../../../config/fontStyles';
 import GuideIconStyle from './GuideIconStyle';
@@ -29,6 +29,7 @@ const GuideIcon = (props) => {
           color={iconColor}
         />
       )}
+      <View style={GuideIconStyle.middleSpacer} />
       <Text
         style={[
           fontStyles.bigTextStyle,

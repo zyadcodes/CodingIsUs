@@ -1,17 +1,11 @@
 // This is going to contain the bottom tab navigator that will be used in the mobile app
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import colors from '../config/colors';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import AllCategoriesScreen from './screens/AllCategoriesScreen/AllCategoriesScreen';
 import GuidesListScreen from './screens/GuidesListScreen/GuidesListScreen';
 import SettingsScreen from './screens/SettingsScreen/SettingsScreen';
 import {Icon} from 'react-native-elements';
-import {Text} from 'react-native';
-import admob, {
-  MaxAdContentRating,
-  AdsConsent,
-  AdsConsentStatus,
-} from '@react-native-firebase/admob';
 
 const Tab = createBottomTabNavigator();
 

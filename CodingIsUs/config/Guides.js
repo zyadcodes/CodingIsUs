@@ -103,6 +103,12 @@ const FirestoreGuide = {
       ID: 2009,
     },
   ],
+  additionalResources: [
+    {
+      title: 'Documentation',
+      link: 'https://firebase.google.com/docs',
+    },
+  ],
 };
 
 const JavaGuide = {
@@ -215,6 +221,16 @@ const JavaGuide = {
       description: 'Learn about how Binary Trees are implemented in Java',
       videoLink: 'SiQgW1uN9g0',
       ID: 3017,
+    },
+  ],
+  additionalResources: [
+    {
+      title: 'Documentation',
+      link: 'https://docs.oracle.com/en/java/',
+    },
+    {
+      title: 'VSCode Download',
+      link: 'https://code.visualstudio.com/download',
     },
   ],
 };
@@ -341,6 +357,16 @@ const JavaScriptGuide = {
       ID: 4017,
     },
   ],
+  additionalResources: [
+    {
+      title: 'Documentation',
+      link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+    },
+    {
+      title: 'VSCode Download',
+      link: 'https://code.visualstudio.com/download',
+    },
+  ],
 };
 
 const ReactJSGuide = {
@@ -404,6 +430,20 @@ const ReactJSGuide = {
         'Learn how to style your components and create complex components',
       videoLink: 'XVdwq8W2ZsM',
       ID: 5008,
+    },
+  ],
+  additionalResources: [
+    {
+      title: 'JS Documentation',
+      link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+    },
+    {
+      title: 'React Documentation',
+      link: 'https://reactjs.org/docs/getting-started.html',
+    },
+    {
+      title: 'VSCode Download',
+      link: 'https://code.visualstudio.com/download',
     },
   ],
 };
@@ -642,6 +682,20 @@ const ReactNativeGuide = {
       ID: 6035,
     },
   ],
+  additionalResources: [
+    {
+      title: 'JS Documentation',
+      link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+    },
+    {
+      title: 'React Native Documentation',
+      link: 'https://reactnative.dev/docs/getting-started',
+    },
+    {
+      title: 'VSCode Download',
+      link: 'https://code.visualstudio.com/download',
+    },
+  ],
 };
 
 const CPlusPlusGuide = {
@@ -832,6 +886,16 @@ const CPlusPlusGuide = {
         'Continue learning about arrays in the context of dynamic memory',
       videoLink: 'o0VOg6oOPSs',
       ID: 7028,
+    },
+  ],
+  additionalResources: [
+    {
+      title: 'Documentation',
+      link: 'https://devdocs.io/cpp/',
+    },
+    {
+      title: 'VSCode Download',
+      link: 'https://code.visualstudio.com/download',
     },
   ],
 };
@@ -1458,6 +1522,16 @@ const CGuide = {
       ID: 8100,
     },
   ],
+  additionalResources: [
+    {
+      title: 'Documentation',
+      link: 'https://devdocs.io/c/',
+    },
+    {
+      title: 'VSCode Download',
+      link: 'https://code.visualstudio.com/download',
+    },
+  ],
 };
 
 const CSharpGuide = {
@@ -1567,6 +1641,16 @@ const CSharpGuide = {
         'Learn more about generic data types and conclude the C# guide',
       videoLink: 'ZrjCG0Fu5Ew',
       ID: 9015,
+    },
+  ],
+  additionalResources: [
+    {
+      title: 'Documentation',
+      link: 'https://docs.microsoft.com/en-us/dotnet/csharp/',
+    },
+    {
+      title: 'VSCode Download',
+      link: 'https://code.visualstudio.com/download',
     },
   ],
 };
@@ -1687,6 +1771,12 @@ const CSSGuide = {
         'Get an overview of a variety of different existing CSS frameworks',
       videoLink: 'nDXDxA27poE',
       ID: 10017,
+    },
+  ],
+  additionalResources: [
+    {
+      title: 'Documentation',
+      link: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
     },
   ],
 };
@@ -1890,6 +1980,12 @@ const HTMLGuide = {
         'Learn about the Doctype tage in HTML and why you need it in your web page',
       videoLink: 'c625P4B0OY0',
       ID: 11030,
+    },
+  ],
+  additionalResources: [
+    {
+      title: 'Documentation',
+      link: 'https://developer.mozilla.org/en-US/docs/Web/HTML',
     },
   ],
 };
@@ -2185,6 +2281,16 @@ const PythonGuide = {
       ID: 12044,
     },
   ],
+  additionalResources: [
+    {
+      title: 'Documentation',
+      link: 'https://docs.python.org/',
+    },
+    {
+      title: 'VSCode Download',
+      link: 'https://code.visualstudio.com/download',
+    },
+  ],
 };
 
 const MySQLGuide = {
@@ -2352,6 +2458,12 @@ const MySQLGuide = {
       description: 'Learn how to convert an ER Diagram to a Schema in MySQL',
       videoLink: 'xQRRf5fOAt8',
       ID: 13024,
+    },
+  ],
+  additionalResources: [
+    {
+      title: 'Documentation',
+      link: 'https://dev.mysql.com/doc/',
     },
   ],
 };
@@ -2633,6 +2745,16 @@ const PHPGuide = {
       ID: 14042,
     },
   ],
+  additionalResources: [
+    {
+      title: 'Documentation',
+      link: 'https://www.php.net/docs.php',
+    },
+    {
+      title: 'VSCode Download',
+      link: 'https://code.visualstudio.com/download',
+    },
+  ],
 };
 
 const MachineLearningGuide = {
@@ -2724,6 +2846,20 @@ const MachineLearningGuide = {
       description: 'Learn how to implement K-Means Clustering in a real model',
       videoLink: 'zixd-si9Q-o',
       ID: 15012,
+    },
+  ],
+  additionalResources: [
+    {
+      title: 'Python Documentation',
+      link: 'https://docs.python.org/',
+    },
+    {
+      title: 'Tensorflow Documentation',
+      link: 'https://www.tensorflow.org/api_docs',
+    },
+    {
+      title: 'SciKit-Learn Documentation',
+      link: 'https://scikit-learn.org/0.21/documentation.html',
     },
   ],
 };
@@ -3035,6 +3171,12 @@ const KotlinGuide = {
       ID: 16046,
     },
   ],
+  additionalResources: [
+    {
+      title: 'Documentation',
+      link: 'https://kotlinlang.org/docs/reference/',
+    },
+  ]
 };
 
 const AndroidStudioGuide = {
@@ -3351,6 +3493,12 @@ const AndroidStudioGuide = {
       ID: 17046,
     },
   ],
+  additionalResources: [
+    {
+      title: 'Documentation',
+      link: 'https://developer.android.com/docs',
+    },
+  ]
 };
 
 const FlutterGuide = {
@@ -3600,6 +3748,12 @@ const FlutterGuide = {
       ID: 18035,
     },
   ],
+  additionalResources: [
+    {
+      title: 'Documentation',
+      link: 'https://flutter.dev/docs',
+    },
+  ]
 };
 
 const SwiftGuide = {
@@ -3607,7 +3761,8 @@ const SwiftGuide = {
   cover: SwiftCover,
   logo: SwiftLogo,
   duration: '3 Hours',
-  description: 'Swift is a general-purpose, multi-paradigm, compiled programming language developed by Apple Inc. and the open-source community. It is used to develop applications for macOS and iOS.',
+  description:
+    'Swift is a general-purpose, multi-paradigm, compiled programming language developed by Apple Inc. and the open-source community. It is used to develop applications for macOS and iOS.',
   guideID: 19000,
   relatedGuides: [17000, 6000],
   sections: [
@@ -3729,6 +3884,12 @@ const SwiftGuide = {
       ID: 19018,
     },
   ],
+  additionalResources: [
+    {
+      title: 'Documentation',
+      link: 'https://swift.org/documentation/',
+    },
+  ]
 };
 
 export default [

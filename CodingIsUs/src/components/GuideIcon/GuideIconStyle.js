@@ -6,10 +6,9 @@ import {screenHeight, screenWidth} from '../../../config/dimensions';
 export default StyleSheet.create({
   container: {
     width: screenWidth * 0.425,
-    height: screenHeight * 0.185,
     paddingVertical: screenHeight * 0.01,
-    justifyContent: 'space-between',
     alignItems: 'center',
+    justifyContent: 'space-between',
     backgroundColor: colors.white,
     marginLeft: screenWidth * 0.05,
     marginBottom: screenHeight * 0.05,
@@ -22,8 +21,11 @@ export default StyleSheet.create({
     },
     shadowOpacity: 0.175,
   },
+  middleSpacer: {
+    height: screenHeight * 0.01,
+  },
   image: {
     width: screenWidth * 0.4,
-    height: screenHeight * 0.085,
+    height: screenHeight * 0.075,
   },
 });
