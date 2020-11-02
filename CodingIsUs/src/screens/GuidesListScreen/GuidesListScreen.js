@@ -111,7 +111,12 @@ const GuidesListScreen = ({route, navigation}) => {
           ) : (
             <View>
               <View style={GuidesListScreenStyle.headerStyle}>
-                <Text style={[fontStyles.longTitleTextStyle, fontStyles.white]}>
+                <Text
+                  style={[
+                    fontStyles.longTitleTextStyle,
+                    fontStyles.white,
+                    {textAlign: 'center'},
+                  ]}>
                   {strings.AllGuides}
                 </Text>
               </View>
