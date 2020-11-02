@@ -2,7 +2,7 @@
 // and policies
 import React from 'react';
 import SetingsScreenStyle from './SettingsScreenStyle';
-import {View, Text, Linking, TouchableOpacity} from 'react-native';
+import {View, Text, Linking, TouchableOpacity, Alert} from 'react-native';
 import {SocialIcon} from 'react-native-elements';
 import strings from '../../../config/strings';
 import fontStyles from '../../../config/fontStyles';
@@ -50,15 +50,37 @@ const SettingsScreen = ({navigation}) => {
         <View style={SetingsScreenStyle.socialMediaContainer}>
           <TouchableOpacity
             onPress={() => {
-              logEvent('FacebookClicked', {});
-              Linking.openURL('https://www.facebook.com/codingisus');
+              Alert.alert(strings.SwitchingApps, strings.SwitchingAppsText, [
+                {
+                  text: strings.Ok,
+                  onPress: () => {
+                    logEvent('FacebookClicked', {});
+                    Linking.openURL('https://www.facebook.com/codingisus');
+                  },
+                },
+                {
+                  text: strings.Cancel,
+                  style: 'cancel',
+                },
+              ]);
             }}>
             <SocialIcon type="facebook" />
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => {
-              logEvent('InstagramClicked', {});
-              Linking.openURL('https://www.instagram.com/codingisus/');
+              Alert.alert(strings.SwitchingApps, strings.SwitchingAppsText, [
+                {
+                  text: strings.Ok,
+                  onPress: () => {
+                    logEvent('InstagramClicked', {});
+                    Linking.openURL('https://www.instagram.com/codingisus/');
+                  },
+                },
+                {
+                  text: strings.Cancel,
+                  style: 'cancel',
+                },
+              ]);
             }}>
             <SocialIcon type="instagram" />
           </TouchableOpacity>

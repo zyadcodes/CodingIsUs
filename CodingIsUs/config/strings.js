@@ -21,6 +21,10 @@ export default {
   AdditionalResources: 'Additional Resources',
   SeeTheDocumentation:
     'Links to the documentation and any other external resources',
+  SwitchingApps: 'Switching Apps',
+  SwitchingAppsText: 'This link is going to open in your web browser.',
+  Ok: 'Ok',
+  Cancel: 'Cancel',
   Settings: 'Settings',
   AboutUsText:
     'Coding is Us is an organization that is dedicated to creating a community of innovators that are changing the world using technology. Through our mobile app, YouTube channel, and social media, we teach people technology, programming, and much more!',
