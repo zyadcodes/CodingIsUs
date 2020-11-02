@@ -1801,7 +1801,7 @@ const HTMLGuide = {
     },
     {
       name: 'Creating the First Web Page',
-      description: 'Learn how to create your first webstie',
+      description: 'Learn how to create your first website',
       videoLink: '-USAeFpVf_A',
       ID: 11002,
     },

@@ -30,7 +30,7 @@ export default StyleSheet.create({
     justifyContent: 'flex-start',
     alignItems: 'center',
     marginBottom: screenHeight * 0.025,
-    width: screenWidth * 0.6
+    width: screenWidth * 0.6,
   },
   descriptionText: {
     marginBottom: screenHeight * 0.025,
@@ -44,7 +44,7 @@ export default StyleSheet.create({
   progressPercentage: {
     marginLeft: screenWidth * 0.025,
   },
-  sectionsText: {
+  titleText: {
     marginBottom: screenHeight * 0.035,
   },
   sectionContainer: {
@@ -84,5 +84,8 @@ export default StyleSheet.create({
     flexDirection: 'row',
     marginLeft: screenWidth * -0.05,
     alignSelf: 'center',
+  },
+  bottomSpacer: {
+    marginBottom: screenHeight * 0.035,
   },
 });

@@ -186,7 +186,6 @@ const GuideScreen = ({navigation, route}) => {
       </View>
     );
   }
-
   // Returns the UI of the screen
   return (
     <View
@@ -250,9 +249,77 @@ const GuideScreen = ({navigation, route}) => {
                   </Text>
                 </View>
               </View>
-              <View style={GuideScreenStyle.sectionsText}>
+              {!completionData.includes('true') ? (
+                <View>
+                  <View style={GuideScreenStyle.titleText}>
+                    <Text
+                      style={[fontStyles.black, fontStyles.longTitleTextStyle]}>
+                      {strings.GetStarted}
+                    </Text>
+                  </View>
+                  <SectionCard
+                    isCompleted={false}
+                    sectionTitle={guide.sections[0].name}
+                    sectionDescription={guide.sections[0].description}
+                    onPress={() => {
+                      logEvent('SectionClicked', {
+                        sectionID: guide.sections[0].ID,
+                      });
+                      navigation.push('SectionScreen', {
+                        section: guide.sections[0],
+                        completionStatus: completionData[0],
+                        adEEAStatus,
+                      });
+                    }}
+                  />
+                  <View style={GuideScreenStyle.bottomSpacer} />
+                </View>
+              ) : completionData.lastIndexOf('true') ===
+                guide.sections.length - 1 ? (
+                <View />
+              ) : (
+                <View>
+                  <View style={GuideScreenStyle.titleText}>
+                    <Text
+                      style={[fontStyles.black, fontStyles.longTitleTextStyle]}>
+                      {strings.UpNext}
+                    </Text>
+                  </View>
+                  <SectionCard
+                    isCompleted={false}
+                    sectionTitle={
+                      guide.sections[completionData.lastIndexOf('true') + 1]
+                        .name
+                    }
+                    sectionDescription={
+                      guide.sections[completionData.lastIndexOf('true') + 1]
+                        .description
+                    }
+                    onPress={() => {
+                      logEvent('SectionClicked', {
+                        sectionID:
+                          guide.sections[completionData.lastIndexOf('true') + 1]
+                            .ID,
+                      });
+                      navigation.push('SectionScreen', {
+                        section:
+                          guide.sections[
+                            completionData.lastIndexOf('true') + 1
+                          ],
+                        completionStatus:
+                          completionData[
+                            completionData.lastIndexOf('true') + 1
+                          ],
+                        adEEAStatus,
+                      });
+                    }}
+                  />
+                  <View style={GuideScreenStyle.bottomSpacer} />
+                </View>
+              )}
+              <View style={GuideScreenStyle.titleText}>
                 <Text style={[fontStyles.black, fontStyles.longTitleTextStyle]}>
-                  {strings.Sections}
+                  {strings.AllSections}
                 </Text>
               </View>
             </View>

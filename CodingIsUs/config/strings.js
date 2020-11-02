@@ -15,7 +15,9 @@ export default {
   MarkAsDone: 'Mark as Done',
   CodingIsUs: 'Coding is Us',
   AllGuides: 'All Guides',
-  Sections: 'Sections',
+  AllSections: 'All Sections',
+  GetStarted: 'Get Started',
+  UpNext: 'Up Next',
   AdditionalResources: 'Additional Resources',
   SeeTheDocumentation:
     'Links to the documentation and any other external resources',
