@@ -37,6 +37,7 @@ import {
   getAdShownStatus,
   updateAdShownStatus,
 } from '../../../config/StorageFunctions';
+import AnimatedHeader from 'react-native-animated-header';
 
 // Declares the functional component
 const GuideScreen = ({navigation, route}) => {
@@ -192,221 +193,252 @@ const GuideScreen = ({navigation, route}) => {
       style={GuideScreenStyle.container}
       showsHorizontalScrollIndicator={false}
       showsVerticalScrollIndicator={false}>
-      <FlatList
-        showsVerticalScrollIndicator={false}
-        ListHeaderComponent={
-          <View>
-            <TouchableOpacity
-              style={GuideScreenStyle.backButton}
-              onPress={() => navigation.goBack()}>
-              <Icon
-                type="font-awesome"
-                name="arrow-left"
-                color={colors.blue}
-                size={27}
-              />
-            </TouchableOpacity>
-            <Image
-              source={guide.cover}
-              resizeMode={'cover'}
-              style={GuideScreenStyle.coverImage}
+      <AnimatedHeader
+        style={GuideScreenStyle.coverImage}
+        renderLeft={() => (
+          <TouchableOpacity
+            style={GuideScreenStyle.backButton}
+            onPress={() => navigation.goBack()}>
+            <Icon
+              type="font-awesome"
+              name="arrow-left"
+              color={colors.blue}
+              size={27}
             />
-            <View style={GuideScreenStyle.guideInformation}>
-              <View style={GuideScreenStyle.logoTitle}>
-                <View style={GuideScreenStyle.logoContainer}>
-                  <Image
-                    source={guide.logo}
-                    resizeMode={'contain'}
-                    style={GuideScreenStyle.image}
-                  />
-                </View>
-                <Text style={[fontStyles.black, fontStyles.longTitleTextStyle]}>
-                  {guide.title}
-                </Text>
-              </View>
-              <View style={GuideScreenStyle.descriptionText}>
-                <Text style={[fontStyles.black, fontStyles.bigTextStyle]}>
-                  {guide.description}
-                </Text>
-              </View>
-              <View>
-                <Text style={[fontStyles.black, fontStyles.longTitleTextStyle]}>
-                  {strings.Length}
-                  {guide.duration}
-                </Text>
-              </View>
-              <View style={GuideScreenStyle.progressContainerStyle}>
-                <ProgressBar
+          </TouchableOpacity>
+        )}
+        imageSource={guide.cover}
+        toolbarColor={colors.white}
+        noBorder={true}>
+        <FlatList
+          showsVerticalScrollIndicator={false}
+          ListHeaderComponent={
+            <View>
+              {/*
+              <TouchableOpacity
+                style={GuideScreenStyle.backButton}
+                onPress={() => navigation.goBack()}>
+                <Icon
+                  type="font-awesome"
+                  name="arrow-left"
                   color={colors.blue}
-                  unfilledColor={colors.white}
-                  width={screenWidth * 0.8}
-                  height={screenHeight * 0.035}
-                  progress={progress}
+                  size={27}
                 />
-                <View style={GuideScreenStyle.progressPercentage}>
+              </TouchableOpacity>
+              <Image
+                source={guide.cover}
+                resizeMode={'cover'}
+                style={GuideScreenStyle.coverImage}
+              />
+              */}
+              <View style={GuideScreenStyle.guideInformation}>
+                <View style={GuideScreenStyle.logoTitle}>
+                  <View style={GuideScreenStyle.logoContainer}>
+                    <Image
+                      source={guide.logo}
+                      resizeMode={'contain'}
+                      style={GuideScreenStyle.image}
+                    />
+                  </View>
+                  <Text
+                    style={[fontStyles.black, fontStyles.longTitleTextStyle]}>
+                    {guide.title}
+                  </Text>
+                </View>
+                <View style={GuideScreenStyle.descriptionText}>
                   <Text style={[fontStyles.black, fontStyles.bigTextStyle]}>
-                    {(progress * 100).toFixed(0)}%
+                    {guide.description}
+                  </Text>
+                </View>
+                <View>
+                  <Text
+                    style={[fontStyles.black, fontStyles.longTitleTextStyle]}>
+                    {strings.Length}
+                    {guide.duration}
+                  </Text>
+                </View>
+                <View style={GuideScreenStyle.progressContainerStyle}>
+                  <ProgressBar
+                    color={colors.blue}
+                    unfilledColor={colors.white}
+                    width={screenWidth * 0.8}
+                    height={screenHeight * 0.035}
+                    progress={progress}
+                  />
+                  <View style={GuideScreenStyle.progressPercentage}>
+                    <Text style={[fontStyles.black, fontStyles.bigTextStyle]}>
+                      {(progress * 100).toFixed(0)}%
+                    </Text>
+                  </View>
+                </View>
+                {!completionData.includes('true') ? (
+                  <View>
+                    <View style={GuideScreenStyle.titleText}>
+                      <Text
+                        style={[
+                          fontStyles.black,
+                          fontStyles.longTitleTextStyle,
+                        ]}>
+                        {strings.GetStarted}
+                      </Text>
+                    </View>
+                    <SectionCard
+                      isCompleted={false}
+                      sectionTitle={guide.sections[0].name}
+                      sectionDescription={guide.sections[0].description}
+                      onPress={() => {
+                        logEvent('SectionClicked', {
+                          sectionID: guide.sections[0].ID,
+                        });
+                        navigation.push('SectionScreen', {
+                          section: guide.sections[0],
+                          completionStatus: completionData[0],
+                          adEEAStatus,
+                        });
+                      }}
+                    />
+                    <View style={GuideScreenStyle.bottomSpacer} />
+                  </View>
+                ) : completionData.lastIndexOf('true') ===
+                  guide.sections.length - 1 ? (
+                  <View />
+                ) : (
+                  <View>
+                    <View style={GuideScreenStyle.titleText}>
+                      <Text
+                        style={[
+                          fontStyles.black,
+                          fontStyles.longTitleTextStyle,
+                        ]}>
+                        {strings.UpNext}
+                      </Text>
+                    </View>
+                    <SectionCard
+                      isCompleted={false}
+                      sectionTitle={
+                        guide.sections[completionData.lastIndexOf('true') + 1]
+                          .name
+                      }
+                      sectionDescription={
+                        guide.sections[completionData.lastIndexOf('true') + 1]
+                          .description
+                      }
+                      onPress={() => {
+                        logEvent('SectionClicked', {
+                          sectionID:
+                            guide.sections[
+                              completionData.lastIndexOf('true') + 1
+                            ].ID,
+                        });
+                        navigation.push('SectionScreen', {
+                          section:
+                            guide.sections[
+                              completionData.lastIndexOf('true') + 1
+                            ],
+                          completionStatus:
+                            completionData[
+                              completionData.lastIndexOf('true') + 1
+                            ],
+                          adEEAStatus,
+                        });
+                      }}
+                    />
+                    <View style={GuideScreenStyle.bottomSpacer} />
+                  </View>
+                )}
+                <View style={GuideScreenStyle.titleText}>
+                  <Text
+                    style={[fontStyles.black, fontStyles.longTitleTextStyle]}>
+                    {strings.AllSections}
                   </Text>
                 </View>
               </View>
-              {!completionData.includes('true') ? (
-                <View>
-                  <View style={GuideScreenStyle.titleText}>
-                    <Text
-                      style={[fontStyles.black, fontStyles.longTitleTextStyle]}>
-                      {strings.GetStarted}
-                    </Text>
-                  </View>
-                  <SectionCard
-                    isCompleted={false}
-                    sectionTitle={guide.sections[0].name}
-                    sectionDescription={guide.sections[0].description}
-                    onPress={() => {
-                      logEvent('SectionClicked', {
-                        sectionID: guide.sections[0].ID,
-                      });
-                      navigation.push('SectionScreen', {
-                        section: guide.sections[0],
-                        completionStatus: completionData[0],
-                        adEEAStatus,
-                      });
-                    }}
-                  />
-                  <View style={GuideScreenStyle.bottomSpacer} />
-                </View>
-              ) : completionData.lastIndexOf('true') ===
-                guide.sections.length - 1 ? (
-                <View />
-              ) : (
-                <View>
-                  <View style={GuideScreenStyle.titleText}>
-                    <Text
-                      style={[fontStyles.black, fontStyles.longTitleTextStyle]}>
-                      {strings.UpNext}
-                    </Text>
-                  </View>
-                  <SectionCard
-                    isCompleted={false}
-                    sectionTitle={
-                      guide.sections[completionData.lastIndexOf('true') + 1]
-                        .name
-                    }
-                    sectionDescription={
-                      guide.sections[completionData.lastIndexOf('true') + 1]
-                        .description
-                    }
-                    onPress={() => {
-                      logEvent('SectionClicked', {
-                        sectionID:
-                          guide.sections[completionData.lastIndexOf('true') + 1]
-                            .ID,
-                      });
-                      navigation.push('SectionScreen', {
-                        section:
-                          guide.sections[
-                            completionData.lastIndexOf('true') + 1
-                          ],
-                        completionStatus:
-                          completionData[
-                            completionData.lastIndexOf('true') + 1
-                          ],
-                        adEEAStatus,
-                      });
-                    }}
-                  />
-                  <View style={GuideScreenStyle.bottomSpacer} />
-                </View>
-              )}
-              <View style={GuideScreenStyle.titleText}>
-                <Text style={[fontStyles.black, fontStyles.longTitleTextStyle]}>
-                  {strings.AllSections}
-                </Text>
-              </View>
             </View>
-          </View>
-        }
-        data={guide.sections}
-        keyExtractor={(item, index) => item.ID + ''}
-        renderItem={({item, index}) => (
-          <View style={GuideScreenStyle.sectionContainer}>
-            <SectionCard
-              isCompleted={completionData[index] === 'true'}
-              sectionTitle={item.name}
-              sectionDescription={item.description}
-              onPress={() => {
-                logEvent('SectionClicked', {
-                  sectionID: item.ID,
-                });
-                navigation.push('SectionScreen', {
-                  section: item,
-                  completionStatus: completionData[index],
-                  adEEAStatus,
-                });
-              }}
-            />
-          </View>
-        )}
-        ListFooterComponent={
-          <View>
+          }
+          data={guide.sections}
+          keyExtractor={(item, index) => item.ID + ''}
+          renderItem={({item, index}) => (
             <View style={GuideScreenStyle.sectionContainer}>
               <SectionCard
-                isCompleted={true}
-                sectionTitle={strings.AdditionalResources}
-                sectionDescription={strings.SeeTheDocumentation}
+                isCompleted={completionData[index] === 'true'}
+                sectionTitle={item.name}
+                sectionDescription={item.description}
                 onPress={() => {
-                  logEvent('ResourcesClicked', {
-                    guideID: guideID,
+                  logEvent('SectionClicked', {
+                    sectionID: item.ID,
                   });
-                  navigation.push('ResourcesScreen', {
-                    guide: guide,
+                  navigation.push('SectionScreen', {
+                    section: item,
+                    completionStatus: completionData[index],
+                    adEEAStatus,
                   });
                 }}
               />
             </View>
-            <View style={GuideScreenStyle.relatedGuidesStyle}>
-              <View style={GuideScreenStyle.relatedTextStyle}>
-                <Text style={[fontStyles.longTitleTextStyle, fontStyles.black]}>
-                  {strings.Related}
-                </Text>
+          )}
+          ListFooterComponent={
+            <View>
+              <View style={GuideScreenStyle.sectionContainer}>
+                <SectionCard
+                  isCompleted={true}
+                  sectionTitle={strings.AdditionalResources}
+                  sectionDescription={strings.SeeTheDocumentation}
+                  onPress={() => {
+                    logEvent('ResourcesClicked', {
+                      guideID: guideID,
+                    });
+                    navigation.push('ResourcesScreen', {
+                      guide: guide,
+                    });
+                  }}
+                />
               </View>
-              <View style={GuideScreenStyle.relatedGuidesIcons}>
-                <GuideIcon
-                  title={relatedGuides[0].title}
-                  image={relatedGuides[0].logo}
-                  onPress={() => {
-                    navigation.push('GuideScreen', {
-                      adEEAStatus,
-                      loadAd: false,
-                      guideID: relatedGuides[0].guideID,
-                    });
-                    logEvent('RelatedGuideClicked', {
-                      guideIDFrom: guideID,
-                      guideIDTo: relatedGuides[0].guideID,
-                      title: relatedGuides[0].guideID,
-                    });
-                  }}
-                />
-                <GuideIcon
-                  title={relatedGuides[1].title}
-                  image={relatedGuides[1].logo}
-                  onPress={() => {
-                    navigation.push('GuideScreen', {
-                      adEEAStatus,
-                      loadAd: false,
-                      guideID: relatedGuides[1].guideID,
-                    });
-                    logEvent('RelatedGuideClicked', {
-                      guideIDFrom: guideID,
-                      guideIDTo: relatedGuides[1].guideID,
-                      title: relatedGuides[1].guideID,
-                    });
-                  }}
-                />
+              <View style={GuideScreenStyle.relatedGuidesStyle}>
+                <View style={GuideScreenStyle.relatedTextStyle}>
+                  <Text
+                    style={[fontStyles.longTitleTextStyle, fontStyles.black]}>
+                    {strings.Related}
+                  </Text>
+                </View>
+                <View style={GuideScreenStyle.relatedGuidesIcons}>
+                  <GuideIcon
+                    title={relatedGuides[0].title}
+                    image={relatedGuides[0].logo}
+                    onPress={() => {
+                      navigation.push('GuideScreen', {
+                        adEEAStatus,
+                        loadAd: false,
+                        guideID: relatedGuides[0].guideID,
+                      });
+                      logEvent('RelatedGuideClicked', {
+                        guideIDFrom: guideID,
+                        guideIDTo: relatedGuides[0].guideID,
+                        title: relatedGuides[0].guideID,
+                      });
+                    }}
+                  />
+                  <GuideIcon
+                    title={relatedGuides[1].title}
+                    image={relatedGuides[1].logo}
+                    onPress={() => {
+                      navigation.push('GuideScreen', {
+                        adEEAStatus,
+                        loadAd: false,
+                        guideID: relatedGuides[1].guideID,
+                      });
+                      logEvent('RelatedGuideClicked', {
+                        guideIDFrom: guideID,
+                        guideIDTo: relatedGuides[1].guideID,
+                        title: relatedGuides[1].guideID,
+                      });
+                    }}
+                  />
+                </View>
               </View>
             </View>
-          </View>
-        }
-      />
+          }
+        />
+      </AnimatedHeader>
     </View>
   );
 };

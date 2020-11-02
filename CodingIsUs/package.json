@@ -23,6 +23,7 @@
     "@react-navigation/stack": "^5.9.0",
     "react": "16.13.1",
     "react-native": "0.63.2",
+    "react-native-animated-header": "^1.0.7",
     "react-native-code-push": "^6.3.0",
     "react-native-elements": "^2.3.2",
     "react-native-fbsdk": "^2.0.0",

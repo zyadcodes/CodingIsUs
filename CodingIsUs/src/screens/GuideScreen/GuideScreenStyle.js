@@ -9,20 +9,19 @@ export default StyleSheet.create({
     backgroundColor: colors.lightBlue,
   },
   backButton: {
-    position: 'absolute',
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: colors.white,
     height: screenHeight * 0.05,
     width: screenHeight * 0.05,
     borderRadius: screenHeight * 0.025,
-    left: screenWidth * 0.05,
-    top: screenHeight * 0.075,
+    marginLeft: screenWidth * 0.05,
     zIndex: 1,
   },
   coverImage: {
     width: screenWidth * 1,
     height: screenHeight * 0.3,
+    flex: 1
   },
   guideInformation: {
     paddingHorizontal: screenWidth * 0.025,
