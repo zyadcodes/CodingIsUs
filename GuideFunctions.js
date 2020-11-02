@@ -26,7 +26,6 @@ https://ytplaylist-len.herokuapp.com/
 
 */
 
-
 const fetch = require("node-fetch");
 
 const getVideoObjectByID = async (videoID) => {
@@ -68,7 +67,7 @@ async function constructGuideSections(videoIDs, startingID) {
     // The next piece of code needs tto be adjusted according to the format of the video titles
     const title = finalObject.title;
     let name = "";
-    name = title.substring(title.indexOf("Lesson ") + 9).trim();
+    name = title.substring(title.indexOf("-") + 5).trim();
     const section = {
       name,
       description: "",
@@ -81,6 +80,45 @@ async function constructGuideSections(videoIDs, startingID) {
   console.log(sections);
 }
 
-getVideoObjectByID("ySa58y1SRy0").then((result) => {
-  console.log(result);
-});
+constructGuideSections(
+  [
+    "8I539U5lXWY",
+    "Z3ibUPyQY30",
+    "f9G-W8RLuJ4",
+    "JdCyLqmoxOg",
+    "4f1rWL6zccw",
+    "wBz4FCWZXRM",
+    "6J6jGl1i2qg",
+    "3tSPTv27QcY",
+    "3-ne6aqoi8E",
+    "_3khk6o2We4",
+    "yQJqzS8Ns2E",
+    "VkUsiyv54Vc",
+    "YmxfZIaSIW8",
+    "Z9n2XAVVYY8",
+    "Bu5GHmXiP_4",
+    "LZW-w-_IIxs",
+    "pxpJpCIFHYs",
+    "xXuEeChktdQ",
+    "f4pLXGhisuw",
+    "tpsdxtf01po",
+    "I4TD-eCWUWQ",
+    "jKonRZataZw",
+    "hVSrMsUFrYQ",
+    "BmxzCBEQ6OI",
+    "gtEZ7A7Nqzs",
+    "-FlndMkEa40",
+    "UwZnR_x2KAs",
+    "RqpI85wjC7w",
+    "w5VqoHO2-wQ",
+    "YIDLuOEGaK8",
+    "HZyjM9KbTxk",
+    "ObR8UuaPc6Q",
+    "-25cgBtZc94",
+    "W3B042cPdsU",
+    "7myNdQyitXs",
+    "fVCMrrIf2v0",
+    "V5Jp69vHJa4",
+  ],
+  20001
+);

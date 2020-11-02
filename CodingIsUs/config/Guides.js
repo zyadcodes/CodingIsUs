@@ -36,6 +36,8 @@ import FlutterLogo from '../assets/images/FlutterLogo.png';
 import FlutterCover from '../assets/images/FlutterCover.png';
 import SwiftLogo from '../assets/images/SwiftLogo.png';
 import SwiftCover from '../assets/images/SwiftCover.png';
+import RubyLogo from '../assets/images/RubyLogo.png';
+import RubyCover from '../assets/images/RubyCover.jpg';
 
 const FirestoreGuide = {
   title: 'Firestore',
@@ -3176,7 +3178,7 @@ const KotlinGuide = {
       title: 'Documentation',
       link: 'https://kotlinlang.org/docs/reference/',
     },
-  ]
+  ],
 };
 
 const AndroidStudioGuide = {
@@ -3498,7 +3500,7 @@ const AndroidStudioGuide = {
       title: 'Documentation',
       link: 'https://developer.android.com/docs',
     },
-  ]
+  ],
 };
 
 const FlutterGuide = {
@@ -3753,7 +3755,7 @@ const FlutterGuide = {
       title: 'Documentation',
       link: 'https://flutter.dev/docs',
     },
-  ]
+  ],
 };
 
 const SwiftGuide = {
@@ -3889,7 +3891,256 @@ const SwiftGuide = {
       title: 'Documentation',
       link: 'https://swift.org/documentation/',
     },
-  ]
+  ],
+};
+
+const RubyGuide = {
+  title: 'Ruby',
+  cover: RubyCover,
+  logo: RubyLogo,
+  duration: '7.5 Hours',
+  description:
+    'Ruby is a high level, interpreted, general-purpose programming language that was built in the 1990s in Japan. It can be used for a variety of basic programming uses.',
+  guideID: 20000,
+  relatedGuides: [3000, 4000],
+  sections: [
+    {
+      name: 'Install Ruby and Editor',
+      description: 'Get started with Ruby by doing all of the setup',
+      videoLink: '8I539U5lXWY',
+      ID: 20001,
+    },
+    {
+      name: 'Komodo IDE',
+      description: 'Get an in depth look into the Ruby IDE',
+      videoLink: 'Z3ibUPyQY30',
+      ID: 20002,
+    },
+    {
+      name: 'Arithmetic Operators',
+      description: 'Learn about basic math and arithmetic operators in Ruby',
+      videoLink: 'f9G-W8RLuJ4',
+      ID: 20003,
+    },
+    {
+      name: 'Conditionals',
+      description: 'Learn how to perform conditional operators in Ruby',
+      videoLink: 'JdCyLqmoxOg',
+      ID: 20004,
+    },
+    {
+      name: 'Formatting',
+      description: 'Learn how to capitalize, reverse, and perform other string operations in Python',
+      videoLink: '4f1rWL6zccw',
+      ID: 20005,
+    },
+    {
+      name: 'Arrays 1',
+      description: 'Learn how to work with arrays and their functions in Ruby',
+      videoLink: 'wBz4FCWZXRM',
+      ID: 20006,
+    },
+    {
+      name: 'Arrays 2',
+      description: 'Continue learning how to work with arrays in ruby',
+      videoLink: '6J6jGl1i2qg',
+      ID: 20007,
+    },
+    {
+      name: 'Hash',
+      description: 'Learn how to write a Hash using Ruby',
+      videoLink: '3tSPTv27QcY',
+      ID: 20008,
+    },
+    {
+      name: 'gets.chomp Method',
+      description: 'Learn about a vital Ruby to collect user input',
+      videoLink: '3-ne6aqoi8E',
+      ID: 20009,
+    },
+    {
+      name: 'More on Hashes',
+      description: 'Continue learning about Hashing in Rub',
+      videoLink: '_3khk6o2We4',
+      ID: 20010,
+    },
+    {
+      name: 'Functions',
+      description: 'Learn how to define and use functions in Ruby to reuse existing code',
+      videoLink: 'yQJqzS8Ns2E',
+      ID: 20011,
+    },
+    {
+      name: '- counter - index - .each do',
+      description: 'Learn about iteration in Ruby and to use different iteration methods',
+      videoLink: 'VkUsiyv54Vc',
+      ID: 20012,
+    },
+    {
+      name: 'Functions with Numbers',
+      description: 'Learn how to create more dynamic functions to write powerful programs in Ruby',
+      videoLink: 'YmxfZIaSIW8',
+      ID: 20013,
+    },
+    {
+      name: 'Pythagorean Theorem Calculator',
+      description: 'Write your first program in Ruby to calculate the Pythagorean Theorem',
+      videoLink: 'Z9n2XAVVYY8',
+      ID: 20014,
+    },
+    {
+      name: 'Loops',
+      description: 'Learn more about other iteration methods in Ruby',
+      videoLink: 'Bu5GHmXiP_4',
+      ID: 20015,
+    },
+    {
+      name: 'Find and Replace Program',
+      description: 'Write another program that finds and replaces by indicies within an array',
+      videoLink: 'LZW-w-_IIxs',
+      ID: 20016,
+    },
+    {
+      name: 'Multidimensional Arrays',
+      description: 'Learn about more powerful versions of arrays that let you create complex data structures',
+      videoLink: 'pxpJpCIFHYs',
+      ID: 20017,
+    },
+    {
+      name: 'Find Prime Numbers',
+      description: 'Write a program to find prime numbers using all the concepts in Ruby',
+      videoLink: 'xXuEeChktdQ',
+      ID: 20018,
+    },
+    {
+      name: 'Histogram and Sorting',
+      description: 'Learn about Sorting algorithms in Ruby',
+      videoLink: 'f4pLXGhisuw',
+      ID: 20019,
+    },
+    {
+      name: 'Spaceship Operator',
+      description: 'Write a program that utilizes complex comparison operators in Ruby',
+      videoLink: 'tpsdxtf01po',
+      ID: 20020,
+    },
+    {
+      name: 'How to Write a Sort Method',
+      description: 'Write your own custom sorting algorithm in Ruby',
+      videoLink: 'I4TD-eCWUWQ',
+      ID: 20021,
+    },
+    {
+      name: 'Hashes and Symbols',
+      description: 'Learn more about advanced hashing and using symbols as well',
+      videoLink: 'jKonRZataZw',
+      ID: 20022,
+    },
+    {
+      name: 'Add an Item to a Hash',
+      description: 'Learn how to add items to a specific hash in Ruby',
+      videoLink: 'hVSrMsUFrYQ',
+      ID: 20023,
+    },
+    {
+      name: 'CRUD Operations 1',
+      description: 'Learn about create, read, update, and delete operations in CRUD using Ruby',
+      videoLink: 'BmxzCBEQ6OI',
+      ID: 20024,
+    },
+    {
+      name: 'CRUD Operations 2',
+      description: 'Learn about create, read, update, and delete operations in CRUD using Ruby',
+      videoLink: 'gtEZ7A7Nqzs',
+      ID: 20025,
+    },
+    {
+      name: 'Terenary Conditional Expression',
+      description: 'Learn about terenary conditional operators in Ruby',
+      videoLink: '-FlndMkEa40',
+      ID: 20026,
+    },
+    {
+      name: 'When and Then',
+      description: 'Learn about important keywords to handle asynchronous code in Ruby',
+      videoLink: 'UwZnR_x2KAs',
+      ID: 20027,
+    },
+    {
+      name: 'Conditional Assignment Operator',
+      description: 'Learn how to assign variables conditionally in Ruby',
+      videoLink: 'RqpI85wjC7w',
+      ID: 20028,
+    },
+    {
+      name: 'Ruby for SketchUp',
+      description: 'Learn about a popular exterior platform known as the SketchUp Ruby Console',
+      videoLink: 'w5VqoHO2-wQ',
+      ID: 20029,
+    },
+    {
+      name: 'First SketchUp Plugin',
+      description: 'Create your first plugin on the SketchUp Ruby Console',
+      videoLink: 'YIDLuOEGaK8',
+      ID: 20030,
+    },
+    {
+      name: 'Shovel Operator',
+      description: 'Learn how to use the shovel concatenation operator in Ruby',
+      videoLink: 'HZyjM9KbTxk',
+      ID: 20031,
+    },
+    {
+      name: 'Yield',
+      description: 'Get a deeper explanation about the concept of Yielding in Ruby',
+      videoLink: 'ObR8UuaPc6Q',
+      ID: 20032,
+    },
+    {
+      name: 'Ruby Procs Explained',
+      description: 'Learn how to create reusable blocks using Ruby Procs',
+      videoLink: '-25cgBtZc94',
+      ID: 20033,
+    },
+    {
+      name: 'Ruby Lambdas Explained',
+      description: 'Learn about Ruby Lambdas and how they are different than Procs in Ruby',
+      videoLink: 'W3B042cPdsU',
+      ID: 20034,
+    },
+    {
+      name: 'Ruby Classes',
+      description: 'Get an overview of object oriented programming in Ruby using instance variables, objects, and classes',
+      videoLink: '7myNdQyitXs',
+      ID: 20035,
+    },
+    {
+      name: 'Ruby Global Variables',
+      description: 'Learn about global variables and their use in Ruby',
+      videoLink: 'fVCMrrIf2v0',
+      ID: 20036,
+    },
+    {
+      name: 'FizzBuzz Game',
+      description: 'Create a game as your final project in Ruby',
+      videoLink: 'V5Jp69vHJa4',
+      ID: 20037,
+    },
+  ],
+  additionalResources: [
+    {
+      title: 'Documentation',
+      link: 'https://www.ruby-lang.org/en/documentation/',
+    },
+    {
+      title: 'VSCode Download',
+      link: 'https://code.visualstudio.com/download',
+    },
+    {
+      title: 'Komodo IDE',
+      link: 'https://www.activestate.com/products/komodo-ide/',
+    },
+  ],
 };
 
 export default [
@@ -3911,4 +4162,5 @@ export default [
   JavaScriptGuide,
   ReactJSGuide,
   ReactNativeGuide,
+  RubyGuide,
 ];

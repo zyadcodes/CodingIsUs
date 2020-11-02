@@ -10,11 +10,15 @@ import {Icon} from 'react-native-elements';
 const Tab = createBottomTabNavigator();
 
 const MyTabs = () => {
-
   return (
     <Tab.Navigator
       lazy={false}
       tabBarOptions={{
+        style: {
+          height: '12%',
+          alignItems: 'center',
+          justifyContent: 'center',
+        },
         activeTintColor: colors.blue,
         inactiveTintColor: colors.lightGray,
         showLabel: false,
@@ -26,7 +30,7 @@ const MyTabs = () => {
             <Icon
               type={'font-awesome'}
               name={'home'}
-              size={size}
+              size={size * 1.5}
               color={color}
             />
           ),
@@ -37,7 +41,12 @@ const MyTabs = () => {
         name="GuidesListScreen"
         options={{
           tabBarIcon: ({color, size}) => (
-            <Icon type={'font-awesome'} name={'th'} size={size} color={color} />
+            <Icon
+              type={'font-awesome'}
+              name={'th'}
+              size={size * 1.5}
+              color={color}
+            />
           ),
         }}
         component={GuidesListScreen}
@@ -49,7 +58,7 @@ const MyTabs = () => {
             <Icon
               type={'font-awesome'}
               name={'cogs'}
-              size={size}
+              size={size * 1.5}
               color={color}
             />
           ),

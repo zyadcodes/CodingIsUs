@@ -18,6 +18,7 @@ import KotlinLogo from '../assets/images/KotlinLogo.png';
 import AndroidStudioLogo from '../assets/images/AndroidStudioLogo.png';
 import FlutterLogo from '../assets/images/FlutterLogo.png';
 import SwiftLogo from '../assets/images/SwiftLogo.png';
+import RubyLogo from '../assets/images/RubyLogo.png';
 
 const FirestoreGuide = {
   title: 'Firestore',
@@ -127,6 +128,12 @@ const SwiftGuide = {
   guideID: 19000,
 };
 
+const RubyGuide = {
+  title: 'Ruby',
+  logo: RubyLogo,
+  guideID: 20000
+}
+
 export default [
   CGuide,
   HTMLGuide,
@@ -146,4 +153,5 @@ export default [
   JavaScriptGuide,
   ReactJSGuide,
   ReactNativeGuide,
+  RubyGuide
 ];

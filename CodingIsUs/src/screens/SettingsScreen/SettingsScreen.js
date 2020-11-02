@@ -14,12 +14,15 @@ import {logEvent} from '../../../config/Analytics';
 // Declares the functional component
 const SettingsScreen = ({navigation}) => {
   // Creates a component to represent each SettingsCard in order to save code
-  const SettingsCard = (title, url) => (
+  const SettingsCard = (title, text) => (
     <TouchableOpacity
       style={SetingsScreenStyle.settingsCard}
       onPress={() => {
         logEvent('PolicyClicked', {});
-        Linking.openURL(url);
+        navigation.push('PolicyScreen', {
+          title,
+          text,
+        });
       }}>
       <Text style={[fontStyles.black, fontStyles.bigTextStyle]}>{title}</Text>
       <Icon
@@ -33,23 +36,17 @@ const SettingsScreen = ({navigation}) => {
 
   return (
     <View style={SetingsScreenStyle.container}>
+      <View style={SetingsScreenStyle.headerStyle}>
+        <Text style={[fontStyles.longTitleTextStyle, fontStyles.white]}>
+          {strings.Settings}
+        </Text>
+      </View>
       <View style={SettingsScreenStyle.cardsContainer}>
-        {SettingsCard(strings.AboutUs, 'https://codingisus.com/')}
-        {SettingsCard(strings.Facebook, 'https://facebook.com/codingisus')}
-        {SettingsCard(strings.Instagram, 'https://instagram.com/codingisus')}
-        {SettingsCard(
-          strings.PrivacyPolicy,
-          'https://www.codingisus.com/privacy-policy',
-        )}
-        {SettingsCard(
-          strings.TermsOfService,
-          'https://www.codingisus.com/terms-of-service',
-        )}
+        {SettingsCard(strings.AboutUs, strings.AboutUsText)}
+        {SettingsCard(strings.PrivacyPolicy, strings.PrivacyPolicyText)}
+        {SettingsCard(strings.TermsOfService, strings.TermsOfServiceText)}
       </View>
       <View>
-        <Text style={[fontStyles.black, fontStyles.longTitleTextStyle]}>
-          {strings.FollowUsOnSocialMedia}
-        </Text>
         <View style={SetingsScreenStyle.socialMediaContainer}>
           <TouchableOpacity
             onPress={() => {

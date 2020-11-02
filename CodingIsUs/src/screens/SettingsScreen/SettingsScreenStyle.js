@@ -24,14 +24,25 @@ export default StyleSheet.create({
     marginTop: screenHeight * 0.05,
   },
   cardsContainer: {
-    marginTop: screenHeight * 0.075,
     marginBottom: screenHeight * 0.05,
     justifyContent: 'space-evenly',
-    height: screenHeight * 0.4,
+    height: screenHeight * 0.3,
   },
   socialMediaContainer: {
     marginTop: screenHeight * 0.05,
+    width: screenWidth,
     flexDirection: 'row',
     justifyContent: 'space-evenly',
+  },
+  headerStyle: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingTop: screenHeight * 0.05,
+    alignSelf: 'center',
+    width: screenWidth,
+    paddingHorizontal: screenWidth * 0.05,
+    height: screenHeight * 0.21,
+    backgroundColor: colors.blue,
   },
 });
