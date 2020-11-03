@@ -8,7 +8,6 @@ import firebaseAnalytics from '@react-native-firebase/analytics';
 import messaging from '@react-native-firebase/messaging';
 import codePush from 'react-native-code-push';
 import {logEvent} from './config/Analytics';
-import {updateAdShownStatus} from './config/StorageFunctions';
 
 // Declares the functional component
 let App = () => {
@@ -26,7 +25,6 @@ let App = () => {
   // Helper method for UseEffect
   const useEffectHelper = async () => {
     await messaging().requestPermission();
-    await updateAdShownStatus('false');
   };
 
   // Renders the UI. Wrapped by React-Navigation container

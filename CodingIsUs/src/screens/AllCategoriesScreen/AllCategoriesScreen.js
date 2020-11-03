@@ -24,7 +24,7 @@ const AllCategoriesScreen = ({navigation}) => {
   // Stores the status of the user's ad preference and the loading status of the screen
   const [isLoading, setIsLoading] = useState(true);
 
-  // The useEffect method is going to handle any AdMob settings that need to be configured and check for
+  // The useEffect method is going to check for
   // an active internet connection
   useEffect(() => {
     checkInternetConnection();
@@ -87,6 +87,10 @@ const AllCategoriesScreen = ({navigation}) => {
             <View style={AllCategoriesScreenStyle.headerStyle}>
               <Text style={[fontStyles.longTitleTextStyle, fontStyles.white]}>
                 {strings.CodingIsUs}
+              </Text>
+              <View style={AllCategoriesScreenStyle.smallSpacer} />
+              <Text style={[fontStyles.bigTextStyle, fontStyles.white]}>
+                {strings.WhatDoYouWantToLearnAbout}
               </Text>
             </View>
           </View>

@@ -6,20 +6,13 @@ import {
   View,
   Image,
   ActivityIndicator,
-  Platform,
   FlatList,
   TouchableOpacity,
+  PixelRatio,
 } from 'react-native';
+import Share from 'react-native-share';
 import fontStyles from '../../../config/fontStyles';
 import GuideScreenStyle from './GuideScreenStyle';
-import admob, {
-  InterstitialAd,
-  TestIds,
-  MaxAdContentRating,
-  AdsConsent,
-  AdEventType,
-  AdsConsentStatus,
-} from '@react-native-firebase/admob';
 import NetInfo from '@react-native-community/netinfo';
 import strings from '../../../config/strings';
 import colors from '../../../config/colors';
@@ -30,14 +23,16 @@ import GuideIcon from '../../components/GuideIcon/GuideIcon';
 import {useIsFocused} from '@react-navigation/native';
 import ProgressBar from 'react-native-progress/Bar';
 import {logEvent} from '../../../config/Analytics';
-import {getGuideCompletionStatus} from '../../../config/StorageFunctions';
+import {
+  getGuideCompletionStatus,
+  getTimeReviewRequested,
+  setTimeReviewRequested,
+} from '../../../config/StorageFunctions';
 import {screenWidth, screenHeight} from '../../../config/dimensions';
 import SectionCard from '../../components/SectionCard/SectionCard';
-import {
-  getAdShownStatus,
-  updateAdShownStatus,
-} from '../../../config/StorageFunctions';
 import AnimatedHeader from 'react-native-animated-header';
+import InAppReview from 'react-native-in-app-review';
+import AwesomeAlert from 'react-native-awesome-alerts';
 
 // Declares the functional component
 const GuideScreen = ({navigation, route}) => {
@@ -47,12 +42,12 @@ const GuideScreen = ({navigation, route}) => {
   const isFocused = useIsFocused();
 
   // The isLoading state and the other state variables on this screen
-  const [adEEAStatus, setAdEEAStatus] = useState('');
   const [isLoading, setIsLoading] = useState(true);
   const [guide, setGuide] = useState('');
   const [relatedGuides, setRelatedGuides] = useState('');
   const [completionData, setCompletionData] = useState('');
   const [progress, setProgress] = useState('');
+  const [guideCompletedAlert, setGuideCompletedAlert] = useState(false);
 
   // The useEffect method is going to load  that need to be configured and check for
   // an active internet connection and then retrieve the data for which section has been completed
@@ -66,68 +61,6 @@ const GuideScreen = ({navigation, route}) => {
       loadScreenData();
     }
   }, [isFocused]);
-
-  // Sets up and shows the advertisements if it needs to
-  const setupAds = async () => {
-    const adShownStatus = await getAdShownStatus();
-    if (adShownStatus === 'false') {
-      // Requests consent from European Users to show Adverts
-      const consentInfo = await AdsConsent.requestInfoUpdate([
-        'pub-3956967028189707',
-      ]);
-      let formResult = '';
-      if (
-        consentInfo.isRequestLocationInEeaOrUnknown &&
-        consentInfo.status === AdsConsentStatus.UNKNOWN
-      ) {
-        formResult = await AdsConsent.showForm({
-          privacyPolicy: 'https://codingisus.com/pages/privacy-policy',
-          withPersonalizedAds: true,
-          withNonPersonalizedAds: true,
-          withAdFree: false,
-        });
-        setAdEEAStatus(formResult.status);
-      }
-
-      await admob().setRequestConfiguration({
-        // Update all future requests suitable for parental guidance
-        maxAdContentRating: MaxAdContentRating.T,
-
-        // Indicates that you want your content treated as child-directed for purposes of COPPA.
-        tagForChildDirectedTreatment: false,
-
-        // Indicates that you want the ad request to be handled in a
-        // manner suitable for users under the age of consent.
-        tagForUnderAgeOfConsent: false,
-      });
-      // Creates the Ad Request
-      const adUnitId = __DEV__
-        ? TestIds.INTERSTITIAL
-        : Platform.OS === 'ios'
-        ? 'ca-app-pub-3956967028189707/8619654687'
-        : 'ca-app-pub-3956967028189707/9741164661';
-
-      const interstitial = InterstitialAd.createForAdRequest(adUnitId, {
-        requestNonPersonalizedAdsOnly:
-          formResult.status === AdsConsentStatus.NON_PERSONALIZED,
-        keywords: ['computer', 'coding', 'programming', 'computer science'],
-      });
-      const eventListener = interstitial.onAdEvent(async (type) => {
-        if (type === AdEventType.LOADED) {
-          interstitial.show();
-          updateAdShownStatus('true');
-        } else if (type === AdEventType.LEFT_APPLICATION) {
-          logEvent('AppClosedFromAd', {
-            screen: 'GuideScreen',
-          });
-        } else if (type === AdEventType.ERROR) {
-          logEvent('AdError', {screen: 'GuideScreen'});
-        }
-      });
-      // Start loading the interstitial straight away
-      interstitial.load();
-    }
-  };
 
   // Checks for an active internet connection
   const checkInternetConnection = async () => {
@@ -155,8 +88,6 @@ const GuideScreen = ({navigation, route}) => {
       });
       relatedGuides.push(relatedGuide);
     }
-    setRelatedGuides(relatedGuides);
-    setGuide(specificGuide);
     const data = await getGuideCompletionStatus(specificGuide);
     let numSectionsCompleted = 0.0;
     for (const section of data) {
@@ -167,15 +98,25 @@ const GuideScreen = ({navigation, route}) => {
     const progressNumber = parseFloat(
       (numSectionsCompleted / data.length).toFixed(2),
     );
-    if (progressNumber === 1.0 && progress !== '') {
-      logEvent('GuideCompleted', {
-        guideID: guideID,
-      });
-    }
+    setRelatedGuides(relatedGuides);
+    setGuide(specificGuide);
     setProgress(progressNumber);
     setCompletionData(data);
     setIsLoading(false);
-    setupAds();
+    if (progressNumber > 0.0 && progress !== '' && progressNumber < 1.0) {
+      // This means the user just navigated back from the guide but has not completed the guide yet.
+      // A review input will pop up
+      const timeReviewRequested = await getTimeReviewRequested();
+      const currDate = new Date().getTime();
+      if (timeReviewRequested === null) {
+        setTimeReviewRequested(currDate);
+      } else if (currDate - timeReviewRequested > 345600000) {
+        InAppReview.RequestInAppReview();
+        setTimeReviewRequested(currDate);
+      }
+    } else if (progressNumber === 1.0 && progress !== '') {
+      setGuideCompletedAlert(true);
+    }
   };
 
   if (isLoading === true) {
@@ -202,35 +143,18 @@ const GuideScreen = ({navigation, route}) => {
             <Icon
               type="font-awesome"
               name="arrow-left"
-              color={colors.blue}
-              size={27}
+              color={colors.white}
+              size={PixelRatio.get() * 9}
             />
           </TouchableOpacity>
         )}
         imageSource={guide.cover}
-        toolbarColor={colors.white}
+        toolbarColor={colors.blue}
         noBorder={true}>
         <FlatList
           showsVerticalScrollIndicator={false}
           ListHeaderComponent={
             <View>
-              {/*
-              <TouchableOpacity
-                style={GuideScreenStyle.backButton}
-                onPress={() => navigation.goBack()}>
-                <Icon
-                  type="font-awesome"
-                  name="arrow-left"
-                  color={colors.blue}
-                  size={27}
-                />
-              </TouchableOpacity>
-              <Image
-                source={guide.cover}
-                resizeMode={'cover'}
-                style={GuideScreenStyle.coverImage}
-              />
-              */}
               <View style={GuideScreenStyle.guideInformation}>
                 <View style={GuideScreenStyle.logoTitle}>
                   <View style={GuideScreenStyle.logoContainer}>
@@ -291,9 +215,10 @@ const GuideScreen = ({navigation, route}) => {
                           sectionID: guide.sections[0].ID,
                         });
                         navigation.push('SectionScreen', {
+                          guide: guide,
+                          completionData: completionData,
                           section: guide.sections[0],
                           completionStatus: completionData[0],
-                          adEEAStatus,
                         });
                       }}
                     />
@@ -331,6 +256,8 @@ const GuideScreen = ({navigation, route}) => {
                             ].ID,
                         });
                         navigation.push('SectionScreen', {
+                          guide: guide,
+                          completionData: completionData,
                           section:
                             guide.sections[
                               completionData.lastIndexOf('true') + 1
@@ -339,7 +266,6 @@ const GuideScreen = ({navigation, route}) => {
                             completionData[
                               completionData.lastIndexOf('true') + 1
                             ],
-                          adEEAStatus,
                         });
                       }}
                     />
@@ -368,9 +294,10 @@ const GuideScreen = ({navigation, route}) => {
                     sectionID: item.ID,
                   });
                   navigation.push('SectionScreen', {
+                    guide: guide,
+                    completionData: completionData,
                     section: item,
                     completionStatus: completionData[index],
-                    adEEAStatus,
                   });
                 }}
               />
@@ -405,9 +332,7 @@ const GuideScreen = ({navigation, route}) => {
                     title={relatedGuides[0].title}
                     image={relatedGuides[0].logo}
                     onPress={() => {
-                      navigation.push('GuideScreen', {
-                        adEEAStatus,
-                        loadAd: false,
+                      navigation.replace('GuideScreen', {
                         guideID: relatedGuides[0].guideID,
                       });
                       logEvent('RelatedGuideClicked', {
@@ -421,9 +346,7 @@ const GuideScreen = ({navigation, route}) => {
                     title={relatedGuides[1].title}
                     image={relatedGuides[1].logo}
                     onPress={() => {
-                      navigation.push('GuideScreen', {
-                        adEEAStatus,
-                        loadAd: false,
+                      navigation.replace('GuideScreen', {
                         guideID: relatedGuides[1].guideID,
                       });
                       logEvent('RelatedGuideClicked', {
@@ -435,6 +358,52 @@ const GuideScreen = ({navigation, route}) => {
                   />
                 </View>
               </View>
+              <AwesomeAlert
+                show={guideCompletedAlert}
+                title={strings.Congratulations}
+                titleStyle={[fontStyles.black, fontStyles.biggerTextStyle]}
+                customView={
+                  <View style={GuideScreenStyle.shareAlert}>
+                    <Text
+                      style={[fontStyles.black, fontStyles.biggerTextStyle, {textAlign: 'center'}]}>
+                      {strings.YouHaveCompletedThe +
+                        guide.title +
+                        strings.Guide}
+                    </Text>
+                    <Image
+                      source={guide.logo}
+                      resizeMode={'contain'}
+                      style={GuideScreenStyle.image}
+                    />
+                    <Text
+                      style={[fontStyles.black, fontStyles.biggerTextStyle, {textAlign: 'center'}]}>
+                      {strings.ShareThisWithYourFriends}
+                    </Text>
+                  </View>
+                }
+                closeOnTouchOutside={true}
+                showCancelButton={true}
+                showConfirmButton={true}
+                cancelText={strings.Done}
+                confirmText={strings.Share}
+                confirmButtonColor={colors.green}
+                cancelButtonColor={colors.blue}
+                onCancelPressed={() => {
+                  setGuideCompletedAlert(false);
+                }}
+                onConfirmPressed={() => {
+                  logEvent('GuideCompletedShared');
+                  Share.open({
+                    title: strings.CheckItOut,
+                    message:
+                      strings.CheckItOut + ' ' + 
+                      strings.IJustCompletedThe +
+                      guide.title +
+                      strings.CourseOnCodingIsUs,
+                    url: 'https://linktr.ee/codingisus',
+                  });
+                }}
+              />
             </View>
           }
         />

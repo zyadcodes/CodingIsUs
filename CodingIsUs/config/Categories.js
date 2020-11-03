@@ -1,4 +1,5 @@
 // This will be the file containing all of thee categories and which guides are associated with them
+import GuideTitles from './GuideTitles';
 
 const Languages = {
   title: 'Languages',
@@ -16,7 +17,7 @@ const Languages = {
     14000,
     16000,
     19000,
-    20000
+    20000,
   ],
 };
 
@@ -48,10 +49,18 @@ const MachineLearning = {
   guideIDs: [15000],
 };
 
+const AllGuides = {
+  title: 'All Guides',
+  iconName: 'window-restore',
+  iconColor: '#80D8FF',
+  guideIDs: GuideTitles.map((eachGuide) => eachGuide.guideID),
+};
+
 export default [
   Languages,
   MobileAppDevelopment,
   Databases,
   WebDevelopment,
   MachineLearning,
+  AllGuides
 ];

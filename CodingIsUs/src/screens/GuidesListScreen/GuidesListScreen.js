@@ -27,7 +27,7 @@ const GuidesListScreen = ({route, navigation}) => {
   const [isLoading, setIsLoading] = useState(true);
   const [guides, setGuides] = useState('');
 
-  // The useEffect method is going to handle any AdMob settings that need to be configured and check for
+  // The useEffect method is going to check for
   // an active internet connection
   useEffect(() => {
     checkInternetConnection();
@@ -50,17 +50,12 @@ const GuidesListScreen = ({route, navigation}) => {
 
   // Helper method for useEffect
   const loadScreenData = async () => {
-    if (!route.params) {
-      setGuides(GuideTitles);
-      setIsLoading(false);
-    } else {
-      const {category} = route.params;
-      const specificGuides = GuideTitles.filter((eachGuide) =>
-        category.guideIDs.includes(eachGuide.guideID),
-      );
-      setGuides(specificGuides);
-      setIsLoading(false);
-    }
+    const {category} = route.params;
+    const specificGuides = GuideTitles.filter((eachGuide) =>
+      category.guideIDs.includes(eachGuide.guideID),
+    );
+    setGuides(specificGuides);
+    setIsLoading(false);
   };
 
   // Handles the loading state of the screen
@@ -85,43 +80,28 @@ const GuidesListScreen = ({route, navigation}) => {
       <FlatList
         showsVerticalScrollIndicator={false}
         ListHeaderComponent={
-          route.params ? (
-            <View>
-              <View style={GuidesListScreenStyle.headerStyleBackButton}>
-                <TouchableOpacity
-                  style={GuidesListScreenStyle.backButton}
-                  onPress={() => navigation.goBack()}>
-                  <Icon
-                    type="font-awesome"
-                    name="arrow-left"
-                    color={colors.white}
-                  />
-                </TouchableOpacity>
-                <Text
-                  style={[
-                    fontStyles.bigTextStyle,
-                    fontStyles.white,
-                    {textAlign: 'center'},
-                  ]}>
-                  {route.params.category.title}
-                </Text>
-                <View />
-              </View>
+          <View>
+            <View style={GuidesListScreenStyle.headerStyleBackButton}>
+              <TouchableOpacity
+                style={GuidesListScreenStyle.backButton}
+                onPress={() => navigation.goBack()}>
+                <Icon
+                  type="font-awesome"
+                  name="arrow-left"
+                  color={colors.white}
+                />
+              </TouchableOpacity>
+              <Text
+                style={[
+                  fontStyles.bigTextStyle,
+                  fontStyles.white,
+                  {textAlign: 'center'},
+                ]}>
+                {route.params.category.title}
+              </Text>
+              <View />
             </View>
-          ) : (
-            <View>
-              <View style={GuidesListScreenStyle.headerStyle}>
-                <Text
-                  style={[
-                    fontStyles.longTitleTextStyle,
-                    fontStyles.white,
-                    {textAlign: 'center'},
-                  ]}>
-                  {strings.AllGuides}
-                </Text>
-              </View>
-            </View>
-          )
+          </View>
         }
         data={guides}
         numColumns={2}
@@ -131,25 +111,14 @@ const GuidesListScreen = ({route, navigation}) => {
             title={item.title}
             image={item.logo}
             onPress={() => {
-              if (route.params) {
-                navigation.push('GuideScreen', {
-                  guideID: item.guideID,
-                });
-                logEvent('GuideClicked', {
-                  guideID: item.guideID,
-                  title: item.title,
-                  category: route.params.category.title,
-                });
-              } else {
-                navigation.push('GuideScreen', {
-                  loadAd: true,
-                  guideID: item.guideID,
-                });
-                logEvent('GuideClicked', {
-                  guideID: item.guideID,
-                  title: item.title,
-                });
-              }
+              navigation.push('GuideScreen', {
+                guideID: item.guideID,
+              });
+              logEvent('GuideClicked', {
+                guideID: item.guideID,
+                title: item.title,
+                category: route.params.category.title,
+              });
             }}
           />
         )}

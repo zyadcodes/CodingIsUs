@@ -1,36 +1,33 @@
 // This component is going to be the one where each section of an individual guide will be displayed
-import React, {useState, useEffect} from 'react';
+import React, {useState, useRef} from 'react';
 import {
   ScrollView,
   Text,
   View,
   TouchableOpacity,
-  ActivityIndicator,
-  Platform,
+  PixelRatio,
+  Animated,
 } from 'react-native';
-import {
-  InterstitialAd,
-  TestIds,
-  AdEventType,
-  AdsConsentStatus,
-} from '@react-native-firebase/admob';
 import fontStyles from '../../../config/fontStyles';
-import BackButton from '../../components/BackButton/BackButton';
 import SectionScreenStyle from './SectionScreenStyle';
 import YoutubePlayer from 'react-native-youtube-iframe';
-import strings from '../../../config/strings';
 import colors from '../../../config/colors';
 import {Icon} from 'react-native-elements';
-import {
-  updateSectionStatus,
-} from '../../../config/StorageFunctions';
 import SoundPlayer from 'react-native-sound-player';
 import {logEvent} from '../../../config/Analytics';
+import {
+  updateSectionStatus,
+  getGuideCompletionStatus,
+} from '../../../config/StorageFunctions';
+import Svg, {Path} from 'react-native-svg';
+import {CountdownCircleTimer} from 'react-native-countdown-circle-timer';
+import strings from '../../../config/strings';
+import messaging from '@react-native-firebase/messaging';
 
 // Declares the functional component
 const SectionScreen = ({route, navigation}) => {
   // Fetches the props passed into this screen
-  const {section, completionStatus, adEEAStatus} = route.params;
+  const {guide, completionData, section, completionStatus} = route.params;
 
   // Sets the state of the screen for the YouTube video, the isLoading for the screen and the ads, and the completion
   // status of the screen
@@ -38,42 +35,10 @@ const SectionScreen = ({route, navigation}) => {
   const [isDone, setIsDone] = useState(
     completionStatus === 'false' ? false : true,
   );
-  const [adLoaded, setAdLoaded] = useState(false);
-  const [ad, setAd] = useState('');
-  const [isLoading, setIsLoading] = useState(true);
+  const [didVideoComplete, setDidVideoComplete] = useState(false);
 
-  useEffect(() => {
-    // Creates the Ad Request
-    const adUnitId = __DEV__
-      ? TestIds.INTERSTITIAL
-      : Platform.OS === 'ios'
-      ? 'ca-app-pub-3956967028189707/8619654687'
-      : 'ca-app-pub-3956967028189707/9741164661';
-
-    const interstitial = InterstitialAd.createForAdRequest(adUnitId, {
-      requestNonPersonalizedAdsOnly:
-        adEEAStatus === AdsConsentStatus.NON_PERSONALIZED,
-      keywords: ['computer', 'coding', 'programming', 'computer science'],
-    });
-    const eventListener = interstitial.onAdEvent((type) => {
-      if (type === AdEventType.LOADED) {
-        setAd(interstitial);
-        setAdLoaded(true);
-      } else if (type === AdEventType.LEFT_APPLICATION) {
-        logEvent('AppClosedFromAd', {
-          screen: 'SectionScreen',
-        });
-      } else if (type === AdEventType.ERROR) {
-        logEvent('AdError', {screen: 'SectionScreen'});
-      }
-    });
-
-    // Start loading the interstitial straight away
-    interstitial.load();
-    setIsLoading(false);
-    // Unsubscribe from events on unmount
-    return () => eventListener();
-  }, []);
+  // The ScrollView reference
+  const scrollRef = useRef();
 
   // This method is going to update the completion status of this section
   const updateStatus = async () => {
@@ -84,6 +49,25 @@ const SectionScreen = ({route, navigation}) => {
       SoundPlayer.playSoundFile('ding', 'mp3');
       setIsDone(true);
       updateSectionStatus(section.ID, 'true');
+
+      if (!completionData.includes('true')) {
+        console.log('Yes');
+        // This means this is the first section that has been started in this guide
+        messaging().subscribeToTopic('GuideStarted');
+        logEvent('GuideStarted', {
+          guideID: guide.guideID,
+        });
+        messaging().subscribeToTopic('GuideStarted');
+      }
+
+      const newCompletionData = await getGuideCompletionStatus(guide);
+      if (!newCompletionData.includes('false')) {
+        // This means this is the last section completed in this guide
+        logEvent('GuideCompleted', {
+          guideID: guide.guideID,
+        });
+        messaging().unsubscribeFromTopic('GuideStarted');
+      }
     } else {
       logEvent('MarkedAsNotDone', {
         sectionID: section.ID,
@@ -93,44 +77,67 @@ const SectionScreen = ({route, navigation}) => {
     }
   };
 
-  if (isLoading === true) {
-    return (
-      <View style={SectionScreenStyle.container}>
-        <View style={SectionScreenStyle.loadingContainer}>
-          <ActivityIndicator size={25} color={colors.blue} animating={true} />
-        </View>
-      </View>
-    );
-  }
+  // This method is going to navigate to the next section
+  const navigateToNextSection = () => {
+    // Navigates to the next section
+    const indexOfNextSection =
+      guide.sections.findIndex((eachSection) => eachSection === section) + 1;
+    if (indexOfNextSection === guide.sections.length) {
+      navigation.replace('ResourcesScreen', {
+        guide,
+      });
+    } else {
+      const nextSection = guide.sections[indexOfNextSection];
+      const completionStatusOfNextSection = completionData[indexOfNextSection];
+      navigation.replace('SectionScreen', {
+        guide: guide,
+        completionData: completionData,
+        section: nextSection,
+        completionStatus: completionStatusOfNextSection,
+      });
+    }
+  };
 
   // Returns the UI of the screen
   return (
     <ScrollView
       style={SectionScreenStyle.container}
+      ref={scrollRef}
       showsHorizontalScrollIndicator={false}
       showsVerticalScrollIndicator={false}>
-      <BackButton onPress={() => navigation.goBack()} />
-      <View style={SectionScreenStyle.titleContainer}>
-        <Text
-          style={[
-            fontStyles.black,
-            fontStyles.bigTitleTextStyle,
-            fontStyles.bold,
-          ]}>
-          {section.name}
-        </Text>
-      </View>
-      <View style={SectionScreenStyle.descriptionText}>
-        <Text
-          style={[
-            fontStyles.black,
-            fontStyles.bigTextStyle,
-            {textAlign: 'center'},
-          ]}>
-          {section.description}
-        </Text>
-      </View>
       <View>
+        <View style={SectionScreenStyle.svgOuterContainer}>
+          <View style={SectionScreenStyle.svgInnerContainer}>
+            <Svg
+              height={'60%'}
+              width={'100%'}
+              viewBox="0 0 1440 320"
+              style={SectionScreenStyle.svgStyle}>
+              <Path
+                fill={colors.blue}
+                d="M0,160L40,154.7C80,149,160,139,240,128C320,117,400,107,480,117.3C560,128,640,160,720,176C800,192,880,192,960,160C1040,128,1120,64,1200,64C1280,64,1360,128,1400,160L1440,192L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"
+              />
+            </Svg>
+          </View>
+        </View>
+        <View style={SectionScreenStyle.headerStyle}>
+          <TouchableOpacity
+            style={SectionScreenStyle.backButton}
+            onPress={() => navigation.goBack()}>
+            <Icon
+              type="font-awesome"
+              name="arrow-left"
+              color={colors.blue}
+              size={PixelRatio.get() * 9}
+            />
+          </TouchableOpacity>
+          <View style={SectionScreenStyle.smallSpacer} />
+          <Text style={[fontStyles.biggerTextStyle, fontStyles.white]}>
+            {section.name}
+          </Text>
+        </View>
+      </View>
+      <View style={SectionScreenStyle.youtubeContainer}>
         <YoutubePlayer
           height={SectionScreenStyle.youtubeContainer.height}
           width={SectionScreenStyle.youtubeContainer.width}
@@ -142,10 +149,10 @@ const SectionScreen = ({route, navigation}) => {
               logEvent('VideoCompleted', {
                 sectionID: section.ID,
               });
-              if (adLoaded === true) {
-                ad.show();
-                setAdLoaded(false);
-              }
+              setIsDone(true);
+              updateSectionStatus(section.ID, 'true');
+              setDidVideoComplete(true);
+              setTimeout(() => scrollRef.current.scrollToEnd(), 100);
             } else if (state === 'playing') {
               setIsPlaying(true);
               logEvent('VideoStarted', {
@@ -155,10 +162,17 @@ const SectionScreen = ({route, navigation}) => {
           }}
         />
       </View>
-      <View style={SectionScreenStyle.markAsDone}>
-        <Text style={[fontStyles.black, fontStyles.longTitleTextStyle]}>
-          {strings.MarkAsDone}
+      <View style={SectionScreenStyle.descriptionText}>
+        <Text
+          style={[
+            fontStyles.black,
+            fontStyles.biggerTextStyle,
+            {textAlign: 'center'},
+          ]}>
+          {section.description}
         </Text>
+      </View>
+      <View style={SectionScreenStyle.markAsDone}>
         <View style={SectionScreenStyle.smallSpacer} />
         <TouchableOpacity
           onPress={() => {
@@ -167,10 +181,79 @@ const SectionScreen = ({route, navigation}) => {
           <Icon
             type={'font-awesome'}
             name={'check-circle'}
-            size={100}
+            size={PixelRatio.get() * 33}
             color={isDone ? colors.green : colors.lightGray}
           />
         </TouchableOpacity>
+      </View>
+      <View style={SectionScreenStyle.nextSection}>
+        {didVideoComplete === true ? (
+          <View style={SectionScreenStyle.countdownSection}>
+            <TouchableOpacity
+              style={SectionScreenStyle.nextButton}
+              onPress={() => {
+                setDidVideoComplete(false);
+              }}>
+              <Icon
+                type="font-awesome"
+                name="times-circle"
+                color={colors.white}
+                size={PixelRatio.get() * 9}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                logEvent('ConsecutiveSection', {
+                  sectionID: section.ID,
+                });
+                navigateToNextSection();
+                setDidVideoComplete(false);
+              }}>
+              <CountdownCircleTimer
+                isPlaying
+                size
+                duration={10}
+                size={PixelRatio.get() * 50}
+                onComplete={() => {
+                  logEvent('ConsecutiveSection', {
+                    sectionID: section.ID,
+                  });
+                  navigateToNextSection();
+                }}
+                colors={[
+                  [colors.blue, 0.4],
+                  [colors.green, 0.4],
+                  [colors.yellow, 0.2],
+                ]}>
+                {({remainingTime, animatedColor}) => (
+                  <Animated.Text
+                    style={[
+                      {color: animatedColor, textAlign: 'center'},
+                      fontStyles.bigTextStyle,
+                    ]}>
+                    {strings.NextSection + '\n' + remainingTime}
+                  </Animated.Text>
+                )}
+              </CountdownCircleTimer>
+            </TouchableOpacity>
+          </View>
+        ) : (
+          <TouchableOpacity
+            style={SectionScreenStyle.nextButton}
+            onPress={() => {
+              logEvent('ConsecutiveSection', {
+                sectionID: section.ID,
+              });
+              navigateToNextSection();
+            }}>
+            <Icon
+              type="font-awesome"
+              name="arrow-right"
+              color={colors.white}
+              size={PixelRatio.get() * 9}
+            />
+          </TouchableOpacity>
+        )}
       </View>
     </ScrollView>
   );

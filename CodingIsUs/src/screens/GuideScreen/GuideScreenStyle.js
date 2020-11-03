@@ -11,7 +11,7 @@ export default StyleSheet.create({
   backButton: {
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: colors.white,
+    backgroundColor: colors.blue,
     height: screenHeight * 0.05,
     width: screenHeight * 0.05,
     borderRadius: screenHeight * 0.025,
@@ -21,7 +21,7 @@ export default StyleSheet.create({
   coverImage: {
     width: screenWidth * 1,
     height: screenHeight * 0.3,
-    flex: 1
+    flex: 1,
   },
   guideInformation: {
     paddingHorizontal: screenWidth * 0.025,
@@ -90,5 +90,10 @@ export default StyleSheet.create({
   },
   bottomSpacer: {
     marginBottom: screenHeight * 0.035,
+  },
+  shareAlert: {
+    alignItems: 'center',
+    justifyContent: 'space-evenly',
+    height: screenHeight * 0.45
   },
 });

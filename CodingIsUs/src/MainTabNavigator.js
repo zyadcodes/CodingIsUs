@@ -3,7 +3,6 @@ import React from 'react';
 import colors from '../config/colors';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import AllCategoriesScreen from './screens/AllCategoriesScreen/AllCategoriesScreen';
-import GuidesListScreen from './screens/GuidesListScreen/GuidesListScreen';
 import SettingsScreen from './screens/SettingsScreen/SettingsScreen';
 import {Icon} from 'react-native-elements';
 
@@ -36,20 +35,6 @@ const MyTabs = () => {
           ),
         }}
         component={AllCategoriesScreen}
-      />
-      <Tab.Screen
-        name="GuidesListScreen"
-        options={{
-          tabBarIcon: ({color, size}) => (
-            <Icon
-              type={'font-awesome'}
-              name={'th'}
-              size={size * 1.5}
-              color={color}
-            />
-          ),
-        }}
-        component={GuidesListScreen}
       />
       <Tab.Screen
         name="SettingsScreen"

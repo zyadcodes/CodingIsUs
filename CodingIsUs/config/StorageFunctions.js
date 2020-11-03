@@ -35,23 +35,24 @@ const getGuideCompletionStatus = async (guide) => {
   return promises;
 };
 
-// This function is going to fetch the ads status in the local storage to show the ads only a limited amount of times
-const getAdShownStatus = async () => {
-  const key = storageVersion + 'AdShown';
-  const result = await AsyncStorage.getItem(key);
-
-  if (result == null) {
-    return 'false';
-  }
-  return result;
+// This function is going to take in a number and store it as the time the user was requested a review. This will
+// be used to show requests for a review
+const setTimeReviewRequested = async (timeMilliseconds) => {
+  const key = storageVersion + 'timeReviewRequested';
+  await AsyncStorage.setItem(key, timeMilliseconds + '');
+  return 0;
 };
 
-// This function is going to update the ads status in the local storage so it shows the ad a limited amount of times
-// Acts a global status
-const updateAdShownStatus = async (status) => {
-  const key = storageVersion + 'AdShown';
-  await AsyncStorage.setItem(key, status);
-  return 0;
+// This function is going to get the time the user was last requested for a review
+const getTimeReviewRequested = async () => {
+  const result = await AsyncStorage.getItem(
+    storageVersion + 'timeReviewRequested',
+  );
+  if (result === null) {
+    return 0;
+  } else {
+    return parseInt(result);
+  }
 };
 
 // Exports the Functions
@@ -59,6 +60,6 @@ export {
   updateSectionStatus,
   getSectionStatus,
   getGuideCompletionStatus,
-  getAdShownStatus,
-  updateAdShownStatus,
+  setTimeReviewRequested,
+  getTimeReviewRequested,
 };

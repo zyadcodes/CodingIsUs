@@ -15,6 +15,9 @@ export default StyleSheet.create({
   mediumSpacer: {
     height: screenHeight * 0.05,
   },
+  smallSpacer: {
+    height: screenHeight * 0.025,
+  },
   loadingContainer: {
     flex: 1,
     justifyContent: 'center',
@@ -33,12 +36,11 @@ export default StyleSheet.create({
     height: screenHeight * 0.3,
   },
   headerStyle: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    flexDirection: 'column',
+    justifyContent: 'center',
     alignSelf: 'center',
-    width: screenWidth * 0.9,
+    marginHorizontal: screenWidth * 0.05,
     marginTop: screenHeight * 0.1,
-    marginBottom: screenHeight * 0.075,
+    marginBottom: screenHeight * 0.05,
   },
 });

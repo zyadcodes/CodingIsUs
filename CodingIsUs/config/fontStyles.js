@@ -17,6 +17,11 @@ export default StyleSheet.create({
     fontSize: RFPercentage(5),
   },
 
+  biggerTextStyle: {
+    fontFamily: font,
+    fontSize: RFPercentage(4),
+  },
+
   // The style for all big text style
   bigTextStyle: {
     fontFamily: font,

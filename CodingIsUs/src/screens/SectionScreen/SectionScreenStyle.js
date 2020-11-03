@@ -15,17 +15,21 @@ export default StyleSheet.create({
   },
   descriptionText: {
     textAlign: 'center',
-    marginBottom: screenHeight * 0.025,
+    marginTop: screenHeight * 0.015,
+    marginBottom: screenHeight * 0.02,
     paddingHorizontal: screenWidth * 0.025,
     alignItems: 'center',
   },
   markAsDone: {
-    marginVertical: screenHeight * 0.025,
+    marginVertical: screenHeight * 0.01,
     alignItems: 'center',
   },
   youtubeContainer: {
-    height: screenHeight * 0.33,
-    width: screenWidth,
+    height: screenHeight * 0.25,
+    width: screenWidth * 0.9,
+    justifyContent: 'center',
+    alignSelf: 'center',
+    zIndex: 1
   },
   smallSpacer: {
     height: screenHeight * 0.0125,
@@ -35,4 +39,55 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  svgStyle: {
+    position: 'absolute',
+    top: screenHeight * 0.25,
+  },
+  svgOuterContainer: {
+    width: screenWidth,
+    position: 'absolute',
+  },
+  svgInnerContainer: {
+    backgroundColor: colors.blue,
+    height: screenHeight * 0.3,
+  },
+  headerStyle: {
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignSelf: 'flex-start',
+    marginHorizontal: screenWidth * 0.05,
+    marginTop: screenHeight * 0.1,
+    marginBottom: screenHeight * 0.05,
+  },
+  backButton: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: colors.white,
+    height: screenHeight * 0.05,
+    width: screenHeight * 0.05,
+    borderRadius: screenHeight * 0.025,
+    marginRight: screenWidth * 0.025,
+    zIndex: 1,
+  },
+  nextButton: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: colors.blue,
+    height: screenHeight * 0.075,
+    width: screenHeight * 0.075,
+    borderRadius: screenHeight * 0.0375,
+    
+  },
+  nextSection: {
+    marginRight: screenWidth * 0.05,
+    marginTop: screenHeight * 0.025,
+    marginBottom: screenHeight * 0.05,
+    alignSelf: 'flex-end',
+  },
+  countdownSection: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: screenWidth * 0.75
+  }
 });
