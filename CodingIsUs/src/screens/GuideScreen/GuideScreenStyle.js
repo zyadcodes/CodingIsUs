@@ -16,6 +16,7 @@ export default StyleSheet.create({
     width: screenHeight * 0.05,
     borderRadius: screenHeight * 0.025,
     marginLeft: screenWidth * 0.05,
+    marginTop: screenHeight * 0.05,
     zIndex: 1,
   },
   coverImage: {

@@ -30,9 +30,10 @@ import {
 } from '../../../config/StorageFunctions';
 import {screenWidth, screenHeight} from '../../../config/dimensions';
 import SectionCard from '../../components/SectionCard/SectionCard';
-import AnimatedHeader from 'react-native-animated-header';
+import AnimatedHeader from '../../components/AnimatedHeader/AnimatedHeader';
 import InAppReview from 'react-native-in-app-review';
 import AwesomeAlert from 'react-native-awesome-alerts';
+import {RFPercentage} from 'react-native-responsive-fontsize';
 
 // Declares the functional component
 const GuideScreen = ({navigation, route}) => {
@@ -108,9 +109,10 @@ const GuideScreen = ({navigation, route}) => {
       // A review input will pop up
       const timeReviewRequested = await getTimeReviewRequested();
       const currDate = new Date().getTime();
-      if (timeReviewRequested === null) {
+      if (timeReviewRequested === 0) {
         setTimeReviewRequested(currDate);
       } else if (currDate - timeReviewRequested > 345600000) {
+        logEvent('ReviewRequested');
         InAppReview.RequestInAppReview();
         setTimeReviewRequested(currDate);
       }
@@ -136,6 +138,8 @@ const GuideScreen = ({navigation, route}) => {
       showsVerticalScrollIndicator={false}>
       <AnimatedHeader
         style={GuideScreenStyle.coverImage}
+        headerMaxHeight={screenHeight * 0.3}
+        icon={guide.logo}
         renderLeft={() => (
           <TouchableOpacity
             style={GuideScreenStyle.backButton}
@@ -144,7 +148,7 @@ const GuideScreen = ({navigation, route}) => {
               type="font-awesome"
               name="arrow-left"
               color={colors.white}
-              size={PixelRatio.get() * 9}
+              size={RFPercentage(3)}
             />
           </TouchableOpacity>
         )}
@@ -215,6 +219,7 @@ const GuideScreen = ({navigation, route}) => {
                           sectionID: guide.sections[0].ID,
                         });
                         navigation.push('SectionScreen', {
+                          numVideo: 1,
                           guide: guide,
                           completionData: completionData,
                           section: guide.sections[0],
@@ -256,6 +261,7 @@ const GuideScreen = ({navigation, route}) => {
                             ].ID,
                         });
                         navigation.push('SectionScreen', {
+                          numVideo: 1,
                           guide: guide,
                           completionData: completionData,
                           section:
@@ -294,6 +300,7 @@ const GuideScreen = ({navigation, route}) => {
                     sectionID: item.ID,
                   });
                   navigation.push('SectionScreen', {
+                    numVideo: 1,
                     guide: guide,
                     completionData: completionData,
                     section: item,
@@ -365,7 +372,11 @@ const GuideScreen = ({navigation, route}) => {
                 customView={
                   <View style={GuideScreenStyle.shareAlert}>
                     <Text
-                      style={[fontStyles.black, fontStyles.biggerTextStyle, {textAlign: 'center'}]}>
+                      style={[
+                        fontStyles.black,
+                        fontStyles.biggerTextStyle,
+                        {textAlign: 'center'},
+                      ]}>
                       {strings.YouHaveCompletedThe +
                         guide.title +
                         strings.Guide}
@@ -376,7 +387,11 @@ const GuideScreen = ({navigation, route}) => {
                       style={GuideScreenStyle.image}
                     />
                     <Text
-                      style={[fontStyles.black, fontStyles.biggerTextStyle, {textAlign: 'center'}]}>
+                      style={[
+                        fontStyles.black,
+                        fontStyles.biggerTextStyle,
+                        {textAlign: 'center'},
+                      ]}>
                       {strings.ShareThisWithYourFriends}
                     </Text>
                   </View>
@@ -396,7 +411,8 @@ const GuideScreen = ({navigation, route}) => {
                   Share.open({
                     title: strings.CheckItOut,
                     message:
-                      strings.CheckItOut + ' ' + 
+                      strings.CheckItOut +
+                      ' ' +
                       strings.IJustCompletedThe +
                       guide.title +
                       strings.CourseOnCodingIsUs,

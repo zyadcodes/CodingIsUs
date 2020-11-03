@@ -1,13 +1,6 @@
 // This component is going to be the one where each section of an individual guide will be displayed
 import React, {useState, useRef} from 'react';
-import {
-  ScrollView,
-  Text,
-  View,
-  TouchableOpacity,
-  PixelRatio,
-  Animated,
-} from 'react-native';
+import {ScrollView, Text, View, TouchableOpacity, Animated} from 'react-native';
 import fontStyles from '../../../config/fontStyles';
 import SectionScreenStyle from './SectionScreenStyle';
 import YoutubePlayer from 'react-native-youtube-iframe';
@@ -23,11 +16,18 @@ import Svg, {Path} from 'react-native-svg';
 import {CountdownCircleTimer} from 'react-native-countdown-circle-timer';
 import strings from '../../../config/strings';
 import messaging from '@react-native-firebase/messaging';
+import {RFPercentage} from 'react-native-responsive-fontsize';
 
 // Declares the functional component
 const SectionScreen = ({route, navigation}) => {
   // Fetches the props passed into this screen
-  const {guide, completionData, section, completionStatus} = route.params;
+  const {
+    guide,
+    completionData,
+    section,
+    completionStatus,
+    numVideo,
+  } = route.params;
 
   // Sets the state of the screen for the YouTube video, the isLoading for the screen and the ads, and the completion
   // status of the screen
@@ -50,8 +50,11 @@ const SectionScreen = ({route, navigation}) => {
       setIsDone(true);
       updateSectionStatus(section.ID, 'true');
 
-      if (!completionData.includes('true')) {
-        console.log('Yes');
+      const newCompletionData = await getGuideCompletionStatus(guide);
+      const numOfCompleted = newCompletionData.filter(
+        (eachElement) => eachElement === 'true',
+      );
+      if (numOfCompleted === 1) {
         // This means this is the first section that has been started in this guide
         messaging().subscribeToTopic('GuideStarted');
         logEvent('GuideStarted', {
@@ -59,8 +62,6 @@ const SectionScreen = ({route, navigation}) => {
         });
         messaging().subscribeToTopic('GuideStarted');
       }
-
-      const newCompletionData = await getGuideCompletionStatus(guide);
       if (!newCompletionData.includes('false')) {
         // This means this is the last section completed in this guide
         logEvent('GuideCompleted', {
@@ -90,6 +91,7 @@ const SectionScreen = ({route, navigation}) => {
       const nextSection = guide.sections[indexOfNextSection];
       const completionStatusOfNextSection = completionData[indexOfNextSection];
       navigation.replace('SectionScreen', {
+        numVideo: numVideo + 1,
         guide: guide,
         completionData: completionData,
         section: nextSection,
@@ -128,7 +130,7 @@ const SectionScreen = ({route, navigation}) => {
               type="font-awesome"
               name="arrow-left"
               color={colors.blue}
-              size={PixelRatio.get() * 9}
+              size={RFPercentage(3)}
             />
           </TouchableOpacity>
           <View style={SectionScreenStyle.smallSpacer} />
@@ -149,6 +151,7 @@ const SectionScreen = ({route, navigation}) => {
               logEvent('VideoCompleted', {
                 sectionID: section.ID,
               });
+              logEvent('VideoCompleted' + numVideo);
               setIsDone(true);
               updateSectionStatus(section.ID, 'true');
               setDidVideoComplete(true);
@@ -158,6 +161,7 @@ const SectionScreen = ({route, navigation}) => {
               logEvent('VideoStarted', {
                 sectionID: section.ID,
               });
+              logEvent('VideoStarted' + numVideo);
             }
           }}
         />
@@ -181,7 +185,7 @@ const SectionScreen = ({route, navigation}) => {
           <Icon
             type={'font-awesome'}
             name={'check-circle'}
-            size={PixelRatio.get() * 33}
+            size={RFPercentage(12)}
             color={isDone ? colors.green : colors.lightGray}
           />
         </TouchableOpacity>
@@ -198,7 +202,7 @@ const SectionScreen = ({route, navigation}) => {
                 type="font-awesome"
                 name="times-circle"
                 color={colors.white}
-                size={PixelRatio.get() * 9}
+                size={RFPercentage(5)}
               />
             </TouchableOpacity>
             <TouchableOpacity
@@ -206,6 +210,7 @@ const SectionScreen = ({route, navigation}) => {
                 logEvent('ConsecutiveSection', {
                   sectionID: section.ID,
                 });
+                logEvent('ConsecutiveSection' + numVideo);
                 navigateToNextSection();
                 setDidVideoComplete(false);
               }}>
@@ -213,11 +218,12 @@ const SectionScreen = ({route, navigation}) => {
                 isPlaying
                 size
                 duration={10}
-                size={PixelRatio.get() * 50}
+                size={RFPercentage(20)}
                 onComplete={() => {
                   logEvent('ConsecutiveSection', {
                     sectionID: section.ID,
                   });
+                  logEvent('ConsecutiveSection' + numVideo);
                   navigateToNextSection();
                 }}
                 colors={[
@@ -250,7 +256,7 @@ const SectionScreen = ({route, navigation}) => {
               type="font-awesome"
               name="arrow-right"
               color={colors.white}
-              size={PixelRatio.get() * 9}
+              size={RFPercentage(4)}
             />
           </TouchableOpacity>
         )}

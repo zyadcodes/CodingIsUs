@@ -95,7 +95,7 @@ const GuidesListScreen = ({route, navigation}) => {
                 style={[
                   fontStyles.bigTextStyle,
                   fontStyles.white,
-                  {textAlign: 'center'},
+                  GuidesListScreenStyle.headerTextStyle
                 ]}>
                 {route.params.category.title}
               </Text>

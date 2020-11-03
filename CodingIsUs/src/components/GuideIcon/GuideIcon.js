@@ -1,9 +1,10 @@
 // This component will be the Icon component for each Guide & will be in the HomeScreen
 import React from 'react';
-import {TouchableOpacity, Image, Text, PixelRatio, View} from 'react-native';
+import {TouchableOpacity, Image, Text, View} from 'react-native';
 import {Icon} from 'react-native-elements';
 import fontStyles from '../../../config/fontStyles';
 import GuideIconStyle from './GuideIconStyle';
+import {RFPercentage} from 'react-native-responsive-fontsize';
 
 // Creates the functional component
 const GuideIcon = (props) => {
@@ -24,7 +25,7 @@ const GuideIcon = (props) => {
       ) : (
         <Icon
           type="font-awesome-5"
-          size={PixelRatio.get() * 17}
+          size={RFPercentage(7)}
           name={iconName}
           color={iconColor}
         />

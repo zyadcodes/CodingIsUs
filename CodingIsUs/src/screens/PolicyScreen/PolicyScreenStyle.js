@@ -22,11 +22,15 @@ export default StyleSheet.create({
   },
   backButton: {
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     height: screenHeight * 0.125,
+    width: screenWidth * 0.2
+  },
+  headerTextStyle: {
+    textAlign: 'center',
+    paddingRight: screenWidth * 0.2,
   },
   textContainer: {
-    
     width: screenWidth * 0.9,
     alignSelf: 'center',
   },

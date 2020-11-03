@@ -24,7 +24,7 @@ const PolicyScreen = ({route, navigation}) => {
           style={[
             fontStyles.bigTextStyle,
             fontStyles.white,
-            {textAlign: 'center'},
+            PolicyScreenStyle.headerTextStyle,
           ]}>
           {title}
         </Text>
