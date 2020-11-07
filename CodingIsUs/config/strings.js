@@ -36,6 +36,15 @@ export default {
   IJustCompletedThe: 'I just completed the ',
   CourseOnCodingIsUs: ' course on Coding is Us!',
   Done: 'Done',
+  Playground: 'Playground',
+  TypeYourCodeBelow: 'Type your code below',
+  Output: 'Output',
+  RunCode: 'Run Code!',
+  C: 'C',
+  CPlusPlus: 'C++',
+  JavaScript: 'JavaScript',
+  Python: 'Python',
+  Java: 'Java',
   AboutUsText:
     'Coding is Us is an organization that is dedicated to creating a community of innovators that are changing the world using technology. Through our mobile app, YouTube channel, and social media, we teach people technology, programming, and much more!',
   PrivacyPolicyText: `

@@ -30,18 +30,6 @@ export default StyleSheet.create({
     textAlign: 'center',
     paddingRight: screenWidth * 0.2,
   },
-  headerStyle: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    paddingTop: screenHeight * 0.05,
-    alignSelf: 'center',
-    width: screenWidth,
-    paddingHorizontal: screenWidth * 0.05,
-    height: screenHeight * 0.21,
-    marginBottom: screenHeight * 0.025,
-    backgroundColor: colors.blue,
-  },
   headerStyleBackButton: {
     flexDirection: 'row',
     justifyContent: 'space-between',
