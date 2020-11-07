@@ -26,17 +26,23 @@ https://ytplaylist-len.herokuapp.com/
 
 */
 
+const YoutubeAPIKey = "AIzaSyAzey3sf4xQP9VHrgPsPdBVWUhjECWfiws";
+
 const fetch = require("node-fetch");
 
 const getVideoObjectByID = async (videoID) => {
   const result = await fetch(
-    "https://noembed.com/embed?url=https://www.youtube.com/watch?v=" + videoID,
+    "https://www.googleapis.com/youtube/v3/videos?part=id%2C+snippet&id=" +
+      videoID +
+      "&key=" +
+      YoutubeAPIKey,
     {
       method: "GET",
     }
   );
   const finalObject = await result.json();
-  return finalObject;
+  const videoInformation = finalObject.items[0].snippet;
+  return videoInformation;
 };
 
 /*
@@ -64,13 +70,16 @@ async function constructGuideSections(videoIDs, startingID) {
   for (let i = 0; i < videoIDs.length; i++) {
     const videoID = videoIDs[i];
     const finalObject = await getVideoObjectByID(videoID);
-    // The next piece of code needs tto be adjusted according to the format of the video titles
+    // The next piece of code needs tto be adjusted according to the format of the video titles and descriptions
     const title = finalObject.title;
-    let name = "";
-    name = title.substring(title.indexOf("-") + 5).trim();
+    const description = finalObject.description.substring(
+      0,
+      finalObject.description.indexOf("\n")
+    );
+    let name = title.substring(0, title.indexOf("-") - 1);
     const section = {
       name,
-      description: "",
+      description: description,
       videoLink: videoID,
       ID: ID,
     };
@@ -79,46 +88,32 @@ async function constructGuideSections(videoIDs, startingID) {
   }
   console.log(sections);
 }
-
 constructGuideSections(
   [
-    "8I539U5lXWY",
-    "Z3ibUPyQY30",
-    "f9G-W8RLuJ4",
-    "JdCyLqmoxOg",
-    "4f1rWL6zccw",
-    "wBz4FCWZXRM",
-    "6J6jGl1i2qg",
-    "3tSPTv27QcY",
-    "3-ne6aqoi8E",
-    "_3khk6o2We4",
-    "yQJqzS8Ns2E",
-    "VkUsiyv54Vc",
-    "YmxfZIaSIW8",
-    "Z9n2XAVVYY8",
-    "Bu5GHmXiP_4",
-    "LZW-w-_IIxs",
-    "pxpJpCIFHYs",
-    "xXuEeChktdQ",
-    "f4pLXGhisuw",
-    "tpsdxtf01po",
-    "I4TD-eCWUWQ",
-    "jKonRZataZw",
-    "hVSrMsUFrYQ",
-    "BmxzCBEQ6OI",
-    "gtEZ7A7Nqzs",
-    "-FlndMkEa40",
-    "UwZnR_x2KAs",
-    "RqpI85wjC7w",
-    "w5VqoHO2-wQ",
-    "YIDLuOEGaK8",
-    "HZyjM9KbTxk",
-    "ObR8UuaPc6Q",
-    "-25cgBtZc94",
-    "W3B042cPdsU",
-    "7myNdQyitXs",
-    "fVCMrrIf2v0",
-    "V5Jp69vHJa4",
+    "iDEcP8Mc-7s",
+    "hG_MgGHAX-Q",
+    "WUARiOGSGKY",
+    "ybz5CfIPYq0",
+    "Ok3fIQstvLw",
+    "7r7ZPmspDew",
+    "RmKcFk2LQjM",
+    "S-8IcHucSNg",
+    "vY4I5VeQbBk",
+    "9KT84VMtmzo",
+    "7oARHEepjJ0",
+    "h1t6ZSIW5L8",
+    "C1hbiIp4qtE",
+    "QHCdeBzdmlA",
+    "XPs-HGzElTg",
+    "1y5mtSGTMqs",
+    "JuRhRhJ2914",
+    "USfmkHbIRyE",
+    "Q78aUox7qKA",
+    "09ETWu6Wf8Y",
+    "hiDosLOPQYA",
+    "89q1XeYYeXY",
+    "49awsu1VJbo",
+    "W19zgasQK-c",
   ],
-  20001
+  23001
 );

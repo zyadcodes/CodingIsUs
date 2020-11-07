@@ -30,23 +30,8 @@ const GuidesListScreen = ({route, navigation}) => {
   // The useEffect method is going to check for
   // an active internet connection
   useEffect(() => {
-    checkInternetConnection();
+    loadScreenData();
   }, []);
-
-  // Checks the internet connection
-  const checkInternetConnection = async () => {
-    const networkState = await NetInfo.fetch();
-    if (networkState.isConnected) {
-      loadScreenData();
-    } else {
-      Alert.alert(strings.Whoops, strings.CodingIsUsRequiresInternet, [
-        {
-          text: strings.TryAgain,
-          onPress: () => checkInternetConnection(),
-        },
-      ]);
-    }
-  };
 
   // Helper method for useEffect
   const loadScreenData = async () => {
@@ -79,6 +64,9 @@ const GuidesListScreen = ({route, navigation}) => {
     <View style={GuidesListScreenStyle.container}>
       <FlatList
         showsVerticalScrollIndicator={false}
+        initialNumToRender={5}
+        maxToRenderPerBatch={5}
+        windowSize={5}
         ListHeaderComponent={
           <View>
             <View style={GuidesListScreenStyle.headerStyleBackButton}>
@@ -95,7 +83,7 @@ const GuidesListScreen = ({route, navigation}) => {
                 style={[
                   fontStyles.bigTextStyle,
                   fontStyles.white,
-                  GuidesListScreenStyle.headerTextStyle
+                  GuidesListScreenStyle.headerTextStyle,
                 ]}>
                 {route.params.category.title}
               </Text>

@@ -3,11 +3,14 @@
 import 'react-native-gesture-handler';
 import React, {useRef, useEffect} from 'react';
 import MainStackNavigator from './src/MainStackNavigator';
+import {Alert} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import firebaseAnalytics from '@react-native-firebase/analytics';
 import messaging from '@react-native-firebase/messaging';
 import codePush from 'react-native-code-push';
 import {logEvent} from './config/Analytics';
+import NetInfo from '@react-native-community/netinfo';
+import strings from './config/strings';
 
 // Declares the functional component
 let App = () => {
@@ -20,11 +23,36 @@ let App = () => {
   useEffect(() => {
     logEvent('AppOpen', {});
     useEffectHelper();
+    // Subscribe
+    const unsubscribe = NetInfo.addEventListener((networkState) => {
+      if (!networkState.isConnected) {
+        Alert.alert(strings.Whoops, strings.CodingIsUsRequiresInternet, [
+          {
+            text: strings.TryAgain,
+            onPress: () => checkInternetConnection(),
+          },
+        ]);
+      }
+    });
+    return () => unsubscribe();
   }, []);
 
   // Helper method for UseEffect
   const useEffectHelper = async () => {
     await messaging().requestPermission();
+  };
+
+  // Checks the internet connection
+  const checkInternetConnection = async () => {
+    const networkState = await NetInfo.fetch();
+    if (!networkState.isConnected) {
+      Alert.alert(strings.Whoops, strings.CodingIsUsRequiresInternet, [
+        {
+          text: strings.TryAgain,
+          onPress: () => checkInternetConnection(),
+        },
+      ]);
+    }
   };
 
   // Renders the UI. Wrapped by React-Navigation container

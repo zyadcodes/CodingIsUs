@@ -32,8 +32,9 @@ const SectionCard = (props) => {
         <Text style={[fontStyles.black, fontStyles.bigTextStyle]}>
           {sectionTitle}
         </Text>
+
         <Text style={[fontStyles.black, fontStyles.subTextStyle]}>
-          {sectionDescription}
+          {sectionDescription.length > 80 ? sectionDescription.substring(0, 80).substring(0, sectionDescription.substring(0, 80).lastIndexOf(' ')) + '...' : sectionDescription}
         </Text>
       </View>
     </TouchableOpacity>

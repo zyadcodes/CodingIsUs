@@ -21,51 +21,15 @@ import Svg, {Path} from 'react-native-svg';
 
 // Declares the functional component
 const AllCategoriesScreen = ({navigation}) => {
-  // Stores the status of the user's ad preference and the loading status of the screen
-  const [isLoading, setIsLoading] = useState(true);
 
-  // The useEffect method is going to check for
-  // an active internet connection
-  useEffect(() => {
-    checkInternetConnection();
-  }, []);
-
-  // Checks the internet connection
-  const checkInternetConnection = async () => {
-    const networkState = await NetInfo.fetch();
-    if (networkState.isConnected) {
-      setIsLoading(false);
-    } else {
-      Alert.alert(strings.Whoops, strings.CodingIsUsRequiresInternet, [
-        {
-          text: strings.TryAgain,
-          onPress: () => checkInternetConnection(),
-        },
-      ]);
-    }
-  };
-
-  // Handles the loading state of the screen
-  if (isLoading === true) {
-    return (
-      <View style={AllCategoriesScreenStyle.container}>
-        <View style={AllCategoriesScreenStyle.loadingContainer}>
-          <Image
-            source={CIULogo}
-            resizeMode={'contain'}
-            style={AllCategoriesScreenStyle.logoStyle}
-          />
-          <View style={AllCategoriesScreenStyle.mediumSpacer} />
-          <ActivityIndicator size={25} color={colors.blue} animating={true} />
-        </View>
-      </View>
-    );
-  }
   return (
     <View style={AllCategoriesScreenStyle.container}>
       <FlatList
         showsVerticalScrollIndicator={false}
         data={Categories}
+        initialNumToRender={4}
+        maxToRenderPerBatch={4}
+        windowSize={4}
         numColumns={2}
         keyExtractor={(item, index) => item.title}
         ListHeaderComponent={

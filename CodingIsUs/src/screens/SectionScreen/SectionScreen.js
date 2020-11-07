@@ -170,7 +170,7 @@ const SectionScreen = ({route, navigation}) => {
         <Text
           style={[
             fontStyles.black,
-            fontStyles.biggerTextStyle,
+            fontStyles.bigTextStyle,
             {textAlign: 'center'},
           ]}>
           {section.description}
