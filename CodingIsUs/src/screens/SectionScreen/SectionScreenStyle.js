@@ -15,7 +15,7 @@ export default StyleSheet.create({
   },
   descriptionText: {
     textAlign: 'center',
-    marginTop: screenHeight * 0.015,
+    marginTop: screenHeight * 0.05,
     marginBottom: screenHeight * 0.02,
     paddingHorizontal: screenWidth * 0.025,
     alignItems: 'center',

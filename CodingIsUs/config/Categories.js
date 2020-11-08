@@ -49,6 +49,13 @@ const MachineLearning = {
   guideIDs: [15000],
 };
 
+const GameDevelopment = {
+  title: 'Game Development',
+  iconName: 'gamepad',
+  iconColor: '#0EBD60',
+  guideIDs: [21000, 22000, 23000, 9000],
+};
+
 const AllGuides = {
   title: 'All Guides',
   iconName: 'window-restore',
@@ -61,6 +68,7 @@ export default [
   MobileAppDevelopment,
   Databases,
   WebDevelopment,
+  GameDevelopment,
   MachineLearning,
-  AllGuides
+  AllGuides,
 ];

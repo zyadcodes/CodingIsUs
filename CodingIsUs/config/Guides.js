@@ -38,6 +38,12 @@ import SwiftLogo from '../assets/images/SwiftLogo.png';
 import SwiftCover from '../assets/images/SwiftCover.png';
 import RubyLogo from '../assets/images/RubyLogo.png';
 import RubyCover from '../assets/images/RubyCover.jpg';
+import UnityLogo from '../assets/images/UnityLogo.png';
+import UnityCover from '../assets/images/UnityCover.jpg';
+import UnrealLogo from '../assets/images/UnrealLogo.png';
+import UnrealCover from '../assets/images/UnrealCover.png';
+import GodotLogo from '../assets/images/GodotLogo.png';
+import GodotCover from '../assets/images/GodotCover.png';
 
 const FirestoreGuide = {
   title: 'Firestore',
@@ -3930,7 +3936,8 @@ const RubyGuide = {
     },
     {
       name: 'Formatting',
-      description: 'Learn how to capitalize, reverse, and perform other string operations in Python',
+      description:
+        'Learn how to capitalize, reverse, and perform other string operations in Python',
       videoLink: '4f1rWL6zccw',
       ID: 20005,
     },
@@ -3966,25 +3973,29 @@ const RubyGuide = {
     },
     {
       name: 'Functions',
-      description: 'Learn how to define and use functions in Ruby to reuse existing code',
+      description:
+        'Learn how to define and use functions in Ruby to reuse existing code',
       videoLink: 'yQJqzS8Ns2E',
       ID: 20011,
     },
     {
       name: '- counter - index - .each do',
-      description: 'Learn about iteration in Ruby and to use different iteration methods',
+      description:
+        'Learn about iteration in Ruby and to use different iteration methods',
       videoLink: 'VkUsiyv54Vc',
       ID: 20012,
     },
     {
       name: 'Functions with Numbers',
-      description: 'Learn how to create more dynamic functions to write powerful programs in Ruby',
+      description:
+        'Learn how to create more dynamic functions to write powerful programs in Ruby',
       videoLink: 'YmxfZIaSIW8',
       ID: 20013,
     },
     {
       name: 'Pythagorean Theorem Calculator',
-      description: 'Write your first program in Ruby to calculate the Pythagorean Theorem',
+      description:
+        'Write your first program in Ruby to calculate the Pythagorean Theorem',
       videoLink: 'Z9n2XAVVYY8',
       ID: 20014,
     },
@@ -3996,19 +4007,22 @@ const RubyGuide = {
     },
     {
       name: 'Find and Replace Program',
-      description: 'Write another program that finds and replaces by indicies within an array',
+      description:
+        'Write another program that finds and replaces by indicies within an array',
       videoLink: 'LZW-w-_IIxs',
       ID: 20016,
     },
     {
       name: 'Multidimensional Arrays',
-      description: 'Learn about more powerful versions of arrays that let you create complex data structures',
+      description:
+        'Learn about more powerful versions of arrays that let you create complex data structures',
       videoLink: 'pxpJpCIFHYs',
       ID: 20017,
     },
     {
       name: 'Find Prime Numbers',
-      description: 'Write a program to find prime numbers using all the concepts in Ruby',
+      description:
+        'Write a program to find prime numbers using all the concepts in Ruby',
       videoLink: 'xXuEeChktdQ',
       ID: 20018,
     },
@@ -4020,7 +4034,8 @@ const RubyGuide = {
     },
     {
       name: 'Spaceship Operator',
-      description: 'Write a program that utilizes complex comparison operators in Ruby',
+      description:
+        'Write a program that utilizes complex comparison operators in Ruby',
       videoLink: 'tpsdxtf01po',
       ID: 20020,
     },
@@ -4032,7 +4047,8 @@ const RubyGuide = {
     },
     {
       name: 'Hashes and Symbols',
-      description: 'Learn more about advanced hashing and using symbols as well',
+      description:
+        'Learn more about advanced hashing and using symbols as well',
       videoLink: 'jKonRZataZw',
       ID: 20022,
     },
@@ -4044,13 +4060,15 @@ const RubyGuide = {
     },
     {
       name: 'CRUD Operations 1',
-      description: 'Learn about create, read, update, and delete operations in CRUD using Ruby',
+      description:
+        'Learn about create, read, update, and delete operations in CRUD using Ruby',
       videoLink: 'BmxzCBEQ6OI',
       ID: 20024,
     },
     {
       name: 'CRUD Operations 2',
-      description: 'Learn about create, read, update, and delete operations in CRUD using Ruby',
+      description:
+        'Learn about create, read, update, and delete operations in CRUD using Ruby',
       videoLink: 'gtEZ7A7Nqzs',
       ID: 20025,
     },
@@ -4062,7 +4080,8 @@ const RubyGuide = {
     },
     {
       name: 'When and Then',
-      description: 'Learn about important keywords to handle asynchronous code in Ruby',
+      description:
+        'Learn about important keywords to handle asynchronous code in Ruby',
       videoLink: 'UwZnR_x2KAs',
       ID: 20027,
     },
@@ -4074,7 +4093,8 @@ const RubyGuide = {
     },
     {
       name: 'Ruby for SketchUp',
-      description: 'Learn about a popular exterior platform known as the SketchUp Ruby Console',
+      description:
+        'Learn about a popular exterior platform known as the SketchUp Ruby Console',
       videoLink: 'w5VqoHO2-wQ',
       ID: 20029,
     },
@@ -4092,7 +4112,8 @@ const RubyGuide = {
     },
     {
       name: 'Yield',
-      description: 'Get a deeper explanation about the concept of Yielding in Ruby',
+      description:
+        'Get a deeper explanation about the concept of Yielding in Ruby',
       videoLink: 'ObR8UuaPc6Q',
       ID: 20032,
     },
@@ -4104,13 +4125,15 @@ const RubyGuide = {
     },
     {
       name: 'Ruby Lambdas Explained',
-      description: 'Learn about Ruby Lambdas and how they are different than Procs in Ruby',
+      description:
+        'Learn about Ruby Lambdas and how they are different than Procs in Ruby',
       videoLink: 'W3B042cPdsU',
       ID: 20034,
     },
     {
       name: 'Ruby Classes',
-      description: 'Get an overview of object oriented programming in Ruby using instance variables, objects, and classes',
+      description:
+        'Get an overview of object oriented programming in Ruby using instance variables, objects, and classes',
       videoLink: '7myNdQyitXs',
       ID: 20035,
     },
@@ -4143,6 +4166,912 @@ const RubyGuide = {
   ],
 };
 
+const UnityGuide = {
+  title: 'Unity',
+  cover: UnityCover,
+  logo: UnityLogo,
+  duration: '14 Hours',
+  description:
+    'Unity is a cross-platform game engine developed by Unity Technologies. As of 2018, the engine had been extended to support more than 25 platforms.',
+  guideID: 21000,
+  relatedGuides: [22000, 23000],
+  sections: [
+    {
+      name: 'Getting Started',
+      description:
+        "Want to make a video game but don't know where to start? This video should help point you in the right direction!",
+      videoLink: 'j48LtUkZRjU',
+      ID: 21001,
+    },
+    {
+      name: 'Basics',
+      description: 'Get started making your first video game!',
+      videoLink: 'IlKaB1etrik',
+      ID: 21002,
+    },
+    {
+      name: 'Programming',
+      description: 'Write your first script to move the player!',
+      videoLink: '9ZEu_I-ido4',
+      ID: 21003,
+    },
+    {
+      name: 'Movement',
+      description: 'In this video we learn to control our player!',
+      videoLink: 'Au8oX5pu5u4',
+      ID: 21004,
+    },
+    {
+      name: 'Camera Follow',
+      description: "Let's make our camera follow our player!",
+      videoLink: 'HVB6UVcb3f8',
+      ID: 21005,
+    },
+    {
+      name: 'Collision',
+      description: "What happens when stuff collides? Let's take a look!",
+      videoLink: 'gAB64vfbrhI',
+      ID: 21006,
+    },
+    {
+      name: 'Gameplay',
+      description:
+        "Alright enough messing around... Let's turn this into a game!",
+      videoLink: 'D4I0I3QJAvc',
+      ID: 21007,
+    },
+    {
+      name: 'Score & UI',
+      description: "Let's create a score counter for our game!",
+      videoLink: 'TAGZxRMloyU',
+      ID: 21008,
+    },
+    {
+      name: 'Game Over',
+      description: 'What happens when we lose?',
+      videoLink: 'VbZ9_C4-Qbo',
+      ID: 21009,
+    },
+    {
+      name: 'Winning Levels',
+      description: "Let's make a way to reach new levels!",
+      videoLink: 'Iv7A8TzreY4',
+      ID: 21010,
+    },
+    {
+      name: 'Finishing Up',
+      description: "Let's wrap things up!",
+      videoLink: 'r5NWZoTSjWs',
+      ID: 21011,
+    },
+    {
+      name: 'Building & Exporting the game',
+      description:
+        'This video explains the entire export process to three different platforms.',
+      videoLink: '7nxKAtxGSn8',
+      ID: 21012,
+    },
+    {
+      name: 'Top 10 Tips 1',
+      description: 'A collection of my favorite Unity quick tips!',
+      videoLink: 'JDVuTBHnGWw',
+      ID: 21013,
+    },
+    {
+      name: 'High Score in Unity',
+      description: "Let's make a high score!",
+      videoLink: 'vZU51tbgMXk',
+      ID: 21014,
+    },
+    {
+      name: 'Top 10 Tips 2',
+      description:
+        'You guys seemed to like the last one so here are 10 more handy Unity tips!',
+      videoLink: 'IHeMmFxvmkY',
+      ID: 21015,
+    },
+    {
+      name: 'Smooth Camera Follow',
+      description: 'In this video we make a smooth camera movement.',
+      videoLink: 'MFQhpwc6cKE',
+      ID: 21016,
+    },
+    {
+      name: 'Good Graphics',
+      description: 'Let’s make Unity look beautiful!',
+      videoLink: 'owZneI02YOU',
+      ID: 21017,
+    },
+    {
+      name: 'Audio',
+      description: 'Learn how to add sound to your game!',
+      videoLink: '6OT43pvUyfY',
+      ID: 21018,
+    },
+    {
+      name: 'Power Ups',
+      description: 'Learn how to make Power Ups in Unity!',
+      videoLink: 'CLSiRf_OrBk',
+      ID: 21019,
+    },
+    {
+      name: 'Lighting',
+      description:
+        'In this video we’ll learn a bunch about lighting and use it to light a simple scene using the Progressive Lightmapper.',
+      videoLink: 'VnG2gOKV9dw',
+      ID: 21020,
+    },
+    {
+      name: 'Tilemaps',
+      description:
+        'Learn how to use the Tilemap tools in Unity to easily create cool 2D levels.',
+      videoLink: 'ryISV_nH8qw',
+      ID: 21021,
+    },
+    {
+      name: 'Particle System',
+      description: 'Everything to know about the Particle System in Unity!',
+      videoLink: 'FEA1wTMJAR0',
+      ID: 21022,
+    },
+    {
+      name: 'Real Time Lighting',
+      description:
+        'In this video we’ll learn how to light up a scene in realtime.',
+      videoLink: 'wwm98VdzD8s',
+      ID: 21023,
+    },
+    {
+      name: 'Camera Shake',
+      description:
+        'Spice up your game by adding Camera Shake using Unity!',
+      videoLink: '9A9yj8KnM8c',
+      ID: 21024,
+    },
+    {
+      name: 'Smooth Game UI',
+      description: 'Make your game run smooth by using Level of Detail!',
+      videoLink: 'ifNyVS2_6f8',
+      ID: 21025,
+    },
+    {
+      name: 'NavMesh',
+      description:
+        'Learn how to create AI pathfinding using the Unity NavMesh components!',
+      videoLink: 'CHV1ymlw-P8',
+      ID: 21026,
+    },
+    {
+      name: 'Sculp, Paint, and Texture',
+      description:
+        'Learn how to easily sculpt, paint, detail and texture your levels for free using Polybrush.',
+      videoLink: 'JWAnQiN9Zkw',
+      ID: 21027,
+    },
+    {
+      name: 'Animated Character',
+      description:
+        'Learn how to link together surfaces and how to add an animated character to our Agent.',
+      videoLink: 'blPglabGueM',
+      ID: 21028,
+    },
+    {
+      name: 'ProGrids',
+      description: 'Check out Skillshare: http://skl.sh/brackeys4',
+      videoLink: 'UtNvtIrJcNc',
+      ID: 21029,
+    },
+    {
+      name: 'Model',
+      description:
+        'Learn how to use ProBuilder to model levels and props inside the Unity editor! ProBuilder has been acquired by Unity and is now completely free.',
+      videoLink: 'PUSOg5YEflM',
+      ID: 21030,
+    },
+    {
+      name: 'Shader Graph',
+      description: 'The time has come... Let\'s explore Unity\'s new Shader Graph!',
+      videoLink: 'Ar9eIn4z6XE',
+      ID: 21031,
+    },
+    {
+      name: 'Hologram',
+      description: 'Let’s create a cool Hologram effect using Shader Graph!',
+      videoLink: 'KGGB5LFEejg',
+      ID: 21032,
+    },
+    {
+      name: 'Unity 3D Game Kit',
+      description:
+        'Learn how you can use the 3D Game Kit to create game levels without writing any code.',
+      videoLink: 'qsU4nM0L_n0',
+      ID: 21033,
+    },
+    {
+      name: '2D Games',
+      description:
+        "Want to make a 2D game but don't know where to start? This video should help point you in the right direction!",
+      videoLink: 'on9nwbZngyw',
+      ID: 21034,
+    },
+    {
+      name: '2D Movement',
+      description: 'Let’s give our player some moves!',
+      videoLink: 'dwcT-Dch0bA',
+      ID: 21035,
+    },
+    {
+      name: 'Prefab Workflows',
+      description: 'The time has finally come... Nested Prefabs are upon us!',
+      videoLink: '6_gAiPPKyUg',
+      ID: 21036,
+    },
+    {
+      name: '2D Cameras',
+      description: 'Let’s put a camera on our character!',
+      videoLink: '2jTY11Am0Ig',
+      ID: 21037,
+    },
+    {
+      name: '2D Shooting',
+      description: "Let's learn how to shoot enemies!",
+      videoLink: 'wkKsl1Mfp5M',
+      ID: 21038,
+    },
+    {
+      name: 'Organic Levels',
+      description: 'How to make organic levels in Unity with Sprite Shape!',
+      videoLink: 'GSo_fU1JdfM',
+      ID: 21039,
+    },
+    {
+      name: 'Animation in 2D',
+      description:
+        'Wanna learn how to make your characters come alive? Then Skeletal Animation is for you!',
+      videoLink: 'eXIuizGzY2A',
+      ID: 21040,
+    },
+    {
+      name: 'Millions of Particles',
+      description:
+        'Make amazing particle effects with the new Visual Effect Graph in Unity!',
+      videoLink: 'FvZNVQuLDjI',
+      ID: 21041,
+    },
+    {
+      name: 'Input Systems',
+      description:
+        'Let’s check out what Unity is working on for the new Input System!',
+      videoLink: 'Pzd8NhcRzVo',
+      ID: 21042,
+    },
+    {
+      name: 'Fire & Smoke 1',
+      description:
+        "Let's learn how to make realistic fire and smoke with VFX Graph!",
+      videoLink: 'R6D1b7zZHHA',
+      ID: 21043,
+    },
+    {
+      name: 'Fire & Smoke 2',
+      description:
+        "Let's learn how to make realistic fire and smoke with VFX Graph!",
+      videoLink: 'R6D1b7zZHHA',
+      ID: 21044,
+    },
+    {
+      name: 'Questing System',
+      description: "Let's go on a tutorial-quest together!",
+      videoLink: 'e7VEe_qW4oE',
+      ID: 21045,
+    },
+    {
+      name: 'HDRP',
+      description: 'Upgrade to HDRP and take your graphics to the next level! ',
+      videoLink: '12gkcdLc77s',
+      ID: 21046,
+    },
+    {
+      name: 'Cartoon Water',
+      description: "Let's make some simple cartoon water!",
+      videoLink: 'Vg0L9aCRWPE',
+      ID: 21047,
+    },
+    {
+      name: 'Snoke',
+      description:
+        "Let's learn how to make a cool Snow Shader in Shader Graph! ",
+      videoLink: 'IC9g5hlfV6o',
+      ID: 21048,
+    },
+    {
+      name: '2D Lights',
+      description:
+        "Let's learn how to make 2D lights using the new 2D Renderer in Unity!",
+      videoLink: 'nkgGyO9VG54',
+      ID: 21049,
+    },
+    {
+      name: 'Controller Input',
+      description:
+        'Let’s set up Gamepad controls using the new Unity Input System!',
+      videoLink: 'p-3S73MaDP8',
+      ID: 21050,
+    },
+    {
+      name: 'Top Down Movement',
+      description:
+        "Let's have a look at the easiest and best way to make top-down movement in Unity!",
+      videoLink: 'whzomFgjT50',
+      ID: 21051,
+    },
+    {
+      name: 'Top Down Shooting',
+      description:
+        "Let's have a look at the easiest and best way to make top down shooting in Unity!",
+      videoLink: 'LNLVOjbrQj4',
+      ID: 21052,
+    },
+    {
+      name: 'First Person Movement',
+      description:
+        "Let's see how to get an FPS Character Controller up and running in no time!",
+      videoLink: '_QajrabyTJc',
+      ID: 21053,
+    },
+    {
+      name: 'RPG Without Code',
+      description:
+        'Create your first RPG without writing any code using Unity RPG Creator Kit!. ',
+      videoLink: 'wnzJ06Y8mdg',
+      ID: 21054,
+    },
+    {
+      name: 'Snaps',
+      description:
+        'Quickly create and prototype 3D levels in Unity using Snaps!',
+      videoLink: 'b4oqOdBCy3c',
+      ID: 21055,
+    },
+    {
+      name: 'FPS Microgame',
+      description:
+        'Get started creating your first FPS using the FPS Microgame.',
+      videoLink: 'jE3ZJ_tCGTo',
+      ID: 21056,
+    },
+    {
+      name: 'Melee Combat',
+      description: 'Learn how to make melee combat in Unity!',
+      videoLink: 'sPiVz1k-fEs',
+      ID: 21057,
+    },
+    {
+      name: 'Fireworks with VFX Graph!',
+      description:
+        "Let's get this year started with some awesome fireworks in Unity!",
+      videoLink: 'iCEHarLRCzI',
+      ID: 21058,
+    },
+    {
+      name: 'Transitions',
+      description:
+        "Transitions in Unity are easy to learn - let's have a look!",
+      videoLink: 'CE9VOZivb3I',
+      ID: 21059,
+    },
+    {
+      name: 'Light Probes',
+      description:
+        "High quality lighting is not performant... Until now! Let's have a look at Light Probes in Unity.",
+      videoLink: '_E0JXOZDTKA',
+      ID: 21060,
+    },
+    {
+      name: 'Dissolve',
+      description: 'Create your own 2D Shaders with Shader Graph!',
+      videoLink: '5dzGj9k8Qy8',
+      ID: 21061,
+    },
+    {
+      name: 'Third Person Movement',
+      description:
+        "Let's learn how to make a solid third person controller with a moving camera!",
+      videoLink: '4HpC--2iowE',
+      ID: 21062,
+    },
+    {
+      name:
+        'Image Effects',
+      description: 'Master every Post Processing effect in Unity!',
+      videoLink: '9tjYz6Ab0oc',
+      ID: 21063,
+    },
+  ],
+  additionalResources: [
+    {
+      title: 'Documentation',
+      link: 'https://docs.unity3d.com/Manual/index.html',
+    },
+    {
+      title: 'Download',
+      link: 'https://unity.com/products?_ga=2.162356348.1718478951.1604785816-110803733.1604785816',
+    },
+  ],
+};
+
+const UnrealGuide = {
+  title: 'Unreal',
+  cover: UnrealCover,
+  logo: UnrealLogo,
+  duration: '9 Hours',
+  description:
+    'Unreal Engine is a complete suite of development tools for anyone working with real-time technology. From design visualizations and cinematic experiences to high-quality games across PC, console, mobile, VR, and AR, Unreal Engine gives you everything you need to start, ship, grow, and stand out from the crowd.',
+  guideID: 22000,
+  relatedGuides: [21000, 23000],
+  sections: [
+    {
+      name: 'Creating an FPS Game',
+      description: "If you've ever wanted to create a first person shooter game but weren't sure where to start, this is the tutorial series for you. You'll learn everything you need to create an FPS from scratch using Unreal Engine 4.",
+      videoLink: 'DywBqQtTHMo',
+      ID: 22001
+    },
+    {
+      name: 'True First Person Camera',
+      description: "In today's episode we take a look at how we can setup the true first person camera by converting the third person camera to first person, giving us a realistic look and feel to our FPS game.",
+      videoLink: '0mgm16ki8zM',
+      ID: 22002
+    },
+    {
+      name: 'Player Health & Armor',
+      description: "In today's video we take a look at how we can setup a player health and armor variable that we can use later on in the series for healing and killing the player.",
+      videoLink: 'UneAoM979uc',
+      ID: 22003
+    },
+    {
+      name: 'Regenerating Armor & Damage Function',
+      description: "In today's video we set up our regenerating armor system and create a basic damaging function for when the player loses health. We go over the maths used to differentiate between when the player should lose health or armor.",
+      videoLink: 'iFu2WXc8lz0',
+      ID: 22004
+    },
+    {
+      name: 'Blood Splash Effect',
+      description: "In today's video we show you how you can create a blood splash/splatter effect for when the player takes damage in our shooter game.",
+      videoLink: 'RL-x6rHGDxs',
+      ID: 22005
+    },
+    {
+      name: 'Setting Up Character Animations',
+      description: 'Today we take a look at how we can import a customer character and set up the animations. We go over step by step how we can begin creating the animation blueprint and animation blendspace to start bringing our character to life.',
+      videoLink: 'RPdPmys9JWY',
+      ID: 22006
+    },
+    {
+      name: 'Finishing The Animation Blueprint',
+      description: "In today's video we check out how we can finish up our animation blueprint, setting up the conditioning and logic to determine the player's speed and direction and then feed it into our animation blendspace.",
+      videoLink: 'ftLBejDtlqc',
+      ID: 22007
+    },
+    {
+      name: 'Adding The A',
+      description: "We take a look at how we can set up a gun for the character, more specifically the AK-47. We show you how to import the weapon into the game and have it spawn inside of the player's hands.",
+      videoLink: 'YCdAX6zhyBs',
+      ID: 22008
+    },
+    {
+      name: 'Firing Our A',
+      description: 'We take a look at how we can setup a projectile for a weapon, showing you how to create the socket and spawn the projectile actor.',
+      videoLink: '-Q2ZEFmnnmw',
+      ID: 22009
+    },
+    {
+      name: 'Crouching With Animations',
+      description: "In today's video we take a look at how we can setup a crouch system for our FPS character, going over how we can create an additional blendspace for crouching and then set up the inputs and transitioning between the normal and crouching state using blueprints.",
+      videoLink: 'U4HnqE_OZ7Y',
+      ID: 22010
+    },
+    {
+      name: 'Sprinting With Animations',
+      description: "In today's video we show you how you can make your FPS character sprint, going over exactly how we can setup a sprint state inside of our blueprint and tell it to play our animations for sprinting.",
+      videoLink: 'aAIbKT-hQF0',
+      ID: 22011
+    },
+    {
+      name: 'Using Control Rotation',
+      description: "Today we take a look at how we can use the player's control rotation to affect the position of the characters weapon. Doing this will make the player's weapon/gun follow the player's camera at all times. Enjoy!",
+      videoLink: 'AAd7g8tvheI',
+      ID: 22012
+    },
+    {
+      name: 'Fully Automatic Rifle',
+      description: 'We take a look at how we can make our weapon fully automatic, creating all of the blueprint required to do so along with variables for fire rate!',
+      videoLink: 'w2I7rPwGOuU',
+      ID: 22013
+    },
+    {
+      name: 'Aiming Down Sights',
+      description: "Today we take a look at how we can setup a basic iron sights system, going over how we can get the engine to switch to a different camera when they're holding down the right mouse button.",
+      videoLink: '5nNGq6fS6vI',
+      ID: 22014
+    },
+    {
+      name: 'Spawning The Muzzle Flash',
+      description: 'Today we take a look at how we can spawn a muzzle flash from the muzzle point in our weapon when firing. We do this by spawning the particle effects at the socket location.',
+      videoLink: 'FIhV9OoHnyc',
+      ID: 22015
+    },
+    {
+      name: 'Fixing Movement States',
+      description: "In today's video we take a look at how we can fix our movement states, making sure the character is unable to both sprint and crouch at the same time.",
+      videoLink: '2_s_cAugBEA',
+      ID: 22016
+    },
+    {
+      name: 'Setting Up Ammo & Reloading ',
+      description: 'We take a look at how we can make our AK47 weapon reload inside of Unreal Engine 4. We go over all of the variables and maths required to setup the reloading system.',
+      videoLink: 'z6ln4oVHq0g',
+      ID: 22017
+    },
+    {
+      name: 'Conservative Ammo Reloading ',
+      description: 'We go over how we can setup a conservative reload system, whereby when the reloads it only replenishes the ammo that the player has used as opposed to the entire magazine.',
+      videoLink: '5e13-2C_r_c',
+      ID: 22018
+    },
+    {
+      name: 'Weapon Reload Animation ',
+      description: 'Today we show you how to make your reload system play an animation when the player is reloading. We go over everything we need to setup the reload state and variables/logic to make it transition.',
+      videoLink: 'PWHu4DPs4j4',
+      ID: 22019
+    },
+    {
+      name: 'Firing System Fix',
+      description: "Today we show you how you can make some changes to our firing system so that it doesn't fire when the player is either sprinting or reloading.",
+      videoLink: 'g_a2sIoh8Oo',
+      ID: 22020
+    },
+    {
+      name: 'Aiming With A Crosshair',
+      description: "During this video we go over how you can add a cross hair target onto the player's screen. We also go over how you can make it invisible when the player is aiming down the sights to give a clear view of the iron sights.",
+      videoLink: 'kc3rx6Izqd8',
+      ID: 22021
+    },
+    {
+      name: 'Dynamic Spread Crosshair',
+      description: "Today we take a look at how you can create a dynamic spread crosshair which will expand based on the player's speed. We also go over how we can change some of the variables within our crosshair widget to set the default thickness & length.",
+      videoLink: '5Dx57AXWyIg',
+      ID: 22022
+    },
+    {
+      name: 'Picking Up Ammo',
+      description: "In today's video we take a look at how we can create a simple ammo pickup for our game, replenishing the player's max ammo when they walk over the item and collect it.",
+      videoLink: 'uUqDVAzbVaQ',
+      ID: 22023
+    },
+    {
+      name: 'Setting Up AI & Bullet Damage',
+      description: "In today's video we take a look at how we can setup a simple character, place it within our scene and make it take damage when it gets hit with our bullet projectile.",
+      videoLink: 'MAvM6ICC42w',
+      ID: 22024
+    },
+    {
+      name: 'Enemy AI Following/Chasing',
+      description: "Today we take a look at how we can get our AI enemy to chase & follow your character. We setup the navigational mesh to control where they can & can't go along with the script to get him to move.",
+      videoLink: '87lkYjAgYoc',
+      ID: 22025
+    },
+    {
+      name: 'Aiming Fixes',
+      description: 'Today we show you how you can fix up our aiming system, ensuring that it does not let you aim whilst sprint or reloading. We also go over how we can make our cross hair disappear when aiming.',
+      videoLink: 'hjQYWgggzKQ',
+      ID: 22026
+    },
+    {
+      name: 'Smarter AI Actions',
+      description: 'Today we work on making your AI smarter, making them react to bullet hits on them, we show you how to make them chase you when you hit them and also how to spawn an impact effect on the hit location! ',
+      videoLink: 'FQiRnhPE_3k',
+      ID: 22027
+    },
+    {
+      name: 'Random AI Roaming Setup',
+      description: 'In this video we take a look at how we can make our AI roam when they cannot see the player. We do this by running a check to see if the AI can see the player, if not it will move them to a random point within the navigable radius.',
+      videoLink: 'tTGe6b0Cf7w',
+      ID: 22028
+    },
+    {
+      name: 'Smooth Gun Movement',
+      description: 'Today we take a look at how we can use layered animations to make our gun movement smoother essentially allowing us to merge the idle animation with our existing walk/run blendspace.',
+      videoLink: 'nIVpVyyNEdQ',
+      ID: 22029
+    },
+    {
+      name: 'Simple Objective System',
+      description: 'In this video we take a look at how we can display a player objective on the screen and then change it using a blueprint actor once the player gets to a specific part of the level. This example can also be used to incorporate into your gameplay code.',
+      videoLink: 'GpJPOfQzbAQ',
+      ID: 22030
+    },
+    {
+      name: 'Setting Up Our HUD',
+      description: "In today's episode we take a look at how we can start to form our heads up display within Unreal Engine 4. We go over importing the graphics from our Photoshop document, bring them into the engine and start displaying them on our screen.",
+      videoLink: 'stYR5eyJw8c',
+      ID: 22031
+    },
+    {
+      name: 'Enemy Killfeed',
+      description: 'Here we take a look at how we can create a kill-feed which will display and popup when a player has killed an enemy. We go over how to setup the blueprint to display it, along with layout out and animating the graphics to make it look good!',
+      videoLink: '3Csk3CAS52U',
+      ID: 22032
+    },
+    {
+      name: 'Creating a Minimap',
+      description: 'Today we take a look at how we can make the minimap for our heads up display inside of Unreal Engine 4. We use a scene capture component to render a real time picture and then place it onto our UI to form our mini-map!',
+      videoLink: '8AhY7CUbzwc',
+      ID: 22033
+    },
+    {
+      name: 'Match Timer',
+      description: "Here we take a look at how we can add a timer onto the player's heads up display (HUD) and get it to count down to when the match or objective goal finishes.",
+      videoLink: 'IW1SyIz76jY',
+      ID: 22034
+    },
+    {
+      name: 'Hit Marker With Animation',
+      description: "Here we take a look at how we can create a hit marker effect that'll popup when the player gets a positive hit on one of the enemies. We cover both the blueprints to make it show on the screen along with animating it to quickly fade in/out.",
+      videoLink: '3qje07RrznM',
+      ID: 22035
+    },
+    {
+      name: 'Starting Weapon Switching (HUD)',
+      description: "Today we take a look at how we can start our weapon switching system, starting by working on the heads up display elements, changing text and icons for the weapon based on a 'equippedweapon' variable.",
+      videoLink: 'C_LBE4wibjQ',
+      ID: 22036
+    },
+    {
+      name: 'M4A1 Weapon Pickup',
+      description: 'We create a simple weapon pickup, we cover how to import the model, setup the material then plug that into a blueprint actor the player can pickup which will allow them to use the M4A1 weapon.',
+      videoLink: '2SIAYU-eS4s',
+      ID: 22037
+    },
+    {
+      name: 'Weapon Pickup Message',
+      description: "We create a simple popup message that displays on the player's screen when they collect the M4A1 item within their game. We cover setting up the animation and the blueprints to make it show up.",
+      videoLink: 'hGA49hRKnSk',
+      ID: 22038
+    },
+    {
+      name: 'M4A1 Weapon Setup',
+      description: 'We continue working on the weapon switching system, setting up the blueprint for our second weapon the M4A1 inside of Unreal Engine 4. We also make adjustments to the skeletal mesh for the second weapon to allow it to work in the same was it does for our AK47',
+      videoLink: 'FU3nLnvKvQk',
+      ID: 22039
+    },
+    {
+      name: 'Changing Weapon Visibility',
+      description: "In today's video we take a look at how we can spawn the second weapon into the player's hand and change the weapons visibility to work with our weapon switching system inside of Unreal Engine 4.",
+      videoLink: '_zTLhntv3e8',
+      ID: 22040
+    },
+    {
+      name: 'Displaying Secondary Ammo',
+      description: "Here we show you how you can make the engine switch the ammo being displayed based on the weapon selected so that when the new M4A1 weapon is selected, the M4A1's ammo is being displayed inside of Unreal Engine 4.",
+      videoLink: 'j19wLdeH7rU',
+      ID: 22041
+    },
+    {
+      name: 'Consuming & Reloading M4A1 Ammo',
+      description: "In today's video we show you can make the engine consume the ammo from the second weapon when it is selected, we also show you how you can adjust your reloading system to work with our second weapon.",
+      videoLink: 'jnUtjBaayqM',
+      ID: 22042
+    },
+    {
+      name: 'Weapon Line Tracing',
+      description: 'Here we take a look at how we can use a line trace based firing system for more accurate results by tracing from the centre of the camera where the cross hair is pointed.',
+      videoLink: '5goK0_BSwMY',
+      ID: 22043
+    },
+    {
+      name: 'Ray Tracing While Aiming Down Sight',
+      description: 'In this video we take a look at how we can make the engine ray trace from the aim down sight camera based on a variable switch for more accurate aiming results.',
+      videoLink: 'pLdnmkdJaWo',
+      ID: 22044
+    },
+    {
+      name: 'Damaging With Line Trace',
+      description: 'Here we show you how we can deal damage to our AI using the newly created line trace based weapon system. We cover how we can convert the current projectile damage code to work with our new line traces.',
+      videoLink: '0i89_9s-gys',
+      ID: 22045
+    },
+    {
+      name: 'Crouch Height Adjustment',
+      description: "In this video we show you how you can get your character's collision size to change when they're crouching so that they're able to fit underneath objects.",
+      videoLink: '5L9M-OC1H4s',
+      ID: 22046
+    },
+    {
+      name: 'Zombie Body Setup',
+      description: 'Welcome back to the FPS series, in this video we set up the body of our zombie enemy for our game. We import the model, animations and setup the animation blueprint to bring it all together.',
+      videoLink: '-4pj8bn4mAw',
+      ID: 22047
+    },
+    {
+      name: 'Zombie Ragdoll Death Physics',
+      description: 'In this video we take a look at how we can set up ragdoll physics for our zombie enemy character so when it dies from a bullet induced death it will drop to the ground using realistic physics actions.',
+      videoLink: '8xG0_nx4rUg',
+      ID: 22048
+    },
+    {
+      name: 'Zombie Attack Animation',
+      description: 'In this video we take a look at how we can setup our zombie to attack our enemy, setup the animation blueprint and all of the logic code to make it happen.',
+      videoLink: 'nW8fOATo5zY',
+      ID: 22049
+    },
+    {
+      name: 'Grenade Spawning',
+      description: 'Here we take a look at how we can get a grenade to spawn into the game with projectile movement when the player presses the G key on their keyboard. This grenade will explode after 1 second and play a sound and particle effect.',
+      videoLink: 'FpM1or_-yp0',
+      ID: 22050
+    },
+    {
+      name: 'Grenade Damage',
+      description: 'Today we take a look at how we can setup damage for our grenade projectile using some simple blueprints.',
+      videoLink: '2ZdtA26leZM',
+      ID: 22051
+    },
+    {
+      name: 'Starting The Game Level',
+      description: 'Today we take a look at starting a unique level for our shooter game, starting off with a little bit of landscape work & aquiring assets from the Unreal Marketplace.',
+      videoLink: 'jmxi20fjQ4E',
+      ID: 22052
+    },
+    {
+      name: 'Decorating our level',
+      description: 'Today we take a look at decorating our level, getting it ready to be used by our players. We cover using the foliage tool to populate it & adjusting the lighting & post processing!',
+      videoLink: 'Mb9jQhseE00',
+      ID: 22053
+    },
+    {
+      name: 'Grenade Count',
+      description: 'Today we show you how to make a smoke grenade based on the system we built earlier for the frag grenades.',
+      videoLink: 'FuFnQo1Q-78',
+      ID: 22054
+    }
+  ],
+  additionalResources: [
+    {
+      title: 'Documentation',
+      link: 'https://docs.unrealengine.com/en-US/index.html',
+    },
+    {
+      title: 'Download',
+      link: 'https://www.unrealengine.com/en-US/get-now',
+    },
+  ],
+};
+
+const GodotGuide = {
+  title: 'Godot',
+  cover: GodotCover,
+  logo: GodotLogo,
+  duration: '9.5 Hours',
+  description:
+    'Godot is a 2D and 3D, cross-platform, free and open-source game engine. It provides a huge set of common tools, so you can just focus on making your game without reinventing the wheel.',
+  guideID: 23000,
+  relatedGuides: [22000, 21000],
+  sections: [
+    {
+      name: 'Introduction',
+      description: "We are going to be covering all aspects of Godot development. 2D, 3D, Physics, Importing, Exporting, C#, VisualScript, Shaders, Networking, VR and much more.",
+      videoLink: 'iDEcP8Mc-7s',
+      ID: 23001
+    },
+    {
+      name: 'Getting Started',
+      description: 'In this part of our ongoing Godot 3 tutorial series, we will install Godot, download and import examples and take a brief tour of the UI',
+      videoLink: 'hG_MgGHAX-Q',
+      ID: 23002
+    },
+    {
+      name: 'Nodes, Scenes and Trees',
+      description: 'In this part of the ongoing Godot 3 tutorial series we delve into the overwhelmingly exciting world of nodes, trees and scenes!',
+      videoLink: 'WUARiOGSGKY',
+      ID: 23003
+    },
+    {
+      name: 'GDScript Programming 101',
+      description: "In this video we cover GDScript 101, a quick primer on learning Godot's built in programming language GDScript. We cover a ton in this video, creating and attaching scripts, the code editor, loops, variables, globals, conditionals and much more. We even briefly look at the built in debugger.",
+      videoLink: 'ybz5CfIPYq0',
+      ID: 23004
+    },
+    {
+      name: '2D Graphics, Sprites and Animation',
+      description: 'In this episode, we finally start getting into some of the fun stuff. First we look at how to use the 2D editor in Godot 3. Then we create a sprite, look at the texture importing process and cover Sprite nodes from a programmatic perspective, showing you how to position, rotate, translate etc. We also talk a bit about the built in viewport option.',
+      videoLink: 'Ok3fIQstvLw',
+      ID: 23005
+    },
+    {
+      name: 'Keyboard, Mouse and Joystick Input',
+      description: 'As the title suggests, in this video we look at Keyboard, Mouse and Joystick/Gamepad handling using the Godot 3 game engine. We look at both polled and event driven input handling as well as creating Input maps.',
+      videoLink: '7r7ZPmspDew',
+      ID: 23006
+    },
+    {
+      name: 'User Interface Development',
+      description: 'Godot has a robust set of widgets, containers and controls that can be used to make flexible user interfaces. This tutorial walks through creating controls like widgets, wiring them up for signals and handled events in code.',
+      videoLink: 'RmKcFk2LQjM',
+      ID: 23007
+    },
+    {
+      name: 'Sound FX and Music',
+      description: 'Today we cover all things audio. Using AudioStreamPlayer, loading audio files WAV and OGG, looping, panning, special effects, audio buses, positional audio and using Areas to toggle special effects on an off!',
+      videoLink: 'S-8IcHucSNg',
+      ID: 23008
+    },
+    {
+      name: '2D Physics',
+      description: 'In this tutorial we look at implementing 2d physics using the Godot 3 game engine. We cover all kinds of subjects from simple collisions with Area2D, to Rigid Body, Kinematic Body and Static body collisions, custom collision polygons, handling collision callbacks and the basics of creating a platformer in physics.',
+      videoLink: 'vY4I5VeQbBk',
+      ID: 23009
+    },
+    {
+      name: 'Tiles & TileMaps',
+      description: 'In this tutorial we are going to look at creating TileSets, then using those TileSets to create TileMaps in the Godot 3 Game Engine. This is part of our ongoing Godot 3 tutorial series and is incredibly useful for creating 2D games such as platformers or top down RPGs. Godot 3 is also capable of creating isometric and custom perspective maps, but that is not covered in this particular tutorial.',
+      videoLink: '9KT84VMtmzo',
+      ID: 23010
+    },
+    {
+      name: 'VR in Godot',
+      description: 'This video shows how to implement VR using the Godot 3 engine and SteamVR.  In my case, the headset used is an MS VR powered HMD by Samsung.',
+      videoLink: '1y5mtSGTMqs',
+      ID: 23016
+    },
+    {
+      name: 'Networking',
+      description: 'This video covers networking in the Godot game engine. First we start of creating a simple UDP socket server and a client. We then illustrate the use of HTTPClient to make a REST web service request.  We then create a simple ENet based client and server in Godot.  Finally we create a simple lobby and networked game using GDScript keywords master, slave, sync and remote.',
+      videoLink: 'JuRhRhJ2914',
+      ID: 23017
+    },
+    {
+      name: 'Keyframed Animation',
+      description: 'This video covers 2D keyframe animation in Godot. In Godot 3.1, the animation system got a massive overhaul, making it easy to create complex animations using keyframes. This video showcases how to use AnimationPlayer, AnimationTreePlayer and the animation system in general to create and blend animations in Godot.',
+      videoLink: 'USfmkHbIRyE',
+      ID: 23018
+    },
+    {
+      name: 'Blender to Godot',
+      description: 'This tutorial walks entirely through the process of creating a full textured, rigged and animated model, creating multiple keyframed named animations in the NLA Editor, then using the Better Collada exporter to make those models available in the Godot game engine.  We then import and animate the final model in Godot.',
+      videoLink: 'Q78aUox7qKA',
+      ID: 23019
+    },
+    {
+      name: 'Intro to 3D Game Development In Godot',
+      description: "We've covered all aspects of game development in Godot 2D, now it's time to continue on into the 3rd dimension! In this tutorial, we introduce the 3D editor in Godot, the key commands and hotkeys you need to know to navigate and edit in 3D.  We show how to create 3D objects, apply textures, create a camera and an environment.",
+      videoLink: '09ETWu6Wf8Y',
+      ID: 23020
+    },
+    {
+      name: 'Visual Shaders',
+      description: 'In this tutorial in the ongoing Godot Tutorial series we are going to look at Visual Shader development. We discuss how to create fragment and vertex shaders in the open source game engine using the visual tools instead of code.',
+      videoLink: 'hiDosLOPQYA',
+      ID: 23021
+    },
+    {
+      name: 'Publishing',
+      description: 'In this tutorial we cover the process of actually publishing your finished Godot game. We look at how you actually generate an exe or APK, HTML5 or whatever that you can then share or publish. We demonstrate how to create a Windows executable and an HTML5 web assembly, but the same process applies to all forms of exporting from Godot.',
+      videoLink: '89q1XeYYeXY',
+      ID: 23022
+    },
+  ],
+  additionalResources: [
+    {
+      title: 'Documentation',
+      link: 'https://docs.godotengine.org/en/stable/index.html',
+    },
+    {
+      title: 'Download',
+      link: 'https://godotengine.org/download',
+    },
+  ],
+};
+
 export default [
   CGuide,
   HTMLGuide,
@@ -4163,4 +5092,7 @@ export default [
   ReactJSGuide,
   ReactNativeGuide,
   RubyGuide,
+  UnityGuide,
+  UnrealGuide,
+  GodotGuide
 ];

@@ -19,6 +19,9 @@ import AndroidStudioLogo from '../assets/images/AndroidStudioLogo.png';
 import FlutterLogo from '../assets/images/FlutterLogo.png';
 import SwiftLogo from '../assets/images/SwiftLogo.png';
 import RubyLogo from '../assets/images/RubyLogo.png';
+import UnityLogo from '../assets/images/UnityLogo.png';
+import UnrealLogo from '../assets/images/UnrealLogo.png';
+import GodotLogo from '../assets/images/GodotLogo.png';
 
 const FirestoreGuide = {
   title: 'Firestore',
@@ -134,6 +137,24 @@ const RubyGuide = {
   guideID: 20000
 }
 
+const UnityGuide = {
+  title: 'Unity',
+  logo: UnityLogo,
+  guideID: 21000
+}
+
+const UnrealGuide = {
+  title: 'Unreal',
+  logo: UnrealLogo,
+  guideID: 22000
+}
+
+const GodotGuide = {
+  title: 'Godot',
+  logo: GodotLogo,
+  guideID: 23000
+}
+
 export default [
   CGuide,
   HTMLGuide,
@@ -153,5 +174,8 @@ export default [
   JavaScriptGuide,
   ReactJSGuide,
   ReactNativeGuide,
-  RubyGuide
+  RubyGuide,
+  UnityGuide,
+  UnrealGuide,
+  GodotGuide
 ];

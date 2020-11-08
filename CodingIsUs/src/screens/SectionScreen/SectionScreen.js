@@ -141,8 +141,8 @@ const SectionScreen = ({route, navigation}) => {
       </View>
       <View style={SectionScreenStyle.youtubeContainer}>
         <YoutubePlayer
-          height={SectionScreenStyle.youtubeContainer.height}
-          width={SectionScreenStyle.youtubeContainer.width}
+          height={SectionScreenStyle.youtubeContainer.height > 270 ? SectionScreenStyle.youtubeContainer.height: 270}
+          width={SectionScreenStyle.youtubeContainer.width > 480 ? SectionScreenStyle.youtubeContainer.width : 480}
           play={isPlaying}
           videoId={section.videoLink}
           onChangeState={(state) => {
@@ -170,7 +170,7 @@ const SectionScreen = ({route, navigation}) => {
         <Text
           style={[
             fontStyles.black,
-            fontStyles.biggerTextStyle,
+            fontStyles.bigTextStyle,
             {textAlign: 'center'},
           ]}>
           {section.description}
@@ -218,7 +218,7 @@ const SectionScreen = ({route, navigation}) => {
                 isPlaying
                 size
                 duration={10}
-                size={RFPercentage(20)}
+                size={RFPercentage(21)}
                 onComplete={() => {
                   logEvent('ConsecutiveSection', {
                     sectionID: section.ID,

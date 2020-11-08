@@ -50,31 +50,12 @@ const GuideScreen = ({navigation, route}) => {
   const [progress, setProgress] = useState('');
   const [guideCompletedAlert, setGuideCompletedAlert] = useState(false);
 
-  // The useEffect method is going to load  that need to be configured and check for
-  // an active internet connection and then retrieve the data for which section has been completed
-  useEffect(() => {
-    checkInternetConnection();
-  }, []);
-
   // Makes sure that the most recent completion data is displayed by setting it every time this screen is navigated to
   useEffect(() => {
     if (isFocused === true) {
       loadScreenData();
     }
   }, [isFocused]);
-
-  // Checks for an active internet connection
-  const checkInternetConnection = async () => {
-    const networkState = await NetInfo.fetch();
-    if (!networkState.isConnected) {
-      Alert.alert(strings.Whoops, strings.CodingIsUsRequiresInternet, [
-        {
-          text: strings.TryAgain,
-          onPress: () => checkInternetConnection(),
-        },
-      ]);
-    }
-  };
 
   // Retrieves which sections in this guide have been marked as completed and which haven't as well as the actual
   // guide and related guides
@@ -157,6 +138,9 @@ const GuideScreen = ({navigation, route}) => {
         noBorder={true}>
         <FlatList
           showsVerticalScrollIndicator={false}
+          initialNumToRender={8}
+          maxToRenderPerBatch={8}
+          windowSize={8}
           ListHeaderComponent={
             <View>
               <View style={GuideScreenStyle.guideInformation}>
