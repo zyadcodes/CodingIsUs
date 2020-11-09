@@ -17,6 +17,7 @@ import {CountdownCircleTimer} from 'react-native-countdown-circle-timer';
 import strings from '../../../config/strings';
 import messaging from '@react-native-firebase/messaging';
 import {RFPercentage} from 'react-native-responsive-fontsize';
+import {screenWidth} from '../../../config/dimensions';
 
 // Declares the functional component
 const SectionScreen = ({route, navigation}) => {
@@ -141,8 +142,16 @@ const SectionScreen = ({route, navigation}) => {
       </View>
       <View style={SectionScreenStyle.youtubeContainer}>
         <YoutubePlayer
-          height={SectionScreenStyle.youtubeContainer.height > 270 ? SectionScreenStyle.youtubeContainer.height: 270}
-          width={SectionScreenStyle.youtubeContainer.width > 480 ? SectionScreenStyle.youtubeContainer.width : 480}
+          height={
+            SectionScreenStyle.youtubeContainer.height > 220
+              ? SectionScreenStyle.youtubeContainer.height
+              : 220
+          }
+          width={
+            SectionScreenStyle.youtubeContainer.width > 380
+              ? SectionScreenStyle.youtubeContainer.width
+              : 380
+          }
           play={isPlaying}
           videoId={section.videoLink}
           onChangeState={(state) => {

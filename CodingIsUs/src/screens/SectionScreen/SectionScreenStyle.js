@@ -15,7 +15,7 @@ export default StyleSheet.create({
   },
   descriptionText: {
     textAlign: 'center',
-    marginTop: screenHeight * 0.05,
+    marginTop: screenHeight * 0.075,
     marginBottom: screenHeight * 0.02,
     paddingHorizontal: screenWidth * 0.025,
     alignItems: 'center',
@@ -29,6 +29,7 @@ export default StyleSheet.create({
     width: screenWidth * 0.9,
     justifyContent: 'center',
     alignSelf: 'center',
+    alignItems: 'center',
     zIndex: 1
   },
   smallSpacer: {
