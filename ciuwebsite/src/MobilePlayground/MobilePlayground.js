@@ -1,8 +1,40 @@
 // This is going to be the screen in the mobile app which will contain the coding playground. It will utilize React Native
 // web in order to contain all of the code that is used in the app
 import React, { useState } from "react";
-import { View, Text } from "react-native-web";
+import {
+  View,
+  Text,
+  Dimensions,
+  TextInput,
+  TouchableOpacity,
+} from "react-native-web";
 import MobilePlaygroundStyle from "./MobilePlaygroundStyle";
+import strings from "../config/strings";
+import fontStyles from "../config/fontStyles";
+import Dropdown from "react-dropdown";
+import "react-dropdown/style.css";
+import "./MobilePlaygroundStyle.css";
+import AceEditor from "react-ace";
+import "ace-builds/src-noconflict/mode-java";
+import "ace-builds/src-noconflict/mode-csharp";
+import "ace-builds/src-noconflict/mode-c_cpp";
+import "ace-builds/src-noconflict/mode-javascript";
+import "ace-builds/src-noconflict/mode-python";
+import "ace-builds/src-noconflict/theme-github";
+import firebase from "firebase";
+import "firebase/functions";
+
+// Initializes firebase
+firebase.initializeApp({
+  apiKey: "AIzaSyAuPVR7ZPOMddAQX2_asx0VsOLpTlfF4NU",
+  authDomain: "coding-is-us.firebaseapp.com",
+  databaseURL: "https://coding-is-us.firebaseio.com",
+  projectId: "coding-is-us",
+  storageBucket: "coding-is-us.appspot.com",
+  messagingSenderId: "234463436871",
+  appId: "1:234463436871:web:4cdebed85b0ecc0d2d1162",
+  measurementId: "G-YD5RKZX6KZ",
+});
 
 // Creates the functional component
 const MobilePlayground = () => {
@@ -10,20 +42,95 @@ const MobilePlayground = () => {
   const [isCompiling, setIsCompiling] = useState(false);
   const [languageSelected, setLanguageSelected] = useState("java");
   const [code, setCode] = useState("");
+  const [output, setOutput] = useState("");
+
+  // The screen dimensions
+  const screenHeight = Dimensions.get("window").height;
+  const screenWidth = Dimensions.get("window").width;
 
   // Returns the UI of the screen
   return (
     <View style={MobilePlaygroundStyle.container}>
-      <Text>Hello</Text>
+      <View style={MobilePlaygroundStyle.headerStyle}>
+        <Text style={{ ...fontStyles.longTitleTextStyle, ...fontStyles.white }}>
+          {strings.Playground}
+        </Text>
+      </View>
+      <View style={MobilePlaygroundStyle.dropdownContainer}>
+        <Dropdown
+          controlClassName={"controlClassName"}
+          menuClassName={"controlClassName"}
+          options={[
+            { value: "java", label: "Java" },
+            { value: "c", label: "C" },
+            { value: "csharp", label: "C#" },
+            { value: "cpp", label: "C++" },
+            { value: "js", label: "JavaScript" },
+            { value: "python", label: "Python" },
+          ]}
+          onChange={(value) => setLanguageSelected(value.value)}
+          value={languageSelected}
+        />
+      </View>
+      <View style={MobilePlaygroundStyle.typeCodeBelowTextContainer}>
+        <Text style={{ ...fontStyles.bigTextStyle, ...fontStyles.black }}>
+          {strings.TypeYourCodeBelow}
+        </Text>
+      </View>
+      <View style={MobilePlaygroundStyle.codeEditorContainer}>
+        <AceEditor
+          className={"editorStyle"}
+          width={screenWidth}
+          height={screenHeight * 0.2}
+          mode={
+            languageSelected === "java"
+              ? "java"
+              : languageSelected === "c"
+              ? "c_cpp"
+              : languageSelected === "csharp"
+              ? "csharp"
+              : languageSelected === "cpp"
+              ? "c_cpp"
+              : languageSelected === "js"
+              ? "javascript"
+              : "python"
+          }
+          value={code}
+          theme="monokai"
+          onChange={(newCode) => setCode(newCode)}
+        />
+      </View>
+      <View style={MobilePlaygroundStyle.typeCodeBelowTextContainer}>
+        <Text style={{ ...fontStyles.bigTextStyle, ...fontStyles.black }}>
+          {strings.Output}
+        </Text>
+      </View>
+      <TextInput
+        multiline={true}
+        value={output}
+        editable={true}
+        style={MobilePlaygroundStyle.outputStyle}
+      />
+      <TouchableOpacity
+        disabled={isCompiling}
+        style={MobilePlaygroundStyle.runCodeButton}
+        onPress={async () => {
+          setIsCompiling(true);
+          setOutput(strings.Compiling);
+          const compiledOutput = (await firebase
+            .functions()
+            .httpsCallable("runCode")({ code, language: languageSelected })).data;
+          setOutput(compiledOutput);
+          setIsCompiling(false);
+        }}
+      >
+        <Text style={{ ...fontStyles.mainTextStyle, ...fontStyles.white }}>
+          {strings.RunCode}
+        </Text>
+      </TouchableOpacity>
     </View>
   );
 };
-
-/* 
- <div>
-      <AceEditor mode="python" value={code} theme="monokai" />
-    </div>
-    */
 
 // Exports the playground
 export default MobilePlayground;

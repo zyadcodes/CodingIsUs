@@ -1,0 +1,8 @@
+/* This is the CSS StyleSheet for the MobilePlayground */
+.controlClassName {
+    width: 20%;
+    border-color: #2EB2FF;
+}
+.editorStyle {
+    width: '100vw';
+}

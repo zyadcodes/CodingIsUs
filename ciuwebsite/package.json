@@ -8,12 +8,18 @@
     "@testing-library/user-event": "^12.2.0",
     "brace": "^0.11.1",
     "compile-run": "^2.3.4",
+    "firebase": "^8.0.1",
+    "fs": "0.0.1-security",
+    "got": "^11.8.0",
+    "node-fetch": "^2.6.1",
     "react": "^17.0.1",
     "react-ace": "^9.2.0",
     "react-dom": "^17.0.1",
+    "react-dropdown": "^1.9.0",
     "react-native-web": "^0.14.7",
     "react-scripts": "4.0.0",
-    "web-vitals": "^0.2.4"
+    "web-vitals": "^0.2.4",
+    "webfont": "^9.0.0"
   },
   "scripts": {
     "start": "react-scripts start",

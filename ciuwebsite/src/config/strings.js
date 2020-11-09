@@ -9,4 +9,5 @@ export default {
   JavaScript: "JavaScript",
   Python: "Python",
   Java: "Java",
+  Compiling: "Compiling...",
 };

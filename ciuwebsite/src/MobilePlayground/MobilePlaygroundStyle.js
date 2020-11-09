@@ -11,4 +11,55 @@ export default StyleSheet.create({
     height: screenHeight,
     backgroundColor: colors.lightBlue,
   },
+  headerStyle: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingTop: screenHeight * 0.05,
+    alignSelf: "center",
+    width: screenWidth,
+    paddingHorizontal: screenWidth * 0.05,
+    height: screenHeight * 0.21,
+    backgroundColor: colors.blue,
+  },
+  dropdownContainer: {
+    marginTop: screenHeight * 0.025,
+    marginLeft: screenWidth * 0.05,
+    zIndex: 1,
+  },
+  typeCodeBelowTextContainer: {
+    zIndex: 0,
+    marginTop: screenHeight * 0.015,
+    marginLeft: screenWidth * 0.05,
+  },
+  codeEditorContainer: {
+    zIndex: 0,
+    marginTop: screenHeight * 0.015,
+  },
+  outputStyle: {
+    outline: 'none',
+    paddingVertical: screenHeight * 0.015,
+    paddingHorizontal: screenWidth * 0.025,
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    borderTopWidth: 1,
+    borderTopColor: colors.lightGray,
+    borderBottomWidth: 1,
+    borderBottomColor: colors.lightGray,
+    marginTop: screenHeight * 0.01,
+    width: screenWidth,
+    height: screenHeight * 0.2,
+    backgroundColor: colors.white
+  },
+  runCodeButton: {
+    width: screenWidth * 0.15,
+    borderRadius: screenHeight * 0.05,
+    height: screenHeight * 0.1,
+    backgroundColor: colors.blue,
+    alignItems: 'center',
+    justifyContent: 'center',
+    alignSelf: 'flex-end',
+    marginTop: screenHeight * 0.02,
+    marginRight: screenWidth * 0.025
+  }
 });
