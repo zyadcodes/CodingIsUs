@@ -1,21 +1,16 @@
 // This screen will present a layout of all of the categories that are currently presented in the app
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {
   View,
   Text,
   FlatList,
-  Image,
-  ActivityIndicator,
-  Alert,
 } from 'react-native';
 import AllCategoriesScreenStyle from './AllCategoriesScreenStyle';
 import strings from '../../../config/strings';
 import fontStyles from '../../../config/fontStyles';
 import colors from '../../../config/colors';
 import GuideIcon from '../../components/GuideIcon/GuideIcon';
-import CIULogo from '../../../assets/images/CIULogo.png';
 import Categories from '../../../config/Categories';
-import NetInfo from '@react-native-community/netinfo';
 import {logEvent} from '../../../config/Analytics';
 import Svg, {Path} from 'react-native-svg';
 

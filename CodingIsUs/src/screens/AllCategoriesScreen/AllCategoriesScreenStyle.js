@@ -38,8 +38,9 @@ export default StyleSheet.create({
   headerStyle: {
     flexDirection: 'column',
     justifyContent: 'center',
-    alignSelf: 'center',
-    marginHorizontal: screenWidth * 0.025,
+    alignSelf: 'flex-start',
+    marginLeft: screenWidth * 0.05,
+    marginRight: screenWidth * 0.025,
     marginTop: screenHeight * 0.1,
     marginBottom: screenHeight * 0.05,
   },
