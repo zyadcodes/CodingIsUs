@@ -23,6 +23,7 @@ import "ace-builds/src-noconflict/mode-python";
 import "ace-builds/src-noconflict/theme-github";
 import firebase from "firebase";
 import "firebase/functions";
+import CompilerLanguages from "../config/CompilerLanguages";
 
 // Initializes firebase
 firebase.initializeApp({
@@ -40,8 +41,13 @@ firebase.initializeApp({
 const MobilePlayground = () => {
   // The state of the code being entered and the language selected. Also the loading state
   const [isCompiling, setIsCompiling] = useState(false);
-  const [languageSelected, setLanguageSelected] = useState("java");
-  const [code, setCode] = useState("");
+  const [languageSelected, setLanguageSelected] = useState(
+    CompilerLanguages[0]
+  );
+  const [languageSelectedDropdown, setLanguageSelectedDropdown] = useState(
+    CompilerLanguages[0]
+  );
+  const [code, setCode] = useState(CompilerLanguages[0].template);
   const [output, setOutput] = useState("");
 
   // The screen dimensions
@@ -60,20 +66,22 @@ const MobilePlayground = () => {
         <Dropdown
           controlClassName={"controlClassName"}
           menuClassName={"controlClassName"}
-          options={[
-            { value: "java", label: "Java" },
-            { value: "c", label: "C" },
-            { value: "csharp", label: "C#" },
-            { value: "cpp", label: "C++" },
-            { value: "js", label: "JavaScript" },
-            { value: "python", label: "Python" },
-          ]}
-          onChange={(value) => setLanguageSelected(value.value)}
-          value={languageSelected}
+          options={CompilerLanguages}
+          onChange={(value) => {
+            const newLanguageSelected = CompilerLanguages.find(
+              (eachLangauage) => {
+                return eachLangauage.value === value.value;
+              }
+            );
+            setLanguageSelected(newLanguageSelected);
+            setCode(newLanguageSelected.template);
+            setLanguageSelectedDropdown(value.value);
+          }}
+          value={languageSelectedDropdown}
         />
       </View>
       <View style={MobilePlaygroundStyle.typeCodeBelowTextContainer}>
-        <Text style={{ ...fontStyles.bigTextStyle, ...fontStyles.black }}>
+        <Text style={{ ...fontStyles.biggerTextStyle, ...fontStyles.black }}>
           {strings.TypeYourCodeBelow}
         </Text>
       </View>
@@ -81,27 +89,16 @@ const MobilePlayground = () => {
         <AceEditor
           className={"editorStyle"}
           width={screenWidth}
-          height={screenHeight * 0.2}
-          mode={
-            languageSelected === "java"
-              ? "java"
-              : languageSelected === "c"
-              ? "c_cpp"
-              : languageSelected === "csharp"
-              ? "csharp"
-              : languageSelected === "cpp"
-              ? "c_cpp"
-              : languageSelected === "js"
-              ? "javascript"
-              : "python"
-          }
+          fontSize={'3.25vw'}
+          height={'20vh'}
+          mode={languageSelected.editorMode}
           value={code}
           theme="monokai"
           onChange={(newCode) => setCode(newCode)}
         />
       </View>
       <View style={MobilePlaygroundStyle.typeCodeBelowTextContainer}>
-        <Text style={{ ...fontStyles.bigTextStyle, ...fontStyles.black }}>
+        <Text style={{ ...fontStyles.biggerTextStyle, ...fontStyles.black }}>
           {strings.Output}
         </Text>
       </View>
@@ -117,14 +114,18 @@ const MobilePlayground = () => {
         onPress={async () => {
           setIsCompiling(true);
           setOutput(strings.Compiling);
-          const compiledOutput = (await firebase
-            .functions()
-            .httpsCallable("runCode")({ code, language: languageSelected })).data;
+          const compiledOutput = (
+            await firebase.functions().httpsCallable("runCode")({
+              code,
+              languageID: languageSelected.compilerID,
+            })
+          ).data;
+          console.log(compiledOutput);
           setOutput(compiledOutput);
           setIsCompiling(false);
         }}
       >
-        <Text style={{ ...fontStyles.mainTextStyle, ...fontStyles.white }}>
+        <Text style={{ ...fontStyles.biggerTextStyle, ...fontStyles.white }}>
           {strings.RunCode}
         </Text>
       </TouchableOpacity>

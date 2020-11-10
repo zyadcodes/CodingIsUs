@@ -8,17 +8,6 @@ const got = require("got");
 const accessToken = "8ca5858d335f9887bfda937a1517cbae";
 const endpoint = "c8f4cd08.compilers.sphere-engine.com";
 
-// The following is an objecct that connects each language to be compiled in the cloud and its corresponding
-// ID in the Sphere engine
-const languages = {
-  java: 10,
-  c: 11,
-  csharp: 27,
-  cpp: 44,
-  js: 56,
-  python: 116,
-};
-
 /* The following are miscellaneous functions that can be used throughout the rest of the file */
 
 // This function will halt the program for the amount of milliseconds specified
@@ -33,19 +22,19 @@ const sleep = (ms) => {
 // This CLOUD FUNCTION is going to run code in the cloud and return the result as a string. It will
 // take in a language to run the code in, and then the source code itself, as parameters.
 exports.runCode = functions.https.onCall(async (input, context) => {
-  const { code, language } = input;
-  const output = await postSubmission(code, language);
+  const { code, languageID } = input;
+  const output = await postSubmission(code, languageID);
   return output;
 });
 
 // This function will handle the posting of the submission to the Sphere Engine API to compile
-const postSubmission = async (code, language) => {
+const postSubmission = async (code, languageID) => {
   const submission = await fetch(
     "https://" + endpoint + "/api/v4/submissions?access_token=" + accessToken,
     {
       method: "POST",
       body: JSON.stringify({
-        compilerId: languages[language],
+        compilerId: languageID,
         source: code,
       }),
       headers: { "Content-Type": "application/json" },
@@ -82,8 +71,12 @@ const getSubmission = async (submissionID) => {
       const uri = finalResult.result.streams.output.uri;
       const response = await got(uri);
       return response.body;
-    } else {
+    } else if (finalResult.result.streams.cmpinfo) {
       const uri = finalResult.result.streams.cmpinfo.uri;
+      const response = await got(uri);
+      return response.body;
+    } else {
+      const uri = finalResult.result.streams.error.uri;
       const response = await got(uri);
       return response.body;
     }

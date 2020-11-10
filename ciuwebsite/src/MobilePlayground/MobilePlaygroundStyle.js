@@ -48,18 +48,18 @@ export default StyleSheet.create({
     borderBottomColor: colors.lightGray,
     marginTop: screenHeight * 0.01,
     width: screenWidth,
-    height: screenHeight * 0.2,
+    height: screenHeight * 0.1,
     backgroundColor: colors.white
   },
   runCodeButton: {
-    width: screenWidth * 0.15,
+    width: screenWidth * 0.45,
     borderRadius: screenHeight * 0.05,
-    height: screenHeight * 0.1,
+    height: screenHeight * 0.085,
     backgroundColor: colors.blue,
     alignItems: 'center',
     justifyContent: 'center',
     alignSelf: 'flex-end',
     marginTop: screenHeight * 0.02,
-    marginRight: screenWidth * 0.025
+    marginRight: screenWidth * 0.05
   }
 });

@@ -1,78 +1,35 @@
 // This is the screen that represents the Playground in the app where the users will be able to run basic code and
 // practice what they've learned in the rest of the app
 import React, {useState} from 'react';
-import PlaygroundScreenStyle from './PlaygroundScreenStyle';
-import {View, Text, TextInput, TouchableOpacity} from 'react-native';
-import strings from '../../../config/strings';
-import fontStyles from '../../../config/fontStyles';
-import DropDownPicker from 'react-native-dropdown-picker';
 import {WebView} from 'react-native-webview';
-import {screenHeight, screenWidth} from '../../../config/dimensions';
+import {View, ActivityIndicator} from 'react-native';
+import PlaygroundScreenStyle from './PlaygroundScreenStyle';
+import colors from '../../../config/colors';
 
 // Creates the functional component
 const PlaygroundScreen = ({route, navigation}) => {
-  // The state of the screen
-  const [language, setLanguage] = useState('c');
+  const [isLoading, setIsLoading] = useState(true);
 
   return (
-    <WebView
-      source={{uri: 'https://codingisus.com'}}
-      style={{
-        height: screenHeight * 1,
-        width: screenWidth * 1,
-        marginTop: screenHeight * 0.1
-      }}
-    />
-  );
-
-  // Renders the UI of the screen
-  return (
-    <View>
-      <View style={PlaygroundScreenStyle.headerStyle}>
-        <Text style={[fontStyles.longTitleTextStyle, fontStyles.white]}>
-          {strings.Playground}
-        </Text>
-      </View>
-      <View style={PlaygroundScreenStyle.dropDownContainerView}>
-        <DropDownPicker
-          items={[
-            {
-              label: 'C',
-              value: 'c',
-            },
-            {
-              label: 'C++',
-              value: 'cpp',
-            },
-            {
-              label: 'JavaScript',
-              value: 'js',
-            },
-            {
-              label: 'Python',
-              value: 'python',
-            },
-            {
-              label: 'Java',
-              value: 'java',
-            },
-          ]}
-          defaultValue={language}
-          containerStyle={PlaygroundScreenStyle.dropDownStyle}
-          style={PlaygroundScreenStyle.dropDownContainerStyle}
-          dropDownStyle={PlaygroundScreenStyle.dropdownDropdownStyle}
-          itemStyle={PlaygroundScreenStyle.dropdownItemStyle}
-          labelStyle={[fontStyles.mainTextStyle, fontStyles.black]}
-          onChangeItem={(item) => setLanguage(item.value)}
-        />
-      </View>
-      <View style={PlaygroundScreenStyle.codeContainer}>
-        <View style={PlaygroundScreenStyle.typeYourCode}>
-          <Text style={[fontStyles.bigTextStyle, fontStyles.black]}>
-            {strings.TypeYourCodeBelow}
-          </Text>
+    <View style={PlaygroundScreenStyle.webviewContainer}>
+      {isLoading === true ? (
+        <View style={PlaygroundScreenStyle.container}>
+          <View style={PlaygroundScreenStyle.loadingContainer}>
+            <ActivityIndicator size={25} color={colors.blue} animating={true} />
+          </View>
         </View>
-        <View></View>
+      ) : (
+        <View style={{height: 0, width: 0}} />
+      )}
+      <View style={PlaygroundScreenStyle.webviewContainer}>
+        <WebView
+          source={{uri: 'https://coding-is-us.firebaseapp.com/'}}
+          incognito={true}
+          onLoadEnd={() => {
+            setIsLoading(false);
+          }}
+          style={PlaygroundScreenStyle.webviewContainer}
+        />
       </View>
     </View>
   );
