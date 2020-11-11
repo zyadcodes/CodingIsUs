@@ -22,14 +22,16 @@ const PlaygroundScreen = ({route, navigation}) => {
         <View style={{height: 0, width: 0}} />
       )}
       <View style={PlaygroundScreenStyle.webviewContainer}>
-        <WebView
-          source={{uri: 'https://coding-is-us.firebaseapp.com/'}}
-          incognito={true}
-          onLoadEnd={() => {
-            setIsLoading(false);
-          }}
-          style={PlaygroundScreenStyle.webviewContainer}
-        />
+        <View style={{flex: 1}}>
+          <WebView
+            source={{uri: 'https://coding-is-us.firebaseapp.com/'}}
+            incognito={true}
+            scrollEnabled={false}
+            onLoadEnd={() => {
+              setIsLoading(false);
+            }}
+          />
+        </View>
       </View>
     </View>
   );

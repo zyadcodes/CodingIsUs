@@ -5,6 +5,7 @@ import colors from '../../../config/colors';
 
 export default StyleSheet.create({
   webviewContainer: {
+    flex: 1,
     height: screenHeight * 1,
     width: screenWidth * 1,
   },

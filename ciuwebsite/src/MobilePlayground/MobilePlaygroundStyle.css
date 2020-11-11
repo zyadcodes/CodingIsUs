@@ -1,8 +1,75 @@
 /* This is the CSS StyleSheet for the MobilePlayground */
 .controlClassName {
-    width: 40%;
-    border-color: #2EB2FF;
+  width: 40%;
+  border-color: #2eb2ff;
 }
 .editorStyle {
-    width: '100vw';
+  width: 100vw;
+}
+.container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  background-color: #f0ffff;
+}
+.headerStyle {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 5vh;
+  align-self: center;
+  width: 90vw;
+  padding-right: 5vw;
+  padding-left: 5vw;
+  height: 21vh;
+  background-color: #2eb2ff;
+}
+.dropdownContainer {
+  margin-top: 2.5vh;
+  margin-left: 5vw;
+  z-index: 1;
+}
+.typeCodeBelowTextContainer {
+  z-index: 0;
+  margin-top: 1.5vh;
+  margin-left: 5vw;
+}
+.codeEditorContainer {
+  z-index: 0;
+  margin-top: 1.5vh;
+}
+.outputStyle {
+  outline: none;
+  padding-top: 1.5vh;
+  padding-bottom: 1.5vh;
+  padding-left: 2.5vw;
+  padding-right: 2.5vw;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border-left-width: 0vh;
+  border-right-color: #ffffff;
+  border-left-color: #ffffff;
+  border-right-width: 0vh;
+  border-top-width: 0.5vh;
+  border-top-color: #a8a8a8;
+  border-bottom-width: 0.5vh;
+  border-bottom-color: #a8a8a8;
+  margin-top: 1vh;
+  width: 95vw;
+  height: 10vh;
+  background-color: #ffffff;
+}
+.runCodeButton {
+  outline: none;
+  border-width: 0;
+  width: 45vw;
+  border-radius: 5vh;
+  height: 8.5vh;
+  background-color: #2eb2ff;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-end;
+  margin-top: 2vh;
+  margin-right: 5vw;
 }

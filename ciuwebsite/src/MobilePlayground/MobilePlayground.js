@@ -1,14 +1,7 @@
 // This is going to be the screen in the mobile app which will contain the coding playground. It will utilize React Native
 // web in order to contain all of the code that is used in the app
 import React, { useState } from "react";
-import {
-  View,
-  Text,
-  Dimensions,
-  TextInput,
-  TouchableOpacity,
-} from "react-native-web";
-import MobilePlaygroundStyle from "./MobilePlaygroundStyle";
+import { View, Text, TextInput, TouchableOpacity } from "react-native-web";
 import strings from "../config/strings";
 import fontStyles from "../config/fontStyles";
 import Dropdown from "react-dropdown";
@@ -50,19 +43,15 @@ const MobilePlayground = () => {
   const [code, setCode] = useState(CompilerLanguages[0].template);
   const [output, setOutput] = useState("");
 
-  // The screen dimensions
-  const screenHeight = Dimensions.get("window").height;
-  const screenWidth = Dimensions.get("window").width;
-
   // Returns the UI of the screen
   return (
-    <View style={MobilePlaygroundStyle.container}>
-      <View style={MobilePlaygroundStyle.headerStyle}>
+    <div className="container">
+      <div className="headerStyle">
         <Text style={{ ...fontStyles.longTitleTextStyle, ...fontStyles.white }}>
           {strings.Playground}
         </Text>
-      </View>
-      <View style={MobilePlaygroundStyle.dropdownContainer}>
+      </div>
+      <div className="dropdownContainer">
         <Dropdown
           controlClassName={"controlClassName"}
           menuClassName={"controlClassName"}
@@ -79,39 +68,39 @@ const MobilePlayground = () => {
           }}
           value={languageSelectedDropdown}
         />
-      </View>
-      <View style={MobilePlaygroundStyle.typeCodeBelowTextContainer}>
+      </div>
+      <div className="typeCodeBelowTextContainer">
         <Text style={{ ...fontStyles.biggerTextStyle, ...fontStyles.black }}>
           {strings.TypeYourCodeBelow}
         </Text>
-      </View>
-      <View style={MobilePlaygroundStyle.codeEditorContainer}>
+      </div>
+      <div className="codeEditorContainer">
         <AceEditor
           className={"editorStyle"}
-          width={screenWidth}
-          fontSize={'3.25vw'}
-          height={'20vh'}
+          width={"100vw"}
+          fontSize={"3.25vw"}
+          height={"20vh"}
           mode={languageSelected.editorMode}
           value={code}
           theme="monokai"
           onChange={(newCode) => setCode(newCode)}
         />
-      </View>
-      <View style={MobilePlaygroundStyle.typeCodeBelowTextContainer}>
+      </div>
+      <div className="typeCodeBelowTextContainer">
         <Text style={{ ...fontStyles.biggerTextStyle, ...fontStyles.black }}>
           {strings.Output}
         </Text>
-      </View>
-      <TextInput
+      </div>
+      <input
+        className="outputStyle"
         multiline={true}
         value={output}
         editable={true}
-        style={MobilePlaygroundStyle.outputStyle}
       />
-      <TouchableOpacity
+      <button
         disabled={isCompiling}
-        style={MobilePlaygroundStyle.runCodeButton}
-        onPress={async () => {
+        className="runCodeButton"
+        onClick={async () => {
           setIsCompiling(true);
           setOutput(strings.Compiling);
           const compiledOutput = (
@@ -120,7 +109,6 @@ const MobilePlayground = () => {
               languageID: languageSelected.compilerID,
             })
           ).data;
-          console.log(compiledOutput);
           setOutput(compiledOutput);
           setIsCompiling(false);
         }}
@@ -128,8 +116,8 @@ const MobilePlayground = () => {
         <Text style={{ ...fontStyles.biggerTextStyle, ...fontStyles.white }}>
           {strings.RunCode}
         </Text>
-      </TouchableOpacity>
-    </View>
+      </button>
+    </div>
   );
 };
 

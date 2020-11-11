@@ -150,7 +150,9 @@ const SectionScreen = ({route, navigation}) => {
           width={
             SectionScreenStyle.youtubeContainer.width > 380
               ? SectionScreenStyle.youtubeContainer.width
-              : 380
+              : screenWidth > 380
+              ? 380
+              : screenWidth
           }
           play={isPlaying}
           videoId={section.videoLink}
