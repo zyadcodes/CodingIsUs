@@ -1,7 +1,7 @@
 // This screen is going to be the one that contains the resources for each guide like documentation and other
 // external links
 import React from 'react';
-import {View, Text, FlatList, Linking, Alert} from 'react-native';
+import {View, Text, FlatList} from 'react-native';
 import Hyperlink from 'react-native-hyperlink';
 import BackButton from '../../components/BackButton/BackButton';
 import fontStyles from '../../../config/fontStyles';

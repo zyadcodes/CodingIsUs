@@ -1,5 +1,4 @@
 // This will export all of the font styles to be used in this app
-import { StyleSheet } from "react-native-web";
 import colors from "./colors";
 
 // Gets the correct font that will be used

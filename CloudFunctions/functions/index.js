@@ -62,23 +62,30 @@ const getSubmission = async (submissionID) => {
   );
 
   const finalResult = await result.json();
-  if (finalResult.executing === true) {
-    await sleep(2000);
-    const output = await getSubmission(submissionID);
-    return output;
-  } else {
-    if (finalResult.result.streams.output) {
-      const uri = finalResult.result.streams.output.uri;
-      const response = await got(uri);
-      return response.body;
-    } else if (finalResult.result.streams.cmpinfo) {
-      const uri = finalResult.result.streams.cmpinfo.uri;
-      const response = await got(uri);
-      return response.body;
+  try {
+    if (finalResult.executing === true) {
+      await sleep(2000);
+      const output = await getSubmission(submissionID);
+      return output;
     } else {
-      const uri = finalResult.result.streams.error.uri;
-      const response = await got(uri);
-      return response.body;
+      if (finalResult.result.streams.output) {
+        const uri = finalResult.result.streams.output.uri;
+        const response = await got(uri);
+        return response.body;
+      } else if (finalResult.result.streams.cmpinfo) {
+        const uri = finalResult.result.streams.cmpinfo.uri;
+        const response = await got(uri);
+        return response.body;
+      } else if (finalResult.result.streams.error) {
+        const uri = finalResult.result.streams.error.uri;
+        const response = await got(uri);
+        return response.body;
+      } else if (finalResult.result.streams.source) {
+        return " ";
+      }
     }
+  } catch (error) {
+    console.log(finalResult);
+    return "Error in code. Please try again.";
   }
 };

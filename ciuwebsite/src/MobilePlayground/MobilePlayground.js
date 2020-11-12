@@ -17,6 +17,7 @@ import "ace-builds/src-noconflict/theme-github";
 import firebase from "firebase";
 import "firebase/functions";
 import CompilerLanguages from "../config/CompilerLanguages";
+import { logEvent } from "../config/Analytics";
 
 // Initializes firebase
 firebase.initializeApp({
@@ -91,16 +92,20 @@ const MobilePlayground = () => {
           {strings.Output}
         </Text>
       </div>
-      <input
+      <textarea
         className="outputStyle"
         multiline={true}
         value={output}
-        editable={true}
+        disabled={false}
       />
       <button
         disabled={isCompiling}
+        type="button"
         className="runCodeButton"
         onClick={async () => {
+          logEvent('PlaygroundCompiled', {
+            language: languageSelected.label
+          })
           setIsCompiling(true);
           setOutput(strings.Compiling);
           const compiledOutput = (

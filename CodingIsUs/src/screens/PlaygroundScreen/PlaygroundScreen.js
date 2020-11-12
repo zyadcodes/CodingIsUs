@@ -1,14 +1,19 @@
 // This is the screen that represents the Playground in the app where the users will be able to run basic code and
 // practice what they've learned in the rest of the app
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {WebView} from 'react-native-webview';
 import {View, ActivityIndicator} from 'react-native';
 import PlaygroundScreenStyle from './PlaygroundScreenStyle';
 import colors from '../../../config/colors';
+import {logEvent} from '../../../config/Analytics';
 
 // Creates the functional component
 const PlaygroundScreen = ({route, navigation}) => {
   const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    logEvent('PlaygroundAccessed', {});
+  }, []);
 
   return (
     <View style={PlaygroundScreenStyle.webviewContainer}>
@@ -24,7 +29,7 @@ const PlaygroundScreen = ({route, navigation}) => {
       <View style={PlaygroundScreenStyle.webviewContainer}>
         <View style={{flex: 1}}>
           <WebView
-            source={{uri: 'https://coding-is-us.firebaseapp.com/'}}
+            source={{uri: 'https://coding-is-us.web.app'}}
             incognito={true}
             scrollEnabled={false}
             onLoadEnd={() => {

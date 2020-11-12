@@ -8,16 +8,13 @@ import {
   FlatList,
   Image,
   ActivityIndicator,
-  Alert,
 } from 'react-native';
-import strings from '../../../config/strings';
 import fontStyles from '../../../config/fontStyles';
 import {Icon} from 'react-native-elements';
 import colors from '../../../config/colors';
 import GuideIcon from '../../components/GuideIcon/GuideIcon';
 import CIULogo from '../../../assets/images/CIULogo.png';
 import GuideTitles from '../../../config/GuideTitles';
-import NetInfo from '@react-native-community/netinfo';
 import {logEvent} from '../../../config/Analytics';
 import GuidesListScreenStyle from './GuidesListScreenStyle';
 

@@ -13,7 +13,6 @@ import {
 import Share from 'react-native-share';
 import fontStyles from '../../../config/fontStyles';
 import GuideScreenStyle from './GuideScreenStyle';
-import NetInfo from '@react-native-community/netinfo';
 import strings from '../../../config/strings';
 import colors from '../../../config/colors';
 import Guides from '../../../config/Guides';
