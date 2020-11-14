@@ -16,6 +16,3 @@ To Release Website:
 
 - To release test website for testing: firebase hosting:channel:deploy test (Returns URL for testing)
 - To deploy live website: firebase deploy
-
-
-
