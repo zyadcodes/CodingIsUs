@@ -72,11 +72,13 @@ async function constructGuideSections(videoIDs, startingID) {
     const finalObject = await getVideoObjectByID(videoID);
     // The next piece of code needs tto be adjusted according to the format of the video titles and descriptions
     const title = finalObject.title;
-    const description = finalObject.description.substring(
-      0,
-      finalObject.description.indexOf("\n")
-    );
-    let name = title.substring(0, title.indexOf("-") - 1);
+    const description = finalObject.description
+      .substring(
+        finalObject.description.indexOf("https://cbt.gg/2GUgiHU") + 22,
+        finalObject.description.indexOf("Step 1")
+      )
+      .trim();
+    let name = title;
     const section = {
       name,
       description: description,
@@ -88,32 +90,21 @@ async function constructGuideSections(videoIDs, startingID) {
   }
   console.log(sections);
 }
+
 constructGuideSections(
   [
-    "iDEcP8Mc-7s",
-    "hG_MgGHAX-Q",
-    "WUARiOGSGKY",
-    "ybz5CfIPYq0",
-    "Ok3fIQstvLw",
-    "7r7ZPmspDew",
-    "RmKcFk2LQjM",
-    "S-8IcHucSNg",
-    "vY4I5VeQbBk",
-    "9KT84VMtmzo",
-    "7oARHEepjJ0",
-    "h1t6ZSIW5L8",
-    "C1hbiIp4qtE",
-    "QHCdeBzdmlA",
-    "XPs-HGzElTg",
-    "1y5mtSGTMqs",
-    "JuRhRhJ2914",
-    "USfmkHbIRyE",
-    "Q78aUox7qKA",
-    "09ETWu6Wf8Y",
-    "hiDosLOPQYA",
-    "89q1XeYYeXY",
-    "49awsu1VJbo",
-    "W19zgasQK-c",
+    "cVKBFNxaM4k",
+    "jW0Y5SimnwM",
+    "hVQRrhevo7k",
+    "udKBDRcj178",
+    "bXRLvUeRgvY",
+    "9fsOI3sxJCw",
+    "fyS3QdYuMZI",
+    "HVTQKUtkyhs",
+    "X1qoKLL040A",
+    "tOrMC1pDYjs",
+    "oCFTbwTjcgQ",
+    "bMXtoLpA5jU",
   ],
-  23001
+  25000
 );

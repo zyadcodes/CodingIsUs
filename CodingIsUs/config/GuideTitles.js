@@ -22,6 +22,8 @@ import RubyLogo from '../assets/images/RubyLogo.png';
 import UnityLogo from '../assets/images/UnityLogo.png';
 import UnrealLogo from '../assets/images/UnrealLogo.png';
 import GodotLogo from '../assets/images/GodotLogo.png';
+import CybersecurityLogo from '../assets/images/CybersecurityLogo.png';
+import CloudComputingLogo from '../assets/images/CloudComputingLogo.png';
 
 const FirestoreGuide = {
   title: 'Firestore',
@@ -134,25 +136,37 @@ const SwiftGuide = {
 const RubyGuide = {
   title: 'Ruby',
   logo: RubyLogo,
-  guideID: 20000
-}
+  guideID: 20000,
+};
 
 const UnityGuide = {
   title: 'Unity',
   logo: UnityLogo,
-  guideID: 21000
-}
+  guideID: 21000,
+};
 
 const UnrealGuide = {
   title: 'Unreal',
   logo: UnrealLogo,
-  guideID: 22000
-}
+  guideID: 22000,
+};
 
 const GodotGuide = {
   title: 'Godot',
   logo: GodotLogo,
-  guideID: 23000
+  guideID: 23000,
+};
+
+const CybersecurityGuide = {
+  title: 'Cybersecurity',
+  logo: CybersecurityLogo,
+  guideID: 24000,
+};
+
+const CloudComputingGuide = {
+  title: 'Cloud Computing',
+  logo: CloudComputingLogo,
+  guideID: 25000
 }
 
 export default [
@@ -177,5 +191,7 @@ export default [
   RubyGuide,
   UnityGuide,
   UnrealGuide,
-  GodotGuide
+  GodotGuide,
+  CybersecurityGuide,
+  CloudComputingGuide
 ];

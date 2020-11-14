@@ -44,6 +44,10 @@ import UnrealLogo from '../assets/images/UnrealLogo.png';
 import UnrealCover from '../assets/images/UnrealCover.png';
 import GodotLogo from '../assets/images/GodotLogo.png';
 import GodotCover from '../assets/images/GodotCover.png';
+import CybersecurityLogo from '../assets/images/CybersecurityLogo.png';
+import CybersecurityCover from '../assets/images/CybersecurityCover.jpg';
+import CloudComputingLogo from '../assets/images/CloudComputingLogo.png';
+import CloudComputingCover from '../assets/images/CloudComputingCover.png';
 
 const FirestoreGuide = {
   title: 'Firestore',
@@ -2771,89 +2775,394 @@ const MachineLearningGuide = {
   logo: MachineLearningLogo,
   description:
     'Machine learning is the study of computer algorithms that improve automatically through experience. It is seen as a subset of artificial intelligence.',
-  duration: '2.5 Hours',
+  duration: '6 Hours',
   guideID: 15000,
   relatedGuides: [12000, 3000],
   sections: [
     {
-      name: 'Introduction',
-      description: 'Get an introduction to Machine Learning with Python',
-      videoLink: 'ujTCoH21GlA',
+      name: 'What is Machine Learning?',
+      description:
+        'Got lots of data? Machine learning can help! In this episode of Cloud AI Adventures, Yufeng Guo explains machine learning from the ground up, using concrete examples.',
+      videoLink: 'HcqpanDadyQ',
       ID: 15001,
     },
     {
-      name: 'Linear Regression 1',
+      name: 'The 7 Steps of Machine Learning',
       description:
-        'Learn about the basics of creating a linear regression model',
-      videoLink: '45ryDIPHdGg',
+        'How can we tell if a drink is beer or wine? Machine learning, of course! In this episode of Cloud AI Adventures, Yufeng walks through the 7 steps involved in applied machine learning. ',
+      videoLink: 'nKW8Ndu7Mjw',
       ID: 15002,
     },
     {
-      name: 'Linear Regression 2',
+      name: 'Plain and Simple Estimators',
       description:
-        'Get a deeper insight into implementing a Linear Regression model',
-      videoLink: '1BYu65vLKdA',
+        "In this episode of AI Adventures, it's time to write some TensorFlow code! We'll build a linear model to recognize different kinds of flowers using a canned estimator.",
+      videoLink: 'G7oolm0jU8I',
       ID: 15003,
     },
     {
-      name: 'Saving Models & Plotting Data',
+      name: 'Serverless Predictions at Scale',
       description:
-        'Learn how to save your ML models and plot the data and the results',
-      videoLink: '3AQ_74xrch8',
+        'In this episode of AI Adventures, Yufeng explains how to scale your machine learning using the cloud, no ops work required!',
+      videoLink: '_JCMN8-yhBM',
       ID: 15004,
     },
     {
-      name: 'K-Nearest Neighbors 1',
+      name: 'Visualizing Your Model Using TensorBoard',
       description:
-        'Learn how to deal with irregular data using the KNN techniques',
-      videoLink: 'ddqQUz9mZaM',
+        'In this episode of AI Adventures, Yufeng takes us on a tour of TensorBoard, the visualizer built into TensorFlow, to visualize and help debug models. ',
+      videoLink: 'qEQ-_EId-D0',
       ID: 15005,
     },
     {
-      name: 'K-Nearest Neighbors 2',
-      description: 'Understand how K-Nearest Neighbors work on a high level',
-      videoLink: 'vwLT6bZrHEE',
+      name: 'Estimators Revisited: Deep Neural Networks',
+      description:
+        'In this episode of AI Adventures, Yufeng explains how to build models for more complex datasets, using TensorFlow to build deep neural networks!',
+      videoLink: 's0JvhHr3r8k',
       ID: 15006,
     },
     {
-      name: 'K-Nearest Neighbors 3',
-      description: 'Learn how to implement a K-Nearest Neighbors model',
-      videoLink: 'TQKI0KE-JYY',
+      name: 'Big Data for Training Models in the Cloud',
+      description:
+        'What do you do when your data is too big to fit on your machine? In this episode of Cloud AI Adventures, Yufeng walks through some of the options and rationale for putting your big data in the cloud. ',
+      videoLink: 'MNh5Qq0dekQ',
       ID: 15007,
     },
     {
-      name: 'Using Sci-Kit Learn Datasets',
+      name: 'Natural Language Generation at Google Research',
       description:
-        'Learn how to implement and create models for datasets using Sci-Kit Learn',
-      videoLink: 'dNBvQ38MlT8',
+        'In this episode of AI Adventures, Yufeng interviews Google Research engineer Justin Zhao to talk about natural text generation, recurrent neural networks, and state of the art research!',
+      videoLink: 'MNvT5JekDpg',
       ID: 15008,
     },
     {
-      name: 'Support Vector Machines 1',
+      name: 'Distributed Training in the Cloud',
       description:
-        'Get a high level understanding for how Support Vector Machines work',
-      videoLink: 'JHxyrMgOUWI',
+        'Training machine learning models at scale has never been simpler. By leveraging in the cloud machine learning engine, we can quickly and easily train TensorFlow models without worrying about configuring servers installing drivers and libraries. ',
+      videoLink: 'J_d4bEKUG2Q',
       ID: 15009,
     },
     {
-      name: 'Support Vector Machine',
+      name: 'Machine Learning Meets Fashion',
       description:
-        'Learn how to implement a Support Vector Machine to create powerful machine learning models',
-      videoLink: 'l2I8NycJMCY',
+        'In this episode of AI Adventures, Yufeng showcases many of the machine learning tools introduced so far by working through an end-to-end example with a fashionable dataset.',
+      videoLink: 'RJudqel8DVA',
       ID: 15010,
     },
     {
-      name: 'K-Means Clustering 1',
+      name: 'Wrangling Data with Pandas',
       description:
-        'Get a high level understanding of what K-Means Clustering is and why it is a useful strategy when implementing models',
-      videoLink: 'g1Zbuk1gAfk',
+        'In this episode of AI Adventures, Yufeng explores the fascinating world of pandas, an open-source python library that provides easy to use, high-performance data structures and data analysis tools.',
+      videoLink: 'XDAnFZqJDvI',
       ID: 15011,
     },
     {
-      name: 'K-Means Clustering 2',
-      description: 'Learn how to implement K-Means Clustering in a real model',
-      videoLink: 'zixd-si9Q-o',
+      name: 'Introduction to Kaggle Kernels',
+      description:
+        'In this episode of AI Adventures, Yufeng explains how to use Kaggle Kernels to do data science in your browser without any downloads!',
+      videoLink: 'FloMHMOU5Bs',
       ID: 15012,
+    },
+    {
+      name: 'Jupyter Tips and Tricks',
+      description:
+        'In this episode of AI Adventures, Yufeng journeys to Jupyter to bring back some tips and tricks for your data science workflow!',
+      videoLink: '2eCHD6f_phE',
+      ID: 15013,
+    },
+    {
+      name: 'Which Python Package Manager Should You Use?',
+      description:
+        'In this episode of AI Adventures, Yufeng discusses some of the options available when it comes to managing your Python environment for machine learning and data science, and helps you make an informed decision based on your needs.',
+      videoLink: '3J02sec99RM',
+      ID: 15014,
+    },
+    {
+      name: 'Datalab: Notebook in the Cloud',
+      description:
+        'In this episode of AI Adventures, Yufeng explains how to use Cloud Datalab to use a notebook in the cloud to do data science on large datasets!',
+      videoLink: 'Eu57QKNHaiY',
+      ID: 15015,
+    },
+    {
+      name: 'Print Statements in TensorFlow',
+      description:
+        'In this episode of AI Adventures, Yufeng explains how to properly use print statements in your TensorFlow graph.',
+      videoLink: 'pCJEMfujekA',
+      ID: 15016,
+    },
+    {
+      name: 'TensorFlow Object Detection on IOS',
+      description:
+        "In this interview of AI Adventures, Yufeng interviews Developer Advocate Sara Robinson to talk about a custom object detection iOS app she built to detect Taylor Swift. We'll cover everything from training a model with transfer learning, to serving the model in the cloud, to making prediction requests to the model from an iOS device (in Swift!).",
+      videoLink: '0uXMgLIlXoE',
+      ID: 15017,
+    },
+    {
+      name: 'Visualize Your Data with Facets',
+      description:
+        'In this episode of AI Adventures, Yufeng explains how to use Facets, a project from Google Research, to visualize your dataset, find interesting relationships, and clean your data for machine learning.',
+      videoLink: 'WVclIFyCCOo',
+      ID: 15018,
+    },
+    {
+      name: 'Quick Draw: The Biggest Doodle Dataset',
+      description:
+        'In this episode of AI Adventures, Yufeng explores the massive "Quick, Draw!" dataset, a collection of over 1 billion doodles, drawn by users all over the world!',
+      videoLink: '8DEjphIfeYw',
+      ID: 15019,
+    },
+    {
+      name: 'AI Adventures: Art, Science, and Tools of Machine Learning',
+      description: `Looking to get more insights from your data, but don't know where to begin? Dive into machine learning and the discovery journey of applying it to your datasets with this session based on the YouTube series "AI Adventures".`,
+      videoLink: 't3Uuk8edSzs',
+      ID: 15020,
+    },
+    {
+      name: 'BigQuery and Open Datasets',
+      description:
+        'We all love data. But it can be hard to make practical use of large datasets. In this episode of AI Adventures, Yufeng Guo introduces BigQuery public datasets, which allow you to query huge datasets with great responsiveness without needing to worry about the storage costs. Time to break out your big data toolbox, because these queries are going to be big!',
+      videoLink: '_cj2pA3p51I',
+      ID: 15021,
+    },
+    {
+      name: 'How to Make a Data Science Project with Kaggle',
+      description:
+        'It can take a lot of tools to do data science, but Kaggle is a one-stop shop that provides all the tools to share and collaborate on data science projects. In the episode of AI Adventures, Yufeng is joined by Megan Risdal, product lead for datasets at Kaggle. They’ll teach you how to make a data science project with Kaggle, and more!',
+      videoLink: 'm2DfpM6MyB8',
+      ID: 15022,
+    },
+    {
+      name: 'AutoML Vision 1',
+      description:
+        'In this episode of AI Adventures, Yufeng Guo uses AutoML Vision to build and employ a machine learning model that recognizes different types of….chairs! In part 1, he’ll walk you through gathering the data and creating a csv file that describes the location and label for all the images in the dataset. Don’t miss part 2 to see how the model performs!',
+      videoLink: 'kgxfdTh9lz0',
+      ID: 15023,
+    },
+    {
+      name: 'AutoML Vision 2',
+      description:
+        'In part one of the AI Adventures intro to AutoML Vision, Yufeng talked about what AutoML Vision is used for and showed how to gather and prepare our training data. Stick around for part two where he shows how to use the data to train our model! ',
+      videoLink: 'aUfIFoMEIgg',
+      ID: 15024,
+    },
+    {
+      name: 'Learning Scikit-Learn',
+      description:
+        "Scikit-learn is a well-documented and well-loved Python machine learning library. The library is maintained and reliable, offering a vast collection of machine learning algorithms for you to incorporate into your projects. If you haven't tried scikit-learn, you definitely should! ",
+      videoLink: 'rvVkVsG49uU',
+      ID: 15025,
+    },
+    {
+      name: 'Serving Scikit-Learn Models at Scale',
+      description:
+        'Scikit-learn is a great tool for building your models. When it comes time to deploy them to prediction, scale up using Google Cloud ML Engine. In this episode of AI Adventures, Yufeng shows you how to set up your own deployment pipeline with scikit-learn so you can go back to focusing on tuning your model!',
+      videoLink: 'MaKLWy5zXe8',
+      ID: 15026,
+    },
+    {
+      name: 'Getting Started with Keras',
+      description:
+        'Getting started with Keras has never been easier! Not only is it built into TensorFlow, but when you combine it with Kaggle Kernels you don’t have to install anything! Plus you get to take advantage of the resources from the Kaggle community. In this episode of AI Adventures, Yufeng shows you how to get started with Keras. Take a look! ',
+      videoLink: 'J6Ok8p463C4',
+      ID: 15027,
+    },
+    {
+      name: 'Scaling Up Keras with Estimators',
+      description:
+        'When you convert a Keras model to a TensorFlow Estimator, you get the best of both worlds: easy to read Keras model syntax along with distributed training with TensorFlow. In this episode of AI Adventures, Yufeng shows you how to scale up a Keras model with estimators so that it can run larger datasets or across many machines. Plus, it makes it easy to do model serving once the training is complete! ',
+      videoLink: 'YCXFceVKHTk',
+      ID: 15028,
+    },
+    {
+      name: 'Getting Started with TensorFlow.Js',
+      description:
+        'TensorFlow.js is an ecosystem of JavaScript based tools for training and deploying machine learning models. In this episode of AI Adventures, learn all about getting started with Tensorflow.js through tutorials like training a convolutional neural network in your browser and building a Pac-Man game that’s played with data from your webcam! This is only a beginning… stay tuned for deep dives on TensorFlow.js coming soon!',
+      videoLink: 'WYvgP9LfvTg',
+      ID: 15029,
+    },
+    {
+      name: 'How to Import a Keras Model Into TensorFlow.Js',
+      description:
+        'How can we get a Keras model to run on TensorFlow.js? One of the best things about TensorFlow.js is that it has the ability to collaborate across a range of platforms, languages, and devices. In this episode of AI Adventures, Yufeng shows you how to import a Keras model into TensorFlow.js. ',
+      videoLink: 'f8ed_xAjkOg',
+      ID: 15030,
+    },
+    {
+      name: 'Deep Learning VM Images',
+      description:
+        'Imagine if you could avoid the headache of setting up new libraries, configuring them, and making sure they are all compatible. In this episode of AI Adventures, Yufeng shows you how to take advantage of deep learning VM images on Google Compute Engine to make setting up new environments a piece of cake. ',
+      videoLink: 'kyNbYCHFCSw',
+      ID: 15031,
+    },
+    {
+      name: 'Using TensorFlow Hub for More Productive Machine Learning',
+      description:
+        'Libraries and a repository of shared code dramatically boost efficiency as well as innovation. If you lack the resources, do not want to start from scratch, or is searching for collaboration, TensorFlow Hub is a great place to start. In this episode, Yufeng will go over what TF Hub is and the different ways it can be used. ',
+      videoLink: 'SJ1LGUyw-Xg',
+      ID: 15032,
+    },
+    {
+      name: 'TensorFlow Eager Mode',
+      description:
+        'TensorFlow graph is an amazing tool that represent your computation in terms of the dependencies between individual operations. However, it can be overwhelming to grasp if you are just starting out. How can we keep the pride and performance without the frustration? Watch the video to find out!',
+      videoLink: 'qTYQEXsBb_E',
+      ID: 15033,
+    },
+    {
+      name: 'Jupyter on the Web with Colab',
+      description:
+        "In this episode of AI Adventures, Yufeng introduces Colab, which allows you to not only execute Jupyter Notebooks on the web, but also offers a free GPU, excellent collaboration features, built-in code snippets, and much much more. It's great for learners and researchers alike, and comes with all the things you love about being part of Google Drive!",
+      videoLink: 'yEIc9z-Ad3k',
+      ID: 15034,
+    },
+    {
+      name: 'How to Upgrade Colab with More Compute',
+      description:
+        'In this episode of AI Adventures, Yufeng introduces how you can use Deep Learning VMs on Google Cloud Platform to seriously boost your data science processing power, and access it all through Colab.',
+      videoLink: 'U5HyNzf_ips',
+      ID: 15035,
+    },
+    {
+      name: 'Kubeflow: Machine Learning on Kubernetes',
+      description:
+        'In this episode of AI Adventures, Yufeng introduces Kubeflow, an open-source project that is meant to help make running machine learning training and prediction on Kubernetes clusters easier.',
+      videoLink: 'HBxyLnEzyhw',
+      ID: 15036,
+    },
+    {
+      name: 'BigQuery ML: Machine Learning with Standard SQL',
+      description:
+        'In this episode of AI Adventures, Yufeng introduces BigQuery ML, which allows you to build machine learning models right within BigQuery, using SQL! That means no more copying big tables of data around, and more chances to find insights to your dataset!',
+      videoLink: '6Kska20zQO4',
+      ID: 15037,
+    },
+    {
+      name: 'PyTorch on GCP',
+      description:
+        'In this episode of AI Adventures, Yufeng introduces all the ways you can run PyTorch on GCP, from Colab and Kaggle, to Deep Learning VMs.',
+      videoLink: 'x2P-Wsqtfi8',
+      ID: 15038,
+    },
+    {
+      name: 'AutoML Tables (AI Adventures)',
+      description:
+        'In this episode of AI Adventures, Yufeng introduces AutoML Tables, a tool to automatically build and deploy state-of-the-art machine learning models on structured data. It automates modeling on a wide range of data types, including numbers, classes, strings, timestamps, lists, and nested fields.  ',
+      videoLink: 'tWbiOuHae0c',
+      ID: 15039,
+    },
+    {
+      name: 'TensorFlow Privacy',
+      description:
+        'In this episode of AI Adventures, Yufeng introduces TensorFlow Privacy, a tool that turns the science and math behind differential privacy into a tool that you can use.',
+      videoLink: 'fCxp_lHo5ek',
+      ID: 15040,
+    },
+    {
+      name: 'Visualizing Convolutional Neural Networks Using Lucid',
+      description:
+        'In this episode of AI Adventures, Yufeng introduces Lucid, a tool for a collection of infrastructure and tools for research in neural network interpretability. Learn about feature activations and how they can be used to better understand what different parts of a convolutional neural network is looking for! ',
+      videoLink: 'b27hzEs8YWw',
+      ID: 15041,
+    },
+    {
+      name:
+        'Understanding Image Models and Predictions Using an Activation Atlas',
+      description:
+        'In this episode of AI Adventures, Yufeng takes the idea of feature activations in convolutional neural networks even further, by applying them to entire images to create "activation grids", and uses them to produce an Activation Atlas.',
+      videoLink: '76jZkqlGIMY',
+      ID: 15042,
+    },
+    {
+      name: 'Getting Started with Natural Language Processing: Bag of Words',
+      description:
+        "In this episode of AI Adventures, Yufeng introduces how to use Keras to implement 'bag of words', to get you started on your natural language processing journey!",
+      videoLink: 'UFtXy0KRxVI',
+      ID: 15043,
+    },
+    {
+      name: 'Using AutoML Natural Language for Custom Text Classification',
+      description:
+        'In this episode of AI Adventures, Yufeng introduces how to use AutoML Natural Language to perform custom text classification using data from Stack Overflow questions! Using machine learning to classify machine learning questions, what could go wrong?',
+      videoLink: 'ieaqfU1BwJ8',
+      ID: 15044,
+    },
+    {
+      name: 'Tensor Processing Units: History and Hardware',
+      description:
+        'In this episode of AI Adventures, Yufeng Guo goes through the logistics and history of TPU’s (Tensor Processing Units) and how they differ from CPU’s and GPU’s.',
+      videoLink: 'MXxN4fv01c8',
+      ID: 15045,
+    },
+    {
+      name: 'Diving Into the TPU V2 and V3',
+      description:
+        'In this episode of AI Adventures, Yufeng Guo introduces the TPU v2 and v3. Specifically, he goes over their architecture, how they work, and how Google Developers can get their hands on these TPUs. ',
+      videoLink: 'kBjYK3K3P6M',
+      ID: 15046,
+    },
+    {
+      name: 'AI Platform Training with Built-In Algorithms',
+      description:
+        'In this episode, Yufeng Guo speaks to how you can use Google Cloud AI Platform Built-in Algorithms to train and deploy machine learning models without writing any training code. ',
+      videoLink: 'IrPXm0DSCWI',
+      ID: 15047,
+    },
+    {
+      name: 'Training Models with Custom Containers on Cloud AI Platform',
+      description:
+        'In this episode of AI Adventures, Yufeng Guo uses AI Platform Custom Containers to show you how to run custom training jobs on Google Cloud using Docker containers. Specifically, he speaks to the key benefits of using custom containers such as - faster start-up time, ability to use any ML framework, and capacity to use any version of your choice. ',
+      videoLink: 'h_BpDOdTX7Y',
+      ID: 15048,
+    },
+    {
+      name: 'Using the What-If Tool for Explainability',
+      description:
+        'In this episode of AI Adventures, Yufeng Guo speaks to how you can inspect your machine learning models via the new What-If tool. Specifically, he speaks to the different features that are integrated into the What-If tool - such as the Facets Dive tool, Performance & Fairness tab, and the Facets Overview tool - that allows users to create predictions for new edit values, check overall model performance, and look at the distribution of data points within their models. ',
+      videoLink: 'jHojeFCc5HE',
+      ID: 15049,
+    },
+    {
+      name: 'Intro to Explanations for AI Platform',
+      description:
+        'In this episode of AI Adventures, we’ll show you how to use Cloud’s AI Prediction service, and how it helps you understand your model’s outputs by recognizing bias and discrepancies via AI Explanations. Yufeng also speaks to the different use cases for the two methods of feature attribution within AI Explanations - sampled shapely and integrated gradients - and what models are best suited for these attributions. ',
+      videoLink: 'XXvFHqLv9p8',
+      ID: 15050,
+    },
+    {
+      name: 'Cloud AI Data Labeling Service',
+      description:
+        'Collecting data for training your ML models is one thing. Labeling that data is another. In this episode of AI Adventures, Yufeng Guo explains the Cloud AI Platform data labeling service, how to use it, and how it helps with labeling structured and unstructured data alike. ',
+      videoLink: 'o7mcVV0igLw',
+      ID: 15051,
+    },
+    {
+      name: 'Introduction to JAX',
+      description:
+        'JAX is an open-source Python library that brings together Autograd and XLA, facilitating high-performance machine learning research. In this episode of AI Adventures, Yufeng Guo talks about how you can use JAX to compile and run your NumPy programs on GPUs and TPUs, and its ability to support composable function transformations. ',
+      videoLink: '0mVmRHMaOJ4',
+      ID: 15052,
+    },
+    {
+      name: 'Setting Up AI Platform Pipelines',
+      description:
+        'AI Platform Pipelines are an excellent way to improve the reliability and reproducibility of your data science and machine learning workflows. In this episode, Yufeng demonstrates how to set up AI Platform Pipelines to address your MLOps needs. ',
+      videoLink: 'MUtsIaQuiRw',
+      ID: 15053,
+    },
+    {
+      name: 'AI Platform Optimizer',
+      description:
+        'Wanting to tune your hyperparameters on your machine learning model? In this episode of AI Adventures, Yufeng Guo showcases one of Google’s newest AI products - the AI Platform Optimizer - and how you can use it to tune any evaluable system in your ML model. Watch to learn how you can utilize the AI Platform Optimizer to suggest trials to optimize your ML models.  ',
+      videoLink: 'b0MizT6Vatw',
+      ID: 15054,
+    },
+    {
+      name: 'Persistent Disk for Productive Data Science',
+      description:
+        'Looking to upgrade your storage options for your ML workloads? In this episode of AI Adventures, Yufeng Guo showcases the different storage options from Google Cloud - such as Google Cloud Storage and Persistent Disks - and walks you through the different use cases for these tools. What storage option will best fit your ML project? ',
+      videoLink: '4T1cYGFjUEk',
+      ID: 15055,
     },
   ],
   additionalResources: [
@@ -4323,8 +4632,7 @@ const UnityGuide = {
     },
     {
       name: 'Camera Shake',
-      description:
-        'Spice up your game by adding Camera Shake using Unity!',
+      description: 'Spice up your game by adding Camera Shake using Unity!',
       videoLink: '9A9yj8KnM8c',
       ID: 21024,
     },
@@ -4370,7 +4678,8 @@ const UnityGuide = {
     },
     {
       name: 'Shader Graph',
-      description: 'The time has come... Let\'s explore Unity\'s new Shader Graph!',
+      description:
+        "The time has come... Let's explore Unity's new Shader Graph!",
       videoLink: 'Ar9eIn4z6XE',
       ID: 21031,
     },
@@ -4581,8 +4890,7 @@ const UnityGuide = {
       ID: 21062,
     },
     {
-      name:
-        'Image Effects',
+      name: 'Image Effects',
       description: 'Master every Post Processing effect in Unity!',
       videoLink: '9tjYz6Ab0oc',
       ID: 21063,
@@ -4595,7 +4903,8 @@ const UnityGuide = {
     },
     {
       title: 'Download',
-      link: 'https://unity.com/products?_ga=2.162356348.1718478951.1604785816-110803733.1604785816',
+      link:
+        'https://unity.com/products?_ga=2.162356348.1718478951.1604785816-110803733.1604785816',
     },
   ],
 };
@@ -4612,328 +4921,382 @@ const UnrealGuide = {
   sections: [
     {
       name: 'Creating an FPS Game',
-      description: "If you've ever wanted to create a first person shooter game but weren't sure where to start, this is the tutorial series for you. You'll learn everything you need to create an FPS from scratch using Unreal Engine 4.",
+      description:
+        "If you've ever wanted to create a first person shooter game but weren't sure where to start, this is the tutorial series for you. You'll learn everything you need to create an FPS from scratch using Unreal Engine 4.",
       videoLink: 'DywBqQtTHMo',
-      ID: 22001
+      ID: 22001,
     },
     {
       name: 'True First Person Camera',
-      description: "In today's episode we take a look at how we can setup the true first person camera by converting the third person camera to first person, giving us a realistic look and feel to our FPS game.",
+      description:
+        "In today's episode we take a look at how we can setup the true first person camera by converting the third person camera to first person, giving us a realistic look and feel to our FPS game.",
       videoLink: '0mgm16ki8zM',
-      ID: 22002
+      ID: 22002,
     },
     {
       name: 'Player Health & Armor',
-      description: "In today's video we take a look at how we can setup a player health and armor variable that we can use later on in the series for healing and killing the player.",
+      description:
+        "In today's video we take a look at how we can setup a player health and armor variable that we can use later on in the series for healing and killing the player.",
       videoLink: 'UneAoM979uc',
-      ID: 22003
+      ID: 22003,
     },
     {
       name: 'Regenerating Armor & Damage Function',
-      description: "In today's video we set up our regenerating armor system and create a basic damaging function for when the player loses health. We go over the maths used to differentiate between when the player should lose health or armor.",
+      description:
+        "In today's video we set up our regenerating armor system and create a basic damaging function for when the player loses health. We go over the maths used to differentiate between when the player should lose health or armor.",
       videoLink: 'iFu2WXc8lz0',
-      ID: 22004
+      ID: 22004,
     },
     {
       name: 'Blood Splash Effect',
-      description: "In today's video we show you how you can create a blood splash/splatter effect for when the player takes damage in our shooter game.",
+      description:
+        "In today's video we show you how you can create a blood splash/splatter effect for when the player takes damage in our shooter game.",
       videoLink: 'RL-x6rHGDxs',
-      ID: 22005
+      ID: 22005,
     },
     {
       name: 'Setting Up Character Animations',
-      description: 'Today we take a look at how we can import a customer character and set up the animations. We go over step by step how we can begin creating the animation blueprint and animation blendspace to start bringing our character to life.',
+      description:
+        'Today we take a look at how we can import a customer character and set up the animations. We go over step by step how we can begin creating the animation blueprint and animation blendspace to start bringing our character to life.',
       videoLink: 'RPdPmys9JWY',
-      ID: 22006
+      ID: 22006,
     },
     {
       name: 'Finishing The Animation Blueprint',
-      description: "In today's video we check out how we can finish up our animation blueprint, setting up the conditioning and logic to determine the player's speed and direction and then feed it into our animation blendspace.",
+      description:
+        "In today's video we check out how we can finish up our animation blueprint, setting up the conditioning and logic to determine the player's speed and direction and then feed it into our animation blendspace.",
       videoLink: 'ftLBejDtlqc',
-      ID: 22007
+      ID: 22007,
     },
     {
       name: 'Adding The A',
-      description: "We take a look at how we can set up a gun for the character, more specifically the AK-47. We show you how to import the weapon into the game and have it spawn inside of the player's hands.",
+      description:
+        "We take a look at how we can set up a gun for the character, more specifically the AK-47. We show you how to import the weapon into the game and have it spawn inside of the player's hands.",
       videoLink: 'YCdAX6zhyBs',
-      ID: 22008
+      ID: 22008,
     },
     {
       name: 'Firing Our A',
-      description: 'We take a look at how we can setup a projectile for a weapon, showing you how to create the socket and spawn the projectile actor.',
+      description:
+        'We take a look at how we can setup a projectile for a weapon, showing you how to create the socket and spawn the projectile actor.',
       videoLink: '-Q2ZEFmnnmw',
-      ID: 22009
+      ID: 22009,
     },
     {
       name: 'Crouching With Animations',
-      description: "In today's video we take a look at how we can setup a crouch system for our FPS character, going over how we can create an additional blendspace for crouching and then set up the inputs and transitioning between the normal and crouching state using blueprints.",
+      description:
+        "In today's video we take a look at how we can setup a crouch system for our FPS character, going over how we can create an additional blendspace for crouching and then set up the inputs and transitioning between the normal and crouching state using blueprints.",
       videoLink: 'U4HnqE_OZ7Y',
-      ID: 22010
+      ID: 22010,
     },
     {
       name: 'Sprinting With Animations',
-      description: "In today's video we show you how you can make your FPS character sprint, going over exactly how we can setup a sprint state inside of our blueprint and tell it to play our animations for sprinting.",
+      description:
+        "In today's video we show you how you can make your FPS character sprint, going over exactly how we can setup a sprint state inside of our blueprint and tell it to play our animations for sprinting.",
       videoLink: 'aAIbKT-hQF0',
-      ID: 22011
+      ID: 22011,
     },
     {
       name: 'Using Control Rotation',
-      description: "Today we take a look at how we can use the player's control rotation to affect the position of the characters weapon. Doing this will make the player's weapon/gun follow the player's camera at all times. Enjoy!",
+      description:
+        "Today we take a look at how we can use the player's control rotation to affect the position of the characters weapon. Doing this will make the player's weapon/gun follow the player's camera at all times. Enjoy!",
       videoLink: 'AAd7g8tvheI',
-      ID: 22012
+      ID: 22012,
     },
     {
       name: 'Fully Automatic Rifle',
-      description: 'We take a look at how we can make our weapon fully automatic, creating all of the blueprint required to do so along with variables for fire rate!',
+      description:
+        'We take a look at how we can make our weapon fully automatic, creating all of the blueprint required to do so along with variables for fire rate!',
       videoLink: 'w2I7rPwGOuU',
-      ID: 22013
+      ID: 22013,
     },
     {
       name: 'Aiming Down Sights',
-      description: "Today we take a look at how we can setup a basic iron sights system, going over how we can get the engine to switch to a different camera when they're holding down the right mouse button.",
+      description:
+        "Today we take a look at how we can setup a basic iron sights system, going over how we can get the engine to switch to a different camera when they're holding down the right mouse button.",
       videoLink: '5nNGq6fS6vI',
-      ID: 22014
+      ID: 22014,
     },
     {
       name: 'Spawning The Muzzle Flash',
-      description: 'Today we take a look at how we can spawn a muzzle flash from the muzzle point in our weapon when firing. We do this by spawning the particle effects at the socket location.',
+      description:
+        'Today we take a look at how we can spawn a muzzle flash from the muzzle point in our weapon when firing. We do this by spawning the particle effects at the socket location.',
       videoLink: 'FIhV9OoHnyc',
-      ID: 22015
+      ID: 22015,
     },
     {
       name: 'Fixing Movement States',
-      description: "In today's video we take a look at how we can fix our movement states, making sure the character is unable to both sprint and crouch at the same time.",
+      description:
+        "In today's video we take a look at how we can fix our movement states, making sure the character is unable to both sprint and crouch at the same time.",
       videoLink: '2_s_cAugBEA',
-      ID: 22016
+      ID: 22016,
     },
     {
       name: 'Setting Up Ammo & Reloading ',
-      description: 'We take a look at how we can make our AK47 weapon reload inside of Unreal Engine 4. We go over all of the variables and maths required to setup the reloading system.',
+      description:
+        'We take a look at how we can make our AK47 weapon reload inside of Unreal Engine 4. We go over all of the variables and maths required to setup the reloading system.',
       videoLink: 'z6ln4oVHq0g',
-      ID: 22017
+      ID: 22017,
     },
     {
       name: 'Conservative Ammo Reloading ',
-      description: 'We go over how we can setup a conservative reload system, whereby when the reloads it only replenishes the ammo that the player has used as opposed to the entire magazine.',
+      description:
+        'We go over how we can setup a conservative reload system, whereby when the reloads it only replenishes the ammo that the player has used as opposed to the entire magazine.',
       videoLink: '5e13-2C_r_c',
-      ID: 22018
+      ID: 22018,
     },
     {
       name: 'Weapon Reload Animation ',
-      description: 'Today we show you how to make your reload system play an animation when the player is reloading. We go over everything we need to setup the reload state and variables/logic to make it transition.',
+      description:
+        'Today we show you how to make your reload system play an animation when the player is reloading. We go over everything we need to setup the reload state and variables/logic to make it transition.',
       videoLink: 'PWHu4DPs4j4',
-      ID: 22019
+      ID: 22019,
     },
     {
       name: 'Firing System Fix',
-      description: "Today we show you how you can make some changes to our firing system so that it doesn't fire when the player is either sprinting or reloading.",
+      description:
+        "Today we show you how you can make some changes to our firing system so that it doesn't fire when the player is either sprinting or reloading.",
       videoLink: 'g_a2sIoh8Oo',
-      ID: 22020
+      ID: 22020,
     },
     {
       name: 'Aiming With A Crosshair',
-      description: "During this video we go over how you can add a cross hair target onto the player's screen. We also go over how you can make it invisible when the player is aiming down the sights to give a clear view of the iron sights.",
+      description:
+        "During this video we go over how you can add a cross hair target onto the player's screen. We also go over how you can make it invisible when the player is aiming down the sights to give a clear view of the iron sights.",
       videoLink: 'kc3rx6Izqd8',
-      ID: 22021
+      ID: 22021,
     },
     {
       name: 'Dynamic Spread Crosshair',
-      description: "Today we take a look at how you can create a dynamic spread crosshair which will expand based on the player's speed. We also go over how we can change some of the variables within our crosshair widget to set the default thickness & length.",
+      description:
+        "Today we take a look at how you can create a dynamic spread crosshair which will expand based on the player's speed. We also go over how we can change some of the variables within our crosshair widget to set the default thickness & length.",
       videoLink: '5Dx57AXWyIg',
-      ID: 22022
+      ID: 22022,
     },
     {
       name: 'Picking Up Ammo',
-      description: "In today's video we take a look at how we can create a simple ammo pickup for our game, replenishing the player's max ammo when they walk over the item and collect it.",
+      description:
+        "In today's video we take a look at how we can create a simple ammo pickup for our game, replenishing the player's max ammo when they walk over the item and collect it.",
       videoLink: 'uUqDVAzbVaQ',
-      ID: 22023
+      ID: 22023,
     },
     {
       name: 'Setting Up AI & Bullet Damage',
-      description: "In today's video we take a look at how we can setup a simple character, place it within our scene and make it take damage when it gets hit with our bullet projectile.",
+      description:
+        "In today's video we take a look at how we can setup a simple character, place it within our scene and make it take damage when it gets hit with our bullet projectile.",
       videoLink: 'MAvM6ICC42w',
-      ID: 22024
+      ID: 22024,
     },
     {
       name: 'Enemy AI Following/Chasing',
-      description: "Today we take a look at how we can get our AI enemy to chase & follow your character. We setup the navigational mesh to control where they can & can't go along with the script to get him to move.",
+      description:
+        "Today we take a look at how we can get our AI enemy to chase & follow your character. We setup the navigational mesh to control where they can & can't go along with the script to get him to move.",
       videoLink: '87lkYjAgYoc',
-      ID: 22025
+      ID: 22025,
     },
     {
       name: 'Aiming Fixes',
-      description: 'Today we show you how you can fix up our aiming system, ensuring that it does not let you aim whilst sprint or reloading. We also go over how we can make our cross hair disappear when aiming.',
+      description:
+        'Today we show you how you can fix up our aiming system, ensuring that it does not let you aim whilst sprint or reloading. We also go over how we can make our cross hair disappear when aiming.',
       videoLink: 'hjQYWgggzKQ',
-      ID: 22026
+      ID: 22026,
     },
     {
       name: 'Smarter AI Actions',
-      description: 'Today we work on making your AI smarter, making them react to bullet hits on them, we show you how to make them chase you when you hit them and also how to spawn an impact effect on the hit location! ',
+      description:
+        'Today we work on making your AI smarter, making them react to bullet hits on them, we show you how to make them chase you when you hit them and also how to spawn an impact effect on the hit location! ',
       videoLink: 'FQiRnhPE_3k',
-      ID: 22027
+      ID: 22027,
     },
     {
       name: 'Random AI Roaming Setup',
-      description: 'In this video we take a look at how we can make our AI roam when they cannot see the player. We do this by running a check to see if the AI can see the player, if not it will move them to a random point within the navigable radius.',
+      description:
+        'In this video we take a look at how we can make our AI roam when they cannot see the player. We do this by running a check to see if the AI can see the player, if not it will move them to a random point within the navigable radius.',
       videoLink: 'tTGe6b0Cf7w',
-      ID: 22028
+      ID: 22028,
     },
     {
       name: 'Smooth Gun Movement',
-      description: 'Today we take a look at how we can use layered animations to make our gun movement smoother essentially allowing us to merge the idle animation with our existing walk/run blendspace.',
+      description:
+        'Today we take a look at how we can use layered animations to make our gun movement smoother essentially allowing us to merge the idle animation with our existing walk/run blendspace.',
       videoLink: 'nIVpVyyNEdQ',
-      ID: 22029
+      ID: 22029,
     },
     {
       name: 'Simple Objective System',
-      description: 'In this video we take a look at how we can display a player objective on the screen and then change it using a blueprint actor once the player gets to a specific part of the level. This example can also be used to incorporate into your gameplay code.',
+      description:
+        'In this video we take a look at how we can display a player objective on the screen and then change it using a blueprint actor once the player gets to a specific part of the level. This example can also be used to incorporate into your gameplay code.',
       videoLink: 'GpJPOfQzbAQ',
-      ID: 22030
+      ID: 22030,
     },
     {
       name: 'Setting Up Our HUD',
-      description: "In today's episode we take a look at how we can start to form our heads up display within Unreal Engine 4. We go over importing the graphics from our Photoshop document, bring them into the engine and start displaying them on our screen.",
+      description:
+        "In today's episode we take a look at how we can start to form our heads up display within Unreal Engine 4. We go over importing the graphics from our Photoshop document, bring them into the engine and start displaying them on our screen.",
       videoLink: 'stYR5eyJw8c',
-      ID: 22031
+      ID: 22031,
     },
     {
       name: 'Enemy Killfeed',
-      description: 'Here we take a look at how we can create a kill-feed which will display and popup when a player has killed an enemy. We go over how to setup the blueprint to display it, along with layout out and animating the graphics to make it look good!',
+      description:
+        'Here we take a look at how we can create a kill-feed which will display and popup when a player has killed an enemy. We go over how to setup the blueprint to display it, along with layout out and animating the graphics to make it look good!',
       videoLink: '3Csk3CAS52U',
-      ID: 22032
+      ID: 22032,
     },
     {
       name: 'Creating a Minimap',
-      description: 'Today we take a look at how we can make the minimap for our heads up display inside of Unreal Engine 4. We use a scene capture component to render a real time picture and then place it onto our UI to form our mini-map!',
+      description:
+        'Today we take a look at how we can make the minimap for our heads up display inside of Unreal Engine 4. We use a scene capture component to render a real time picture and then place it onto our UI to form our mini-map!',
       videoLink: '8AhY7CUbzwc',
-      ID: 22033
+      ID: 22033,
     },
     {
       name: 'Match Timer',
-      description: "Here we take a look at how we can add a timer onto the player's heads up display (HUD) and get it to count down to when the match or objective goal finishes.",
+      description:
+        "Here we take a look at how we can add a timer onto the player's heads up display (HUD) and get it to count down to when the match or objective goal finishes.",
       videoLink: 'IW1SyIz76jY',
-      ID: 22034
+      ID: 22034,
     },
     {
       name: 'Hit Marker With Animation',
-      description: "Here we take a look at how we can create a hit marker effect that'll popup when the player gets a positive hit on one of the enemies. We cover both the blueprints to make it show on the screen along with animating it to quickly fade in/out.",
+      description:
+        "Here we take a look at how we can create a hit marker effect that'll popup when the player gets a positive hit on one of the enemies. We cover both the blueprints to make it show on the screen along with animating it to quickly fade in/out.",
       videoLink: '3qje07RrznM',
-      ID: 22035
+      ID: 22035,
     },
     {
       name: 'Starting Weapon Switching (HUD)',
-      description: "Today we take a look at how we can start our weapon switching system, starting by working on the heads up display elements, changing text and icons for the weapon based on a 'equippedweapon' variable.",
+      description:
+        "Today we take a look at how we can start our weapon switching system, starting by working on the heads up display elements, changing text and icons for the weapon based on a 'equippedweapon' variable.",
       videoLink: 'C_LBE4wibjQ',
-      ID: 22036
+      ID: 22036,
     },
     {
       name: 'M4A1 Weapon Pickup',
-      description: 'We create a simple weapon pickup, we cover how to import the model, setup the material then plug that into a blueprint actor the player can pickup which will allow them to use the M4A1 weapon.',
+      description:
+        'We create a simple weapon pickup, we cover how to import the model, setup the material then plug that into a blueprint actor the player can pickup which will allow them to use the M4A1 weapon.',
       videoLink: '2SIAYU-eS4s',
-      ID: 22037
+      ID: 22037,
     },
     {
       name: 'Weapon Pickup Message',
-      description: "We create a simple popup message that displays on the player's screen when they collect the M4A1 item within their game. We cover setting up the animation and the blueprints to make it show up.",
+      description:
+        "We create a simple popup message that displays on the player's screen when they collect the M4A1 item within their game. We cover setting up the animation and the blueprints to make it show up.",
       videoLink: 'hGA49hRKnSk',
-      ID: 22038
+      ID: 22038,
     },
     {
       name: 'M4A1 Weapon Setup',
-      description: 'We continue working on the weapon switching system, setting up the blueprint for our second weapon the M4A1 inside of Unreal Engine 4. We also make adjustments to the skeletal mesh for the second weapon to allow it to work in the same was it does for our AK47',
+      description:
+        'We continue working on the weapon switching system, setting up the blueprint for our second weapon the M4A1 inside of Unreal Engine 4. We also make adjustments to the skeletal mesh for the second weapon to allow it to work in the same was it does for our AK47',
       videoLink: 'FU3nLnvKvQk',
-      ID: 22039
+      ID: 22039,
     },
     {
       name: 'Changing Weapon Visibility',
-      description: "In today's video we take a look at how we can spawn the second weapon into the player's hand and change the weapons visibility to work with our weapon switching system inside of Unreal Engine 4.",
+      description:
+        "In today's video we take a look at how we can spawn the second weapon into the player's hand and change the weapons visibility to work with our weapon switching system inside of Unreal Engine 4.",
       videoLink: '_zTLhntv3e8',
-      ID: 22040
+      ID: 22040,
     },
     {
       name: 'Displaying Secondary Ammo',
-      description: "Here we show you how you can make the engine switch the ammo being displayed based on the weapon selected so that when the new M4A1 weapon is selected, the M4A1's ammo is being displayed inside of Unreal Engine 4.",
+      description:
+        "Here we show you how you can make the engine switch the ammo being displayed based on the weapon selected so that when the new M4A1 weapon is selected, the M4A1's ammo is being displayed inside of Unreal Engine 4.",
       videoLink: 'j19wLdeH7rU',
-      ID: 22041
+      ID: 22041,
     },
     {
       name: 'Consuming & Reloading M4A1 Ammo',
-      description: "In today's video we show you can make the engine consume the ammo from the second weapon when it is selected, we also show you how you can adjust your reloading system to work with our second weapon.",
+      description:
+        "In today's video we show you can make the engine consume the ammo from the second weapon when it is selected, we also show you how you can adjust your reloading system to work with our second weapon.",
       videoLink: 'jnUtjBaayqM',
-      ID: 22042
+      ID: 22042,
     },
     {
       name: 'Weapon Line Tracing',
-      description: 'Here we take a look at how we can use a line trace based firing system for more accurate results by tracing from the centre of the camera where the cross hair is pointed.',
+      description:
+        'Here we take a look at how we can use a line trace based firing system for more accurate results by tracing from the centre of the camera where the cross hair is pointed.',
       videoLink: '5goK0_BSwMY',
-      ID: 22043
+      ID: 22043,
     },
     {
       name: 'Ray Tracing While Aiming Down Sight',
-      description: 'In this video we take a look at how we can make the engine ray trace from the aim down sight camera based on a variable switch for more accurate aiming results.',
+      description:
+        'In this video we take a look at how we can make the engine ray trace from the aim down sight camera based on a variable switch for more accurate aiming results.',
       videoLink: 'pLdnmkdJaWo',
-      ID: 22044
+      ID: 22044,
     },
     {
       name: 'Damaging With Line Trace',
-      description: 'Here we show you how we can deal damage to our AI using the newly created line trace based weapon system. We cover how we can convert the current projectile damage code to work with our new line traces.',
+      description:
+        'Here we show you how we can deal damage to our AI using the newly created line trace based weapon system. We cover how we can convert the current projectile damage code to work with our new line traces.',
       videoLink: '0i89_9s-gys',
-      ID: 22045
+      ID: 22045,
     },
     {
       name: 'Crouch Height Adjustment',
-      description: "In this video we show you how you can get your character's collision size to change when they're crouching so that they're able to fit underneath objects.",
+      description:
+        "In this video we show you how you can get your character's collision size to change when they're crouching so that they're able to fit underneath objects.",
       videoLink: '5L9M-OC1H4s',
-      ID: 22046
+      ID: 22046,
     },
     {
       name: 'Zombie Body Setup',
-      description: 'Welcome back to the FPS series, in this video we set up the body of our zombie enemy for our game. We import the model, animations and setup the animation blueprint to bring it all together.',
+      description:
+        'Welcome back to the FPS series, in this video we set up the body of our zombie enemy for our game. We import the model, animations and setup the animation blueprint to bring it all together.',
       videoLink: '-4pj8bn4mAw',
-      ID: 22047
+      ID: 22047,
     },
     {
       name: 'Zombie Ragdoll Death Physics',
-      description: 'In this video we take a look at how we can set up ragdoll physics for our zombie enemy character so when it dies from a bullet induced death it will drop to the ground using realistic physics actions.',
+      description:
+        'In this video we take a look at how we can set up ragdoll physics for our zombie enemy character so when it dies from a bullet induced death it will drop to the ground using realistic physics actions.',
       videoLink: '8xG0_nx4rUg',
-      ID: 22048
+      ID: 22048,
     },
     {
       name: 'Zombie Attack Animation',
-      description: 'In this video we take a look at how we can setup our zombie to attack our enemy, setup the animation blueprint and all of the logic code to make it happen.',
+      description:
+        'In this video we take a look at how we can setup our zombie to attack our enemy, setup the animation blueprint and all of the logic code to make it happen.',
       videoLink: 'nW8fOATo5zY',
-      ID: 22049
+      ID: 22049,
     },
     {
       name: 'Grenade Spawning',
-      description: 'Here we take a look at how we can get a grenade to spawn into the game with projectile movement when the player presses the G key on their keyboard. This grenade will explode after 1 second and play a sound and particle effect.',
+      description:
+        'Here we take a look at how we can get a grenade to spawn into the game with projectile movement when the player presses the G key on their keyboard. This grenade will explode after 1 second and play a sound and particle effect.',
       videoLink: 'FpM1or_-yp0',
-      ID: 22050
+      ID: 22050,
     },
     {
       name: 'Grenade Damage',
-      description: 'Today we take a look at how we can setup damage for our grenade projectile using some simple blueprints.',
+      description:
+        'Today we take a look at how we can setup damage for our grenade projectile using some simple blueprints.',
       videoLink: '2ZdtA26leZM',
-      ID: 22051
+      ID: 22051,
     },
     {
       name: 'Starting The Game Level',
-      description: 'Today we take a look at starting a unique level for our shooter game, starting off with a little bit of landscape work & aquiring assets from the Unreal Marketplace.',
+      description:
+        'Today we take a look at starting a unique level for our shooter game, starting off with a little bit of landscape work & aquiring assets from the Unreal Marketplace.',
       videoLink: 'jmxi20fjQ4E',
-      ID: 22052
+      ID: 22052,
     },
     {
       name: 'Decorating our level',
-      description: 'Today we take a look at decorating our level, getting it ready to be used by our players. We cover using the foliage tool to populate it & adjusting the lighting & post processing!',
+      description:
+        'Today we take a look at decorating our level, getting it ready to be used by our players. We cover using the foliage tool to populate it & adjusting the lighting & post processing!',
       videoLink: 'Mb9jQhseE00',
-      ID: 22053
+      ID: 22053,
     },
     {
       name: 'Grenade Count',
-      description: 'Today we show you how to make a smoke grenade based on the system we built earlier for the frag grenades.',
+      description:
+        'Today we show you how to make a smoke grenade based on the system we built earlier for the frag grenades.',
       videoLink: 'FuFnQo1Q-78',
-      ID: 22054
-    }
+      ID: 22054,
+    },
   ],
   additionalResources: [
     {
@@ -4959,105 +5322,122 @@ const GodotGuide = {
   sections: [
     {
       name: 'Introduction',
-      description: "We are going to be covering all aspects of Godot development. 2D, 3D, Physics, Importing, Exporting, C#, VisualScript, Shaders, Networking, VR and much more.",
+      description:
+        'We are going to be covering all aspects of Godot development. 2D, 3D, Physics, Importing, Exporting, C#, VisualScript, Shaders, Networking, VR and much more.',
       videoLink: 'iDEcP8Mc-7s',
-      ID: 23001
+      ID: 23001,
     },
     {
       name: 'Getting Started',
-      description: 'In this part of our ongoing Godot 3 tutorial series, we will install Godot, download and import examples and take a brief tour of the UI',
+      description:
+        'In this part of our ongoing Godot 3 tutorial series, we will install Godot, download and import examples and take a brief tour of the UI',
       videoLink: 'hG_MgGHAX-Q',
-      ID: 23002
+      ID: 23002,
     },
     {
       name: 'Nodes, Scenes and Trees',
-      description: 'In this part of the ongoing Godot 3 tutorial series we delve into the overwhelmingly exciting world of nodes, trees and scenes!',
+      description:
+        'In this part of the ongoing Godot 3 tutorial series we delve into the overwhelmingly exciting world of nodes, trees and scenes!',
       videoLink: 'WUARiOGSGKY',
-      ID: 23003
+      ID: 23003,
     },
     {
       name: 'GDScript Programming 101',
-      description: "In this video we cover GDScript 101, a quick primer on learning Godot's built in programming language GDScript. We cover a ton in this video, creating and attaching scripts, the code editor, loops, variables, globals, conditionals and much more. We even briefly look at the built in debugger.",
+      description:
+        "In this video we cover GDScript 101, a quick primer on learning Godot's built in programming language GDScript. We cover a ton in this video, creating and attaching scripts, the code editor, loops, variables, globals, conditionals and much more. We even briefly look at the built in debugger.",
       videoLink: 'ybz5CfIPYq0',
-      ID: 23004
+      ID: 23004,
     },
     {
       name: '2D Graphics, Sprites and Animation',
-      description: 'In this episode, we finally start getting into some of the fun stuff. First we look at how to use the 2D editor in Godot 3. Then we create a sprite, look at the texture importing process and cover Sprite nodes from a programmatic perspective, showing you how to position, rotate, translate etc. We also talk a bit about the built in viewport option.',
+      description:
+        'In this episode, we finally start getting into some of the fun stuff. First we look at how to use the 2D editor in Godot 3. Then we create a sprite, look at the texture importing process and cover Sprite nodes from a programmatic perspective, showing you how to position, rotate, translate etc. We also talk a bit about the built in viewport option.',
       videoLink: 'Ok3fIQstvLw',
-      ID: 23005
+      ID: 23005,
     },
     {
       name: 'Keyboard, Mouse and Joystick Input',
-      description: 'As the title suggests, in this video we look at Keyboard, Mouse and Joystick/Gamepad handling using the Godot 3 game engine. We look at both polled and event driven input handling as well as creating Input maps.',
+      description:
+        'As the title suggests, in this video we look at Keyboard, Mouse and Joystick/Gamepad handling using the Godot 3 game engine. We look at both polled and event driven input handling as well as creating Input maps.',
       videoLink: '7r7ZPmspDew',
-      ID: 23006
+      ID: 23006,
     },
     {
       name: 'User Interface Development',
-      description: 'Godot has a robust set of widgets, containers and controls that can be used to make flexible user interfaces. This tutorial walks through creating controls like widgets, wiring them up for signals and handled events in code.',
+      description:
+        'Godot has a robust set of widgets, containers and controls that can be used to make flexible user interfaces. This tutorial walks through creating controls like widgets, wiring them up for signals and handled events in code.',
       videoLink: 'RmKcFk2LQjM',
-      ID: 23007
+      ID: 23007,
     },
     {
       name: 'Sound FX and Music',
-      description: 'Today we cover all things audio. Using AudioStreamPlayer, loading audio files WAV and OGG, looping, panning, special effects, audio buses, positional audio and using Areas to toggle special effects on an off!',
+      description:
+        'Today we cover all things audio. Using AudioStreamPlayer, loading audio files WAV and OGG, looping, panning, special effects, audio buses, positional audio and using Areas to toggle special effects on an off!',
       videoLink: 'S-8IcHucSNg',
-      ID: 23008
+      ID: 23008,
     },
     {
       name: '2D Physics',
-      description: 'In this tutorial we look at implementing 2d physics using the Godot 3 game engine. We cover all kinds of subjects from simple collisions with Area2D, to Rigid Body, Kinematic Body and Static body collisions, custom collision polygons, handling collision callbacks and the basics of creating a platformer in physics.',
+      description:
+        'In this tutorial we look at implementing 2d physics using the Godot 3 game engine. We cover all kinds of subjects from simple collisions with Area2D, to Rigid Body, Kinematic Body and Static body collisions, custom collision polygons, handling collision callbacks and the basics of creating a platformer in physics.',
       videoLink: 'vY4I5VeQbBk',
-      ID: 23009
+      ID: 23009,
     },
     {
       name: 'Tiles & TileMaps',
-      description: 'In this tutorial we are going to look at creating TileSets, then using those TileSets to create TileMaps in the Godot 3 Game Engine. This is part of our ongoing Godot 3 tutorial series and is incredibly useful for creating 2D games such as platformers or top down RPGs. Godot 3 is also capable of creating isometric and custom perspective maps, but that is not covered in this particular tutorial.',
+      description:
+        'In this tutorial we are going to look at creating TileSets, then using those TileSets to create TileMaps in the Godot 3 Game Engine. This is part of our ongoing Godot 3 tutorial series and is incredibly useful for creating 2D games such as platformers or top down RPGs. Godot 3 is also capable of creating isometric and custom perspective maps, but that is not covered in this particular tutorial.',
       videoLink: '9KT84VMtmzo',
-      ID: 23010
+      ID: 23010,
     },
     {
       name: 'VR in Godot',
-      description: 'This video shows how to implement VR using the Godot 3 engine and SteamVR.  In my case, the headset used is an MS VR powered HMD by Samsung.',
+      description:
+        'This video shows how to implement VR using the Godot 3 engine and SteamVR.  In my case, the headset used is an MS VR powered HMD by Samsung.',
       videoLink: '1y5mtSGTMqs',
-      ID: 23016
+      ID: 23016,
     },
     {
       name: 'Networking',
-      description: 'This video covers networking in the Godot game engine. First we start of creating a simple UDP socket server and a client. We then illustrate the use of HTTPClient to make a REST web service request.  We then create a simple ENet based client and server in Godot.  Finally we create a simple lobby and networked game using GDScript keywords master, slave, sync and remote.',
+      description:
+        'This video covers networking in the Godot game engine. First we start of creating a simple UDP socket server and a client. We then illustrate the use of HTTPClient to make a REST web service request.  We then create a simple ENet based client and server in Godot.  Finally we create a simple lobby and networked game using GDScript keywords master, slave, sync and remote.',
       videoLink: 'JuRhRhJ2914',
-      ID: 23017
+      ID: 23017,
     },
     {
       name: 'Keyframed Animation',
-      description: 'This video covers 2D keyframe animation in Godot. In Godot 3.1, the animation system got a massive overhaul, making it easy to create complex animations using keyframes. This video showcases how to use AnimationPlayer, AnimationTreePlayer and the animation system in general to create and blend animations in Godot.',
+      description:
+        'This video covers 2D keyframe animation in Godot. In Godot 3.1, the animation system got a massive overhaul, making it easy to create complex animations using keyframes. This video showcases how to use AnimationPlayer, AnimationTreePlayer and the animation system in general to create and blend animations in Godot.',
       videoLink: 'USfmkHbIRyE',
-      ID: 23018
+      ID: 23018,
     },
     {
       name: 'Blender to Godot',
-      description: 'This tutorial walks entirely through the process of creating a full textured, rigged and animated model, creating multiple keyframed named animations in the NLA Editor, then using the Better Collada exporter to make those models available in the Godot game engine.  We then import and animate the final model in Godot.',
+      description:
+        'This tutorial walks entirely through the process of creating a full textured, rigged and animated model, creating multiple keyframed named animations in the NLA Editor, then using the Better Collada exporter to make those models available in the Godot game engine.  We then import and animate the final model in Godot.',
       videoLink: 'Q78aUox7qKA',
-      ID: 23019
+      ID: 23019,
     },
     {
       name: 'Intro to 3D Game Development In Godot',
-      description: "We've covered all aspects of game development in Godot 2D, now it's time to continue on into the 3rd dimension! In this tutorial, we introduce the 3D editor in Godot, the key commands and hotkeys you need to know to navigate and edit in 3D.  We show how to create 3D objects, apply textures, create a camera and an environment.",
+      description:
+        "We've covered all aspects of game development in Godot 2D, now it's time to continue on into the 3rd dimension! In this tutorial, we introduce the 3D editor in Godot, the key commands and hotkeys you need to know to navigate and edit in 3D.  We show how to create 3D objects, apply textures, create a camera and an environment.",
       videoLink: '09ETWu6Wf8Y',
-      ID: 23020
+      ID: 23020,
     },
     {
       name: 'Visual Shaders',
-      description: 'In this tutorial in the ongoing Godot Tutorial series we are going to look at Visual Shader development. We discuss how to create fragment and vertex shaders in the open source game engine using the visual tools instead of code.',
+      description:
+        'In this tutorial in the ongoing Godot Tutorial series we are going to look at Visual Shader development. We discuss how to create fragment and vertex shaders in the open source game engine using the visual tools instead of code.',
       videoLink: 'hiDosLOPQYA',
-      ID: 23021
+      ID: 23021,
     },
     {
       name: 'Publishing',
-      description: 'In this tutorial we cover the process of actually publishing your finished Godot game. We look at how you actually generate an exe or APK, HTML5 or whatever that you can then share or publish. We demonstrate how to create a Windows executable and an HTML5 web assembly, but the same process applies to all forms of exporting from Godot.',
+      description:
+        'In this tutorial we cover the process of actually publishing your finished Godot game. We look at how you actually generate an exe or APK, HTML5 or whatever that you can then share or publish. We demonstrate how to create a Windows executable and an HTML5 web assembly, but the same process applies to all forms of exporting from Godot.',
       videoLink: '89q1XeYYeXY',
-      ID: 23022
+      ID: 23022,
     },
   ],
   additionalResources: [
@@ -5068,6 +5448,314 @@ const GodotGuide = {
     {
       title: 'Download',
       link: 'https://godotengine.org/download',
+    },
+  ],
+};
+
+const CybersecurityGuide = {
+  title: 'Cybersecurity',
+  cover: CybersecurityCover,
+  logo: CybersecurityLogo,
+  duration: '17 Hours',
+  description:
+    'Computer security, cybersecurity or information technology security is the protection of computer systems and networks from the theft of or damage to their hardware, software, or electronic data, as well as from the disruption or misdirection of the services they provide.',
+  guideID: 24000,
+  relatedGuides: [4000, 14000],
+  sections: [
+    {
+      name: 'Introduction to Cyber Security',
+      description: `This video on "What is Cyber Security" gives an introduction to the Cyber Security world and talks about its basic concepts. You get to know different kinds of attack in today's IT world and how cybersecurity is the solution to these attacks.`,
+      videoLink: 'ooJSgsB5fIE',
+      ID: 24001,
+    },
+    {
+      name: 'CyberSecurity Career',
+      description:
+        "This video talks about some of the major cybersecurity certifications required to get into the security industry.  If you're interested in a developing an exciting career in cyber security, check out 2018's top ten cybersecurity certifications.",
+      videoLink: 'eO8l70pdVhY',
+      ID: 24002,
+    },
+    {
+      name: 'NIST Cybersecurity Framework',
+      description:
+        'This video will help you understand why and how the organizations are using cybersecurity framework to Identify, Protect and Recover from cyber attacks.',
+      videoLink: 'uk8-jJgu8-I',
+      ID: 24003,
+    },
+    {
+      name: 'Demo On Man in The Middle Attack',
+      description:
+        'This video gives an indepth information about the Cyber Security world and talks about its basic concepts.',
+      videoLink: '_QtSB0Old_Q',
+      ID: 24004,
+    },
+    {
+      name: 'Popular Tools for Cybersecurity Threats',
+      description:
+        "This video gives an introduction to the various tools used in the industry for the purpose of cybersecurity. You get to know different kinds of security tools in today's IT world and how they protect us against cyber threats/attacks.",
+      videoLink: 'KgtevibJlTE',
+      ID: 24005,
+    },
+    {
+      name: 'Why Cybersecurity is Important',
+      description:
+        'This video talks about the Top 10 Reasons to Learn Cybersecurity and what makes the Cybersecurity a lucrative career choice.',
+      videoLink: 'ZLyFt6BdxD4',
+      ID: 24006,
+    },
+    {
+      name: 'Skills Required in Cybersecurity Career',
+      description:
+        'Cybersecurity careers are complex and many roles can be found in banks, retailers and government organizations. This video will guide you through multiple career paths in cybersecurity.',
+      videoLink: 'Sj4TD0LSC_k',
+      ID: 24007,
+    },
+    {
+      name: 'Types of Cyber Attacks',
+      description:
+        'This video will help you understand the types of cyber attacks that commonly plague businesses and how to tackle them and prevent them.',
+      videoLink: 'Dk-ZqQ-bfy4',
+      ID: 24008,
+    },
+    {
+      name: 'Introduction to Cryptography',
+      description:
+        'Cryptography is essential to protect the information shared across the internet. This video on What is cryptography explaines you the fundamental concepts along with various encryption techniques.',
+      videoLink: '5jpgMXt1Z9Y',
+      ID: 24009,
+    },
+    {
+      name: 'CyberSecurity Interview Tips',
+      description:
+        'This video consists of 50 questions from multiple cybersecurity domains which will help you in preparation of your interviews.',
+      videoLink: 'otWst36CKyM',
+      ID: 24010,
+    },
+    {
+      name: 'Types of Computer Security',
+      description:
+        'This video gives an introduction to Computer Security and the types of computer security. Also, it teaches you various ways to secure your computer devices.',
+      videoLink: 'd30n-YxOHo4',
+      ID: 24011,
+    },
+    {
+      name: 'Penetration Testing Tutorial',
+      description:
+        'We will go over one of the most rampant vulnerability of web-based applications i.e. Cross-Site Scripting.',
+      videoLink: '1qzjWNcQVeI',
+      ID: 24012,
+    },
+    {
+      name: 'Secret Key Exchange',
+      description:
+        'This video teaches Diffie-Helman algorithm which is used to exchange the symmetric key between sender and receiver. The exchange of keys is done using a mathematical calculation individually at both ends.',
+      videoLink: 'ochCOjm7XZk',
+      ID: 24013,
+    },
+    {
+      name: 'Introduction to Network Security',
+      description:
+        'This video gives an introduction to Network Security and its nuances.',
+      videoLink: '6Jubl1UnJTE',
+      ID: 24014,
+    },
+    {
+      name: 'Penetration Testing using Metasploit',
+      description:
+        'This video gives an introduction to Web Application penetration testing using metasploit and metasploitable2.',
+      videoLink: 'LUGkIvcQmGE',
+      ID: 24015,
+    },
+    {
+      name: 'Introduction to Netcat',
+      description:
+        'This video will help you understand Netcat, which is one of the most powerful, versatile tool used by ethical hackers for a multitude of purposes.',
+      videoLink: 'rdgv-EqyeAU',
+      ID: 24016,
+    },
+    {
+      name: 'Application Security Tutorial',
+      description:
+        'This video will help you understand what application security is and measures taken to improve the security of an application often by finding, fixing and preventing security vulnerabilities.',
+      videoLink: 'gfFKuiZ9Y7s',
+      ID: 24017,
+    },
+    {
+      name: 'Ethical Hacking for Beginners',
+      description:
+        'This video will give you an introduction to Ethical Hacking. This is a beginners tutorial covering all the fundamentals of Ethical Hacking.',
+      videoLink: '2VSNn7UIXn8',
+      ID: 24018,
+    },
+    {
+      name: 'Understanding Cybersecurity Basics',
+      description:
+        'This video will introduce you to the world of cybersecurity and talks about its basic concepts.',
+      videoLink: '5MMoxyK1Y9o',
+      ID: 24019,
+    },
+    {
+      name: 'Cybersecurity Salary',
+      description:
+        'This video covers all the basic aspects of becoming a certified Cybersecurity Engineer.',
+      videoLink: 'e6_mVZg-Dms',
+      ID: 24020,
+    },
+    {
+      name: 'Kali Linux Tutorial',
+      description:
+        'This video will help you understand what Kali Linux, covers all its basic concepts and introduces you to few top Kali Linux tools.',
+      videoLink: 'J36yzsCLPNg',
+      ID: 24021,
+    },
+    {
+      name: 'Kali Linux Tutorial',
+      description:
+        'This video will help you understand how to install Kali Linux on different platforms like windows, mac and Linux distributions.',
+      videoLink: 'Bbe9YP86yoQ',
+      ID: 24022,
+    },
+    {
+      name: 'Ethical Hacking Course',
+      description:
+        'This video will give you a sneak peek into the career of an Ethical Hacker. ',
+      videoLink: 'YkZBsiQj5lc',
+      ID: 24023,
+    },
+    {
+      name: 'Ethical Hacker Jobs & Salary',
+      description:
+        'This video covers all the basic aspects of becoming an ethical hacker. It establishes the concepts like roles, responsibilities, skills, salaries and even trends to get you up to speed with hacking.',
+      videoLink: '1jGo3-4t568',
+      ID: 24024,
+    },
+    {
+      name: 'Ethical Hacking Career',
+      description:
+        'This video covers all the basic aspects of becoming an ethical hacker. It establishes the concepts like roles, responsibilities, skills, salaries and even trends to get you up to speed with hacking. The following topics are going to be discussed throughout the course of this video: \n',
+      videoLink: 'SFdOLK997fw',
+      ID: 24025,
+    },
+  ],
+  additionalResources: [
+    {
+      title: 'Kali Linux',
+      link: 'https://www.kali.org/docs/',
+    },
+    {
+      title: 'Javascript Documentation',
+      link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+    },
+  ],
+};
+
+const CloudComputingGuide = {
+  title: 'Cloud Computer',
+  cover: CloudComputingCover,
+  logo: CloudComputingLogo,
+  duration: '1.5 Hours',
+  description:
+    'Cloud computing is the on-demand availability of computer system resources, especially data storage and computing power, without direct active management by the user. The term is generally used to describe data centers available to many users over the Internet.',
+  guideID: 25000,
+  relatedGuides: [2000, 24000],
+  sections: [
+    {
+      name: 'Introduction to Cloud Technologies',
+      description:
+        'Choosing a career path in IT can be both exciting and daunting — there’s so many options! Here we discuss what to consider when choosing a career path and how cloud computing can allow you to explore different areas of IT.',
+      videoLink: 'cVKBFNxaM4k',
+      ID: 25001,
+    },
+    {
+      name: 'What are Cloud Technologies?',
+      description:
+        'Knowing and understanding common terminology is crucial to being successful in IT. Here we cover the basics of cloud computing and its impact on IT.',
+      videoLink: 'jW0Y5SimnwM',
+      ID: 25002,
+    },
+    {
+      name: 'What Cloud Jobs are Available?',
+      description:
+        'Cloud computing has many applications. As a result, there are a variety of job roles that require cloud knowledge. Here we highlight some of those jobs. He also discusses the importance of continuing education when working in a cloud-related role.',
+      videoLink: 'hVQRrhevo7k',
+      ID: 25003,
+    },
+    {
+      name: 'What Cloud Skills are Essential?',
+      description:
+        'Working in a cloud-based environment requires a specific skill set. Here we cover three must-have cloud computing skills: using tools, communication, and problem solving.',
+      videoLink: 'udKBDRcj178',
+      ID: 25004,
+    },
+    {
+      name: 'Why You Should Learn Virtualization',
+      description:
+        'Cloud computing and virtualization work well together to help meet the needs of IT departments. Here we explain virtualization and the role it plays in cloud computing.',
+      videoLink: 'bXRLvUeRgvY',
+      ID: 25005,
+    },
+    {
+      name: 'Why You Should Automate Everything',
+      description:
+        'Automation increases efficiency, accuracy, and standardizes processes — all of which are crucial to IT infrastructure. Here we discuss how automation plays a key role in successful cloud-based environments.',
+      videoLink: '9fsOI3sxJCw',
+      ID: 25006,
+    },
+    {
+      name: 'Why You Should Learn Wide Area Networking',
+      description:
+        'Networking is where it all starts as far as IT goes. Not surprisingly, networking plays a huge role in cloud computing. Here we discuss networking elements such as connectivity and naming schemes — and how it all ties to cloud computing.',
+      videoLink: 'fyS3QdYuMZI',
+      ID: 25007,
+    },
+    {
+      name: 'Every Cloud Service Has These Common Traits',
+      description:
+        'According to the National Institute of Standards and Technology, cloud computing services must possess five key characteristics. Here we define and explains these five traits, which include broad network access and shared resources.',
+      videoLink: 'HVTQKUtkyhs',
+      ID: 25008,
+    },
+    {
+      name: 'What are the Cloud Deployment Models?',
+      description:
+        'There are four types of cloud deployment models as defined by the National Institute of Standards and Technology. Here we explain and compares the elements of private, public, hybrid, and community cloud models.',
+      videoLink: 'X1qoKLL040A',
+      ID: 25009,
+    },
+    {
+      name: 'What are the Cloud Service Models?',
+      description:
+        'There are three types of cloud service models as defined by the National Institute of Standards and Technology. Here we explain the Infrastructure (IaaS), Platform (PaaS), and Software (SaaS) As-A-Service models.',
+      videoLink: 'tOrMC1pDYjs',
+      ID: 25010,
+    },
+    {
+      name: 'Cloud Technologies in the Real World',
+      description:
+        'You might be surprised at just prevalent cloud computing is in everyday life. Here we walk through some real-world examples of cloud services in action. He also demonstrates how different cloud services work together to solve a variety of problems.',
+      videoLink: 'oCFTbwTjcgQ',
+      ID: 25011,
+    },
+    {
+      name: 'How to Use Cloud Skills to Get a Job',
+      description:
+        'Many companies, large and small, use cloud computing services. As a result, there is a demand for IT professionals who can leverage cloud technologies. Here we highlight certifications that can help you hit the ground running as you pursue a career working with cloud-based services.',
+      videoLink: 'bMXtoLpA5jU',
+      ID: 25012,
+    },
+  ],
+  additionalResources: [
+    {
+      title: 'Amazon Web Services Docs',
+      link: 'https://docs.aws.amazon.com/',
+    },
+    {
+      title: 'Google Cloud Platform Docs',
+      link: 'https://cloud.google.com/docs',
+    },
+    {
+      title: 'Microsoft Azure Docs',
+      link: 'https://docs.microsoft.com/en-us/azure/',
     },
   ],
 };
@@ -5094,5 +5782,7 @@ export default [
   RubyGuide,
   UnityGuide,
   UnrealGuide,
-  GodotGuide
+  GodotGuide,
+  CybersecurityGuide,
+  CloudComputingGuide,
 ];

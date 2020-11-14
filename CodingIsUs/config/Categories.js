@@ -42,11 +42,11 @@ const WebDevelopment = {
   guideIDs: [5000, 11000, 10000],
 };
 
-const MachineLearning = {
-  title: 'Machine Learning',
+const Concepts = {
+  title: 'Concepts',
   iconName: 'atom',
   iconColor: '#1520A6',
-  guideIDs: [15000],
+  guideIDs: [15000, 24000, 25000],
 };
 
 const GameDevelopment = {
@@ -69,6 +69,6 @@ export default [
   Databases,
   WebDevelopment,
   GameDevelopment,
-  MachineLearning,
+  Concepts,
   AllGuides,
 ];
