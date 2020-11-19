@@ -143,16 +143,9 @@ const SectionScreen = ({route, navigation}) => {
       <View style={SectionScreenStyle.youtubeContainer}>
         <YoutubePlayer
           height={
-            SectionScreenStyle.youtubeContainer.height > 220
-              ? SectionScreenStyle.youtubeContainer.height
-              : 220
+            280
           }
-          width={
-            SectionScreenStyle.youtubeContainer.width > 380
-              ? SectionScreenStyle.youtubeContainer.width
-              : screenWidth > 380
-              ? 380
-              : screenWidth
+          width={380
           }
           play={isPlaying}
           videoId={section.videoLink}

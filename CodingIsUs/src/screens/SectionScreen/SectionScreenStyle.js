@@ -15,7 +15,7 @@ export default StyleSheet.create({
   },
   descriptionText: {
     textAlign: 'center',
-    marginTop: screenHeight * 0.075,
+    marginTop: screenHeight * 0.035,
     marginBottom: screenHeight * 0.02,
     paddingHorizontal: screenWidth * 0.025,
     alignItems: 'center',
@@ -30,7 +30,7 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignSelf: 'center',
     alignItems: 'center',
-    zIndex: 1
+    zIndex: 1,
   },
   smallSpacer: {
     height: screenHeight * 0.0125,
@@ -58,7 +58,8 @@ export default StyleSheet.create({
     alignSelf: 'flex-start',
     marginHorizontal: screenWidth * 0.05,
     marginTop: screenHeight * 0.1,
-    marginBottom: screenHeight * 0.05,
+    marginBottom:
+      screenHeight * 0.25 < 280 ? screenHeight * 0.05 + 75 : screenHeight * 0.05,
   },
   backButton: {
     justifyContent: 'center',
@@ -77,7 +78,6 @@ export default StyleSheet.create({
     height: screenHeight * 0.075,
     width: screenHeight * 0.075,
     borderRadius: screenHeight * 0.0375,
-    
   },
   nextSection: {
     marginRight: screenWidth * 0.05,
@@ -89,6 +89,6 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    width: screenWidth * 0.75
-  }
+    width: screenWidth * 0.75,
+  },
 });

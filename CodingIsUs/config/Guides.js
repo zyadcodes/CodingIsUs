@@ -48,6 +48,14 @@ import CybersecurityLogo from '../assets/images/CybersecurityLogo.png';
 import CybersecurityCover from '../assets/images/CybersecurityCover.jpg';
 import CloudComputingLogo from '../assets/images/CloudComputingLogo.png';
 import CloudComputingCover from '../assets/images/CloudComputingCover.png';
+import GCPLogo from '../assets/images/GCPLogo.png';
+import GCPCover from '../assets/images/GCPCover.png';
+import AzureLogo from '../assets/images/AzureLogo.png';
+import AzureCover from '../assets/images/AzureCover.jpg';
+import OOPLogo from '../assets/images/OOPLogo.png';
+import OOPCover from '../assets/images/OOPCover.jpg';
+import DatabaseDesignLogo from '../assets/images/DatabaseDesignLogo.png';
+import DatabaseDesignCover from '../assets/images/DatabaseDesignCover.jpeg';
 
 const FirestoreGuide = {
   title: 'Firestore',
@@ -57,7 +65,7 @@ const FirestoreGuide = {
     'Cloud Firestore is a NoSQL document database that lets you easily store, sync, and query data for your mobile and web apps at a global scale.',
   duration: '1 Hour',
   guideID: 2000,
-  relatedGuides: [13000, 6000],
+  relatedGuides: [29000, 13000],
   sections: [
     {
       name: 'Introduction',
@@ -2313,7 +2321,7 @@ const MySQLGuide = {
     'MySQL is a database management system. It may be anything from a simple shopping list to a picture gallery or the vast amounts of information in a corporate network.',
   duration: '4.5 Hours',
   guideID: 13000,
-  relatedGuides: [2000, 14000],
+  relatedGuides: [29000, 14000],
   sections: [
     {
       name: 'Introduction',
@@ -5657,7 +5665,7 @@ const CloudComputingGuide = {
   description:
     'Cloud computing is the on-demand availability of computer system resources, especially data storage and computing power, without direct active management by the user. The term is generally used to describe data centers available to many users over the Internet.',
   guideID: 25000,
-  relatedGuides: [2000, 24000],
+  relatedGuides: [26000, 27000],
   sections: [
     {
       name: 'Introduction to Cloud Technologies',
@@ -5760,6 +5768,799 @@ const CloudComputingGuide = {
   ],
 };
 
+const GCPGuide = {
+  title: 'Google Cloud Platform',
+  cover: GCPCover,
+  logo: GCPLogo,
+  duration: '1.5 Hours',
+  description:
+    'Google Cloud Platform, offered by Google, is a suite of cloud computing services that runs on the same infrastructure that Google uses internally for its end-user products, such as Google Search, Gmail, file storage, and YouTube.',
+  guideID: 26000,
+  relatedGuides: [25000, 7000],
+  sections: [
+    {
+      name: 'Welcome to Google Cloud Platform',
+      description:
+        'Welcome to Google Cloud Platform! GCP can be overwhelming at first, but we’ll help you get started in this video.',
+      videoLink: '4D3X6Xl5c_Y',
+      ID: 26001,
+    },
+    {
+      name: 'The Google Cloud Platform Free Trial and Free Tier',
+      description:
+        'Watch this short video to understand the difference between Google Cloud Platform’s (GCP) free tier and free trial and understand how they can help you test GCP or use it for development purposes at no or little cost.',
+      videoLink: 'P2ADJdk5mYo',
+      ID: 26002,
+    },
+    {
+      name: 'The Cloud Console Tour',
+      description:
+        'Manage your cloud resources such as virtual machines, Kubernetes clusters, or Machine Learning APIs with the browser-based GCP Console. Tasks that you can access include: user and permissions management, activity logs, technical support, and the GCP’s browser-based command line (CloudShell).',
+      videoLink: 'FsbYh47q55o',
+      ID: 26003,
+    },
+    {
+      name: 'Developer and Management Tools',
+      description:
+        'In this short GCP Essentials video, learn about the Cloud SDK, the gcloud Command-Line, and Cloud Shell. We explain how Google Cloud’s tools can help you accomplish tasks effectively, and establish powerful workflows across whichever OS you use.',
+      videoLink: '3v9XWdFyh2E',
+      ID: 26004,
+    },
+    {
+      name: 'Compute',
+      description:
+        'Learn about Compute Engine Essentials. We discuss Platform Overview of Compute Engine.',
+      videoLink: 'hHmBOv8z1D0',
+      ID: 26005,
+    },
+    {
+      name: 'Machine Learning',
+      description:
+        'In this short GCP Essentials video, see how GCP has made Machine Learning easier for you from behind the scenes. We further discuss Compute Engine Essentials with a Platform Overview.',
+      videoLink: 'QR_LQQ-vvko',
+      ID: 26006,
+    },
+    {
+      name: 'Serverless',
+      description:
+        'We try to help you in understanding how Google Cloud Platform makes serverless work for you.',
+      videoLink: 'PBw9vD_BO5A',
+      ID: 26007,
+    },
+    {
+      name: 'Data & Storage',
+      description:
+        'We discuss the Platform Overview of Google Cloud Storage. Learn about data and storage essentials, such as BigQuery, CloudSQL, Cloud Dataproc, and much more!',
+      videoLink: 'tc2940Zwvyk',
+      ID: 26008,
+    },
+    {
+      name: 'Hands-on GCP',
+      description:
+        'Here, we try out the different tutorials, online courses, codelabs and solutions that Google Cloud Platform has to offer.',
+      videoLink: 'eSYOjZuDtDw',
+      ID: 26009,
+    },
+    {
+      name: 'GCP Staying in touch',
+      description:
+        'Join us in a walk through of some prominent and some less obvious resources, that may work well for your GCP journey. Having the right sources of information and communication channels can be the difference between a regular and a highly-productive GCP user!',
+      videoLink: 'vmTRaAkYH7k',
+      ID: 26010,
+    },
+    {
+      name: 'Running Containers',
+      description:
+        'Find out the top three ways you can run your containers on Google Cloud! Google Kubernetes Engine for a container orchestration solution, Cloud Run for a fully serverless approach and Compute Engine to simply use Virtual Machines.',
+      videoLink: 'jh0fPT-AWwM',
+      ID: 26011,
+    },
+    {
+      name: 'Projects & Storage',
+      description:
+        'In this episode of GCP Essentials, we go over the relationship between Firebase and Google Cloud Platform. Stay tuned to find out how the two platforms have a lot in common and were conceived to nicely complement one another!',
+      videoLink: 'xbmYmgBEj4o',
+      ID: 26012,
+    },
+    {
+      name: 'Functions & Firestore',
+      description:
+        'In this episode we’ll explore two more products: Cloud Functions, and Cloud Firestore.',
+      videoLink: 'zR6CsTLTPsk',
+      ID: 26013,
+    },
+    {
+      name: 'Cloud Logging',
+      description:
+        'In this episode of Google Cloud Platform Essentials, we show you how logs are aggregated for all Google Cloud products, how to utilize them, and how to use them for tracking application errors.',
+      videoLink: 'gyDp-Cl_MdA',
+      ID: 26014,
+    },
+    {
+      name: 'Error Reporting',
+      description:
+        'Error reporting can be tedious in terms of identifying and resolving bugs in your application. In this video of Google Cloud Platform Essentials, we’ll show you how to use Cloud Error Reporting to gain better observability over your workloads running in a multitude of cloud services.',
+      videoLink: 'GANi9eRxhHs',
+      ID: 26015,
+    },
+    {
+      name: 'Debugging',
+      description:
+        'Google Cloud offers many tools that can help you manage your application services. In this video, we teach you how to set up and utilize Cloud Trace, Cloud Profiler, and Cloud Debugger to collect latency data across different services, memory-allocation information, and inspect application code locations without compromising the performance of your web application.',
+      videoLink: 'CjGv1bDy9rI',
+      ID: 26016,
+    },
+    {
+      name: 'Code & Build tools',
+      description:
+        'In this video of GCP essentials, we discuss how you can use Cloud Code - an IDE extension - to rapidly iterate, debug, and deploy code for various Google Cloud libraries in an IDE. Moreover, we also talk about how to continuously deploy and integrate various cloud services with Cloud Build.',
+      videoLink: 'TH_OuqZ1ZKU',
+      ID: 26017,
+    },
+  ],
+  additionalResources: [
+    {
+      title: 'Google Cloud Platform Docs',
+      link: 'https://cloud.google.com/docs',
+    },
+    {
+      title: 'Documentation',
+      link: 'https://firebase.google.com/docs',
+    },
+  ],
+};
+
+const AzureGuide = {
+  title: 'Azure',
+  cover: AzureCover,
+  logo: AzureLogo,
+  duration: '7 Hours',
+  description:
+    'Microsoft Azure, commonly referred to as Azure, is a cloud computing service created by Microsoft for building, testing, deploying, and managing applications and services through Microsoft-managed data centers.',
+  guideID: 27000,
+  relatedGuides: [25000, 26000],
+  sections: [
+    {
+      name: 'What is Cloud',
+      description:
+        'Get an introduction into the Cloud and how Azure works to provide services in the space.',
+      videoLink: 'M7v52Wbe8Dc',
+      ID: 27001,
+    },
+    {
+      name: 'Azure Regions',
+      description:
+        'Learn about the concept of Azure Regions and how to use them.',
+      videoLink: 'ptbKhbZM16Q',
+      ID: 27002,
+    },
+    {
+      name: 'Azure Docs',
+      description: 'Learn about the concept of Azure Docs and how to use it.',
+      videoLink: 'eKr_K2c87vs',
+      ID: 27003,
+    },
+    {
+      name: 'Azure Portal Basics',
+      description:
+        'Learn the ins and outs of the Azure Portal and get started with this powerful tool.',
+      videoLink: 'X9n-fi0cVN8',
+      ID: 27004,
+    },
+    {
+      name: 'CloudShell',
+      description:
+        'Learn about the CloudShell and how to use it in this video.',
+      videoLink: '-Xm6ViBAWKQ',
+      ID: 27005,
+    },
+    {
+      name: 'Resource Groups',
+      description:
+        'Learn about Resource Groups and their allocation in this video.',
+      videoLink: 'C0y2108wfsQ',
+      ID: 27006,
+    },
+    {
+      name: 'Virtual Networks',
+      description: 'Learn how to use Virtual Networks in Microsoft Azure.',
+      videoLink: 'uGePuL5wPX0',
+      ID: 27007,
+    },
+    {
+      name: 'Create First VMs',
+      description:
+        'Learn how to create your first Virtual Machine in Microsoft Azure.',
+      videoLink: 'fULXp1d1_2A',
+      ID: 27008,
+    },
+    {
+      name: 'Create First VMs 2',
+      description:
+        'Learn how to create your first Virtual Machine in Microsoft Azure.',
+      videoLink: 'X5nvQ4I7Byk',
+      ID: 27009,
+    },
+    {
+      name: 'Clean Up',
+      description:
+        'Finish up your projects by learning Clean Up practices in Azure.',
+      videoLink: 'wlr-6qp_FwM',
+      ID: 27010,
+    },
+    {
+      name: 'Connectivity Options',
+      description:
+        'Learn about various connectivity options and the uses of each one.',
+      videoLink: 'HsOrDE0Mb5Q',
+      ID: 27011,
+    },
+    {
+      name: 'ExpressRoute',
+      description:
+        'Learn about ExpressRoute, a way to create private connections with Azure data centers.',
+      videoLink: '8QDWuY0iWtk',
+      ID: 27012,
+    },
+    {
+      name: 'Virtual Network Gateway',
+      description:
+        'Learn about the Virtual Network Gateway, and how to leverage its use cases.',
+      videoLink: 'rRKJdbUjAn0',
+      ID: 27013,
+    },
+    {
+      name: 'Point-to-Site VPN',
+      description:
+        'Learn how to create a Point-to-Site VPN with Microsoft Azure.',
+      videoLink: 'Olw1YvkBu6Y',
+      ID: 27014,
+    },
+    {
+      name: 'Site-to-Site VPN',
+      description:
+        'Learn how to create a Site-to-Site VPN with Microsoft Azure.',
+      videoLink: '9CCZ6I3DRqM',
+      ID: 27015,
+    },
+    {
+      name: 'Domain Controller',
+      description:
+        'Learn about Domain Controllers and their use cases in Microsoft Azure.',
+      videoLink: '8vkTkF5jwSI',
+      ID: 27016,
+    },
+    {
+      name: 'Azure Firewall',
+      description:
+        'Learn about Azure Firewall and how it can be used to build protection for your systems.',
+      videoLink: 'SM0s-ygsRN8',
+      ID: 27017,
+    },
+    {
+      name: 'Public IP Prefix',
+      description:
+        'Learn about the Public IP Prefix and how Azure related it to basic networking concepts.',
+      videoLink: 'khAHNk6R2-8',
+      ID: 27018,
+    },
+    {
+      name: 'Azure Bastion',
+      description:
+        'Learn about Azure Bastion and the use cases of this powerful infrastructure.',
+      videoLink: 'Ixl44IRkxj0',
+      ID: 27019,
+    },
+    {
+      name: 'Azure Firewall & Azure Bastion',
+      description:
+        'Learn how to combine Azure Firewall with Azure Bastion to create dynamic, secure software.',
+      videoLink: 'xZJKbP3qNWY',
+      ID: 27020,
+    },
+    {
+      name: 'Azure-P2S OpenVPN',
+      description:
+        'Learn about an alternative VPN software offered by Microsoft Azure.',
+      videoLink: 'OTAjPrfKS5U',
+      ID: 27021,
+    },
+    {
+      name: 'AzureDNS',
+      description: 'Learn about AzureDNS and how to use this platform.',
+      videoLink: '6kdBgO0jqaY',
+      ID: 27022,
+    },
+    {
+      name: 'Azure Charts',
+      description:
+        'Learn about Azure Charts and how you can use it to analyze and derive decisions from data.',
+      videoLink: 'SLMTAkmpExU',
+      ID: 27023,
+    },
+    {
+      name: 'New Azure Portal',
+      description:
+        'Learn about the latest edition of Azure Portal and how to use it.',
+      videoLink: 'u7uA8JCZsf4',
+      ID: 27024,
+    },
+    {
+      name: 'Top 10 Azure Cost Savings Tips',
+      description:
+        'Take a inside look at the most cost-effective ways to use Micrsoft Azure.',
+      videoLink: 'sZRcqDkIQdk',
+      ID: 27025,
+    },
+    {
+      name: 'Azure ARC',
+      description: 'Learn about Azure ARC, and its use cases.',
+      videoLink: 'hblUwtiK8zY',
+      ID: 27026,
+    },
+    {
+      name: 'Azure Dedicated Hosts Secrets Revealed',
+      description:
+        'Learn about Azure Dedicated Hosts and the ins and outs of the service.',
+      videoLink: 'b1_oaX_JqqA',
+      ID: 27027,
+    },
+    {
+      name: 'Proximity Placement Groups',
+      description:
+        'Learn about Proximity Placement Groups and how to use them in your projects.',
+      videoLink: '0gdkpLdZv68',
+      ID: 27028,
+    },
+    {
+      name: 'New VM Sizes',
+      description:
+        'Learn about the latest improvements in Virtual Machines and their larger sizes.',
+      videoLink: 'tFkSaBq11qA',
+      ID: 27029,
+    },
+  ],
+  additionalResources: [
+    {
+      title: 'Microsoft Azure Docs',
+      link: 'https://docs.microsoft.com/en-us/azure/',
+    },
+  ],
+};
+
+const OOPGuide = {
+  title: 'Object Oriented Programming',
+  cover: OOPCover,
+  logo: OOPLogo,
+  duration: '1 Hour',
+  description:
+    'Object-oriented programming is a programming paradigm based on the concept of "objects", which can contain data and code: data in the form of fields, and code, in the form of procedures.',
+  guideID: 28000,
+  relatedGuides: [3000, 9000],
+  sections: [
+    {
+      name: 'What is programming?',
+      description: 'Learn the fundamentals of basic programming concepts.',
+      videoLink: 'UJcbFIV4JSQ',
+      ID: 28001,
+    },
+    {
+      name: 'What is a Class vs What is an Object?',
+      description:
+        'Learn the definitions of the key concepts of Classes and Objects and understand their differences.',
+      videoLink: 'K8eOkzQ_o9w',
+      ID: 28002,
+    },
+    {
+      name: 'What is inheritance?',
+      description:
+        'Learn about in inheritance, and why it is extremely useful in programming.',
+      videoLink: 'ajOYOxCanhE',
+      ID: 28003,
+    },
+    {
+      name: 'What is polymorphism?',
+      description:
+        'Learn about Polymorphism in programming, and how you can use it to create powerful programs.',
+      videoLink: 'tIWm3I_Zu7I',
+      ID: 28004,
+    },
+    {
+      name: 'What is abstraction?',
+      description:
+        'Learn about the concept of abstraction in programming, and why it is key when it comes to coding in an object oriented langauge.',
+      videoLink: 'L1-zCdrx8Lk',
+      ID: 28005,
+    },
+    {
+      name: 'What is encapsulation?',
+      description:
+        'Learn about encapsulation and more about how you can keep your classes safe and secure.',
+      videoLink: 'sNKKxc4QHqA',
+      ID: 28006,
+    },
+  ],
+  additionalResources: [
+    {
+      title: 'Java Documentation',
+      link: 'https://docs.oracle.com/en/java/',
+    },
+    {
+      title: 'C# Documentation',
+      link: 'https://docs.microsoft.com/en-us/dotnet/csharp/',
+    },
+  ],
+};
+
+const DatabaseDesignGuide = {
+  title: 'Database Design',
+  cover: DatabaseDesignCover,
+  logo: DatabaseDesignLogo,
+  duration: '8 Hours',
+  description:
+    'Database design is the organization of data according to a database model. The designer determines what data must be stored and how the data elements interrelate. With this information, they can begin to fit the data to the database model.',
+  guideID: 29000,
+  relatedGuides: [13000, 2000],
+  sections: [
+    {
+      name: 'What is a Database?',
+      description:
+        'A database is used to store large amounts of data. It differs from a spreadsheet in that it can be manipulated and managed in so many ways. A database will give us security, control, flexibility, and backups for our data.',
+      videoLink: 'hG_3UHepr_M',
+      ID: 29001,
+    },
+    {
+      name: 'What is a Relational Database?',
+      description:
+        'In this video we talked about a relational database. A relational database is a database that sorts all information in relations. A relation is physically represented by a table. A table will have rows and columns organizing all of our information.  ',
+      videoLink: 'zhu6jtlghIs',
+      ID: 29002,
+    },
+    {
+      name: 'RDBMS',
+      description:
+        'This video will talk about the relational database management system (RDBMS). The RDBMS is what allows us to do awesome things with our database. The RDBMS adds features as well as security. With a RDBMS we do not only have a database to store information but we can run queries and do things with our data. We use our RDBMS with SQL, a database programming language.',
+      videoLink: 'X-81V5jNrYM',
+      ID: 29003,
+    },
+    {
+      name: 'Introduction to SQL',
+      description:
+        'This video will be an introduction to structured query language (SQL). SQL is a language used to talk to any relational database management system.',
+      videoLink: 'Aw6DwXK0ZGM',
+      ID: 29004,
+    },
+    {
+      name: 'Naming Conventions',
+      description:
+        'This video will be explaining what naming conventions are in general and then proceed to explain what naming conventions we will be using. It is important to realize that many relational database management systems have different naming conventions.',
+      videoLink: 'Rtw3YOYDt3A',
+      ID: 29005,
+    },
+    {
+      name: 'What is Database Design?',
+      description:
+        'Database Design is the process of structuring your database in a way that will reduce errors, incorrect data, and redundant data. This will give us an optimized, fast, safe, reliable database.',
+      videoLink: 'nSzuHnkcfo8',
+      ID: 29006,
+    },
+    {
+      name: 'Data Integrity',
+      description:
+        'Integrity is important because it is what keeps our database functional and reliable. This video will discuss three areas of integrity that you should be thinking of when you design your database.',
+      videoLink: '1D_h-yFtQVo',
+      ID: 29007,
+    },
+    {
+      name: 'Database Terms',
+      description:
+        "This video will go over some of the most common database terms.  Learn these because you don't want to have to look anything up during this series!",
+      videoLink: 'pShj3gtYQik',
+      ID: 29008,
+    },
+    {
+      name: 'More Database Terms',
+      description:
+        'Here we will cover more terms that you should know when working with databases.',
+      videoLink: '3-qSONSuZq0',
+      ID: 29009,
+    },
+    {
+      name: 'Atomic Values',
+      description:
+        'This video will talk about Atomic values. Atomic values store only one individual thing. As long as the value can be considered as an individual value then it is considered atomic.',
+      videoLink: 'Uhy75wsS96s',
+      ID: 29010,
+    },
+    {
+      name: 'Relationships',
+      description:
+        'This video will be an introduction to relationships. Database design relationships, to be exact. The three kinds of relationships (logically) are one-to-one, one-to-many, and many-to-many. We will learn that many-to-many relationships cannot be stored within a database correctly.',
+      videoLink: '2ko_rBZXTjE',
+      ID: 29011,
+    },
+    {
+      name: 'One-to-One Relationships',
+      description:
+        'This video will take the time needed to understand the basics of one-to-one relationships. One-to-one relationships are very easy to understand. Watch this video and this series in its entirety to fully understand designing relationships.',
+      videoLink: 'jKfZiotyRhk',
+      ID: 29012,
+    },
+    {
+      name: 'One-to-Many Relationships',
+      description:
+        'One-to-Many relationships are when one row from tableA can have a relationship with multiple rows of tableB but each row of tableB can only have a relationship with one row from tableA.',
+      videoLink: 'fCUrCNiA0j0',
+      ID: 29013,
+    },
+    {
+      name: 'Many-to-Many Relationships',
+      description:
+        'Many to Many relationships cannot be stored in a database practically. The only way we can think of many to many relationships is logically. This video will be explaining the logical design for a many to many relationships. ',
+      videoLink: 'pv7P9R9JI-E',
+      ID: 29014,
+    },
+    {
+      name: 'Designing One-to-One Relationships',
+      description:
+        "This video will go over designing one to one relationships. This video will be useful for you when you're actually designing you database. One to One relationships (over multiple tables) are not as common because it is easier to store as a column within the parent table.",
+      videoLink: 'M-Rw21NGORo',
+      ID: 29015,
+    },
+    {
+      name: 'Designing One-to-Many Relationships',
+      description:
+        'One to Many relationships will have a parent table and a child table. The child table will have a foreign key referencing the primary key in the parent table.',
+      videoLink: 'DzchNE1pbrk',
+      ID: 29016,
+    },
+    {
+      name: 'Parent Tables and Child Tables',
+      description:
+        'Child tables reference a primary key using a foreign key. This helps us design our relationships properly.',
+      videoLink: 'ZtK89kVLPzM',
+      ID: 29017,
+    },
+    {
+      name: 'Designing Many-to-Many Relationships',
+      description:
+        'The secret to designing many to many relationships is to use an intermediary table (junction table) to break a many-to-many relationship into two one-to-many relationships.',
+      videoLink: 'GJbtDTGmOGY',
+      ID: 29018,
+    },
+    {
+      name: 'Summary of Relationships',
+      description:
+        'This video will sum up everything we learned from the last videos over relationships!',
+      videoLink: 'o2aAU6wQZSw',
+      ID: 29019,
+    },
+    {
+      name: 'Introduction to Keys',
+      description:
+        'Keys are a big thing in database design and programming. Keys keep everything unique and are used to make connections between tables.',
+      videoLink: 'AAREmlb4sTs',
+      ID: 29020,
+    },
+    {
+      name: 'Primary Key Index',
+      description:
+        'Primary key will automatically create an index used for database optimization! ',
+      videoLink: 'AI4ifO-6-mo',
+      ID: 29021,
+    },
+    {
+      name: 'Look up Table',
+      description:
+        'A look up table is a table with a list of all possible values for a column in a different table. These values are then accessed through a foreign key. This is often used for one to many relationships where the many has only so many possibilities.',
+      videoLink: 'sCCBJBb4HQA',
+      ID: 29022,
+    },
+    {
+      name: 'Superkey and Candidate Key',
+      description:
+        'A superkey is any number of columns that forces every row to be unique. A candidate key is taking the superkey and removing unnecessary columns to get the least number of columns possible for row uniqueness.',
+      videoLink: 'kAXP8a1zuHo',
+      ID: 29023,
+    },
+    {
+      name: 'Primary Key and Alternate Key',
+      description:
+        '​A primary key are the candidate key that you select to be used as the main key for that table. All other candidate keys can be assigned as an alternate key. The Primary must be specified upon table creation. The alternate keys may be an official type of key in your RDBMS or it may be defined as simply a unique index.',
+      videoLink: 'u77YwdnleS0',
+      ID: 29024,
+    },
+    {
+      name: 'Surrogate Key and Natural Key 1',
+      description:
+        'Surrogate keys are auto incremented numbers that have no real world meaning. Auto incremented means that each row will have the next highest number.  Natural keys are keys created from the columns already present within your table.',
+      videoLink: 'GCA63syHvsk',
+      ID: 29025,
+    },
+    {
+      name: 'Surrogate Keys or Natural Keys 2',
+      description:
+        'This video will be talking about the pros and cons of using surrogate or natural keys. Keep in mind that the one that you should use can vary depending upon the purpose of your database.',
+      videoLink: 'wcuqwXUF-gY',
+      ID: 29026,
+    },
+    {
+      name: 'Foreign Key',
+      description:
+        'Every row within a foreign key column references a primary key value of another table. This is used to make connections between tables within our database.',
+      videoLink: 'qvxpTUc4nX0',
+      ID: 29027,
+    },
+    {
+      name: 'NOT NULL Foreign Key',
+      description:
+        'Foreign key columns with NOT NULL as a column characteristic will prevent any rows that do not have a parent primary key. This will force a relationship for every column.',
+      videoLink: 'tANmR6BJSDg',
+      ID: 29028,
+    },
+    {
+      name: 'Foreign Key Constraints',
+      description:
+        'Foreign key constraints are used for referential integrity. Referential integrity protects the connections between tables. The three possibilities talked about in this video are do restrict, cascade, and set null.',
+      videoLink: 'rOyZtFo4qaU',
+      ID: 29029,
+    },
+    {
+      name: 'Simple Key, Composite Key, Compound Key',
+      description:
+        'Simple keys are keys with only one column. Composite keys are keys with multiple columns where at least one column is not a key in itself. Compound keys are keys where all columns are themselves keys.',
+      videoLink: 'vsGDtnBCwgg',
+      ID: 29030,
+    },
+    {
+      name: 'Review and Key Points',
+      description:
+        'This video is a summary of all of the keys that we have learned. We will be discussing the key types and the key categories.',
+      videoLink: 'kDguqVQydco',
+      ID: 29031,
+    },
+    {
+      name: 'Introduction to Entity Relationship Modeling',
+      description:
+        'Entity relationship modeling is the process of designing your entire database structure. This video will be going over the basics of EER models.',
+      videoLink: 'vmFFEok91GU',
+      ID: 29032,
+    },
+    {
+      name: 'Cardinality',
+      description:
+        'Cardinality is the maximum number of connections a row of one table can have with row(s) of another table. This is basically just a fancy word to describe the two options: 1, or many.',
+      videoLink: 'alc5OWoLDkY',
+      ID: 29033,
+    },
+    {
+      name: 'Modality',
+      description:
+        'Modality is the least amount of relationships one row of a table can have with a row of another table. The only two possibilities are 0 or 1. 1 is the equivalent as marking the foreign key column as NOT NULL.',
+      videoLink: '_JwVlbzOaP0',
+      ID: 29034,
+    },
+    {
+      name: 'Introduction to Database Normalization',
+      description:
+        'This will introduce you to the topic of Database Normalization. Over the next few videos we will be covering 1NF, 2NF and 3Nf in more detail!',
+      videoLink: 'RZ9lvPRxwpg',
+      ID: 29035,
+    },
+    {
+      name: '1NF',
+      description:
+        'First normal form is the first step in database normalization. It has to do with making every column and value atomic.',
+      videoLink: 'JjwEhK4QxRo',
+      ID: 29036,
+    },
+    {
+      name: '2NF',
+      description:
+        'Second normal form has to do with removing partial dependencies.  A partial dependency is when a column depends on only part of the primary key.',
+      videoLink: 'WSKuxoAN35g',
+      ID: 29037,
+    },
+    {
+      name: '3NF',
+      description:
+        '3rd normal form deals with removing transitive dependencies,  A transitive dependency is when a column depends upon a column that depends upon the primary key.',
+      videoLink: '6A41gVJ3g2g',
+      ID: 29038,
+    },
+    {
+      name: 'Indexes',
+      description:
+        'This video covers the basics of indexes. Indexing is an extremely important step of database design. Without Indexes database queries can take a substantial amount of time and hog system resources.',
+      videoLink: 'EZ3jBam2IEA',
+      ID: 29039,
+    },
+    {
+      name: 'Data Types',
+      description:
+        'Data types are often classified into Dates, Numeric, and string.',
+      videoLink: '4OlN9oianT4',
+      ID: 29040,
+    },
+    {
+      name: 'Introduction to Joins',
+      description:
+        'Joining is the process of taking data from multiple tables and putting it into one generated view.  This video will be pretty slow and easy to follow because I want you to fully grasp the idea of joins.',
+      videoLink: 'agC06TR_MJU',
+      ID: 29041,
+    },
+    {
+      name: 'Inner Join 1',
+      description:
+        'Inner joins are used to take columns of 1 table and join them with columns of another table.',
+      videoLink: '2lrNZdY3fE4',
+      ID: 29042,
+    },
+    {
+      name: 'Inner Join 2',
+      description:
+        'Inner joins across 3 or more tables will only return results that meet all join requirements.',
+      videoLink: 'TMBgvCMvSiI',
+      ID: 29043,
+    },
+    {
+      name: 'Inner Join 3',
+      description:
+        'Inner Joins across multiple tables can be complicated at first, but when you take the time to think about it, they are very easy to understand!',
+      videoLink: 'B47Idwxi3jI',
+      ID: 29044,
+    },
+    {
+      name: 'Introduction to Outer Joins',
+      description:
+        'Outer Joins will take all rows from either the left, right, or both tables.  This is good for when you want to return all of the rows for only one side of the join, but not the other.',
+      videoLink: 'vPnajSbemUM',
+      ID: 29045,
+    },
+    {
+      name: 'Right Outer Join',
+      description:
+        'Right outer joins are similar to left outer joins. They basically do the same thing. Left is right and right is left and the same effect can be rendered by merely flipping the tables',
+      videoLink: 'NHexrFjeO6o',
+      ID: 29046,
+    },
+    {
+      name: 'JOIN with NOT NULL Columns',
+      description:
+        'This video will help you understand the different results you can get when you have foreign keys that are labeled as NOT NULL.',
+      videoLink: '6n_zA2Nd9vo',
+      ID: 29047,
+    },
+    {
+      name: 'Outer Join Across 3 Tables',
+      description:
+        'Outer Joins in situations of multiple tables make things complicated.  But with good understanding and a little practice the path will be clear.',
+      videoLink: 'EqSI9_03qRM',
+      ID: 29048,
+    },
+    {
+      name: 'Alias',
+      description:
+        'An alias is another name for a column or table. This is useful for when you want to change the way a a query looks, make it easier to type out, or change the way our view is presented. ',
+      videoLink: 'wlTRroeVkj0',
+      ID: 29049,
+    },
+    {
+      name: 'Self Join',
+      description:
+        'This video will dive into the topic of self joins. Self joins are when you join a table with itself. This can be useful for replacing values within the table or having more than one of the same column.',
+      videoLink: 'W0p8KP0o8g4',
+      ID: 29050,
+    },
+  ],
+  additionalResources: [
+    {
+      title: 'SQL Documentation',
+      link: 'https://dev.mysql.com/doc/',
+    },
+  ],
+};
+
 export default [
   CGuide,
   HTMLGuide,
@@ -5785,4 +6586,8 @@ export default [
   GodotGuide,
   CybersecurityGuide,
   CloudComputingGuide,
+  GCPGuide,
+  AzureGuide,
+  OOPGuide,
+  DatabaseDesignGuide,
 ];

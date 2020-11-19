@@ -20,7 +20,7 @@ export default StyleSheet.create({
       height: 7,
     },
     shadowOpacity: 0.175,
-    minHeight: screenHeight * 0.15,
+    minHeight: screenHeight * 0.16,
   },
   middleSpacer: {
     height: screenHeight * 0.01,

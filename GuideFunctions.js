@@ -72,13 +72,8 @@ async function constructGuideSections(videoIDs, startingID) {
     const finalObject = await getVideoObjectByID(videoID);
     // The next piece of code needs tto be adjusted according to the format of the video titles and descriptions
     const title = finalObject.title;
-    const description = finalObject.description
-      .substring(
-        finalObject.description.indexOf("https://cbt.gg/2GUgiHU") + 22,
-        finalObject.description.indexOf("Step 1")
-      )
-      .trim();
-    let name = title;
+    const description = finalObject.description.substring(0, finalObject.description.indexOf('\n\n'));
+    let name = title.substring(title.indexOf('-') + 1).trim();
     const section = {
       name,
       description: description,
@@ -93,18 +88,56 @@ async function constructGuideSections(videoIDs, startingID) {
 
 constructGuideSections(
   [
-    "cVKBFNxaM4k",
-    "jW0Y5SimnwM",
-    "hVQRrhevo7k",
-    "udKBDRcj178",
-    "bXRLvUeRgvY",
-    "9fsOI3sxJCw",
-    "fyS3QdYuMZI",
-    "HVTQKUtkyhs",
-    "X1qoKLL040A",
-    "tOrMC1pDYjs",
-    "oCFTbwTjcgQ",
-    "bMXtoLpA5jU",
+    "hG_3UHepr_M",
+    "zhu6jtlghIs",
+    "X-81V5jNrYM",
+    "Aw6DwXK0ZGM",
+    "Rtw3YOYDt3A",
+    "nSzuHnkcfo8",
+    "1D_h-yFtQVo",
+    "pShj3gtYQik",
+    "3-qSONSuZq0",
+    "Uhy75wsS96s",
+    "2ko_rBZXTjE",
+    "jKfZiotyRhk",
+    "fCUrCNiA0j0",
+    "pv7P9R9JI-E",
+    "M-Rw21NGORo",
+    "DzchNE1pbrk",
+    "ZtK89kVLPzM",
+    "GJbtDTGmOGY",
+    "o2aAU6wQZSw",
+    "AAREmlb4sTs",
+    "AI4ifO-6-mo",
+    "sCCBJBb4HQA",
+    "kAXP8a1zuHo",
+    "u77YwdnleS0",
+    "GCA63syHvsk",
+    "wcuqwXUF-gY",
+    "qvxpTUc4nX0",
+    "tANmR6BJSDg",
+    "rOyZtFo4qaU",
+    "vsGDtnBCwgg",
+    "kDguqVQydco",
+    "vmFFEok91GU",
+    "alc5OWoLDkY",
+    "_JwVlbzOaP0",
+    "RZ9lvPRxwpg",
+    "JjwEhK4QxRo",
+    "WSKuxoAN35g",
+    "6A41gVJ3g2g",
+    "EZ3jBam2IEA",
+    "4OlN9oianT4",
+    "agC06TR_MJU",
+    "2lrNZdY3fE4",
+    "TMBgvCMvSiI",
+    "B47Idwxi3jI",
+    "vPnajSbemUM",
+    "NHexrFjeO6o",
+    "6n_zA2Nd9vo",
+    "EqSI9_03qRM",
+    "wlTRroeVkj0",
+    "W0p8KP0o8g4",
   ],
-  25000
+  29001
 );

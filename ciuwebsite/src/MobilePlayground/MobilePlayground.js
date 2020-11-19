@@ -1,7 +1,7 @@
 // This is going to be the screen in the mobile app which will contain the coding playground. It will utilize React Native
 // web in order to contain all of the code that is used in the app
 import React, { useState } from "react";
-import { View, Text, TextInput, TouchableOpacity } from "react-native-web";
+import { Text } from "react-native-web";
 import strings from "../config/strings";
 import fontStyles from "../config/fontStyles";
 import Dropdown from "react-dropdown";
@@ -13,6 +13,11 @@ import "ace-builds/src-noconflict/mode-csharp";
 import "ace-builds/src-noconflict/mode-c_cpp";
 import "ace-builds/src-noconflict/mode-javascript";
 import "ace-builds/src-noconflict/mode-python";
+import "ace-builds/src-noconflict/mode-sql";
+import "ace-builds/src-noconflict/mode-php";
+import "ace-builds/src-noconflict/mode-kotlin";
+import "ace-builds/src-noconflict/mode-swift";
+import "ace-builds/src-noconflict/mode-ruby";
 import "ace-builds/src-noconflict/theme-github";
 import firebase from "firebase";
 import "firebase/functions";

@@ -46,7 +46,7 @@ const Concepts = {
   title: 'Concepts',
   iconName: 'atom',
   iconColor: '#1520A6',
-  guideIDs: [15000, 24000, 25000],
+  guideIDs: [15000, 24000, 25000, 28000, 29000],
 };
 
 const GameDevelopment = {
@@ -54,6 +54,13 @@ const GameDevelopment = {
   iconName: 'gamepad',
   iconColor: '#0EBD60',
   guideIDs: [21000, 22000, 23000, 9000],
+};
+
+const Cloud = {
+  title: 'Cloud',
+  iconName: 'cloud',
+  iconColor: '#C0C0C0',
+  guideIDs: [25000, 26000, 27000],
 };
 
 const AllGuides = {
@@ -70,5 +77,6 @@ export default [
   WebDevelopment,
   GameDevelopment,
   Concepts,
+  Cloud,
   AllGuides,
 ];

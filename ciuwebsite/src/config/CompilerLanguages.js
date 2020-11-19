@@ -74,6 +74,72 @@ int main() {
     label: "Python",
     editorMode: 'python',
     compilerID: 116, 
+    template: `# your code goes here`,
+  },
+  {
+    value: "sqliteq",
+    label: "SQLite - Queries",
+    editorMode: 'sql',
+    compilerID: 52, 
+    template: `
+-- your code goes here
+
+  `,
+  },
+  {
+    value: "sqlites",
+    label: "SQLite - Schema",
+    editorMode: 'sql',
+    compilerID: 40, 
+    template: `
+-- your code goes here
+
+  `,
+  },
+  {
+    value: "php",
+    label: "PHP",
+    editorMode: 'php',
+    compilerID: 29, 
+    template: `
+<?php
+
+// your code goes here
+    
+  `,
+  },
+  {
+    value: "kotlin",
+    label: "Kotlin",
+    editorMode: 'kotlin',
+    compilerID: 47, 
+    template: `
+import java.util.*
+ 
+fun main(args: Array<String>) {
+    val sc = Scanner(System.\`in\`)
+        
+    // your code goes here
+
+}
+    
+  `,
+  },
+  {
+    value: "swift",
+    label: "Swift",
+    editorMode: 'swift',
+    compilerID: 85, 
+    template: `
+// your code goes here
+
+  `,
+  },
+  {
+    value: "ruby",
+    label: "Ruby",
+    editorMode: 'ruby',
+    compilerID: 17, 
     template: `
 # your code goes here
 

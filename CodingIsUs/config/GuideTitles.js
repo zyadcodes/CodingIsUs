@@ -24,6 +24,10 @@ import UnrealLogo from '../assets/images/UnrealLogo.png';
 import GodotLogo from '../assets/images/GodotLogo.png';
 import CybersecurityLogo from '../assets/images/CybersecurityLogo.png';
 import CloudComputingLogo from '../assets/images/CloudComputingLogo.png';
+import AzureLogo from '../assets/images/AzureLogo.png';
+import GCPLogo from '../assets/images/GCPLogo.png';
+import OOPLogo from '../assets/images/OOPLogo.png';
+import DatabaseDesignLogo from '../assets/images/DatabaseDesignLogo.png';
 
 const FirestoreGuide = {
   title: 'Firestore',
@@ -169,6 +173,30 @@ const CloudComputingGuide = {
   guideID: 25000
 }
 
+const GCPGuide = {
+  title: 'Google Cloud Platform',
+  logo: GCPLogo,
+  guideID: 26000
+}
+
+const AzureGuide = {
+  title: 'Azure',
+  logo: AzureLogo,
+  guideID: 27000
+}
+
+const OOPGuide = {
+  title: 'Object Oriented Programming',
+  logo: OOPLogo,
+  guideID: 28000
+}
+
+const DatabaseDesignGuide = {
+  title: 'Database Design',
+  logo: DatabaseDesignLogo,
+  guideID: 29000
+}
+
 export default [
   CGuide,
   HTMLGuide,
@@ -193,5 +221,9 @@ export default [
   UnrealGuide,
   GodotGuide,
   CybersecurityGuide,
-  CloudComputingGuide
+  CloudComputingGuide,
+  GCPGuide,
+  AzureGuide,
+  OOPGuide,
+  DatabaseDesignGuide
 ];
