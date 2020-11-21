@@ -56,6 +56,8 @@ import OOPLogo from '../assets/images/OOPLogo.png';
 import OOPCover from '../assets/images/OOPCover.jpg';
 import DatabaseDesignLogo from '../assets/images/DatabaseDesignLogo.png';
 import DatabaseDesignCover from '../assets/images/DatabaseDesignCover.jpeg';
+import XamarinLogo from '../assets/images/XamarinLogo.png';
+import XamarinCover from '../assets/images/XamarinCover.png';
 
 const FirestoreGuide = {
   title: 'Firestore',
@@ -6561,6 +6563,236 @@ const DatabaseDesignGuide = {
   ],
 };
 
+const XamarinGuide = {
+  title: 'Xamarin',
+  cover: XamarinCover,
+  logo: XamarinLogo,
+  duration: '4.5 Hours',
+  description:
+    'Xamarin is an open source cross-platform framework from Microsoft for building iOS, Android, & Windows apps with . NET from a single shared codebase.',
+  guideID: 30000,
+  relatedGuides: [9000, 18000],
+  sections: [
+    {
+      name: 'Basics',
+      description: 'Get familiar with the topics of Xamarin Forms',
+      videoLink: 'C5DHkIcIIgc',
+      ID: 30001,
+    },
+    {
+      name: 'Setup',
+      description:
+        'Learn how to set up Xamarin Forms to get started with its concepts',
+      videoLink: 'spPKRD0x_DQ',
+      ID: 30002,
+    },
+    {
+      name: 'Basic Login Screen',
+      description: 'Create a basic login screen with Xamarin Forms',
+      videoLink: 'eAZ4kPf5eTc',
+      ID: 30003,
+    },
+    {
+      name: 'Login Screen Design',
+      description:
+        'Start working on the UI and the design of the login screen using Xamarin Forms',
+      videoLink: 'a5_DC2AnTZM',
+      ID: 30004,
+    },
+    {
+      name: 'Local Database',
+      description:
+        'Learn how to create a local database in your app using Xamarin Forms',
+      videoLink: 'nFkwRuTG8eM',
+      ID: 30005,
+    },
+    {
+      name: 'REST API Connection',
+      description:
+        'Learn how to make asynchronous calls to your API using REST',
+      videoLink: 'bXnEaHtPN48',
+      ID: 30006,
+    },
+    {
+      name: 'PCL Targeting',
+      description:
+        'Learn about the concept of PCL Targeting and learn how to apply it in Xamarin Forms',
+      videoLink: 'MWtZIaBh97M',
+      ID: 30007,
+    },
+    {
+      name: 'Internet Connection Check 1',
+      description:
+        'Learn how to check for an internet connection in your mobile app using Xamarin Forms',
+      videoLink: 'lAfrdG_0Zqg',
+      ID: 30008,
+    },
+    {
+      name: 'Internet Connection Check 2',
+      description:
+        'Learn how to check for an internet connection in your mobile app using Xamarin Forms',
+      videoLink: 'O_bSj_LyGhA',
+      ID: 30009,
+    },
+    {
+      name: 'Segue',
+      description:
+        'Continue learning about Xamarin Forms and how to use it to make powerful mobile apps',
+      videoLink: 'Wr7pzfXD1LY',
+      ID: 30010,
+    },
+    {
+      name: 'Master Detail',
+      description:
+        'Learn more about detail oriented mobile app development with Xamarin Forms',
+      videoLink: 'K2be1RfDYK4',
+      ID: 30011,
+    },
+    {
+      name: 'Relative Layout',
+      description:
+        'Understand layout design in order to build powerful UI designs in Xamarin Forms',
+      videoLink: 'xIgLjtr2oo8',
+      ID: 30012,
+    },
+    {
+      name: 'Settings',
+      description:
+        'Creating a Settings screen using Xamarin Forms in order to build a powerful mobile app',
+      videoLink: '0q5QuvyYq-M',
+      ID: 30013,
+    },
+    {
+      name: 'ListView',
+      description:
+        'Learn how to construct lists in Xamarin Forms in order to display ordered data in your mobile app',
+      videoLink: 'pBwuePbsnOI',
+      ID: 30014,
+    },
+    {
+      name: 'Custom ListView Cell',
+      description: 'Learn how to customize ListView cell designs',
+      videoLink: 'ASsF7sQHNLk',
+      ID: 30015,
+    },
+    {
+      name: 'ListView OnSelect',
+      description:
+        'Learn how to implement complex or simple functionality in your ListViews',
+      videoLink: 'm2ytzs6oiJk',
+      ID: 30016,
+    },
+    {
+      name: 'SearchBar',
+      description:
+        'Using Xamarin Forms, learn how to construct a SearchBar in your mobile app',
+      videoLink: 'cOIBBxnKmaw',
+      ID: 30017,
+    },
+    {
+      name: 'ToolBar Items',
+      description:
+        'Learn how to construct a ToolBar using Xamarin Forms and then use that to manipulate ToolBar Items',
+      videoLink: 'DqFJx6CqKpc',
+      ID: 30018,
+    },
+    {
+      name: 'Display Alert Sheet',
+      description:
+        'Learn how to display Alerts in your mobile app using Xamarin Forms',
+      videoLink: '3RAhShvxleE',
+      ID: 30019,
+    },
+    {
+      name: 'Picker and BoxView',
+      description:
+        'Learn how to create a Picker in Xamarin Forms and a BoxView to make your app more powerful',
+      videoLink: 'fDz0fVkxrXs',
+      ID: 30020,
+    },
+    {
+      name: 'Label, Entry, Editor',
+      description:
+        'Learn core concepts about taking in user inputs in Xamarin Forms',
+      videoLink: 'urjtheZVqUY',
+      ID: 30021,
+    },
+    {
+      name: 'DatePicker',
+      description:
+        'Learn how to control a DatePicker in Xamarin Forms to manipulate dates and times',
+      videoLink: 'vxSbVsIEp4s',
+      ID: 30022,
+    },
+    {
+      name: 'Switch',
+      description:
+        'Learn how to use a Switch component in Xamarin Forms in order to make a more dynamic app',
+      videoLink: 'psE0GjNQC00',
+      ID: 30023,
+    },
+    {
+      name: 'Circle Image',
+      description:
+        'Learn more about adding images to spice up your mobile app using Xamarin Forms',
+      videoLink: 'kSIElbOdNDc',
+      ID: 30024,
+    },
+    {
+      name: 'MVVM Login',
+      description:
+        'Learn about the core web concept of MVVM Login and how to implement it using Xamarin Forms',
+      videoLink: 'NWjNUNG1K1A',
+      ID: 30025,
+    },
+    {
+      name: 'Pie Chart',
+      description:
+        'Using OxyPlot, learn how to plot graphs and charts in Xamarin Forms',
+      videoLink: 'IBjCa6A_42E',
+      ID: 30026,
+    },
+    {
+      name: 'SplashScreen',
+      description:
+        'Learn how to create a basic SplashScreen to your mobile app using Xamarin Forms',
+      videoLink: 'J2B_0cxsm2o',
+      ID: 30027,
+    },
+    {
+      name: 'ProgressBar',
+      description:
+        'Learn how to add a ProgressBar to your Xamarin app to add more animations and dynamic features to the app',
+      videoLink: 'A07FLVSXodM',
+      ID: 30028,
+    },
+    {
+      name: 'ScrollView, Event, Animation',
+      description:
+        'Learn about a variety of features in Xamarin Forms features to allow you to create a more interactive and dynamic mobile application',
+      videoLink: 'Z_IqSDkPn2M',
+      ID: 30029,
+    },
+    {
+      name: 'Listview Delete, SQLite',
+      description:
+        'Using SQLite, learn how to make dynamic ListViews that rely on backend services like SQL',
+      videoLink: 'z9JgdcguBqQ',
+      ID: 30030,
+    },
+  ],
+  additionalResources: [
+    {
+      title: 'Xamarin Documentation',
+      link: 'https://docs.microsoft.com/en-us/xamarin/',
+    },
+    {
+      title: 'C# Documentation',
+      link: 'https://docs.microsoft.com/en-us/dotnet/csharp/',
+    },
+  ],
+};
+
 export default [
   CGuide,
   HTMLGuide,
@@ -6590,4 +6822,5 @@ export default [
   AzureGuide,
   OOPGuide,
   DatabaseDesignGuide,
+  XamarinGuide,
 ];

@@ -28,6 +28,7 @@ import AzureLogo from '../assets/images/AzureLogo.png';
 import GCPLogo from '../assets/images/GCPLogo.png';
 import OOPLogo from '../assets/images/OOPLogo.png';
 import DatabaseDesignLogo from '../assets/images/DatabaseDesignLogo.png';
+import XamarinLogo from '../assets/images/XamarinLogo.png';
 
 const FirestoreGuide = {
   title: 'Firestore',
@@ -197,6 +198,12 @@ const DatabaseDesignGuide = {
   guideID: 29000
 }
 
+const XamarinGuide = {
+  title: 'Xamarin',
+  logo: XamarinLogo,
+  guideID: 30000
+}
+
 export default [
   CGuide,
   HTMLGuide,
@@ -225,5 +232,6 @@ export default [
   GCPGuide,
   AzureGuide,
   OOPGuide,
-  DatabaseDesignGuide
+  DatabaseDesignGuide,
+  XamarinGuide
 ];

@@ -25,7 +25,7 @@ const MobileAppDevelopment = {
   title: 'Mobile App Development',
   iconName: 'mobile',
   iconColor: '#800080',
-  guideIDs: [17000, 18000, 19000, 6000],
+  guideIDs: [17000, 18000, 19000, 6000, 30000],
 };
 
 const Databases = {
