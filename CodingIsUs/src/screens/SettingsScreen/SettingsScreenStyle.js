@@ -23,6 +23,20 @@ export default StyleSheet.create({
     borderBottomWidth: 0.2,
     marginTop: screenHeight * 0.05,
   },
+  signOutCard: {
+    flexDirection: 'row',
+    width: screenWidth,
+    paddingHorizontal: screenWidth * 0.05,
+    height: screenHeight * 0.05,
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    backgroundColor: colors.red,
+    borderTopColor: colors.lightGray,
+    borderTopWidth: 0.2,
+    borderBottomColor: colors.lightGray,
+    borderBottomWidth: 0.2,
+    marginTop: screenHeight * 0.05,
+  },
   cardsContainer: {
     marginBottom: screenHeight * 0.05,
     justifyContent: 'space-evenly',
@@ -34,7 +48,7 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-evenly',
   },
-  headerStyle: {
+  headerStyleBackButton: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -43,6 +57,17 @@ export default StyleSheet.create({
     width: screenWidth,
     paddingHorizontal: screenWidth * 0.05,
     height: screenHeight * 0.21,
+    marginBottom: screenHeight * 0.025,
     backgroundColor: colors.blue,
+  },
+  backButton: {
+    justifyContent: 'center',
+    alignItems: 'flex-start',
+    height: screenHeight * 0.125,
+    width: screenWidth * 0.2
+  },
+  headerTextStyle: {
+    textAlign: 'center',
+    paddingRight: screenWidth * 0.2,
   },
 });

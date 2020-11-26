@@ -49,6 +49,23 @@ const MobilePlayground = () => {
   const [code, setCode] = useState(CompilerLanguages[0].template);
   const [output, setOutput] = useState("");
 
+  // Returns a maintenance screen temporarily until playground is fixed
+  /*
+  return (
+    <div className={"maintenanceContainer"}>
+      <Text
+        style={{
+          ...fontStyles.biggerTextStyle,
+          ...fontStyles.black,
+          paddingHorizontal: "5vw",
+          textAlign: "center",
+        }}
+      >
+        {"Playground currently under maintenance. Please check back soon!"}
+      </Text>
+    </div>
+  );
+*/
   // Returns the UI of the screen
   return (
     <div className="container">
@@ -108,9 +125,9 @@ const MobilePlayground = () => {
         type="button"
         className="runCodeButton"
         onClick={async () => {
-          logEvent('PlaygroundCompiled', {
-            language: languageSelected.label
-          })
+          logEvent("PlaygroundCompiled", {
+            language: languageSelected.label,
+          });
           setIsCompiling(true);
           setOutput(strings.Compiling);
           const compiledOutput = (

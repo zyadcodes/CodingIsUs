@@ -20,6 +20,10 @@ import GuidesListScreenStyle from './GuidesListScreenStyle';
 
 // Declares the functional component
 const GuidesListScreen = ({route, navigation}) => {
+
+  // Fetches the userID from the params
+  const {userID} = route.params;
+
   // Stores the status of the user's ad preference and the loading status of the screen
   const [isLoading, setIsLoading] = useState(true);
   const [guides, setGuides] = useState('');
@@ -98,6 +102,7 @@ const GuidesListScreen = ({route, navigation}) => {
             onPress={() => {
               navigation.push('GuideScreen', {
                 guideID: item.guideID,
+                userID
               });
               logEvent('GuideClicked', {
                 guideID: item.guideID,

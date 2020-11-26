@@ -13,6 +13,15 @@
   flex-direction: column;
   background-color: #f0ffff;
 }
+.maintenanceContainer {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0ffff;
+}
 .headerStyle {
   display: flex;
   flex-direction: row;
@@ -79,7 +88,7 @@
 }
 
 .runCodeButton:active {
-  background-color: #1167B1;
+  background-color: #1167b1;
   box-shadow: 0 0.25vh #666;
   transform: translateY(0.25vh);
 }

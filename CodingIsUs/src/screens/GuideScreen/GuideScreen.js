@@ -37,7 +37,7 @@ import {RFPercentage} from 'react-native-responsive-fontsize';
 // Declares the functional component
 const GuideScreen = ({navigation, route}) => {
   // Fetches the props passed into this screen
-  const {guideID} = route.params;
+  const {guideID, userID} = route.params;
 
   const isFocused = useIsFocused();
 
@@ -55,6 +55,13 @@ const GuideScreen = ({navigation, route}) => {
       loadScreenData();
     }
   }, [isFocused]);
+
+  // This is a helper method that will sleep for a parameterized amount of seconds
+  const sleep = (ms) => {
+    return new Promise((resolve) => {
+      setTimeout(resolve, ms);
+    });
+  };
 
   // Retrieves which sections in this guide have been marked as completed and which haven't as well as the actual
   // guide and related guides
@@ -83,6 +90,7 @@ const GuideScreen = ({navigation, route}) => {
     setGuide(specificGuide);
     setProgress(progressNumber);
     setCompletionData(data);
+    await sleep(250);
     setIsLoading(false);
     if (progressNumber > 0.0 && progress !== '' && progressNumber < 1.0) {
       // This means the user just navigated back from the guide but has not completed the guide yet.
@@ -207,6 +215,7 @@ const GuideScreen = ({navigation, route}) => {
                           completionData: completionData,
                           section: guide.sections[0],
                           completionStatus: completionData[0],
+                          userID,
                         });
                       }}
                     />
@@ -247,6 +256,7 @@ const GuideScreen = ({navigation, route}) => {
                           numVideo: 1,
                           guide: guide,
                           completionData: completionData,
+                          userID,
                           section:
                             guide.sections[
                               completionData.lastIndexOf('true') + 1
@@ -288,6 +298,7 @@ const GuideScreen = ({navigation, route}) => {
                     completionData: completionData,
                     section: item,
                     completionStatus: completionData[index],
+                    userID,
                   });
                 }}
               />
@@ -384,6 +395,18 @@ const GuideScreen = ({navigation, route}) => {
                 showConfirmButton={true}
                 cancelText={strings.Done}
                 confirmText={strings.Share}
+                confirmButtonStyle={GuideScreenStyle.buttonStyle}
+                cancelButtonStyle={GuideScreenStyle.buttonStyle}
+                confirmButtonTextStyle={[
+                  fontStyles.white,
+                  fontStyles.bigTextStyle,
+                  {textAlign: 'center'},
+                ]}
+                cancelButtonTextStyle={[
+                  fontStyles.white,
+                  fontStyles.bigTextStyle,
+                  {textAlign: 'center'},
+                ]}
                 confirmButtonColor={colors.green}
                 cancelButtonColor={colors.blue}
                 onCancelPressed={() => {

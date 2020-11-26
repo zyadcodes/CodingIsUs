@@ -9,4 +9,11 @@ const logEvent = (events, parameters) => {
   AppEventsLogger.logEvent(events, parameters);
 };
 
-export {logEvent};
+// This method is going to send user data over to facebook to better match users with their events
+const setupFBMatching = (email) => {
+  AppEventsLogger.setUserData({
+    email: email,
+  });
+};
+
+export {logEvent, setupFBMatching};

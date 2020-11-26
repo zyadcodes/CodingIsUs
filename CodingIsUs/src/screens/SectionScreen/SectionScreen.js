@@ -28,6 +28,7 @@ const SectionScreen = ({route, navigation}) => {
     section,
     completionStatus,
     numVideo,
+    userID,
   } = route.params;
 
   // Sets the state of the screen for the YouTube video, the isLoading for the screen and the ads, and the completion
@@ -49,7 +50,7 @@ const SectionScreen = ({route, navigation}) => {
       });
       SoundPlayer.playSoundFile('ding', 'mp3');
       setIsDone(true);
-      updateSectionStatus(section.ID, 'true');
+      updateSectionStatus(section.ID, 'true', userID);
 
       const newCompletionData = await getGuideCompletionStatus(guide);
       const numOfCompleted = newCompletionData.filter(
@@ -75,7 +76,7 @@ const SectionScreen = ({route, navigation}) => {
         sectionID: section.ID,
       });
       setIsDone(false);
-      updateSectionStatus(section.ID, 'false');
+      updateSectionStatus(section.ID, 'false', userID);
     }
   };
 
@@ -97,6 +98,7 @@ const SectionScreen = ({route, navigation}) => {
         completionData: completionData,
         section: nextSection,
         completionStatus: completionStatusOfNextSection,
+        userID,
       });
     }
   };
@@ -142,11 +144,8 @@ const SectionScreen = ({route, navigation}) => {
       </View>
       <View style={SectionScreenStyle.youtubeContainer}>
         <YoutubePlayer
-          height={
-            280
-          }
-          width={380
-          }
+          height={280}
+          width={380}
           play={isPlaying}
           videoId={section.videoLink}
           onChangeState={(state) => {
@@ -157,7 +156,7 @@ const SectionScreen = ({route, navigation}) => {
               });
               logEvent('VideoCompleted' + numVideo);
               setIsDone(true);
-              updateSectionStatus(section.ID, 'true');
+              updateSectionStatus(section.ID, 'true', userID);
               setDidVideoComplete(true);
               setTimeout(() => scrollRef.current.scrollToEnd(), 100);
             } else if (state === 'playing') {

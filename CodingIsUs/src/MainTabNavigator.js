@@ -4,15 +4,16 @@ import colors from '../config/colors';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import AllCategoriesScreen from './screens/AllCategoriesScreen/AllCategoriesScreen';
 import PlaygroundScreen from './screens/PlaygroundScreen/PlaygroundScreen';
-import SettingsScreen from './screens/SettingsScreen/SettingsScreen';
+import ProfileScreen from './screens/ProfileScreen/ProfileScreen';
 import {Icon} from 'react-native-elements';
+import {Platform} from 'react-native';
 
 const Tab = createBottomTabNavigator();
 
-const MyTabs = () => {
+const MyTabs = ({navigation, route}) => {
   return (
     <Tab.Navigator
-      lazy={false}
+      lazy={Platform.OS === 'android' ? true : false}
       tabBarOptions={{
         style: {
           height: '12%',
@@ -35,7 +36,9 @@ const MyTabs = () => {
             />
           ),
         }}
-        component={AllCategoriesScreen}
+        children={() => (
+          <AllCategoriesScreen route={route} navigation={navigation} />
+        )}
       />
       <Tab.Screen
         name="PlaygroundScreen"
@@ -49,21 +52,23 @@ const MyTabs = () => {
             />
           ),
         }}
-        component={PlaygroundScreen}
+        children={() => (
+          <PlaygroundScreen route={route} navigation={navigation} />
+        )}
       />
       <Tab.Screen
-        name="SettingsScreen"
+        name="ProfileScreen"
         options={{
           tabBarIcon: ({color, size}) => (
             <Icon
               type={'font-awesome'}
-              name={'cogs'}
+              name={'user'}
               size={size * 1.5}
               color={color}
             />
           ),
         }}
-        component={SettingsScreen}
+        children={() => <ProfileScreen route={route} navigation={navigation} />}
       />
     </Tab.Navigator>
   );

@@ -77,6 +77,11 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  buttonStyle: {
+    width: screenWidth * 0.3,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   relatedGuidesStyle: {
     marginVertical: screenHeight * 0.05,
   },
@@ -95,6 +100,6 @@ export default StyleSheet.create({
   shareAlert: {
     alignItems: 'center',
     justifyContent: 'space-evenly',
-    height: screenHeight * 0.45
+    height: screenHeight * 0.45,
   },
 });

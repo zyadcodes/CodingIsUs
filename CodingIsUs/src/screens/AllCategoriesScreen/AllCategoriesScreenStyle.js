@@ -18,6 +18,11 @@ export default StyleSheet.create({
   smallSpacer: {
     height: screenHeight * 0.025,
   },
+  buttonStyle: {
+    width: screenWidth * 0.3,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   loadingContainer: {
     flex: 1,
     justifyContent: 'center',
