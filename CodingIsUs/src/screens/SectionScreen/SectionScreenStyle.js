@@ -1,5 +1,6 @@
 // This is going to contain the StyleSheet for SectionStyle component
 import {StyleSheet} from 'react-native';
+import {RFPercentage} from 'react-native-responsive-fontsize';
 import colors from '../../../config/colors';
 import {screenWidth, screenHeight} from '../../../config/dimensions';
 
@@ -59,7 +60,9 @@ export default StyleSheet.create({
     marginHorizontal: screenWidth * 0.05,
     marginTop: screenHeight * 0.1,
     marginBottom:
-      screenHeight * 0.25 < 280 ? screenHeight * 0.05 + 75 : screenHeight * 0.05,
+      screenHeight * 0.25 < 280
+        ? screenHeight * 0.05 + 75
+        : screenHeight * 0.05,
   },
   backButton: {
     justifyContent: 'center',
@@ -70,6 +73,10 @@ export default StyleSheet.create({
     borderRadius: screenHeight * 0.025,
     marginRight: screenWidth * 0.025,
     zIndex: 1,
+  },
+  checkboxStyle: {
+    height: RFPercentage(12),
+    width: RFPercentage(12),
   },
   nextButton: {
     justifyContent: 'center',

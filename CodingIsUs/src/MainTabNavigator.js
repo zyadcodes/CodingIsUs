@@ -6,14 +6,13 @@ import AllCategoriesScreen from './screens/AllCategoriesScreen/AllCategoriesScre
 import PlaygroundScreen from './screens/PlaygroundScreen/PlaygroundScreen';
 import ProfileScreen from './screens/ProfileScreen/ProfileScreen';
 import {Icon} from 'react-native-elements';
-import {Platform} from 'react-native';
 
 const Tab = createBottomTabNavigator();
 
 const MyTabs = ({navigation, route}) => {
   return (
     <Tab.Navigator
-      lazy={Platform.OS === 'android' ? true : false}
+      lazy={true}
       tabBarOptions={{
         style: {
           height: '12%',

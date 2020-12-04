@@ -14,23 +14,33 @@ import fontStyles from '../../../config/fontStyles';
 import ProfileScreenStyle from './ProfileScreenStyle';
 import strings from '../../../config/strings';
 import AuthFlow from '../../components/AuthFlow/AuthFlow';
-import {getUserData, getUserProgress} from '../../../config/StorageFunctions';
+import {
+  getUserData,
+  getUserProgress,
+  retrieveFirestoreData,
+} from '../../../config/StorageFunctions';
 import colors from '../../../config/colors';
 import CIULogo from '../../../assets/images/CIULogo.png';
 import ProgressBar from 'react-native-progress/Bar';
 import {screenHeight, screenWidth} from '../../../config/dimensions';
 import {useIsFocused} from '@react-navigation/native';
+import AwesomeAlert from '../../components/AwesomeAlert/AwesomeAlert';
+import { logEvent } from '../../../config/Analytics';
 
 // Creates the functional component
 const ProfileScreen = ({route, navigation}) => {
   // Will fetch all the necessary props used to determine if a user is logged in or not
   const [userID, setUserID] = useState(route.params.userID);
+  const [isEmailVerified, setIsEmailVerified] = useState(
+    route.params.isEmailVerified,
+  );
   const [isAuthFlowVisible, setIsAuthFlowVisible] = useState(
     route.params.userID === '' ? true : false,
   );
   const [user, setUser] = useState(route.params.user);
   const [userProgress, setUserProgress] = useState('');
   const [isLoading, setIsLoading] = useState(true);
+  const [accountVerifiedVisible, setAccountVerifiedVisible] = useState(false);
 
   const isFocused = useIsFocused();
 
@@ -54,13 +64,18 @@ const ProfileScreen = ({route, navigation}) => {
   // authentication
   const onAuthStateChanged = async (user) => {
     if (user) {
+      setIsLoading(true);
       await sleep(350);
       setUserID(user.uid);
+      setIsEmailVerified(user.emailVerified);
       const userObject = await getUserData(user.uid);
+      await retrieveFirestoreData(user.uid);
       setUser(userObject);
       loadScreenData(user.uid);
     } else {
       setUserID('');
+      setUserProgress('');
+      setIsEmailVerified('');
     }
   };
 
@@ -117,29 +132,81 @@ const ProfileScreen = ({route, navigation}) => {
         maxToRenderPerBatch={6}
         windowSize={6}
         ListHeaderComponent={
-          <View style={ProfileScreenStyle.headerStyle}>
-            <View style={ProfileScreenStyle.headerSection}>
-              <Text style={[fontStyles.white, fontStyles.biggerTextStyle]}>
-                {strings.Hi}
-              </Text>
-              {user.name.length > 15 ? (
+          <View>
+            <View style={ProfileScreenStyle.headerStyle}>
+              <View style={ProfileScreenStyle.headerSection}>
                 <Text style={[fontStyles.white, fontStyles.biggerTextStyle]}>
-                  {user.name.substring(0, 14)}
+                  {strings.Hi}
                 </Text>
-              ) : (
-                <Text style={[fontStyles.white, fontStyles.biggerTextStyle]}>
-                  {user.name}
-                </Text>
-              )}
+                {user.name.length > 15 ? (
+                  <Text style={[fontStyles.white, fontStyles.biggerTextStyle]}>
+                    {user.name.substring(0, 14)}
+                  </Text>
+                ) : (
+                  <Text style={[fontStyles.white, fontStyles.biggerTextStyle]}>
+                    {user.name}
+                  </Text>
+                )}
+              </View>
+              <View style={ProfileScreenStyle.headerSection}>
+                <Image
+                  source={CIULogo}
+                  resizeMode={'cover'}
+                  borderRadius={screenHeight * 0.05}
+                  style={ProfileScreenStyle.logoStyle}
+                />
+              </View>
             </View>
-            <View style={ProfileScreenStyle.headerSection}>
-              <Image
-                source={CIULogo}
-                resizeMode={'cover'}
-                borderRadius={screenHeight * 0.05}
-                style={ProfileScreenStyle.logoStyle}
-              />
-            </View>
+            {isEmailVerified === false ? (
+              <View>
+                <AwesomeAlert
+                  show={accountVerifiedVisible}
+                  title={strings.VerifyEmail}
+                  titleStyle={[
+                    fontStyles.black,
+                    fontStyles.biggerTextStyle,
+                    {textAlign: 'center'},
+                  ]}
+                  message={strings.PleaseVerifyYourEmailAddress}
+                  messageStyle={[
+                    fontStyles.black,
+                    fontStyles.bigTextStyle,
+                    {textAlign: 'center'},
+                  ]}
+                  closeOnTouchOutside={false}
+                  closeOnHardwareBackPress={false}
+                  onDismiss={() => {
+                    setAccountVerifiedVisible(false);
+                  }}
+                  showConfirmButton={true}
+                  confirmText={strings.Ok}
+                  confirmButtonStyle={ProfileScreenStyle.buttonStyle}
+                  confirmButtonTextStyle={[
+                    fontStyles.white,
+                    fontStyles.biggerTextStyle,
+                    {textAlign: 'center'},
+                  ]}
+                  confirmButtonColor={colors.blue}
+                  onConfirmPressed={() => {
+                    setAccountVerifiedVisible(false);
+                  }}
+                />
+                <TouchableOpacity
+                  style={ProfileScreenStyle.accountNotVerifiedBanner}
+                  onPress={() => setAccountVerifiedVisible(true)}>
+                  <Text
+                    style={[
+                      fontStyles.white,
+                      fontStyles.biggerTextStyle,
+                      {textAlign: 'center'},
+                    ]}>
+                    {strings.AccountNotVerified}
+                  </Text>
+                </TouchableOpacity>
+              </View>
+            ) : (
+              <View />
+            )}
           </View>
         }
         data={userProgress.inProgressguides.concat(
@@ -170,6 +237,7 @@ const ProfileScreen = ({route, navigation}) => {
             <TouchableOpacity
               style={ProfileScreenStyle.guideContainer}
               onPress={() => {
+                logEvent('GuideClicked', {});
                 navigation.push('GuideScreen', {
                   userID: userID,
                   guideID: item.guideID,
@@ -210,6 +278,7 @@ const ProfileScreen = ({route, navigation}) => {
             onPress={() =>
               navigation.push('SettingsScreen', {
                 userID: userID,
+                user: user
               })
             }>
             <Text

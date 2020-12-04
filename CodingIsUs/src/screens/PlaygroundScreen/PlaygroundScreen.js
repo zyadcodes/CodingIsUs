@@ -10,6 +10,7 @@ import strings from '../../../config/strings';
 import fontStyles from '../../../config/fontStyles';
 import AuthFlow from '../../components/AuthFlow/AuthFlow';
 import auth from '@react-native-firebase/auth';
+import {retrieveFirestoreData} from '../../../config/StorageFunctions';
 
 // Creates the functional component
 const PlaygroundScreen = ({route, navigation}) => {
@@ -39,6 +40,7 @@ const PlaygroundScreen = ({route, navigation}) => {
   const onAuthStateChanged = async (user) => {
     if (user) {
       await sleep(350);
+      await retrieveFirestoreData(user.uid);
       setUserID(user.uid);
     } else {
       setUserID('');

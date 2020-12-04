@@ -3,10 +3,11 @@ const functions = require("firebase-functions");
 const fetch = require("node-fetch");
 const got = require("got");
 
-// The following are the access tokens and endpoints for the Sphere Engine API to compile code in the Cloud
+// The following are the access tokens and endpoints for the various APIS used here
 // HIGHLY SENSITIVE
 const accessToken = "8ca5858d335f9887bfda937a1517cbae";
 const endpoint = "c8f4cd08.compilers.sphere-engine.com";
+
 
 /* The following are miscellaneous functions that can be used throughout the rest of the file */
 

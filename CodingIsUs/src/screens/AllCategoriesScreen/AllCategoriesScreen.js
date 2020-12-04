@@ -13,6 +13,8 @@ import auth from '@react-native-firebase/auth';
 import AsyncStorage from '@react-native-community/async-storage';
 import AuthFlow from '../../components/AuthFlow/AuthFlow';
 import AwesomeAlert from '../../components/AwesomeAlert/AwesomeAlert';
+import messaging from '@react-native-firebase/messaging';
+import {retrieveFirestoreData} from '../../../config/StorageFunctions';
 
 // Declares the functional component
 const AllCategoriesScreen = ({route, navigation}) => {
@@ -34,6 +36,7 @@ const AllCategoriesScreen = ({route, navigation}) => {
     const isFirstLaunch = await AsyncStorage.getItem('isFirstLaunch');
     if (isFirstLaunch === null && isFirstLaunch !== 'false') {
       logEvent('FirstLaunch', {});
+      messaging().subscribeToTopic('GuideNotStarted');
       setIsFirstLaunch(true);
     }
   };
@@ -50,6 +53,7 @@ const AllCategoriesScreen = ({route, navigation}) => {
   const onAuthStateChanged = async (user) => {
     if (user) {
       setUserID(user.uid);
+      await retrieveFirestoreData(user.uid);
     } else {
       setUserID('');
     }

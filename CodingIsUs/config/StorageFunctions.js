@@ -3,6 +3,8 @@
 import AsyncStorage from '@react-native-community/async-storage';
 import firestore from '@react-native-firebase/firestore';
 import Guides from './Guides';
+import auth from '@react-native-firebase/auth';
+import messaging from '@react-native-firebase/messaging';
 
 const storageVersion = '@1.0.0:';
 const hubspotAPIKey = '95fced1a-b418-4d09-82ae-89e8f3b2d12b';
@@ -170,11 +172,35 @@ const addUserToEmailList = async (name, email) => {
   return result;
 };
 
+// Updates a user in the email marketin glist in HubSpot
+const updateUserInEmailList = async (oldEmail, newName, newEmail) => {
+  const result = await fetch(
+    'https://api.hubapi.com/contacts/v1/contact/email/' +
+      oldEmail +
+      '/profile?hapikey=' +
+      hubspotAPIKey,
+    {
+      credentials: 'include',
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        properties: [
+          {property: 'email', value: newEmail},
+          {property: 'firstname', value: newName},
+        ],
+      }),
+    },
+  );
+  return result;
+};
+
 // Once a user has logged in, this is going to retrieve all of their data from the cloud and write it to the async
 // storage so as to keep the data on the client consistent with the server
 const retrieveFirestoreData = async (userID) => {
   // Clears the current async storage
-  // Will add the current guide progress to Firebase
   let allKeys = await AsyncStorage.getAllKeys();
   // Filters the keys to only include the guide storages
   allKeys = allKeys.filter(
@@ -191,12 +217,25 @@ const retrieveFirestoreData = async (userID) => {
   ).docs.map((eachDoc) => eachDoc.data());
 
   const promises = [];
+  // This will handle the correct push notification subscription
+  let hasGuideStarted = false;
   for (const guideDoc of userGuideCollectoin) {
     for (const sectionID of Object.keys(guideDoc)) {
+      if (guideDoc[sectionID] === true) {
+        hasGuideStarted = true;
+      }
       promises.push(
         updateSectionStatus(sectionID + '', guideDoc[sectionID] + '', ''),
       );
     }
+  }
+
+  if (hasGuideStarted === true) {
+    messaging().unsubscribeFromTopic('GuideNotStarted');
+    messaging().subscribeToTopic('GuideStarted');
+  } else {
+    messaging().unsubscribeFromTopic('GuideStarted');
+    messaging().subscribeToTopic('GuideNotStarted');
   }
 
   await Promise.all(promises);
@@ -303,6 +342,24 @@ const getUserProgress = async (userID) => {
   return {completedGuides, inProgressguides};
 };
 
+// This method is going to log out the user from the app and delete all of the information from AsyncStorage
+const signOut = async () => {
+  // Clears the current async storage
+  let allKeys = await AsyncStorage.getAllKeys();
+  // Filters the keys to only include the guide storages
+  allKeys = allKeys.filter(
+    (eachKey) =>
+      eachKey !== storageVersion + 'timeReviewRequested' &&
+      eachKey !== storageVersion + 'AdShown' &&
+      eachKey !== 'isFirstLaunch',
+  );
+  await AsyncStorage.multiRemove(allKeys);
+  messaging().unsubscribeFromTopic('GuideStarted');
+  messaging().subscribeToTopic('GuideNotStarted');
+  await auth().signOut();
+  return 0;
+};
+
 // Exports the Functions
 export {
   updateSectionStatus,
@@ -315,4 +372,6 @@ export {
   addUserToEmailList,
   getUserData,
   getUserProgress,
+  signOut,
+  updateUserInEmailList
 };

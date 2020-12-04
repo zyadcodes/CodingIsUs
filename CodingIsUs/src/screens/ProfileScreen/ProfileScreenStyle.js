@@ -47,12 +47,24 @@ export default StyleSheet.create({
   headerSection: {
     justifyContent: 'space-between',
   },
+  buttonStyle: {
+    width: screenWidth * 0.3,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   logoStyle: {
     backgroundColor: colors.white,
     justifyContent: 'center',
     alignItems: 'center',
     height: screenHeight * 0.1,
     width: screenHeight * 0.1,
+  },
+  accountNotVerifiedBanner: {
+    backgroundColor: colors.lightGray,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: screenWidth,
+    height: screenHeight * 0.065,
   },
   progressContainerStyle: {
     flexDirection: 'row',
@@ -94,13 +106,13 @@ export default StyleSheet.create({
   },
   progressTitle: {
     marginVertical: screenHeight * 0.015,
-    paddingHorizontal: screenWidth * 0.025
+    paddingHorizontal: screenWidth * 0.025,
   },
   settingsCard: {
     backgroundColor: colors.blue,
     width: screenWidth,
     height: screenHeight * 0.075,
     justifyContent: 'center',
-    alignItems: 'center'
-  }
+    alignItems: 'center',
+  },
 });

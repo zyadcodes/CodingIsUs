@@ -40,7 +40,32 @@ export default StyleSheet.create({
   cardsContainer: {
     marginBottom: screenHeight * 0.05,
     justifyContent: 'space-evenly',
-    height: screenHeight * 0.3,
+    height: screenHeight * 0.4,
+  },
+  buttonStyle: {
+    width: screenWidth * 0.3,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  inputViewContainer: {
+    width: screenWidth * 0.7,
+    alignSelf: 'center',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  spacer: {
+    height: screenHeight * 0.015,
+  },
+  inputContainerStyle: {
+    width: screenWidth * 0.7,
+    height: screenHeight * 0.05,
+    justifyContent: 'center',
+    alignItems: 'flex-start',
+    paddingLeft: screenWidth * 0.015,
+    backgroundColor: colors.white,
+    borderColor: colors.black,
+    borderWidth: 0.5,
+    borderRadius: screenHeight * 0.015,
   },
   socialMediaContainer: {
     marginTop: screenHeight * 0.05,
@@ -64,7 +89,7 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'flex-start',
     height: screenHeight * 0.125,
-    width: screenWidth * 0.2
+    width: screenWidth * 0.2,
   },
   headerTextStyle: {
     textAlign: 'center',

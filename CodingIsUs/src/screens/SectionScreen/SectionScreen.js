@@ -17,7 +17,6 @@ import {CountdownCircleTimer} from 'react-native-countdown-circle-timer';
 import strings from '../../../config/strings';
 import messaging from '@react-native-firebase/messaging';
 import {RFPercentage} from 'react-native-responsive-fontsize';
-import {screenWidth} from '../../../config/dimensions';
 
 // Declares the functional component
 const SectionScreen = ({route, navigation}) => {
@@ -58,7 +57,7 @@ const SectionScreen = ({route, navigation}) => {
       );
       if (numOfCompleted === 1) {
         // This means this is the first section that has been started in this guide
-        messaging().subscribeToTopic('GuideStarted');
+        messaging().unsubscribeFromTopic('GuideNotStarted');
         logEvent('GuideStarted', {
           guideID: guide.guideID,
         });
@@ -70,6 +69,7 @@ const SectionScreen = ({route, navigation}) => {
           guideID: guide.guideID,
         });
         messaging().unsubscribeFromTopic('GuideStarted');
+        messaging().subscribeToTopic('GuideNotStarted');
       }
     } else {
       logEvent('MarkedAsNotDone', {

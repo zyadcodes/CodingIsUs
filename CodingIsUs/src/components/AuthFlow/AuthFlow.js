@@ -1,7 +1,7 @@
 // This is the component that will control the flow of authentication within the mobile app.
 // It will control the logging in and the signing up for an account
 import React, {useState, useEffect} from 'react';
-import {View, Text, TextInput, Platform} from 'react-native';
+import {View, Text, TextInput, Platform, TouchableOpacity} from 'react-native';
 import AuthFlowStyle from './AuthFlowStyle';
 import AwesomeAlert from '../../components/AwesomeAlert/AwesomeAlert';
 import strings from '../../../config/strings';
@@ -10,10 +10,7 @@ import colors from '../../../config/colors';
 import {logEvent, setupFBMatching} from '../../../config/Analytics';
 import CheckBox from '@react-native-community/checkbox';
 import auth from '@react-native-firebase/auth';
-import {
-  createUserInFirestore,
-  retrieveFirestoreData,
-} from '../../../config/StorageFunctions';
+import {createUserInFirestore} from '../../../config/StorageFunctions';
 
 // Declares the functional component
 const AuthFlow = (props) => {
@@ -37,6 +34,11 @@ const AuthFlow = (props) => {
   const [errorMessage, setErrorMessage] = useState('');
   const [currentStep, setCurrentStep] = useState('');
   const [isSuccessVisible, setIsSuccessVisible] = useState(false);
+  const [resetPasswordvisible, setResetPasswordVisible] = useState(false);
+  const [
+    isResetPasswordSuccessVisible,
+    setIsResetPasswordSuccessVisible,
+  ] = useState(false);
 
   // The useEffect method will unsubscribe from any left over events when it is unmounted so as to not create any memory leaks
   useEffect(() => {
@@ -80,7 +82,6 @@ const AuthFlow = (props) => {
         trimmedEmail,
         trimmedPassword,
       );
-      await retrieveFirestoreData(user.user.uid);
       setupFBMatching(trimmedEmail);
       logEvent('LogIn', {});
     } catch (error) {
@@ -190,6 +191,17 @@ const AuthFlow = (props) => {
     }
   };
 
+  // This is going to send an email password link to the entered email
+  const resetPassword = async () => {
+    const trimmedEmail = email.trim();
+    auth().sendPasswordResetEmail(trimmedEmail);
+    await sleep(250);
+    logEvent('PasswordReset', {});
+    setIsLoadingVisible(false);
+    await sleep(250);
+    setIsResetPasswordSuccessVisible(true);
+  };
+
   // Renders the UI of the screen
   return (
     <View>
@@ -285,6 +297,17 @@ const AuthFlow = (props) => {
               value={password}
             />
             <View style={AuthFlowStyle.spacer} />
+            <View style={AuthFlowStyle.spacer} />
+            <TouchableOpacity
+              onPress={async () => {
+                setIsLoginVisible(false);
+                await sleep(250);
+                setResetPasswordVisible(true);
+              }}>
+              <Text style={[fontStyles.black, fontStyles.bigTextStyle]}>
+                {strings.ForgetPassword}
+              </Text>
+            </TouchableOpacity>
           </View>
         }
         closeOnTouchOutside={false}
@@ -320,6 +343,72 @@ const AuthFlow = (props) => {
           await sleep(250);
           setIsLoadingVisible(true);
           logIn();
+        }}
+      />
+      <AwesomeAlert
+        show={resetPasswordvisible}
+        title={strings.ResetPassword}
+        titleStyle={[
+          fontStyles.black,
+          fontStyles.biggerTextStyle,
+          {textAlign: 'center'},
+        ]}
+        customView={
+          <View style={AuthFlowStyle.inputViewContainer}>
+            <Text
+              style={[
+                fontStyles.black,
+                fontStyles.bigTextStyle,
+                {alignSelf: 'flex-start'},
+              ]}>
+              {strings.EnterYourEmail}
+            </Text>
+            <View style={AuthFlowStyle.spacer} />
+            <TextInput
+              keyboardType={'email-address'}
+              autoCorrect={false}
+              style={AuthFlowStyle.inputContainerStyle}
+              placeholder={strings.EmailDotDotDot}
+              autoCapitalize={'none'}
+              onChangeText={(newText) => setEmail(newText)}
+              autoCompleteType={'email'}
+              value={email}
+            />
+          </View>
+        }
+        closeOnTouchOutside={false}
+        closeOnHardwareBackPress={false}
+        onDismiss={() => {
+          setResetPasswordVisible(false);
+        }}
+        showCancelButton={true}
+        showConfirmButton={true}
+        cancelText={strings.Back}
+        confirmText={strings.Reset}
+        cancelButtonStyle={AuthFlowStyle.buttonStyle}
+        confirmButtonStyle={AuthFlowStyle.buttonStyle}
+        cancelButtonTextStyle={[
+          fontStyles.white,
+          fontStyles.biggerTextStyle,
+          {textAlign: 'center'},
+        ]}
+        confirmButtonTextStyle={[
+          fontStyles.white,
+          fontStyles.biggerTextStyle,
+          {textAlign: 'center'},
+        ]}
+        confirmButtonColor={colors.blue}
+        cancelButtonColor={colors.lightGray}
+        onCancelPressed={async () => {
+          setResetPasswordVisible(false);
+          await sleep(250);
+          setIsLoginVisible(true);
+        }}
+        onConfirmPressed={async () => {
+          setResetPasswordVisible(false);
+          await sleep(250);
+          setIsLoadingVisible(true);
+          resetPassword();
         }}
       />
       <AwesomeAlert
@@ -562,6 +651,38 @@ const AuthFlow = (props) => {
         confirmButtonColor={colors.blue}
         onConfirmPressed={() => {
           setIsSuccessVisible(false);
+        }}
+      />
+      <AwesomeAlert
+        show={isResetPasswordSuccessVisible}
+        title={strings.ResetPassword}
+        titleStyle={[
+          fontStyles.black,
+          fontStyles.biggerTextStyle,
+          {textAlign: 'center'},
+        ]}
+        message={strings.ResetPasswordMessage}
+        messageStyle={[
+          fontStyles.black,
+          fontStyles.bigTextStyle,
+          {textAlign: 'center'},
+        ]}
+        closeOnTouchOutside={false}
+        closeOnHardwareBackPress={false}
+        onDismiss={() => {
+          setIsResetPasswordSuccessVisible(false);
+        }}
+        showConfirmButton={true}
+        confirmText={strings.Ok}
+        confirmButtonStyle={AuthFlowStyle.buttonStyle}
+        confirmButtonTextStyle={[
+          fontStyles.white,
+          fontStyles.biggerTextStyle,
+          {textAlign: 'center'},
+        ]}
+        confirmButtonColor={colors.blue}
+        onConfirmPressed={() => {
+          setIsResetPasswordSuccessVisible(false);
         }}
       />
       <AwesomeAlert

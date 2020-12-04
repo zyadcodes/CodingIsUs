@@ -43,6 +43,22 @@ export default {
   ContinueLearning: 'Continue Learning',
   Completed: 'Completed',
   SignOut: 'Sign Out',
+  EditProfile: 'Edit Profile',
+  Save: 'Save',
+  ProfileUpdated: 'Profile Updated',
+  ProfileUpdatedMessage: 'Your profile has been updated',
+  IncorrectPassword: 'Your password is incorrect',
+  EmailMatchError: 'Please make sure your email addresses match',
+  AccountNotVerified: 'Account Not Verified',
+  VerifyEmail: 'Verify Email',
+  ForgetPassword: 'Forget Password?',
+  EnterYourEmail: 'Enter your email address',
+  ResetPassword: 'Reset Password',
+  ResetPasswordMessage:
+    'We have sent you an email to reset your password. Please check your spam folders',
+  Reset: 'Reset',
+  PleaseVerifyYourEmailAddress:
+    "We have sent a link to your email address to verify your email. Please check your spam folders if you can't find it.",
   LogIn: 'Log In',
   SignUp: 'Sign Up',
   Back: 'Back',
@@ -56,18 +72,22 @@ export default {
   ConfirmEmailDotDotDot: 'Confirm Email...',
   ConfirmPassword: 'Confirm Password',
   ConfirmPasswordDotDotDot: 'Confirm Password...',
-  IAgreeToReceiveEmails: 'I agree to receive coding tips and other promotional content from Coding is Us via email',
+  IAgreeToReceiveEmails:
+    'I agree to receive coding tips and other promotional content from Coding is Us via email',
   Whoops: 'Whoops',
   PleaseFillOutAllFields: 'Please fill out all of the fields',
   IncorrectEmailOrPassword: 'Incorrect email or password. Please try again',
   PleaseEnterValidEmail: 'Please enter a valid email address',
   PasswordLengthError: 'Password must be longer than 6 characters',
   EmailPasswordMatchError: 'Your email and password confirmations must match',
-  EmailInUse: 'That email address is already in use. Please go back and log in if you have an account',
-  LogInSignUpToSaveYourProgress: 'Create an account now to save your progress in the app!',
+  EmailInUse:
+    'That email address is already in use. Please go back and log in if you have an account',
+  LogInSignUpToSaveYourProgress:
+    'Create an account now to save your progress in the app!',
   NotNow: 'Not Now',
   Success: 'Success',
-  AccountCreatedSuccessfully: 'Account created successfully. Please check your email to verify your email address',
+  AccountCreatedSuccessfully:
+    'Account created successfully. Please check your email to verify your email address',
   AboutUsText:
     'Coding is Us is an organization that is dedicated to creating a community of innovators that are changing the world using technology. Through our mobile app, YouTube channel, and social media, we teach people technology, programming, and much more!',
   PrivacyPolicyText: `

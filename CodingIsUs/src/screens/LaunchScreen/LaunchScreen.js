@@ -19,15 +19,21 @@ const LaunchScreen = ({navigation, route}) => {
       if (alreadyCalled === false) {
         alreadyCalled = true;
         if (user) {
+          await auth().currentUser.reload();
           const userObject = await getUserData(user.uid);
           setupFBMatching(user.email);
           navigation.replace('BottomTabs', {
             userID: user.uid,
             user: userObject,
+            isEmailVerified: user.emailVerified,
           });
           return;
         } else {
-          navigation.replace('BottomTabs', {userID: '', user: ''});
+          navigation.replace('BottomTabs', {
+            userID: '',
+            user: '',
+            isEmailVerified: '',
+          });
           return;
         }
       }
