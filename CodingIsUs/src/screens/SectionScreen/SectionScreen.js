@@ -1,6 +1,13 @@
 // This component is going to be the one where each section of an individual guide will be displayed
-import React, {useState, useRef} from 'react';
-import {ScrollView, Text, View, TouchableOpacity, Animated} from 'react-native';
+import React, {useState, useRef, useEffect} from 'react';
+import {
+  ScrollView,
+  Text,
+  View,
+  TouchableOpacity,
+  Animated,
+  Picker,
+} from 'react-native';
 import fontStyles from '../../../config/fontStyles';
 import SectionScreenStyle from './SectionScreenStyle';
 import YoutubePlayer from 'react-native-youtube-iframe';
@@ -17,6 +24,7 @@ import {CountdownCircleTimer} from 'react-native-countdown-circle-timer';
 import strings from '../../../config/strings';
 import messaging from '@react-native-firebase/messaging';
 import {RFPercentage} from 'react-native-responsive-fontsize';
+import {WebView} from 'react-native-webview';
 
 // Declares the functional component
 const SectionScreen = ({route, navigation}) => {
@@ -30,16 +38,27 @@ const SectionScreen = ({route, navigation}) => {
     userID,
   } = route.params;
 
-  // Sets the state of the screen for the YouTube video, the isLoading for the screen and the ads, and the completion
+  // Sets the state of the screen for the YouTube video, the isLoading for the screen, and the completion
   // status of the screen
   const [isPlaying, setIsPlaying] = useState(false);
   const [isDone, setIsDone] = useState(
     completionStatus === 'false' ? false : true,
   );
   const [didVideoComplete, setDidVideoComplete] = useState(false);
+  const [playbackSpeeds, setPlaybackSpeeds] = useState([]);
+  const [currentPlaybackSpeed, setCurrentPlaybackSpeed] = useState(1);
 
   // The ScrollView reference
   const scrollRef = useRef();
+  const youtubeRef = useRef();
+
+  // This method is going to set the playback speed options
+  const setPlaybackSpeedOptions = async () => {
+    const current = await youtubeRef.current?.getPlaybackRate();
+    const options = await youtubeRef.current?.getAvailablePlaybackRates();
+    setCurrentPlaybackSpeed(current);
+    setPlaybackSpeeds(options);
+  };
 
   // This method is going to update the completion status of this section
   const updateStatus = async () => {
@@ -144,10 +163,12 @@ const SectionScreen = ({route, navigation}) => {
       </View>
       <View style={SectionScreenStyle.youtubeContainer}>
         <YoutubePlayer
+          ref={youtubeRef}
           height={280}
           width={380}
           play={isPlaying}
           videoId={section.videoLink}
+          onReady={() => setPlaybackSpeedOptions()}
           onChangeState={(state) => {
             if (state === 'ended') {
               setIsPlaying(false);

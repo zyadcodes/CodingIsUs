@@ -1,0 +1,128 @@
+/* This is going to be the CSS for the contact screen*/
+.contactContainer {
+  background-color: #f0ffff;
+  width: 100vw;
+}
+.contactCodingImage {
+  width: 100vw;
+  height: auto;
+  margin-bottom: 3vh;
+}
+.contactBottomContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 3vh;
+}
+.contactLeftSide {
+  margin-left: 4vw;
+  width: 35vw;
+}
+.contactGetInTouch {
+  text-align: center;
+  margin-bottom: 2vh;
+}
+.contactContactMethod:hover {
+  transform: scale(1.15);
+}
+.contactContactMethod {
+  display: flex;
+  width: fit-content;
+  transition: transform 0.2s;
+  flex-direction: row;
+  align-items: center;
+  align-self: flex-start;
+  margin-top: 5vh;
+  margin-left: 5vw;
+}
+.contactRightSide {
+  display: flex;
+  flex-direction: column;
+  margin-right: 4vw;
+  width: 35vw;
+}
+.contactInputStyle {
+  background-color: #ffffff;
+  outline: none;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #a8a8a8;
+  border-radius: 40px;
+  width: 35vw;
+  height: 5vh;
+  padding-left: 0.5vw;
+  padding-right: 0.5vw;
+  margin-top: 3vh;
+  margin-bottom: 4vh;
+}
+.contactMultiline {
+  height: 10vh;
+  padding-top: 1vh;
+  border-radius: 20px;
+  resize: none;
+}
+.contactEmailSubscriptionSection {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.contactCheckbox {
+  width: 2.77vw;
+  height: 2.77vw;
+}
+.contactMethodIcon {
+  font-size: 3vw;
+}
+.contactSubmitButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2eb2ff;
+  outline: none;
+  border-radius: 40px;
+  width: 35vw;
+  transition: transform 0.2s;
+  height: 6vh;
+  margin-top: 3vh;
+  border-width: 0;
+  cursor: pointer;
+}
+.contactSubmitButton:hover {
+  transform: scale(1.15);
+}
+.contactOkButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2eb2ff;
+  outline: none;
+  border-radius: 40px;
+  width: 10vw;
+  height: 6vh;
+  margin-top: 3vh;
+  border-width: 0;
+  cursor: pointer;
+}
+.contactModalContainer {
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+  height: 40vh;
+  border-radius: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #f0ffff;
+  align-items: center;
+  text-align: center;
+  justify-content: space-evenly;
+}
+.contactHorizontalSpacer {
+  width: 3vw;
+}
+.contactLink {
+  cursor: pointer;
+}
+.contactNoTextDecoration {
+  text-decoration: none;
+}

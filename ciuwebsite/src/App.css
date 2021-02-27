@@ -1,0 +1,25 @@
+.appContainer {
+  background-color: #f0ffff;
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100vh;
+  text-align: center;
+  padding-right: 10vw;
+  padding-left: 10vw;
+}
+.appBlueButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2eb2ff;
+  outline: none;
+  border-radius: 40px;
+  width: 35vw;
+  height: 6vh;
+  margin-top: 3vh;
+  border-width: 0;
+  cursor: pointer;
+}

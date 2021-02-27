@@ -65,7 +65,7 @@ const PlaygroundScreen = ({route, navigation}) => {
           </Text>
         </TouchableOpacity>
         {isAuthFlowVisible === true ? (
-          <AuthFlow isVisible={isAuthFlowVisible} showSuccess={false} />
+          <AuthFlow navigation={navigation} isVisible={isAuthFlowVisible} showSuccess={false} />
         ) : (
           <View />
         )}

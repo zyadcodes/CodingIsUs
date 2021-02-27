@@ -1,5 +1,17 @@
 {
   "projects": {
     "default": "coding-is-us"
+  },
+  "targets": {
+    "coding-is-us": {
+      "hosting": {
+        "ciuwebsite": [
+          "codingisus"
+        ],
+        "ciuapp": [
+          "coding-is-us"
+        ]
+      }
+    }
   }
 }

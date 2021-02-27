@@ -1,0 +1,95 @@
+/* This is the CSS StyleSheet for the PracticeScreen */
+.practiceControlClassName {
+  width: 20vw;
+  border-color: #2eb2ff;
+}
+.practiceLoadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 45vh;
+  background-color: #f0ffff;
+}
+.practiceContainer {
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+  background-color: #f0ffff;
+}
+.practiceMaintenanceContainer {
+  display: flex;
+  width: 90vw;
+  height: 50vh;
+  flex-direction: column;
+  text-align: center;
+  padding-right: 5vw;
+  padding-left: 5vw;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0ffff;
+}
+.practiceDropdownContainer {
+  margin-top: 2.5vh;
+  margin-left: 5vw;
+  z-index: 1;
+}
+.practiceTypeCodeBelowTextContainer {
+  z-index: 0;
+  margin-top: 1.5vh;
+  margin-bottom: 1vh;
+  margin-left: 5vw;
+}
+.practiceCodeEditorContainer {
+  z-index: 0;
+  width: 90vw;
+  align-self: center;
+  margin-top: 1.5vh;
+  
+}
+.practiceEditorStyle {
+  border-width: 2px;
+  border-style: solid;
+  border-color: #a8a8a8;
+  border-radius: 20px;
+}
+.practiceOutputStyle {
+  outline: none;
+  border-width: 0;
+  padding-top: 1.5vh;
+  padding-bottom: 1.5vh;
+  padding-left: 2.5vw;
+  padding-right: 2.5vw;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-self: center;
+  margin-top: 1vh;
+  width: 85vw;
+  height: 30vh;
+  background-color: #ffffff;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #a8a8a8;
+  border-radius: 40px;
+  font-family: "Dosis";
+  font-size: 1.66vw;
+  resize: none;
+  margin-bottom: 10vh;
+}
+.practiceRunCodeButton {
+  outline: none;
+  border-width: 0;
+  width: 20vw;
+  border-radius: 5vh;
+  height: 10vh;
+  background-color: #2eb2ff;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-end;
+  margin-top: 2vh;
+  margin-right: 5vw;
+  transition: transform 0.2s;
+}
+.practiceRunCodeButton:hover {
+  transform: scale(1.15);
+}

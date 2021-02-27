@@ -1,0 +1,157 @@
+/* This is the CSS file for the Guide Screen */
+.guideScreenLoadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 45vh;
+  background-color: #f0ffff;
+}
+.guideScreenContainer {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  background-color: #f0ffff;
+}
+.guideScreenTitleBottomContainer {
+  margin-top: 3vh;
+  width: 50vw;
+}
+.guideScreenRowContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.guideScreenGuideCover {
+  width: 55vw;
+  border-bottom-right-radius: 20px;
+  height: auto;
+}
+.guideScreenMarginLeft {
+  margin-left: 5vw;
+}
+.guideScreenGuideLogo {
+  height: 7.5vh;
+  width: auto;
+  margin-right: 1.5vw;
+}
+.guideScreenTitleLogoContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.guideScreenSectionCard {
+  width: 50vw;
+  margin-top: 3.5vh;
+  margin-bottom: 3.5vh;
+  cursor: pointer;
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #ffffff;
+  height: 15vh;
+  justify-content: flex-start;
+}
+.guideScreenSectionCard:hover {
+  transform: scale(1.05);
+}
+.guideScreenIndicator {
+  width: 2.5vw;
+  height: 15vh;
+  margin-right: 1vw;
+}
+.guideScreenGreen {
+  background-color: #99e265;
+}
+.guideScreenRed {
+  background-color: #ff5c5c;
+}
+.guideScreenSectionInfoContainer {
+  display: flex;
+  flex-direction: column;
+  height: 15vh;
+  justify-content: space-evenly;
+  padding-right: 1vw;
+}
+.guideScreenSectionsListContainer {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5vw;
+  align-items: flex-start;
+}
+.guideScreenAd {
+  display: flex;
+  width: 30vw;
+  align-self: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5vh;
+  margin-bottom: 1vh;
+  margin-right: 4vw;
+}
+.guideScreenRightSideSticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 5vh;
+  display: flex;
+  margin-bottom: 2vh;
+  flex-direction: column;
+  align-items: center;
+}
+.guideScreenRightInfoBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-top: 3vh;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  padding-top: 1vh;
+  margin-right: 5vw;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #ffffff;
+  height: 60vh;
+  margin-bottom: 2vh;
+  width: 25vw;
+}
+.guideScreenRelatedGuidesContainer {
+  display: flex;
+  flex-direction: row;
+  width: 50vw;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 5vw;
+  margin-top: 3vh;
+  margin-bottom: 2vh;
+}
+.guideScreenCardContainer {
+  display: flex;
+  cursor: pointer;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  transition: transform 0.2s;
+  padding-top: 3vh;
+  padding-bottom: 3vh;
+  padding-left: 3vw;
+  padding-right: 3vw;
+  width: 15vw;
+  min-height: 25.5vh;
+  margin-bottom: 5vh;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #ffffff;
+}
+.guideScreenRelatedGuideLogo {
+  height: 17.5vh;
+  width: auto;
+}
+.guideScreenVerticalSpacer {
+  height: 2.5vh;
+}
+.guideScreenCardContainer:hover {
+  transform: scale(1.15);
+}

@@ -15,24 +15,18 @@ import {createUserInFirestore} from '../../../config/StorageFunctions';
 // Declares the functional component
 const AuthFlow = (props) => {
   // Retrieves the isVisible prop
-  const {isVisible, showSuccess} = props;
+  const {isVisible, showSuccess, navigation} = props;
 
   // Sets the initial states of the flow
   const [isInitialScreenVisible, setIsInitialScreenVisible] = useState(
     isVisible,
   );
   const [isLoginVisible, setIsLoginVisible] = useState(false);
-  const [isSignUpVisible, setIsSignUpVisible] = useState(false);
   const [isLoadingVisible, setIsLoadingVisible] = useState(false);
-  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [confirmEmail, setConfirmEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-  const [isSubscribed, setIsSubscribed] = useState(true);
   const [isErrorVisible, setIsErrorVisible] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
-  const [currentStep, setCurrentStep] = useState('');
   const [isSuccessVisible, setIsSuccessVisible] = useState(false);
   const [resetPasswordvisible, setResetPasswordVisible] = useState(false);
   const [
@@ -68,7 +62,6 @@ const AuthFlow = (props) => {
     const trimmedPassword = password.trim();
     if (trimmedEmail.length === 0 || trimmedPassword.length === 0) {
       setErrorMessage(strings.PleaseFillOutAllFields);
-      setCurrentStep('login');
       await sleep(500);
       setIsLoadingVisible(false);
       await sleep(250);
@@ -91,97 +84,6 @@ const AuthFlow = (props) => {
         error.code === 'auth/wrong-password'
       ) {
         setErrorMessage(strings.IncorrectEmailOrPassword);
-        setCurrentStep('login');
-        await sleep(500);
-        setIsLoadingVisible(false);
-        await sleep(250);
-        setIsErrorVisible(true);
-        return;
-      }
-    }
-  };
-
-  // This method is going to sign the user up and handle all of the errors that could arise with that sign up
-  const signUp = async () => {
-    // The first step is to check that all of the fields have been filled out
-    const trimmedName = name.trim();
-    const trimmedEmail = email.trim();
-    const trimmedConfirmEmail = confirmEmail.trim();
-    const trimmedPassword = password.trim();
-    const trimmedConfirmPassword = confirmPassword.trim();
-    if (
-      trimmedName.length === 0 ||
-      trimmedEmail.length === 0 ||
-      trimmedConfirmEmail.length === 0 ||
-      trimmedPassword.length === 0 ||
-      trimmedConfirmPassword === 0
-    ) {
-      setErrorMessage(strings.PleaseFillOutAllFields);
-      setCurrentStep('signup');
-      await sleep(500);
-      setIsLoadingVisible(false);
-      await sleep(250);
-      setIsErrorVisible(true);
-      return;
-    }
-
-    // Will check to see if the length of the password is valid
-    if (trimmedPassword.length < 6) {
-      setErrorMessage(strings.PasswordLengthError);
-      setCurrentStep('signup');
-      await sleep(500);
-      setIsLoadingVisible(false);
-      await sleep(250);
-      setIsErrorVisible(true);
-      return;
-    }
-
-    // Will check to see that email and password match
-    if (
-      trimmedEmail !== trimmedConfirmEmail ||
-      trimmedPassword !== trimmedConfirmPassword
-    ) {
-      setErrorMessage(strings.EmailPasswordMatchError);
-      setCurrentStep('signup');
-      await sleep(500);
-      setIsLoadingVisible(false);
-      await sleep(250);
-      setIsErrorVisible(true);
-      return;
-    }
-
-    // If all of the above tests pass, will attempt to now create the account in the database
-    try {
-      const user = await auth().createUserWithEmailAndPassword(
-        trimmedEmail,
-        trimmedPassword,
-      );
-      user.user.sendEmailVerification();
-      await createUserInFirestore(
-        user.user.uid,
-        trimmedName,
-        trimmedEmail,
-        isSubscribed,
-      );
-      setupFBMatching(trimmedEmail);
-      await sleep(250);
-      logEvent('SignUp', {});
-      if (showSuccess === true) {
-        setIsSuccessVisible(true);
-      }
-    } catch (error) {
-      // Checks if the email format is valid
-      if (error.code === 'auth/invalid-email') {
-        setErrorMessage(strings.PleaseEnterValidEmail);
-        setCurrentStep('signup');
-        await sleep(500);
-        setIsLoadingVisible(false);
-        await sleep(250);
-        setIsErrorVisible(true);
-        return;
-      } else if (error.code === 'auth/email-already-in-use') {
-        setErrorMessage(strings.EmailInUse);
-        setCurrentStep('signup');
         await sleep(500);
         setIsLoadingVisible(false);
         await sleep(250);
@@ -244,7 +146,7 @@ const AuthFlow = (props) => {
         onConfirmPressed={async () => {
           setIsInitialScreenVisible(false);
           await sleep(250);
-          setIsSignUpVisible(true);
+          navigation.push('SignUpScreen');
         }}
       />
       <AwesomeAlert
@@ -267,6 +169,7 @@ const AuthFlow = (props) => {
             </Text>
             <View style={AuthFlowStyle.spacer} />
             <TextInput
+            placeholderTextColor={colors.lightGray}
               keyboardType={'email-address'}
               autoCorrect={false}
               style={AuthFlowStyle.inputContainerStyle}
@@ -289,6 +192,7 @@ const AuthFlow = (props) => {
             <TextInput
               style={AuthFlowStyle.inputContainerStyle}
               placeholder={strings.PasswordDotDotDot}
+              placeholderTextColor={colors.lightGray}
               autoCompleteType={'password'}
               autoCorrect={false}
               autoCapitalize={'none'}
@@ -367,6 +271,7 @@ const AuthFlow = (props) => {
             <TextInput
               keyboardType={'email-address'}
               autoCorrect={false}
+              placeholderTextColor={colors.lightGray}
               style={AuthFlowStyle.inputContainerStyle}
               placeholder={strings.EmailDotDotDot}
               autoCapitalize={'none'}
@@ -412,178 +317,6 @@ const AuthFlow = (props) => {
         }}
       />
       <AwesomeAlert
-        show={isSignUpVisible}
-        title={strings.SignUp}
-        titleStyle={[
-          fontStyles.black,
-          fontStyles.biggerTextStyle,
-          {textAlign: 'center'},
-        ]}
-        customView={
-          <View style={AuthFlowStyle.inputViewContainer}>
-            <Text
-              style={[
-                fontStyles.black,
-                fontStyles.bigTextStyle,
-                {alignSelf: 'flex-start'},
-              ]}>
-              {strings.Name}
-            </Text>
-            <View style={AuthFlowStyle.spacer} />
-            <TextInput
-              style={AuthFlowStyle.inputContainerStyle}
-              autoCapitalize={'words'}
-              autoCorrect={false}
-              placeholder={strings.NameDotDotDot}
-              onChangeText={(newText) => setName(newText)}
-              autoCompleteType={'name'}
-              value={name}
-            />
-            <View style={AuthFlowStyle.spacer} />
-            <Text
-              style={[
-                fontStyles.black,
-                fontStyles.bigTextStyle,
-                {alignSelf: 'flex-start'},
-              ]}>
-              {strings.Email}
-            </Text>
-            <View style={AuthFlowStyle.spacer} />
-            <TextInput
-              style={AuthFlowStyle.inputContainerStyle}
-              keyboardType={'email-address'}
-              autoCorrect={false}
-              placeholder={strings.EmailDotDotDot}
-              autoCapitalize={'none'}
-              autoCompleteType={'email'}
-              onChangeText={(newText) => setEmail(newText)}
-              value={email}
-            />
-            <View style={AuthFlowStyle.spacer} />
-            <Text
-              style={[
-                fontStyles.black,
-                fontStyles.bigTextStyle,
-                {alignSelf: 'flex-start'},
-              ]}>
-              {strings.ConfirmEmail}
-            </Text>
-            <View style={AuthFlowStyle.spacer} />
-            <TextInput
-              style={AuthFlowStyle.inputContainerStyle}
-              keyboardType={'email-address'}
-              autoCapitalize={'none'}
-              autoCorrect={false}
-              autoCorrect={false}
-              placeholder={strings.ConfirmEmailDotDotDot}
-              autoCompleteType={'email'}
-              onChangeText={(newText) => setConfirmEmail(newText)}
-              value={confirmEmail}
-            />
-            <View style={AuthFlowStyle.spacer} />
-            <Text
-              style={[
-                fontStyles.black,
-                fontStyles.bigTextStyle,
-                {alignSelf: 'flex-start'},
-              ]}>
-              {strings.Password}
-            </Text>
-            <View style={AuthFlowStyle.spacer} />
-            <TextInput
-              style={AuthFlowStyle.inputContainerStyle}
-              placeholder={strings.PasswordDotDotDot}
-              autoCorrect={false}
-              autoCapitalize={'none'}
-              onChangeText={(newText) => setPassword(newText)}
-              autoCompleteType={'password'}
-              secureTextEntry={Platform.OS === 'ios' ? false : true}
-              value={password}
-            />
-            <View style={AuthFlowStyle.spacer} />
-            <Text
-              style={[
-                fontStyles.black,
-                fontStyles.bigTextStyle,
-                {alignSelf: 'flex-start'},
-              ]}>
-              {strings.ConfirmPassword}
-            </Text>
-            <View style={AuthFlowStyle.spacer} />
-            <TextInput
-              style={AuthFlowStyle.inputContainerStyle}
-              autoCapitalize={'none'}
-              autoCorrect={false}
-              placeholder={strings.ConfirmPasswordDotDotDot}
-              autoCompleteType={'password'}
-              onChangeText={(newText) => setConfirmPassword(newText)}
-              secureTextEntry={Platform.OS === 'ios' ? false : true}
-              value={confirmPassword}
-            />
-            <View style={AuthFlowStyle.spacer} />
-            <View style={AuthFlowStyle.spacer} />
-            <View style={AuthFlowStyle.checkboxContainer}>
-              <CheckBox
-                disabled={false}
-                value={isSubscribed}
-                tintColors={{
-                  true: colors.blue,
-                  false: colors.lightGray,
-                }}
-                onCheckColor={colors.blue}
-                onTintColor={colors.blue}
-                tintColor={colors.lightGray}
-                onValueChange={(newValue) => setIsSubscribed(newValue)}
-              />
-              <View style={AuthFlowStyle.spacer} />
-              <Text
-                style={[
-                  fontStyles.mainTextStyle,
-                  fontStyles.black,
-                  {textAlign: 'center'},
-                ]}>
-                {strings.IAgreeToReceiveEmails}
-              </Text>
-              <View style={AuthFlowStyle.spacer} />
-            </View>
-          </View>
-        }
-        closeOnTouchOutside={false}
-        closeOnHardwareBackPress={false}
-        onDismiss={() => {
-          setIsSignUpVisible(false);
-        }}
-        showCancelButton={true}
-        showConfirmButton={true}
-        cancelText={strings.Back}
-        confirmText={strings.SignUp}
-        cancelButtonStyle={AuthFlowStyle.buttonStyle}
-        confirmButtonStyle={AuthFlowStyle.buttonStyle}
-        cancelButtonTextStyle={[
-          fontStyles.white,
-          fontStyles.biggerTextStyle,
-          {textAlign: 'center'},
-        ]}
-        confirmButtonTextStyle={[
-          fontStyles.white,
-          fontStyles.biggerTextStyle,
-          {textAlign: 'center'},
-        ]}
-        confirmButtonColor={colors.blue}
-        cancelButtonColor={colors.lightGray}
-        onCancelPressed={async () => {
-          setIsSignUpVisible(false);
-          await sleep(250);
-          setIsInitialScreenVisible(true);
-        }}
-        onConfirmPressed={async () => {
-          setIsSignUpVisible(false);
-          await sleep(250);
-          setIsLoadingVisible(true);
-          signUp();
-        }}
-      />
-      <AwesomeAlert
         show={isErrorVisible}
         title={strings.Whoops}
         titleStyle={[
@@ -602,11 +335,7 @@ const AuthFlow = (props) => {
         onDismiss={async () => {
           setIsErrorVisible(false);
           await sleep(250);
-          if (currentStep === 'login') {
-            setIsLoginVisible(true);
-          } else {
-            setIsSignUpVisible(true);
-          }
+          setIsLoginVisible(true);
         }}
         showConfirmButton={true}
         confirmText={strings.Ok}

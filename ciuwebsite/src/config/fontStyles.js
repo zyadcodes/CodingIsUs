@@ -7,41 +7,42 @@ const font = "Dosis";
 export default {
   bigTitleTextStyle: {
     fontFamily: font,
-    fontSize: "7vh",
+    fontSize: "3.88vw",
+  },
+
+  mainTitleTextStyle: {
+    fontFamily: font,
+    fontSize: "3.33vw",
   },
 
   longTitleTextStyle: {
     fontFamily: font,
-    fontSize: '5vh',
+    fontSize: "2.77vw",
   },
 
   biggerTextStyle: {
     fontFamily: font,
-    fontSize: "4vh",
+    fontSize: "2.22vw",
   },
 
-  // The style for all big text style
   bigTextStyle: {
     fontFamily: font,
-    fontSize: "3vh",
+    fontSize: "1.66vw",
   },
 
-  // The style for all small text style
   smallTextStyle: {
     fontFamily: font,
-    fontSize: "1.5vh",
+    fontSize: "0.833vw",
   },
 
-  // The style for all sub text style
   subTextStyle: {
     fontFamily: font,
-    fontSize: "2vh",
+    fontSize: "1.11vw",
   },
 
-  // The style for all the main text style
   mainTextStyle: {
     fontFamily: font,
-    fontSize: "2.5vh",
+    fontSize: "1.38vw",
   },
 
   blue: {

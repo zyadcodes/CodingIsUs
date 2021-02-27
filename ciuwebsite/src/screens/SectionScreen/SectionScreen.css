@@ -1,0 +1,191 @@
+/* This is the CSS screen for the SectionScreen */
+.sectionScreenContainer {
+  width: 100vw;
+  background-color: #f0ffff;
+}
+.sectionLoadingContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 82vh;
+  background-color: #f0ffff;
+}
+.sectionScreenFlexRow {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  justify-content: space-between;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+}
+.sectionTopLeftRowContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.sectionScreenLeftSide {
+  display: flex;
+  flex-direction: column;
+  width: 52.5vw;
+}
+.sectionScreenMarginLeft {
+  margin-left: 5vw;
+}
+.sectionScreenRightSection {
+  margin-top: -3vh;
+  margin-bottom: -3vh;
+  display: flex;
+  flex-direction: column;
+  width: 45vw;
+  align-items: flex-start;
+  border-left-width: 2px;
+  border-left-style: solid;
+  border-left-color: #a8a8a8;
+  background-color: #ffffff;
+}
+.sectionScreenNextButton {
+  height: 10vh;
+  width: 10vh;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #2eb2ff;
+  outline: none;
+  border-width: 0;
+  transition: transform 0.2s;
+}
+.sectionScreenBackToGuideButton {
+  height: 10vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 15vw;
+  border-radius: 40px;
+  cursor: pointer;
+  background-color: #2eb2ff;
+  margin-bottom: 3vh;
+  outline: none;
+  border-width: 0;
+  transition: transform 0.2s;
+  margin-left: 2vw;
+}
+.sectionScreenBackToGuideButton:hover {
+  transform: scale(1.15);
+}
+.sectionScreenCheckButton {
+  height: 10vh;
+  width: 10vh;
+  border-radius: 50%;
+  cursor: pointer;
+  outline: none;
+  border-width: 0;
+  transition: transform 0.2s;
+}
+.sectionScreenCheckButton:hover {
+  transform: scale(1.15);
+}
+.sectionGreen {
+  background-color: #99e265;
+}
+.sectionGray {
+  background-color: #a8a8a8;
+}
+.sectionScreenAd {
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  align-items: center;
+  width: 52.5vw;
+  height: 10vh;
+  margin-top: 5vh;
+  margin-left: 2vw;
+  margin-bottom: 1vh;
+}
+.sectionBottomButtons {
+  margin-top: 3vh;
+  width: 50vw;
+  justify-content: space-between;
+  display: flex;
+  margin-left: 2.5vw;
+  flex-direction: row;
+}
+.sectionNextButton {
+  font-size: 3vw;
+}
+.sectionBackButton {
+  font-size: 2vw;
+}
+.sectionScreenNextButton:hover {
+  transform: scale(1.15);
+}
+.sectionScreenYoutubeContainer {
+  margin-left: 2.5vw;
+  width: 50vw;
+  height: calc(50vw / 16 * 9);
+}
+.sectionScreenDropdownContainer {
+  align-self: flex-end;
+  margin-right: 5vh;
+  margin-top: 2.5vh;
+  z-index: 1;
+}
+.sectionScreenControlClassName {
+  width: 20vw;
+  border-color: #2eb2ff;
+}
+.sectionScreenVerticalSpacer {
+  height: 2vh;
+}
+.sectionScreenTypeCodeBelowTextContainer {
+  z-index: 0;
+  margin-top: 1.5vh;
+  margin-bottom: 1vh;
+  margin-left: 2vw;
+}
+.sectionScreenCodeEditorContainer {
+  z-index: 0;
+  width: 40vw;
+  margin-top: 1.5vh;
+}
+.sectionScreenRunCodeButton {
+  outline: none;
+  border-width: 0;
+  width: 20vw;
+  border-radius: 5vh;
+  height: 10vh;
+  background-color: #2eb2ff;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-end;
+  margin-top: 2vh;
+  margin-right: 3vw;
+  transition: transform 0.2s;
+}
+.sectionScreenRunCodeButton:hover {
+  transform: scale(1.15);
+}
+.sectionScreenOutputStyle {
+  outline: none;
+  border-width: 0;
+  padding-top: 1.5vh;
+  padding-bottom: 1.5vh;
+  padding-left: 2.5vw;
+  padding-right: 2.5vw;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 1vh;
+  border-top-width: 2px;
+  border-top-style: solid;
+  border-top-color: #a8a8a8;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: #a8a8a8;
+  width: 40vw;
+  height: 34vh;
+  background-color: #ffffff;
+  font-family: "Dosis";
+  font-size: 0.833vw;
+  resize: none;
+}

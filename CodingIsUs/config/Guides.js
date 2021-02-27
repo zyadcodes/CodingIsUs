@@ -58,6 +58,8 @@ import DatabaseDesignLogo from '../assets/images/DatabaseDesignLogo.png';
 import DatabaseDesignCover from '../assets/images/DatabaseDesignCover.jpeg';
 import XamarinLogo from '../assets/images/XamarinLogo.png';
 import XamarinCover from '../assets/images/XamarinCover.png';
+import DartCover from '../assets/images/DartCover.jpg';
+import DartLogo from '../assets/images/DartLogo.png';
 
 const FirestoreGuide = {
   title: 'Firestore',
@@ -3836,7 +3838,7 @@ const FlutterGuide = {
     'Flutter is an open-source UI software development kit created by Google. It is used to develop applications for Android, iOS, Linux, Mac, Windows, Google Fuchsia, and the web from a single codebase.',
   duration: '6 Hours',
   guideID: 18000,
-  relatedGuides: [6000, 17000],
+  relatedGuides: [6000, 31000],
   sections: [
     {
       name: 'Intro & Setup',
@@ -6793,6 +6795,74 @@ const XamarinGuide = {
   ],
 };
 
+const DartGuide = {
+  title: 'Dart',
+  compilerIndex: 0, // This value is the corresponding index in the "Compiler Languages" array for this specific language. If there is none, then it will default to 0
+  cover: DartCover,
+  logo: DartLogo,
+  description:
+    'Dart is a client-optimized programming language for apps on multiple platforms. It is developed by Google and is used to build mobile, desktop, server, and web applications.',
+  duration: '4 Hours',
+  guideID: 31000,
+  relatedGuides: [18000, 3000],
+  sections: [
+    {
+      name: 'Introduction',
+      description: 'Get an introduction to Dart and how it generally works as well as its use cases',
+      videoLink: 'fXTsmMFIEmo',
+      ID: 31001
+    },
+    {
+      name: 'Dart Basics',
+      description: 'Understand basic Dart syntax, how it runs its programs, and more fundamentals',
+      videoLink: 'KRmgYlgOjPQ',
+      ID: 31002
+    },
+    {
+      name: 'Dart Type System',
+      description: 'Learn how Dart defines its types and how you can manipulate them',
+      videoLink: '1uq2bS0moKw',
+      ID: 31003
+    },
+    {
+      name: 'Control Flow',
+      description: 'Learn how to process control flow in Dart using if statements and for loops',
+      videoLink: '6vN6fqYXy_E',
+      ID: 31004
+    },
+    {
+      name: 'Build a Command Line App',
+      description: 'Learn how to build your first simple application in Dart',
+      videoLink: 'XoZ01mY-cUg',
+      ID: 31005
+    },
+    {
+      name: 'Collections',
+      description: 'Learn more complex data types and different types of collections in Dart and how you can use them',
+      videoLink: 'xPp_TFI6Eok',
+      ID: 31006
+    },
+    {
+      name: 'Data Processing in Dart',
+      description: 'Learn how to process data correctly and efficiently in Dart',
+      videoLink: 'mBHsuyL_-NI',
+      ID: 31007
+    },
+    {
+      name: 'Null Safety',
+      description: 'Learn how to protect your Dart programs against null values in order to prevent unneccessary crashes and ANRs',
+      videoLink: 'zhLgYA-aNfU',
+      ID: 31008
+    }
+  ],
+  additionalResources: [
+    {
+      title: 'Documentation',
+      link: 'https://firebase.google.com/docs',
+    },
+  ],
+};
+
 export default [
   CGuide,
   HTMLGuide,
@@ -6823,4 +6893,5 @@ export default [
   OOPGuide,
   DatabaseDesignGuide,
   XamarinGuide,
+  DartGuide
 ];

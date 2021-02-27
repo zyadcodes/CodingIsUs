@@ -72,8 +72,8 @@ async function constructGuideSections(videoIDs, startingID) {
     const finalObject = await getVideoObjectByID(videoID);
     // The next piece of code needs tto be adjusted according to the format of the video titles and descriptions
     const title = finalObject.title;
-    const description = '';
-    let name = title.substring(title.indexOf("-") + 1).trim();
+    const description = "";
+    let name = title.substring(title.indexOf(":") + 1).trim();
     const section = {
       name,
       description: description,
@@ -88,36 +88,14 @@ async function constructGuideSections(videoIDs, startingID) {
 
 constructGuideSections(
   [
-    "C5DHkIcIIgc",
-    "spPKRD0x_DQ",
-    "eAZ4kPf5eTc",
-    "a5_DC2AnTZM",
-    "nFkwRuTG8eM",
-    "bXnEaHtPN48",
-    "MWtZIaBh97M",
-    "lAfrdG_0Zqg",
-    "O_bSj_LyGhA",
-    "Wr7pzfXD1LY",
-    "K2be1RfDYK4",
-    "xIgLjtr2oo8",
-    "0q5QuvyYq-M",
-    "pBwuePbsnOI",
-    "ASsF7sQHNLk",
-    "m2ytzs6oiJk",
-    "cOIBBxnKmaw",
-    "DqFJx6CqKpc",
-    "3RAhShvxleE",
-    "fDz0fVkxrXs",
-    "urjtheZVqUY",
-    "vxSbVsIEp4s",
-    "psE0GjNQC00",
-    "kSIElbOdNDc",
-    "NWjNUNG1K1A",
-    "IBjCa6A_42E",
-    "J2B_0cxsm2o",
-    "A07FLVSXodM",
-    "Z_IqSDkPn2M",
-    "z9JgdcguBqQ",
+    "fXTsmMFIEmo",
+    "KRmgYlgOjPQ",
+    "1uq2bS0moKw",
+    "6vN6fqYXy_E",
+    "XoZ01mY-cUg",
+    "xPp_TFI6Eok",
+    "mBHsuyL_-NI",
+    "zhLgYA-aNfU",
   ],
-  30001
+  31001
 );

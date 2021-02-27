@@ -1,0 +1,41 @@
+/* This is going to be the CSS for the LinkScreens */
+.linkContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  text-align: center;
+  height: auto;
+  padding-bottom: 10vh;
+  background-color: #f0ffff;
+}
+.linkLogo {
+  height: 10vh;
+  width: auto;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  padding: 10px;
+}
+.linkButton {
+  width: 80vw;
+  margin-top: 5vh;
+  height: 10vh;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: flex;
+  justify-content: center;
+  transition: transform 0.2s;
+  border-width: 0;
+  align-items: center;
+  background-color: #2eb2ff;
+}
+.linkMarginTop {
+  margin-top: 5vh;
+}
+.linkButton:hover {
+  transform: scale(1.15);
+}

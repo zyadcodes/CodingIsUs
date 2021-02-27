@@ -98,4 +98,11 @@ export default StyleSheet.create({
     alignItems: 'center',
     width: screenWidth * 0.75,
   },
+  adStyle: {
+    width: screenWidth,
+    height: screenHeight,
+    alignItems: 'center',
+    justifyContent: 'center'
+  }
 });
+

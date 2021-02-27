@@ -1,0 +1,12 @@
+.container {
+  background-color: #f0ffff;
+  width: 100vw;
+}
+.titleContainer {
+  margin-left: 3vw;
+  margin-bottom: 5vh;
+  padding-top: 5vh;
+}
+.textContainer {
+  margin-left: 3vw;
+}

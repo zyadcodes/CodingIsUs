@@ -1,0 +1,64 @@
+/* This is going to be the CSS version of the fontStyles.js file */
+
+.bigTitleTextStyle {
+  font-family: "Dosis";
+  font-size: 3.88vw;
+}
+
+.mainTitleTextStyle {
+  font-family: "Dosis";
+  font-size: 3.33vw;
+}
+
+.longTitleTextStyle {
+  font-family: "Dosis";
+  font-size: 2.77vw;
+}
+
+.biggerTextStyle {
+  font-family: "Dosis";
+  font-size: 2.22vw;
+}
+
+.bigTextStyle {
+  font-family: "Dosis";
+  font-size: 1.66vw;
+}
+
+.smallTextStyle {
+  font-family: "Dosis";
+  font-size: 0.833vw;
+}
+
+.subTextStyle {
+  font-family: "Dosis";
+  font-size: 1.11vw;
+}
+
+.mainTextStyle {
+  font-family: "Dosis";
+  font-size: 1.38vw;
+}
+
+.blue {
+  color: #2eb2ff;
+}
+.green {
+  color: #99e265;
+}
+.lightGray {
+  color: #a8a8a8;
+}
+.red {
+  color: #ff5c5c;
+}
+.white {
+  color: #ffffff;
+}
+.black {
+  color: #000000;
+}
+
+.bold {
+  font-weight: bold;
+}

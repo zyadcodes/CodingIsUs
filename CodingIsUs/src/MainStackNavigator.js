@@ -12,6 +12,7 @@ import ResourcesScreen from './screens/ResourcesScreen/ResourcesScreen';
 import PolicyScreen from './screens/PolicyScreen/PolicyScreen';
 import LaunchScreen from './screens/LaunchScreen/LaunchScreen';
 import SettingScreen from './screens/SettingsScreen/SettingsScreen';
+import SignUpScreen from './screens/SignUpScreen/SignUpScreen';
 
 // Declares the Stack Navigator
 const Stack = createStackNavigator();
@@ -32,6 +33,13 @@ const MainStackNavigator = () => {
       <Stack.Screen
         name={'LaunchScreen'}
         component={LaunchScreen}
+        options={{
+          gestureEnabled: false,
+        }}
+      />
+      <Stack.Screen
+        name={'SignUpScreen'}
+        component={SignUpScreen}
         options={{
           gestureEnabled: false,
         }}

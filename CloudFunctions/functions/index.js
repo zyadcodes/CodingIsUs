@@ -2,12 +2,15 @@
 const functions = require("firebase-functions");
 const fetch = require("node-fetch");
 const got = require("got");
+//Configures email for automated emails
+const nodemailer = require("nodemailer");
 
 // The following are the access tokens and endpoints for the various APIS used here
 // HIGHLY SENSITIVE
 const accessToken = "8ca5858d335f9887bfda937a1517cbae";
 const endpoint = "c8f4cd08.compilers.sphere-engine.com";
 
+const hubspotAPIKey = "95fced1a-b418-4d09-82ae-89e8f3b2d12b";
 
 /* The following are miscellaneous functions that can be used throughout the rest of the file */
 
@@ -26,6 +29,87 @@ exports.runCode = functions.https.onCall(async (input, context) => {
   const { code, languageID } = input;
   const output = await postSubmission(code, languageID);
   return output;
+});
+
+// This cloud function will subscribe a user to the email list in Hubspot using only their email
+exports.subscribeEmailToEmailList = functions.https.onCall(
+  async (input, context) => {
+    const { email } = input;
+
+    const result = await fetch(
+      "https://api.hubapi.com/contacts/v1/contact/?hapikey=" + hubspotAPIKey,
+      {
+        credentials: "include",
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          properties: [{ property: "email", value: email }],
+        }),
+      }
+    );
+    return result;
+  }
+);
+
+// This cloud function will subscribe a user to the email list in Hubspot using their email and their name
+exports.subscribeEmailAndNameToEmailList = functions.https.onCall(
+  async (input, context) => {
+    const { email, name } = input;
+
+    const result = await fetch(
+      "https://api.hubapi.com/contacts/v1/contact/?hapikey=" + hubspotAPIKey,
+      {
+        credentials: "include",
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          properties: [
+            { property: "email", value: email },
+            { property: "firstname", value: name },
+          ],
+        }),
+      }
+    );
+    return result;
+  }
+);
+
+// This function is going to send emails to a specific reciever from the info@codingisus.com email.
+// Eventually, we will want to switch to a newer domain name to recieve messages, like a help desk email, etc.
+exports.sendEmail = functions.https.onCall(async (input, context) => {
+  // Gets the information that will be in the email
+  const { to, subject, text } = input;
+
+  // Logs into the email
+  const mailTransport = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: "infocodingisus@gmail.com",
+      pass: "zBusiness123!",
+    },
+    tls: {
+      rejectUnauthorized: false,
+    },
+  });
+
+  //Configures the email subject, to, and from
+  const mailOptions = {
+    from: "Coding is Us <infocodingisus@gmail.com>",
+    to,
+    subject,
+    text,
+  };
+
+  // Sends the email
+  await mailTransport.sendMail(mailOptions);
+
+  return 0;
 });
 
 // This function will handle the posting of the submission to the Sphere Engine API to compile

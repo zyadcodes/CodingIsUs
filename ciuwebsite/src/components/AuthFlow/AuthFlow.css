@@ -1,0 +1,104 @@
+.authModalContainer {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  height: auto;
+  border-radius: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  background-color: #f0ffff;
+  align-items: center;
+  text-align: center;
+  justify-content: space-evenly;
+}
+.authXButton {
+  align-self: flex-start;
+  font-size: 2vw;
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+.authXButton:hover {
+  transform: scale(1.15);
+}
+.modalRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.modalRowSection {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+.authButtonsContainer {
+  display: flex;
+  flex-direction: row;
+  width: 22.5vw;
+  justify-content: space-between;
+  margin-top: 1vh;
+}
+.authButtonsSingleContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 1vh;
+}
+.authButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  border-radius: 40px;
+  width: 10vw;
+  transition: transform 0.2s;
+  height: 6vh;
+  margin-top: 3vh;
+  border-width: 0;
+  cursor: pointer;
+}
+.authButton:hover {
+  transform: scale(1.15);
+}
+.authInputTitle {
+  align-self: flex-start;
+  margin-bottom: 2vh;
+  margin-top: 2vh;
+}
+.authInputStyle {
+  align-self: flex-start;
+  background-color: #ffffff;
+  outline: none;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #a8a8a8;
+  border-radius: 40px;
+  width: 28vw;
+  height: 5vh;
+  padding-left: 0.5vw;
+  padding-right: 0.5vw;
+}
+.authCheckbox {
+  width: 2.77vw;
+  height: 2.77vw;
+  align-self: center;
+  margin-top: 3vh;
+  margin-bottom: 2vh;
+}
+.forgotPassword {
+  margin-top: 2vh;
+}
+.authLink {
+  cursor: pointer;
+}
+.authBlue {
+  background-color: #2eb2ff;
+}
+.authGray {
+  background-color: #a9a9a9;
+}
+.authHoverBlue:hover {
+  color: #2EB2FF
+}

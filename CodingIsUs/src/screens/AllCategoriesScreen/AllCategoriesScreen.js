@@ -71,7 +71,7 @@ const AllCategoriesScreen = ({route, navigation}) => {
         ListHeaderComponent={
           <View>
             {isAuthFlowVisible ? (
-              <AuthFlow isVisible={isAuthFlowVisible} showSuccess={true} />
+              <AuthFlow navigation={navigation} isVisible={isAuthFlowVisible} showSuccess={true} />
             ) : (
               <View />
             )}

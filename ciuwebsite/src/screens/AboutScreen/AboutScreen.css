@@ -1,0 +1,101 @@
+/* This is going to be the CSS for the About Screen */
+.aboutContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  background-color: #f0ffff;
+}
+.aboutTopTextContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 3vh;
+  margin-bottom: 5vh;
+  padding-left: 10vw;
+  padding-right: 10vw;
+}
+.aboutPeopleImage {
+  width: 100vw;
+  height: auto;
+}
+.aboutCardsContainer {
+  display: flex;
+  width: 95vw;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.aboutCard {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 28vw;
+  height: 80vh;
+  transition: transform 0.2s;
+  text-align: center;
+}
+.aboutCard:hover {
+  transform: scale(1.15);
+}
+.aboutCardImage {
+  width: 28vw;
+  height: 40vh;
+  background-color: white;
+  resize: initial;
+}
+.aboutSubscribeContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 15vh;
+}
+.aboutInputField {
+  display: flex;
+  flex-direction: row;
+}
+.aboutTextFieldStyle {
+  background-color: #ffffff;
+  outline: none;
+  border-width: 0;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-style: solid;
+  border-left-width: 2px;
+  border-top-width: 2px;
+  border-bottom-width: 2px;
+  border-color: #2eb2ff;
+  width: 35vw;
+  height: 5vh;
+  padding-left: 0.5vw;
+}
+.aboutSubscribeButton {
+  width: 10vw;
+  height: calc(5vh + 6px);
+  border-top-right-radius: 20px;
+  border-width: 0;
+  border-bottom-right-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2eb2ff;
+}
+.aboutVerticalSpacer {
+  height: 4vh;
+}
+.aboutHorizontalPadding {
+  padding-left: 4vw;
+  padding-right: 4vw;
+}
+.aboutLink {
+  cursor: pointer;
+}
+.aboutCheck {
+  font-size: 2vw;
+  transition: transform 0.2s;
+}
+.aboutCheck:hover {
+  transform: scale(1.15);
+}

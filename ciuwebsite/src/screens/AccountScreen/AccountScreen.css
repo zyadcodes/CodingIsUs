@@ -1,0 +1,84 @@
+/* This will be the CSS file for the account screen */
+.accountLoadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  background-color: #f0ffff;
+  height: 45vh;
+}
+.accountContainer {
+  display: flex;
+  background-color: #f0ffff;
+  flex-direction: column;
+  width: 100vw;
+}
+.accountProfileHeader {
+  height: 30vh;
+  width: 85vw;
+  background-color: #2eb2ff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 10vw;
+  padding-left: 5vw;
+}
+.accountCIULogo {
+  height: 20vh;
+  width: auto;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+.accountProgressContainer {
+  margin-top: 2vh;
+  margin-left: 5vw;
+}
+.accountGuideCard {
+  width: 90vw;
+  align-self: center;
+  margin-top: 3.5vh;
+  margin-bottom: 3.5vh;
+  cursor: pointer;
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #ffffff;
+  height: 15vh;
+  justify-content: space-evenly;
+}
+.accountGuideCard:hover {
+  transform: scale(1.05);
+}
+.accountTitleProgressContainer {
+  display: flex;
+  flex-direction: column;
+  height: 15vh;
+  justify-content: space-evenly;
+}
+.accountGuideLogo {
+  width: auto;
+  height: 10vh;
+}
+.accountSignOutButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  border-radius: 40px;
+  width: 10vw;
+  height: 6vh;
+  margin-top: 3vh;
+  margin-bottom: 5vw;
+  background-color: #a8a8a8;
+  transition: transform 0.2s;
+  align-self: flex-end;
+  margin-right: 10vh;
+  border-width: 0;
+  cursor: pointer;
+}
+.accountSignOutButton:hover {
+  transform: scale(1.15);
+}

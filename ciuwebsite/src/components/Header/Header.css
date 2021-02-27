@@ -1,0 +1,87 @@
+/* This is going to be the CSS file for the Header component */
+.headerContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  background-color: #ffffff;
+  height: 20vh;
+  min-height: 130px;
+}
+.headerTopSection {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-end;
+  padding-right: 3vh;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 10vh;
+  min-height: 65px;
+}
+.headerTopRightSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 40vw;
+}
+.headerLogoContainer {
+  display: flex;
+  flex-direction: row;
+  padding-left: 2.5vw;
+  cursor: pointer;
+  width: auto;
+  height: 10vh;
+  align-items: center;
+}
+.headerLogoStyle {
+  height: 10vh;
+  width: auto;
+  padding-right: 2vw;
+}
+.headerBottomSection {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+  min-height: 65px;
+}
+.headerAuthButtons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-right: 2.5vw;
+}
+.headerLogInLink {
+  display: flex;
+  height: 8vh;
+  width: 10vw;
+  justify-content: center;
+  align-items: center;
+}
+.headerSignUpLink {
+  display: flex;
+  width: 10vw;
+  height: 7.5vh;
+  border-radius: 37.5px;
+  background-color: #2eb2ff;
+  transition: transform 0.2s;
+  justify-content: center;
+  align-items: center;
+}
+.headerSignUpLink:hover {
+  transform: scale(1.15);
+}
+.headerHorizontalSpacer {
+  width: 3vw;
+}
+.headerLeftSpacer {
+  width: 22.5vw;
+}
+.headerLink {
+  cursor: pointer;
+}
+.headerHoverBlue:hover {
+  color: #2EB2FF
+}
