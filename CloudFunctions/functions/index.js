@@ -12,6 +12,8 @@ const endpoint = "c8f4cd08.compilers.sphere-engine.com";
 
 const hubspotAPIKey = "95fced1a-b418-4d09-82ae-89e8f3b2d12b";
 
+console.log("hello world")
+
 /* The following are miscellaneous functions that can be used throughout the rest of the file */
 
 // This function will halt the program for the amount of milliseconds specified
